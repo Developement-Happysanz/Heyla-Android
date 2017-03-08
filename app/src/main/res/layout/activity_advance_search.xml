@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorRed"
+        android:minHeight="?attr/actionBarSize"></android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/tvtitletext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:minHeight="?attr/actionBarSize"
+        android:padding="5dp"
+        android:text="Advance Search"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/actionbarTextSize" />
+
+    <!--<ImageView
+        android:id="@+id/tvfilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:minHeight="?attr/actionBarSize"
+        android:padding="5dp"
+        android:src="@drawable/filter_xxhdpi"
+        android:textColor="@color/white"
+        android:textSize="@dimen/actionbarTextSize" />-->
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:padding="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvsortbydate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="@dimen/mainmargin"
+                android:gravity="center"
+                android:text="Select day"
+                android:textColor="@color/white"
+                android:textSize="@dimen/actionbarTextSize" />
+
+            <LinearLayout
+                android:id="@+id/threebtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvsortbydate"
+                android:layout_marginBottom="@dimen/mainmargin"
+                android:weightSum="3">
+
+                <Button
+                    android:id="@+id/btntoday"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="1"
+                    android:background="@color/btngreybg"
+                    android:text="Today"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btntomorrow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="1"
+                    android:background="@color/btngreybg"
+                    android:text="Tomorrow"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btnselectdate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorRed"
+                    android:text="DD-MM-YYYY"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tveventtype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/threebtn"
+                android:layout_marginBottom="@dimen/mainmargin"
+                android:gravity="center"
+                android:text="Select Event Type"
+                android:textColor="@color/white"
+                android:textSize="@dimen/actionbarTextSize" />
+
+            <Spinner
+                android:id="@+id/eventtypespinner"
+                style="@style/spinner_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tveventtype"
+                android:layout_marginBottom="@dimen/mainmargin"
+                android:textSize="15sp"></Spinner>
+
+            <TextView
+                android:id="@+id/tvsortbycategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/eventtypespinner"
+                android:layout_marginBottom="@dimen/mainmargin"
+                android:gravity="center"
+                android:text="Select Category"
+                android:textColor="@color/white"
+                android:textSize="@dimen/actionbarTextSize" />
+
+            <Button
+                android:id="@+id/catgoryspinner"
+                style="@style/spinner_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvsortbycategory"
+                android:layout_marginBottom="@dimen/mainmargin"
+                android:ellipsize="end"
+                android:gravity="left|center_vertical"
+                android:paddingRight="8dp"
+                android:singleLine="true"
+                android:text="Select Category"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="15sp"></Button>
+
+            <TextView
+                android:id="@+id/tvsortbycity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/catgoryspinner"
+                android:layout_marginBottom="@dimen/mainmargin"
+                android:gravity="center"
+                android:text="Select City"
+                android:textColor="@color/white"
+                android:textSize="@dimen/actionbarTextSize" />
+
+            <!-- <Spinner
+                 android:id="@+id/cityspinner"
+                 style="@style/spinner_style"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/tvsortbycity"
+                 android:layout_marginBottom="@dimen/mainmargin"></Spinner> -->
+
+            <EditText
+                android:id="@+id/btn_city_drop_down"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvsortbycity"
+                android:background="@drawable/gradient_spinner"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:inputType="textNoSuggestions"
+                android:text="Select City"
+                android:textSize="15sp"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tvdaterange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/btn_city_drop_down"
+                android:layout_marginTop="@dimen/mainmargin"
+                android:gravity="center"
+                android:text="Select Date"
+                android:textColor="@color/white"
+                android:textSize="@dimen/actionbarTextSize" />
+
+            <TextView
+                android:id="@+id/tvfrom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/tvdaterange"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="From"
+                android:textColor="@color/orange" />
+
+            <Button
+                android:id="@+id/btnfrom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvfrom"
+                android:layout_marginBottom="@dimen/mainmargin"
+                android:background="@drawable/gradient_spinner"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/btnfrom"
+                android:layout_marginBottom="4dp"
+                android:gravity="center"
+                android:text="To"
+                android:textColor="@color/orange" />
+
+            <Button
+                android:id="@+id/btnto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvto"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/gradient_spinner"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:id="@+id/twobtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnto"
+                android:weightSum="2">
+
+                <Button
+                    android:id="@+id/btncancel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/numberpickerbg"
+                    android:text="Cancel"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btnapply"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorRed"
+                    android:text="Search"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
+
+
+
+

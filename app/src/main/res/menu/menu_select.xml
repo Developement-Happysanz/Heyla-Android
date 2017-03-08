@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.findafun.activity.SelectPreferenceActivity">
+
+    <item
+        android:id="@+id/action_skip"
+        android:orderInCategory="100"
+        android:title="@string/action_skip"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_set"
+        android:icon="@drawable/ic_done_white_24dp"
+        android:orderInCategory="100"
+        android:title="@string/action_set_preferences"
+        app:showAsAction="always" />
+</menu>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/cst_action_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/colorRed">
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:padding="4dp"
+            android:src="@drawable/backarrow" />
+
+        <TextView
+            android:id="@+id/bookings_action_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/back_btn"
+            android:padding="5dp"
+            android:text="INTERN BOARD"
+            android:textColor="@color/white"
+            android:textSize="22dp" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/local_leader_board_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White"
+        android:divider="@color/light_line_color"
+        android:dividerHeight="1dp"></ListView>
+
+</LinearLayout>

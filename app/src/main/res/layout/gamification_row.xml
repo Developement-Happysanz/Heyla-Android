@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp">
+
+    <TextView
+        android:id="@+id/board_data_val"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:text="suman" />
+
+    <ImageView
+        android:id="@+id/board_event_img"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/board_data_val"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/board_event_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/board_data_val"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/board_event_img"
+        android:text="Marathan"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <TextView
+        android:id="@+id/ticket_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/board_event_name"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/board_event_img"
+        android:text="0"
+        android:textColor="@color/text_gray"
+        android:visibility="gone" />
+
+</RelativeLayout>

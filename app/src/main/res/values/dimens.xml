@@ -1,0 +1,17 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Login Screen -->
+    <dimen name="login_edittext_side_margin">35dp</dimen>
+    <dimen name="round_view_radius">30dp</dimen>
+    <dimen name="round_view_radius_preference">10dp</dimen>
+    <dimen name="preference_round_size">150dp</dimen>
+    <dimen name="fab_margin">14dp</dimen>
+    <dimen name="actionbarTextSize">20sp</dimen>
+    <dimen name="mainmargin">10dp</dimen>
+    <dimen name="ticketmargin">50dp</dimen>
+    <dimen name="event_title_text_size">18dp</dimen>
+
+</resources>

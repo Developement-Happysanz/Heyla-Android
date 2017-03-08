@@ -1,0 +1,138 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'heyla_alias'
+            keyPassword 'Heyla@123'
+            storeFile file('heyla.jks')
+            storePassword 'Heyla@123'
+        }
+    }
+    compileSdkVersion 23
+    buildToolsVersion '25.0.2'
+
+    defaultConfig {
+        applicationId "com.palprotech.heyla"
+        multiDexEnabled true
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 3
+        versionName "1.0.2"
+    }
+
+    dexOptions {
+        preDexLibraries = false
+        javaMaxHeapSize "4g"
+
+    }
+    afterEvaluate {
+        tasks.matching {
+            it.name.startsWith('dex')
+        }.each { dx ->
+            if (dx.additionalParameters == null) {
+                dx.additionalParameters = []
+            }
+            dx.additionalParameters += "--set-max-idx-number=55000"
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            jniDebuggable false
+            zipAlignEnabled true
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            output.outputFile = file("$project.buildDir/apk/Heyla.apk")
+        }
+    }
+    productFlavors {
+        flavor {
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':pulltorefresh-and-loadmore')
+    compile files('libs/universal-image-loader-1.9.3.jar')
+//    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+
+    compile 'com.facebook.android:facebook-android-sdk:4.0.0'
+
+//    compile 'com.google.android.gms:play-services-identity:9.0.2'
+//    compile 'com.google.android.gms:play-services-plus:9.0.2'
+//    compile 'com.google.android.gms:play-services-location:9.0.2'
+//    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.google.android.gms:play-services-identity:8.3.0'
+    compile 'com.google.android.gms:play-services-plus:8.3.0'
+    compile 'com.google.android.gms:play-services-location:8.3.0'
+    compile 'com.google.code.gson:gson:2.2.4'
+//
+    compile 'com.mcxiaoke.volley:library:1.0.19'
+
+//    compile 'com.android.support:cardview-v7:23.4.0'
+    compile 'com.android.support:cardview-v7:23.1.1'
+   // compile 'com.github.vihtarb:tooltip:0.1.8'
+
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.makeramen:roundedimageview:2.1.0'
+    //compile 'io.github.yavski:fab-speed-dial:1.0.4'
+
+//    compile 'com.android.support:recyclerview-v7:23.4.0'
+//    compile 'com.android.support:design:23.4.0'
+//    compile 'com.google.android.gms:play-services:9.0.2'
+//    compile 'com.google.android.gms:play-services-auth:9.0.2'
+//    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
+    compile 'com.google.android.gms:play-services:8.3.0'
+    compile 'com.google.android.gms:play-services-auth:8.3.0'
+    compile 'com.android.support:multidex:1.0.0'
+
+    compile 'za.co.riggaroo:materialhelptutorial:1.1.0'
+    compile 'com.github.rampo.updatechecker:library:2.1.8'
+    compile 'com.android.support:support-v4:23.4.0'
+
+
+//    compile 'com.google.android.gms:play-services-ads:9.0.2'
+//    compile 'com.google.android.gms:play-services-gcm:9.0.2'
+    compile 'com.google.android.gms:play-services-ads:8.3.0'
+    compile 'com.google.android.gms:play-services-gcm:8.3.0'
+
+    compile files('libs/twitter4j-core-4.0.4.jar')
+    compile files('libs/apache-mime4j-0.6.jar')
+    compile files('libs/httpclient-4.3.6.jar')
+    compile files('libs/httpcore-4.3.3.jar')
+    compile files('libs/httpmime-4.3.6.jar')
+
+}

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1026979055226",
+    "firebase_url": "https://heylaapp.firebaseio.com",
+    "project_id": "heylaapp",
+    "storage_bucket": "heylaapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026979055226:android:47ccefd453a4cb11",
+        "android_client_info": {
+          "package_name": "com.palprotech.heyla"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1026979055226-85ctjqthkol7mm96hrigdelt5snpci3d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZLV8PcZw2aAc--rhs4KBqTSmn77Tci5Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1026979055226-85ctjqthkol7mm96hrigdelt5snpci3d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

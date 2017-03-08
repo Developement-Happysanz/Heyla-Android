@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.findafun.fragment.NearbyFragment">
+
+    <RelativeLayout
+        android:id="@+id/nearby_header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/nearby_totalevents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:text="Events nearby"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/neary_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/nearby_totalevents"
+            android:text=""
+            android:textColor="@color/title_red" />
+
+        <ImageButton
+            android:id="@+id/nearby_grid_view_btn"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/list_icon_background"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="5dp"
+            android:paddingTop="10dp"
+            android:src="@drawable/list_white_unselected" />
+
+        <ImageButton
+            android:id="@+id/nearby_location_btn"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_toLeftOf="@+id/nearby_grid_view_btn"
+            android:background="@drawable/location_icon_background"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="8dp"
+            android:src="@drawable/location_tab_unselected" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/nearby_header_layout"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/white">
+
+        <com.costum.android.widget.LoadMoreListView
+            android:id="@+id/listView_events"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/button_bg_gray"
+            android:dividerHeight="4dp" />
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="gone"
+            map:cameraTargetLat="16.29905101"
+            map:cameraTargetLng="78.3984375" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

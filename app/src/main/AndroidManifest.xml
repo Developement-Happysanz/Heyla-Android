@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.findafun">
+
+    <permission
+        android:name="your.package.name.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.findafun.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.findafun.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <permission
+        android:name="com.findafun.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.findafun.permission.C2D_MESSAGE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <application
+        android:name=".app.AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/appicon_logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider1685181585055797"
+            android:exported="true" />
+
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBarWhite"
+            android:windowSoftInputMode="adjustPan"></activity>
+
+        <activity
+            android:name=".activity.BookingPlansActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBarEventDetails" />
+
+        <activity
+            android:name=".activity.BookingPlanSeatSelectionActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme" />
+
+        <activity
+            android:name=".ccavactivity.InitialScreenActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ccavactivity.WebViewActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ccavactivity.StatusActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".seamless.activity.BillingShippingActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".seamless.activity.InitialScreenActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".seamless.activity.StatusActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".seamless.activity.WebViewActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".activity.SelectPreferenceActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme" />
+
+        <activity
+            android:name=".activity.SplashScreenActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme"></activity>
+
+        <activity
+            android:name=".activity.SignUpActivity"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme" />
+
+        <activity
+            android:name=".activity.ForgotPasswordActivity"
+            android:label="@string/title_activity_forgot_password"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme" />
+
+        <activity
+            android:name=".activity.LandingActivity"
+            android:label="@string/title_activity_landing"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBarGrey" />
+
+        <activity
+            android:name=".activity.EventDetailActivity"
+            android:label="@string/title_activity_event_detail"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBarEventDetails" />
+
+        <activity
+            android:name=".activity.NearbyActivity"
+            android:label="@string/title_activity_event_detail"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBarEventDetails" />
+
+        <activity
+            android:name=".activity.NearbyStaticActivity"
+            android:label="@string/title_activity_event_detail"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBarEventDetails" />
+
+        <activity
+            android:name=".activity.BookmarksActivity"
+            android:label="@string/title_book_mark"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBarEventDetails" />
+
+        <activity
+            android:name=".activity.SelectCityActivity"
+            android:label="@string/title_activity_select_city"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme" />
+
+        <activity
+            android:name=".activity.ProfileActivity"
+            android:label="@string/title_activity_profile"
+            android:theme="@style/AppFullScreenTheme" />
+
+        <activity
+            android:name=".activity.LeaderBoardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme" />
+
+        <activity
+            android:name=".activity.PhotosActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme" />
+
+        <activity
+            android:name=".activity.EngagementActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme" />
+
+        <activity
+            android:name=".activity.ReviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme" />
+
+        <activity
+            android:name=".activity.SubmitReviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme" />
+
+        <activity
+            android:name=".activity.GlobalLeaderBoardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme" />
+
+        <activity
+            android:name=".activity.LocalLeaderBoardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme" />
+
+        <activity
+            android:name=".activity.BookingsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme" />
+
+        <activity
+            android:name=".activity.InternBoradActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme" />
+
+        <activity
+            android:name=".activity.CheckinsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme" />
+
+        <activity
+            android:name=".activity.AllDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme" />
+
+        <activity
+            android:name=".activity.TermsAndConditionsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme" />
+
+        <activity
+            android:name=".twitter.TwitterActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="com.findafun"
+                    android:scheme="oauth" />
+            </intent-filter>
+        </activity>
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".activity.MapsActivity"
+            android:label="@string/title_activity_maps"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBarEventDetails" />
+
+        <activity
+            android:name=".activity.AdvanceSearchAct"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.AdvaSearchResAct"
+            android:screenOrientation="portrait" />
+
+        <!--
+            <activity
+            android:name="za.co.riggaroo.materialhelptutorial.tutorial.MaterialTutorialActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        -->
+        <!-- <activity -->
+        <!-- android:name=".AppRate.AppRate" -->
+        <!-- android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> -->
+
+        <activity android:name=".activity.PictureDetailsActivity" />
+
+        <activity android:name=".activity.BannerList" />
+
+        <activity
+            android:name=".activity.AddEventActivity"
+            android:label="@string/title_activity_addEvent"
+            android:theme="@style/AppFullScreenTheme" />
+
+        <activity
+            android:name=".activity.LoginNew"
+            android:theme="@style/AppFullScreenTheme"
+            android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.LoginNewActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme"
+            android:windowSoftInputMode="adjustPan"></activity>
+
+        <activity
+            android:name=".activity.SignupNewActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme"
+            android:windowSoftInputMode="adjustPan"></activity>
+
+        <activity
+            android:name=".activity.heyla.Login"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme"
+            android:windowSoftInputMode="adjustPan"></activity>
+
+        <activity
+            android:name=".activity.heyla.Signup"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme"
+            android:windowSoftInputMode="adjustPan"></activity>
+
+        <activity
+            android:name=".activity.StaticEventDetailActivity"
+            android:label="@string/title_activity_event_detail"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBarEventDetails" />
+
+        <activity android:name=".activity.imageGallery"></activity>
+
+
+        <!--            GCM Receiver        -->
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.findafun" />
+            </intent-filter>
+        </receiver>
+
+        <!--            GCM Receiver Service        -->
+        <service
+            android:name=".servicehelpers.GCM.GCMPushReceiverService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <!--            GCM Registration Intent Service        -->
+        <service
+            android:name=".servicehelpers.GCM.GCMRegistrationIntentService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.AddEventActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <RelativeLayout
+            android:id="@+id/cst_action_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/actionbar_color">
+
+            <ImageView
+                android:id="@+id/cst_back_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:padding="6dp"
+                android:src="@drawable/backarrow" />
+
+            <TextView
+                android:id="@+id/cst_action_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/cst_back_btn"
+                android:padding="5dp"
+                android:text="Add Events"
+                android:textColor="@color/title_red"
+                android:textSize="22dp" />
+
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/profile_layout"
+            layout="@layout/content_event_add"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/cst_action_bar_layout" />
+
+    </RelativeLayout>
+</ScrollView>

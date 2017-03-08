@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/White"
+    android:orientation="horizontal"
+    android:paddingBottom="5dp"
+    android:paddingTop="10dp">
+
+    <ImageView
+        android:id="@+id/share_image_src"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:padding="5dp" />
+
+    <TextView
+        android:id="@+id/share_dialog_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="25dp"
+        android:text="Facebook"
+        android:textColor="@color/black_semi_trans"
+        android:textSize="22dp"
+        android:textStyle="bold" />
+
+</LinearLayout>

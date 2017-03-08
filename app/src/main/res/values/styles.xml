@@ -1,0 +1,45 @@
+<resources>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="spinner_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/gradient_spinner</item>
+
+        <item name="android:popupBackground">#312725</item>
+    </style>
+
+    <style name="add_spinner_style">
+        <item name="android:background">@drawable/add_event_spinner</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+
+    </style>
+
+
+<!--
+    <style name="Tool">
+        <item name="android:text">@string/eventPict</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">5dp</item>
+        <item name="backgroundColor">@color/colorPrimary</item>
+        <item name="cornerRadius">10dp</item>
+    </style>
+-->
+
+
+
+
+</resources>

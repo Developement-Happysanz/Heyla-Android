@@ -1,0 +1,252 @@
+<resources>
+    <string name="app_name">Heyla</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_forgot_password">Forgot Password</string>
+
+    <!--<string name="facebook_app_id">1097547633669382</string>-->
+    <string name="facebook_app_id">1455778024434398</string>
+
+
+    <!-- Login Screen -->
+    <string name="hint_email">\tE-Mail ID</string>
+    <string name="hint_password">\tPassword</string>
+    <string name="hint_promocode">\tPromocode (Optional)</string>
+    <string name="forgot_passwords">Forgot Your Password?</string>
+    <string name="forgot_password"><u>Forgot password?</u></string>
+    <string name="guest_login"><u>Guest Login</u></string>
+    <string name="dont_have_account">Don\'t Have an Account? Click Here</string>
+    <string name="title_activity_select_fragment">SelectFragmentActivity</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="title_activity_landing">FAVORITES</string>
+    <string name="drawer_open">Drawer open</string>
+    <string name="drawer_close">Drawer close</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_occured">Failed to connect to the server. Please try again.</string>
+    <string name="empty" />
+    <string name="alert_button_ok">Ok</string>
+    <string name="enter_user_name">User name cannot be empty</string>
+    <string name="email_empty_str">Email Id cannot be empty</string>
+    <string name="enter_valid_email">Please enter a valid email address</string>
+    <string name="enter_password">Password cannot be empty</string>
+    <string name="password_mismatch">Password mismatch</string>
+    <string name="progress_loading">Loading...</string>
+    <string name="no_connectivity">Please check your internet connectivity and try again.</string>
+    <string name="title_activity_event_detail">EventDetailActivity</string>
+    <string name="title_activity_static_event_detail">StaticEventDetailActivity</string>
+    <string name="title_book_mark">Bookmarks</string>
+    <string name="venue">Venue</string>
+    <string name="about_event">About Event</string>
+    <string name="action_set_preferences">Set Preferences</string>
+    <string name="action_skip">Skip</string>
+    <string name="action_edit_preferences">Edit Preferences</string>
+    <string name="action_logout">Logout</string>
+    <string name="alert_button_cancel">Cancel</string>
+    <string name="wish_logout">Do you wish to logout?</string>
+    <string name="select_preference">Select your preferences</string>
+    <string name="enter_confirm_password">Confirm your password</string>
+    <string name="password_not_match">Password do not match</string>
+    <string name="action_directions">Get directions</string>
+    <string name="title_activity_select_city">Select City</string>
+    <string name="select_city">Select your city</string>
+    <string name="select_country">Select your country</string>
+    <string name="swipe_up_to_continue">Swipe up to continue</string>
+    <string name="tab_to_continue">Tap to continue</string>
+    <string name="title_activity_sample">SampleActivity</string>
+    <string name="facebook">Facebook</string>
+    <string name="gplus">Google+</string>
+    <string name="create_account">Create account</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_up_using">Sign up using</string>
+    <string name="hint_enter_name">\tName</string>
+    <string name="by_agreeing">By Signing up, I agree to Hobbistan\'s</string>
+    <string name="terms_and_conditions">Terms and conditions</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="share">Share</string>
+    <string name="contact">Contact</string>
+    <string name="from">From</string>
+    <string name="till">Till</string>
+    <string name="get_started">Get Started</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="title_activity_addEvent">Add Events</string>
+    <string name="title_activity_maps">Map</string>
+
+    <!--live-->
+    <!--<string name="google_maps_key">AIzaSyAr-fwAC4VlMY-oJufV0V6tyJnr__Ia2ag</string>-->
+    <string name="google_maps_key">AIzaSyAu_qu78gnxiWl83tifUPiXxjkVoUPHOZw</string>
+    <!--live-->
+
+    <string name="gps_network_not_enabled">Enable GPS</string>
+    <string name="open_location_settings">Open location manager</string>
+    <string name="Cancel">Cancel</string>
+
+    <string name="share_content">Fun around you</string>
+
+    <string name="terms_conditions">Thanks for using our products and services (“Services”). The Services are provided by Hobbistan, located at 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States.
+
+                                    By using our Services, you are agreeing to these terms. Please read them carefully.
+
+                                    Our Services are very diverse, so sometimes additional terms or product requirements (including age requirements) may apply. Additional terms will be available with the relevant Services and those additional terms become part of your agreement with us if you use those Services.</string>
+    <string name="selectcat">Select Category</string>
+    <string name="selectcity">Select City</string>
+    <string name="home">Home</string>
+    <string name="nearby">Nearby</string>
+    <string name="explore">Explore</string>
+
+    <string name="navigate_user">Navigate User Option</string>
+    <string name="gami_board">Gamification Board</string>
+    <string name="gami_points">Gamification Points</string>
+    <string name="detail_events">Detailed Events</string>
+    <string name="abt_event"></string>
+
+    <!--Floating Menu Name-->
+    <string name="menu_nearby">Nearby</string>
+
+    <string-array name="india_top_places">
+        <item>Select Your City</item>
+        <item>Chennai</item>
+        <item>Coimbatore</item>
+        <item>Mumbai</item>
+        <item>Trivandrum</item>
+        <item>Delhi</item>
+        <item>Bangalore</item>
+    </string-array>
+
+    <string-array name="nearby_distance">
+        <item>Select Distance Range</item>
+        <item>5 kms</item>
+        <item>10 kms</item>
+        <item>15 kms</item>
+        <item>35 kms</item>
+    </string-array>
+
+    <string-array name="events_type">
+        <item>Popular</item>
+        <item>Hotspot</item>
+    </string-array>
+
+    <string name="viewless"><u>View Less</u></string>
+    <string name="viewmore"><u>View More</u></string>
+
+    <string name="permision_available_All">All Permissions have been granted.</string>
+    <string name="permissions_not_granted">Few Permissions were not granted.</string>
+
+    //AddEvent Page
+    <string name="evntName">Name</string>
+    <string name="evntNameVal">Enter name</string>
+    <string name="evntCateName">Category</string>
+    <string name="evntCateVal">Choose category</string>
+    <string name="evntTypeName">Type</string>
+    <string name="evntTypeVal">Choose type</string>
+    <string name="evntCityName">City</string>
+    <string name="evntCityVal">Choose city</string>
+    <string name="evntVenueName">Venue</string>
+    <string name="evntVenueVal">Enter venue</string>
+    <string name="evntAddressName">Address</string>
+    <string name="evntAddressVal">Enter Address</string>
+    <string name="evntDescName">Description</string>
+    <string name="evntCostName">Enter Cost</string>
+    <string name="evntDescVal">Enter description</string>
+    <string name="evntStartDate">Start Date</string>
+    <string name="evntStartDateVal">Start Date</string>
+    <string name="evntEndDate">End Date</string>
+    <string name="evntEndDateVal">End Date</string>
+    <string name="eventContactName">Contact Person</string>
+    <string name="eventContact">Contact</string>
+    <string name="eventContactMail">Contact Email</string>
+    <string name="eventContactVal">Contact</string>
+    <string name="eventLat">Event Latitude</string>
+    <string name="eventLatVal">Latitude</string>
+    <string name="eventLng">Event Longitude</string>
+    <string name="eventLngVal">Longitude</string>
+    <string name="eventPict">Event Picture</string>
+    <string name="eventPict1">Event Picture1</string>
+    <string name="eventPict2">Event Picture2</string>
+    <string name="eventPict3">Event Picture3</string>
+    <string name="eventBanner">Banner</string>
+    <string name="eventAddPhoto">Add Photos</string>
+    <string name="eventSave">Save Event</string>
+    <string name="eventDiscard">Discard</string>
+    <string name="eventStrTime">Start Time</string>
+    <string name="eventStrTimeVal">Time</string>
+    <string name="eventEndTime">End Time</string>
+    <string name="eventEndTimeVal">Time</string>
+    <string name="eventBannerNo">No file chosen</string>
+    <string name="buttonAddPic">Add file</string>
+    <string-array name="event_type">
+        <item>Select Type</item>
+        <item>Regular</item>
+        <item>Special</item>
+    </string-array>
+
+
+    <string-array name="event_category">
+        <item>Select Category</item>
+        <item>Sports and Fitness</item>
+        <item>Travel and Adventures</item>
+        <item>Entertainment</item>
+        <item>Training / Workshop</item>
+        <item>Exhibitions / Fairs</item>
+        <item>Theatre /Stage Shows</item>
+        <item>Entertainment</item>
+        <item>Meetouts / Business</item>
+        <item>Fest / Carnivals</item>
+        <item>Food / Dineout</item>
+        <item>Shopping</item>
+        <item>Bars / Pubs</item>
+    </string-array>
+
+    <string name="event_name">event name cannot be empty</string>
+    <string name="event_category">Select any category</string>
+    <string name="event_type">Select any type</string>
+    <string name="event_city">Select any City</string>
+    <string name="event_venue">Select venue</string>
+    <string name="event_address">Select address</string>
+    <string name="event_desc">Select Description</string>
+    <string name="event_start_date">Select start date</string>
+    <string name="event_end_date">Select end date</string>
+    <string name="event_time">Select time</string>
+    <string name="event_contact">Select phone number</string>
+    <string name="event_contact_person">Select contact person</string>
+    <string name="event_lat">Select latitude</string>
+    <string name="event_lng">Select longitude</string>
+    <string name="event_mail_valid">Enter </string>
+
+    <!--CCAvenue-->
+
+    <string name="access_code">Access Code</string>
+    <string name="pay_opt">Payment Option</string>
+    <string name="card_type">Card Type</string>
+    <string name="pay_button">Pay</string>
+    <string name="next_button">Next</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="country">Country</string>
+    <string name="billingAddress">Billing Address</string>
+    <string name="deliveryAddress">Delivery Address</string>
+    <string name="state">State</string>
+    <string name="city">City</string>
+    <string name="zip">Zip</string>
+    <string name="tel">Telephone</string>
+    <string name="email">Email Id</string>
+    <string name="merchant_id">Merchant Id</string>
+    <string name="currency">Currency</string>
+    <string name="amount">Amount</string>
+    <string name="redirect_url">Redirect Url</string>
+    <string name="cancel_url">Cancel Url</string>
+    <string name="card_number">Card Number</string>
+    <string name="card_cvv">Card CVV</string>
+    <string name="expiry_month">Expiry Month</string>
+    <string name="expiry_year">Expiry Year</string>
+    <string name="card_details">Card Details</string>
+    <string name="issuing_bank">Issuing Bank</string>
+    <string name="rsa_url">RSA Key Url</string>
+    <string name="customer_identifier">Customer Identifier</string>
+    <string name="emi_banks">EMI Banks</string>
+    <string name="emi_card_name">Card Name</string>
+
+</resources>

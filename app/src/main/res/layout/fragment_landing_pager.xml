@@ -1,0 +1,26 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="com.findafun.fragment.LandingPagerFragment">
+
+    <ListView
+        android:id="@+id/listView_events"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/button_bg_gray"
+        android:dividerHeight="4dp" />
+
+    <TextView
+        android:id="@+id/no_home_events"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="No Events Found"
+        android:textColor="@color/title_red"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+</FrameLayout>

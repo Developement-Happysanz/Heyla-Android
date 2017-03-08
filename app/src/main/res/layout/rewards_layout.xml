@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f2f2f2"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:background="@color/White">
+
+            <RelativeLayout
+                android:id="@+id/user_image_layout"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:id="@+id/rewards_user_img"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/profile_icon" />
+
+                <ImageView
+                    android:id="@+id/rewards_level_image_url"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/amateur_trophy" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/rewards_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_image_layout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:padding="3dp"
+                android:text=""
+                android:textColor="@color/title_red"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/rewards_user_hobby"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rewards_user_name"
+                android:layout_centerHorizontal="true"
+                android:padding="2dp"
+                android:text="Music" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/fab_margin"
+                android:src="@android:drawable/ic_dialog_dialer"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <RelativeLayout
+                android:id="@+id/rewards_points_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_weight="0.33"
+                android:background="@color/White">
+
+                <ImageView
+                    android:id="@+id/rewards_points_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="40dp"
+                    android:src="@drawable/star" />
+
+                <TextView
+                    android:id="@+id/rewards_points_total_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_toRightOf="@+id/rewards_points_image"
+                    android:padding="2dp"
+                    android:singleLine="true"
+                    android:text="0"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/rewards_points_subtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/rewards_points_image"
+                    android:layout_alignStart="@+id/rewards_points_image"
+                    android:layout_below="@+id/rewards_points_image"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginTop="8dp"
+                    android:lines="3"
+                    android:text="+300 more points for next Level"
+                    android:textSize="11dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rewards_visa_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_weight="0.33"
+                android:background="@color/White">
+
+                <ImageView
+                    android:id="@+id/rewards_visa_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="40dp"
+                    android:src="@drawable/premium" />
+
+                <TextView
+                    android:id="@+id/rewards_visa_total_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_toRightOf="@+id/rewards_visa_image"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:text="0"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/rewards_visa_subtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/rewards_visa_image"
+                    android:layout_alignStart="@+id/rewards_visa_image"
+                    android:layout_below="@+id/rewards_visa_image"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="8dp"
+                    android:lines="3"
+                    android:text="Sports,Theatre,Comedy,+2 more"
+                    android:textSize="11dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rewards_leaderboard_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_weight="0.33"
+                android:background="@color/White">
+
+                <ImageView
+                    android:id="@+id/rewards_leaderboard_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="40dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:src="@drawable/leaderboard" />
+
+                <TextView
+                    android:id="@+id/rewards_leaderboard_total_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_toRightOf="@+id/rewards_leaderboard_image"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:text="0"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/rewards_leaderboard_subtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/rewards_leaderboard_image"
+                    android:layout_alignStart="@+id/rewards_leaderboard_image"
+                    android:layout_below="@+id/rewards_leaderboard_image"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="8dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:lines="3"
+                    android:text="position in Leaderboard"
+                    android:textSize="11dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/myboard" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:padding="2dp"
+                android:text="My Board"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <RelativeLayout
+                android:id="@+id/rewards_photos_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_weight="0.20"
+                android:background="@color/White">
+
+                <ImageView
+                    android:id="@+id/rewards_photos_image"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="30dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:src="@drawable/photo" />
+
+                <TextView
+                    android:id="@+id/rewards_photos_total_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_toRightOf="@+id/rewards_photos_image"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:text="0"
+
+                    android:textSize="18dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/rewards_photos_image"
+                    android:background="@color/White"></View>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rewards_engagements_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_weight="0.20"
+                android:background="@color/White">
+
+                <ImageView
+                    android:id="@+id/rewards_engagements_image"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="30dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:src="@drawable/engagements" />
+
+                <TextView
+                    android:id="@+id/rewards_engagements_total_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_toRightOf="@+id/rewards_engagements_image"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:text="0"
+                    android:textSize="18dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/rewards_engagements_image"
+                    android:background="@color/White"></View>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rewards_checkins_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_weight="0.20"
+                android:background="@color/White">
+
+                <ImageView
+                    android:id="@+id/rewards_checkins_image"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="30dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:src="@drawable/checkin" />
+
+                <TextView
+                    android:id="@+id/rewards_checkins_total_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_toRightOf="@+id/rewards_checkins_image"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:text="0"
+                    android:textSize="18dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/rewards_checkins_image"
+                    android:background="@color/White"></View>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rewards_bookings_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_weight="0.20"
+                android:background="@color/White">
+
+                <ImageView
+                    android:id="@+id/rewards_bookings_image"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="30dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:src="@drawable/bookings" />
+
+                <TextView
+                    android:id="@+id/rewards_bookings_total_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_toRightOf="@+id/rewards_bookings_image"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:text="0"
+                    android:textSize="18dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/rewards_bookings_image"
+                    android:background="@color/White"></View>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/referral_points_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_weight="0.20"
+                android:background="@color/White">
+
+                <ImageView
+                    android:id="@+id/referral_points_image"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="30dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:src="@drawable/referral" />
+
+                <TextView
+                    android:id="@+id/referral_points_total_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_toRightOf="@+id/referral_points_image"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:text="0"
+                    android:textSize="18dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/referral_points_image"
+                    android:background="@color/White"></View>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="#f2f2f2"></View>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@android:color/white"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/view_statistics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="10dp"
+                android:text="View Full Statistics"
+                android:textColor="@android:color/black"
+                android:textSize="16dp"
+                android:typeface="serif" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#f2f2f2"></View>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ab_app_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="40dp"
+            android:text="Create an account"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+        <EditText
+            android:id="@+id/editText_name"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:hint="Name"
+            android:textColor="@color/white"
+            android:textColorHint="@color/bg_trans" />
+
+        <EditText
+            android:id="@+id/editText_email"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:hint="E-mail id"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white"
+            android:textColorHint="@color/bg_trans" />
+
+        <EditText
+            android:id="@+id/editText_password"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textColorHint="@color/bg_trans" />
+
+        <EditText
+            android:id="@+id/editText_promocode"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:hint="@string/hint_promocode"
+            android:textColor="@color/white"
+            android:textColorHint="@color/bg_trans" />
+
+        <Button
+            android:id="@+id/btn_sign_up"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/ab_create" />
+
+        <TextView
+            android:id="@+id/textView_agreeing_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="By signing up, I agree With Heyla's"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/textView_terms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:enabled="false"
+            android:gravity="center"
+            android:text="Terms and Conditions"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Signup with facebook"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:id="@+id/frag_login_fb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/facebookicon" />
+
+    </LinearLayout>
+
+
+</ScrollView>

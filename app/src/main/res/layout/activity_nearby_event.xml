@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/event_detail_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--<include-->
+        <!--android:id="@+id/activity_toolbar"-->
+        <!--layout="@layout/tool_bar"></include>-->
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorRed"
+        android:minHeight="?attr/actionBarSize"></android.support.v7.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/back_res"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:minHeight="?attr/actionBarSize"
+        android:src="@drawable/ic_arrow_back_white_48dp" />
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_toRightOf="@id/back_res"
+        android:minHeight="?attr/actionBarSize"
+        android:visibility="gone"
+        android:src="@drawable/ab_hobbistan_logo" />
+
+    <TextView
+        android:id="@+id/tvtitletext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:minHeight="?attr/actionBarSize"
+        android:padding="5dp"
+        android:text="Nearby"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/actionbarTextSize" />
+
+    <TextView
+        android:id="@+id/tveventtype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/tvtitletext"
+        android:layout_marginBottom="@dimen/mainmargin"
+        android:gravity="center"
+        android:text="Select Nearby Distance"
+        android:textColor="@color/black"
+        android:textSize="@dimen/actionbarTextSize" />
+
+
+    <Spinner
+        android:id="@+id/nearbyspinner"
+        style="@style/spinner_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tveventtype"
+        android:layout_marginBottom="@dimen/mainmargin"
+        android:textSize="15sp"></Spinner>
+
+    <TextView
+        android:id="@+id/totalnearby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/nearbyspinner"
+        android:layout_marginBottom="@dimen/mainmargin"
+        android:gravity="center"
+        android:text=" Nearby Events"
+        android:textColor="@color/black"
+        android:textSize="@dimen/actionbarTextSize" />
+
+    <!--
+    <RelativeLayout
+        android:id="@+id/nearby_header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/nearby_totalevents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:text="Nearby events "
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/neary_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/nearby_totalevents"
+            android:text=""
+            android:textColor="@color/title_red" />
+
+        <ImageButton
+            android:id="@+id/nearby_grid_view_btn"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/list_icon_background"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="5dp"
+            android:paddingTop="10dp"
+            android:src="@drawable/list_unselected" />
+
+        <ImageButton
+            android:id="@+id/nearby_list_btn"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_toLeftOf="@+id/nearby_location_btn"
+            android:background="@drawable/location_icon_background"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="8dp"
+            android:src="@drawable/nearby_unselected"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/nearby_location_btn"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_toLeftOf="@+id/nearby_grid_view_btn"
+            android:background="@drawable/location_icon_background"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="8dp"
+            android:src="@drawable/map_unselected" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/nearby_header_layout"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/white">
+
+        <ListView
+            android:id="@+id/listView_events"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/button_bg_gray"
+            android:dividerHeight="4dp" />
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="gone"
+            map:cameraTargetLat="16.29905101"
+            map:cameraTargetLng="78.3984375" />
+
+        <TextView
+            android:id="@+id/no_home_events"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="No Events Found"
+            android:textColor="@color/title_red"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+    </RelativeLayout> -->
+
+    <!--
+    <com.costum.android.widget.LoadMoreListView
+        android:id="@+id/listView_events"
+        android:layout_below="@id/totalnearby"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/button_bg_gray"
+        android:dividerHeight="4dp"></com.costum.android.widget.LoadMoreListView>
+-->
+    <ListView
+        android:id="@+id/listView_events"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/button_bg_gray"
+        android:layout_below="@id/totalnearby"
+        android:dividerHeight="4dp" />
+
+</RelativeLayout>
