@@ -294,6 +294,7 @@
                         android:src="@drawable/photo" />
 
                     <TextView
+                        android:id="@+id/phot_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -301,8 +302,21 @@
                         android:layout_toRightOf="@+id/phot_img"
                         android:padding="5dp"
                         android:text="Photos shared"
-                        android:textColor="@color/title_red"
+                        android:textColor="@color/Black"
                         android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/photos_total_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toRightOf="@+id/phot_label"
+                        android:padding="5dp"
+                        android:text="(0)"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
 
                     <ImageView
                         android:layout_width="20dp"
@@ -371,7 +385,7 @@
                         android:layout_toRightOf="@+id/engagement_img"
                         android:padding="5dp"
                         android:text="Engagements"
-                        android:textColor="@color/title_red"
+                        android:textColor="@color/black"
                         android:textSize="18dp" />
 
                     <TextView
@@ -383,7 +397,7 @@
                         android:layout_toRightOf="@+id/eng_lbel"
                         android:padding="5dp"
                         android:text="(0)"
-                        android:textColor="@color/title_red"
+                        android:textColor="@color/black"
                         android:textSize="18dp" />
 
                     <ImageView
@@ -448,8 +462,8 @@
                         android:layout_marginTop="5dp"
                         android:layout_toRightOf="@+id/checkin_img"
                         android:padding="5dp"
-                        android:text="Checkins"
-                        android:textColor="@color/title_red"
+                        android:text="Check-ins"
+                        android:textColor="@color/black"
                         android:textSize="18dp" />
 
                     <TextView
@@ -461,7 +475,7 @@
                         android:layout_toRightOf="@+id/checkins_label"
                         android:padding="5dp"
                         android:text="(0)"
-                        android:textColor="@color/title_red"
+                        android:textColor="@color/black"
                         android:textSize="18dp" />
 
                     <ImageView
@@ -527,7 +541,7 @@
                         android:layout_toRightOf="@+id/bookings_img"
                         android:padding="5dp"
                         android:text="Bookings"
-                        android:textColor="@color/title_red"
+                        android:textColor="@color/black"
                         android:textSize="18dp" />
 
                     <TextView
@@ -539,7 +553,7 @@
                         android:layout_toRightOf="@+id/bookings_label"
                         android:padding="5dp"
                         android:text="(0)"
-                        android:textColor="@color/title_red"
+                        android:textColor="@color/black"
                         android:textSize="18dp" />
 
                     <ImageView
