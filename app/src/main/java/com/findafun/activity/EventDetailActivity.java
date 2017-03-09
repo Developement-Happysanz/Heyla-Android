@@ -214,7 +214,7 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
 
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this)
                 .setTitle("Rate " + getApplicationInfo().loadLabel(getPackageManager()).toString())
-                .setMessage("If You Enjoy Using Hobbistan, please take a moment to rate it. Thanks for Your Support!")
+                .setMessage("If You Enjoy Using Heyla, please take a moment to rate it. Thanks for Your Support!")
                 .setPositiveButton("Rate it! ", null)
                 .setNegativeButton("No Thanks", null)
                 .setNeutralButton("Remind Me Later", null);
