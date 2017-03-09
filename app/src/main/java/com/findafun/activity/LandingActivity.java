@@ -402,7 +402,7 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
     }
 
     private void rateUs() {
-        Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=world.of.fun&hl=en");
+        Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=com.palprotech.heyla&hl=en");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }
