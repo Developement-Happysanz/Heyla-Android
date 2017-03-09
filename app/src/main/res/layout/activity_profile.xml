@@ -37,7 +37,7 @@
                 android:layout_toRightOf="@+id/cst_back_btn"
                 android:padding="5dp"
                 android:text="Edit Profile"
-                android:textColor="@color/title_red"
+                android:textColor="@color/white"
                 android:textSize="22dp" />
 
         </RelativeLayout>
