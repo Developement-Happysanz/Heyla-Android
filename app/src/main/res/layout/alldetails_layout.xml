@@ -62,7 +62,7 @@
                     android:layout_centerHorizontal="true"
                     android:padding="5dp"
                     android:text="Total Points"
-                    android:textColor="@color/title_red"
+                    android:textColor="@color/title_red1"
                     android:textSize="20dp" />
 
                 <ImageView
@@ -302,7 +302,7 @@
                         android:layout_toRightOf="@+id/phot_img"
                         android:padding="5dp"
                         android:text="Photos shared"
-                        android:textColor="@color/Black"
+                        android:textColor="@color/title_red1"
                         android:textSize="18dp" />
 
                     <TextView
@@ -314,7 +314,7 @@
                         android:layout_toRightOf="@+id/phot_label"
                         android:padding="5dp"
                         android:text="(0)"
-                        android:textColor="@color/black"
+                        android:textColor="@color/title_red1"
                         android:textSize="18dp" />
 
 
@@ -385,7 +385,7 @@
                         android:layout_toRightOf="@+id/engagement_img"
                         android:padding="5dp"
                         android:text="Engagements"
-                        android:textColor="@color/black"
+                        android:textColor="@color/title_red1"
                         android:textSize="18dp" />
 
                     <TextView
@@ -397,7 +397,7 @@
                         android:layout_toRightOf="@+id/eng_lbel"
                         android:padding="5dp"
                         android:text="(0)"
-                        android:textColor="@color/black"
+                        android:textColor="@color/title_red1"
                         android:textSize="18dp" />
 
                     <ImageView
@@ -475,7 +475,7 @@
                         android:layout_toRightOf="@+id/checkins_label"
                         android:padding="5dp"
                         android:text="(0)"
-                        android:textColor="@color/black"
+                        android:textColor="@color/title_red1"
                         android:textSize="18dp" />
 
                     <ImageView
@@ -541,7 +541,7 @@
                         android:layout_toRightOf="@+id/bookings_img"
                         android:padding="5dp"
                         android:text="Bookings"
-                        android:textColor="@color/black"
+                        android:textColor="@color/title_red1"
                         android:textSize="18dp" />
 
                     <TextView
@@ -553,7 +553,7 @@
                         android:layout_toRightOf="@+id/bookings_label"
                         android:padding="5dp"
                         android:text="(0)"
-                        android:textColor="@color/black"
+                        android:textColor="@color/title_red1"
                         android:textSize="18dp" />
 
                     <ImageView
