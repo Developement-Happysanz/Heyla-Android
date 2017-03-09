@@ -301,7 +301,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="CHECKIN"
+                            android:text="CHECK-IN"
                             android:textColor="@color/white"
                             android:textSize="16dp"
                             android:textStyle="bold" />
@@ -336,7 +336,8 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:weightSum="1">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -370,26 +371,27 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/cal_from_label"
-                        android:layout_gravity="center"
+                        android:layout_gravity="top"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
-                        android:text=" - "
+                        android:text="-"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
 
                     <TextView
                         android:id="@+id/cal_to_val"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_alignLeft="@+id/txt_calander"
                         android:layout_alignStart="@+id/txt_calander"
                         android:layout_below="@+id/cal_from_label"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
+                        android:layout_marginTop="5dp"
                         android:layout_toRightOf="@+id/cal_to_label"
                         android:text=""
                         android:textColor="@color/white"
-                        android:textSize="16dp" />
+                        android:textSize="16dp"
+                        android:layout_weight="0.88" />
 
                 </LinearLayout>
 
@@ -398,7 +400,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:weightSum="1">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -432,19 +435,20 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
-                        android:text=" - "
+                        android:text="-"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
 
                     <TextView
                         android:id="@+id/clock_to_val"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_marginLeft="15dp"
-                        android:layout_marginTop="3dp"
+                        android:layout_marginTop="5dp"
                         android:text="00"
                         android:textColor="@color/white"
-                        android:textSize="16dp" />
+                        android:textSize="16dp"
+                        android:layout_weight="0.85" />
 
                 </LinearLayout>
 
