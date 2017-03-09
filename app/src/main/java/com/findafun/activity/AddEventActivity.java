@@ -83,6 +83,8 @@ public class AddEventActivity extends AppCompatActivity implements DialogClickLi
     ImageView imageView_back,addEventPict1,addEventPict2,addEventPict3;
     static int pict_flag =0;
 
+    //
+
     EditText nameValue;
     EditText eventType;
     EditText eventCategory;
