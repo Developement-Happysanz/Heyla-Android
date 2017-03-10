@@ -52,6 +52,7 @@ public class AllDetailsActivity extends AppCompatActivity implements IGamificati
     private TextView mBookingscount = null;
     private final Transformation transformation;
 
+
     //photos layout
     private TextView mPhotosStarCount = null;
     private GridView mPhotosGrid = null;

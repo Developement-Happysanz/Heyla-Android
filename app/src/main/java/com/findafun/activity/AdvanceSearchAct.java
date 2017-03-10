@@ -63,6 +63,7 @@ public class AdvanceSearchAct extends AppCompatActivity implements AdapterView.O
     StringBuilder sb;
     private CitySpinnerAdapter citySpinnerAdapter;
     private EditText txtCityDropDown;
+
     private Activity activity;
     private boolean isdoneclick = false;
     String[] categoryarray = {"Sports & Fitness", "Spirituality", "Lifestyle", "Government", "Travel & Adventure", "Charity", "Health", "Entertainment", "Training / Workshop"

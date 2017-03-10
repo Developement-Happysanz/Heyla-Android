@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\Happy Sanz\Palpro Tech\Heyla\Workspace\Heyla\pulltorefresh-and-loadmore\src\main\jniLibs"/></dataSet><dataSet config="release"><source path="E:\Happy Sanz\Palpro Tech\Heyla\Workspace\Heyla\pulltorefresh-and-loadmore\src\release\jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/Naren/Workspace/Heyla/pulltorefresh-and-loadmore/src/main/jniLibs"/></dataSet><dataSet config="release"><source path="/Users/Naren/Workspace/Heyla/pulltorefresh-and-loadmore/src/release/jniLibs"/></dataSet></merger>
