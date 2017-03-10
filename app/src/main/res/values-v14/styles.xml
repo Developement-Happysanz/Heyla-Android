@@ -102,4 +102,8 @@
         <item name="android:backgroundDimEnabled">false</item>
     </style>
 
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/title_red1</item>
+    </style>
+
 </resources>
