@@ -47,6 +47,19 @@
                 android:layout_height="180dp"
                 android:background="@drawable/ab_event_bg">
 
+                <Button
+                    android:id="@+id/whishlist_btn"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="3"
+                    android:background="@drawable/ic_wishlist1"
+                    android:drawablePadding="100dp"
+                    android:onClick="@drawable/ic_wishlist1_selected" />
+
+
                 <!--banner-->
                 <LinearLayout
                     android:id="@+id/banner_gallery_paging"
@@ -67,6 +80,7 @@
                         android:flipInterval="3000"
                         android:inAnimation="@android:anim/slide_in_left"
                         android:outAnimation="@android:anim/slide_out_right">
+
 
                         <ImageView
                             android:id="@+id/banner_image_one"
@@ -460,17 +474,6 @@
                     android:visibility="gone"
                     android:weightSum="1">
 
-                    <Button
-                        android:id="@+id/whishlist_btn"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="0.33"
-                        android:background="@drawable/whishlist_selector"
-                        android:drawableLeft="@drawable/ic_wishlist"
-                        android:drawablePadding="10dp"
-                        android:paddingLeft="5dp"
-                        android:text="Wishlist"
-                        android:textSize="10dp" />
 
                     <Button
                         android:id="@+id/share_btn1"
@@ -791,7 +794,7 @@
                             android:clickable="true"
                             android:padding="3dp"
                             android:text="Location"
-                            android:textColor="@color/white"
+                            android:textColor="@color/title_red1"
                             android:textSize="16dp"
                             android:textStyle="bold" />
 
