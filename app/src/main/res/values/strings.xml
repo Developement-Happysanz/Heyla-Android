@@ -63,7 +63,7 @@
     <string name="sign_up">Sign Up</string>
     <string name="sign_up_using">Sign up using</string>
     <string name="hint_enter_name">\tName</string>
-    <string name="by_agreeing">By Signing up, I agree to Hobbistan\'s</string>
+    <string name="by_agreeing">By Signing up, I agree to Heyla\'s</string>
     <string name="terms_and_conditions">Terms and conditions</string>
     <string name="wishlist">Wishlist</string>
     <string name="share">Share</string>
@@ -86,11 +86,69 @@
 
     <string name="share_content">Fun around you</string>
 
-    <string name="terms_conditions">Thanks for using our products and services (“Services”). The Services are provided by Hobbistan, located at 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States.
+    <string name="terms_conditions">
+        Heyla <b>Terms of Service</b> and <b>Privacy Policy</b>
+        <p>\n\nThis privacy policy has been compiled to better serve those who are concerned with how their \‘Personally identifiable information\’ (PII) is being used online. PII, as we define is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context.
+            \n\nPlease read our privacy policy and terms and conditions carefully to get a clear understanding of how we collect, use, protect or otherwise handle your Personally Identifiable Information in accordance with our policy.
+            \n\nIf you continue to use our app, you are also agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern Heyla’s relationship with you in relation to our app. If you disagree with any part of these terms and conditions, please do not download our apps.
+            \n\nThe term \‘Heyla\’ or \‘us\’ or \‘we\’ refers to the owner of the app whose registered office is No : 6, KUMMALAMMAN KOVIL STREET 3RD LANE, TONDIARPET, CHENNAI 600081. The term \‘you\’ refers to the user or viewer of our app.
+            \n \nThe use of this app is subject to the following terms of use:
+            \n\n1. Terms of Service
+            \n\nBy accessing Heyla app, you are agreeing to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this app are protected by applicable copyright and trademark law.
+            \n\n2. Use License
+            \n\n(a) Permission is granted to download one the materials (Heyla App) on Android &amp; Apple Playstore for personal, non-commercial transitory viewing only.
+            \nThis is the grant of a license, not a transfer of title, and under this license you may not:
+            \n\nI.	modify or copy the materials;
+            \n\nII.	use the materials for any commercial purpose, or for any public display (commercial or non-commercial);
+            \n\nIII.attempt to decompile or reverse engineer the Heyla app;
+            \n\nIV.	remove any copyright or other proprietary notations from the materials; or
+            \n\nV.	transfer the materials to another person or \"mirror\" the materials on any other server.
+            \n\n(b) This license shall automatically terminate if you violate any of these restrictions and may be terminated by Heyla at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format.
+            \n\n3. Disclaimer
+            \n\n(a) The materials on Heyla app are provided on an \'as is\' basis. Heyla makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+            \n\n(b) Further, Heyla does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its app or otherwise relating to such materials or on any sites linked to this site.
+            \n\n4. Limitations
+            \n\nIn no event shall Heyla or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Heyla app, even if Heyla or a Heyla authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.
+            \n\n5. Accuracy of materials
+            \n\nThe materials appearing on Heyla app could include technical, typographical, or photographic errors. Heyla does not warrant that any of the materials on its app are accurate, complete or current. Heyla may make changes to the materials contained on its app at any time without notice. However Heyla does not make any commitment to update the materials.
+            \n\n6. Links
+            \n\nHeyla has not reviewed all of the sites linked to its app and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by Heyla of the site. Use of any such linked website is at the user\'s own risk.
+            \n\n7. Third-party disclosure:
+            \n\nWe do not sell, trade, or otherwise transfer to outside parties your personally identifiable information.
+            \n\n8. Third-party links
+            \n\nWe do not include or offer third-party products or services in our app.
+            \n\n9. Children’s Online Privacy Protection
+            \n\nWhen it comes to the collection of personal information from children under legal age, we follow statutory provisions as applicable to respective countries. It spells out what parents must do to protect children’s privacy and safety online. We do not specifically market to children under legal age.
+            \n\n10. Modifications
+            \n\nHeyla may revise these terms of service for its app at any time without notice. By using this app you are agreeing to be bound by the then current version of these terms of service.
+            \n\n11. Governing Law
+            \n\nThese terms and conditions are governed by and construed in accordance with the laws of India and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location.
+        <b>\n\nPrivacy Policy</b>
+            \n\nYour privacy is important to us. It is Heyla\'s policy to respect your privacy regarding any information we may collect while using our app. Accordingly, we have developed this privacy policy in order for you to understand how we collect, use, communicate, disclose and otherwise make use of personal information. We have outlined our privacy policy below.
+            \n\nWe may collect Personal Information (though not always) when:
+            \n\n•	Registering on our app. You may be asked to enter your name, email address, phone number or other details to help you with your experience.
+            \n\n•	Respond to a survey, fill out a form, Use Live Chat, Open a Support Ticket or enter information on our site for downloading our app.
+            \n\n • Providing us with feedback on our products or services, request support services to make your experience with Heyla more rewarding.
+            \n\n•	We will collect personal information by lawful and fair means and, where appropriate, with the knowledge or consent of the individual concerned.
+            \n\n•	Before or at the time of collecting personal information, we will identify the purposes for which information is being collected.
+            \n\n•	We will collect and use personal information solely for fulfilling those purposes specified by us and for other ancillary purposes, unless we obtain the consent of the individual concerned or as required by law.
+            \n\n•	Personal data should be relevant to the purposes for which it is to be used, and, to the extent necessary for those purposes, should be accurate, complete, and up-to-date.
+            \n\n•	We will protect personal information by using reasonable security safeguards against loss or theft, as well as unauthorized access, disclosure, copying, use or modification.
+            \n\n•	We will make readily available to customers information about our policies and practices relating to the management of personal information.
+            \n\n•	We will only retain personal information for as long as necessary for the fulfilment of those purposes.
+        <b>\n\nUsing your Personal Information:</b>
+            \n\nWe may use the information we collect from you when you register, make a purchase, sign up for our newsletter, respond to a survey or marketing communication, use our app, or use certain other app features in the following ways:
+            \n\n•	To personalize user’s experience and to allow us to deliver the type of content and product offerings in which you are most interested.
+            \n\n•	To improve our app in order to better serve you.
+            \n\n•	To allow us to better service you in responding to your customer service requests.
+            \n\n•	To administer a contest, promotion, survey or other site feature.
+            \n\n•	To quickly process your transactions.
+            \n\n•	To ask for ratings and reviews of services or products
+            \n\nWe are committed to conducting our business in accordance with these principles in order to ensure that the confidentiality of personal information is protected and maintained. Heyla may change this privacy policy from time to time at Heyla\'s sole discretion.
+            \n\n
 
-                                    By using our Services, you are agreeing to these terms. Please read them carefully.
-
-                                    Our Services are very diverse, so sometimes additional terms or product requirements (including age requirements) may apply. Additional terms will be available with the relevant Services and those additional terms become part of your agreement with us if you use those Services.</string>
+        </p>
+    </string>
     <string name="selectcat">Select Category</string>
     <string name="selectcity">Select City</string>
     <string name="home">Home</string>
