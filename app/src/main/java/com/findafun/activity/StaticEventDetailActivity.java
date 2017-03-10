@@ -184,7 +184,7 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
 
         test = saving.getInt("rate", 0);
 
-        if (test > 20) {
+        if (test > 2) {
             test = 0;
             editor.putInt("rate", test);
             editor.commit();
@@ -559,7 +559,7 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
         mShortAnimationDuration = getResources().getInteger(
                 android.R.integer.config_shortAnimTime);
 
-        whishListBtn = (Button) findViewById(R.id.whishlist_btn);
+        whishListBtn = (Button) findViewById(R.id.whishlist1_btn);
         LinearLayout shareBtn = (LinearLayout) findViewById(R.id.share_btn);
         LinearLayout contactBtn = (LinearLayout) findViewById(R.id.contact_btn);
 
@@ -578,14 +578,14 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
                 }
                 if (GamificationDataHolder.getInstance().isEventBookmarked(event.getId())) {
                     Toast.makeText(StaticEventDetailActivity.this, "Event already bookmarked", Toast.LENGTH_SHORT).show();
-                    int imgResource = R.drawable.ic_wishlist_selected;
+                    int imgResource = R.drawable.ic_wishlist1_selected;
                     whishListBtn.setCompoundDrawablesWithIntrinsicBounds(imgResource, 0, 0, 0);
 
                 } else {
                     try {
                         mServiceHelper.makeGetEventServiceCall(String.format(FindAFunConstants.ADD_EVENT_BOOKMARK,
                                 Integer.parseInt(PreferenceStorage.getUserId(StaticEventDetailActivity.this)), Integer.parseInt((event.getId()))));
-                        int imgResource = R.drawable.ic_wishlist_selected;
+                        int imgResource = R.drawable.ic_wishlist1_selected;
                         whishListBtn.setCompoundDrawablesWithIntrinsicBounds(imgResource, 0, 0, 0);
                     } catch (Exception e) {
                         e.printStackTrace();

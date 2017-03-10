@@ -463,7 +463,7 @@
                         android:layout_toRightOf="@+id/checkin_img"
                         android:padding="5dp"
                         android:text="Check-ins"
-                        android:textColor="@color/black"
+                        android:textColor="@color/title_red1"
                         android:textSize="18dp" />
 
                     <TextView

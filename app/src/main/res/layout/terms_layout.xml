@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
-        android:text="Hobbistan Terms of Service"
+        android:text="Heyla Terms of Service"
         android:textSize="24dp"
         android:textStyle="bold" />
 

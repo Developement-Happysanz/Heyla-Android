@@ -47,6 +47,19 @@
                 android:layout_height="180dp"
                 android:background="@drawable/ab_event_bg">
 
+                <Button
+                    android:id="@+id/whishlist1_btn"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="3"
+                    android:background="@drawable/ic_wishlist1"
+                    android:drawablePadding="100dp"
+                    android:onClick="@drawable/ic_wishlist1_selected" />
+
+
                 <!--banner-->
                 <LinearLayout
                     android:id="@+id/banner_gallery_paging"
@@ -434,7 +447,7 @@
                         android:id="@+id/clock_to_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="2dp"
                         android:layout_marginTop="3dp"
                         android:text=" - "
                         android:textColor="@color/white"
@@ -444,8 +457,8 @@
                         android:id="@+id/clock_to_val"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="3dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
                         android:text="00"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
