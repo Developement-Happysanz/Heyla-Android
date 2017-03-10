@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.findafun.R;
@@ -45,17 +46,21 @@ public class PreferenceListAdapter extends RecyclerView.Adapter<PreferenceListAd
     // you provide access to all the views for a data item in a view holder
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         // each data item is just a string in this case
-        public TextView mTextView;
+        public ImageView mImageView;
+        public TextView mPrefTextView;
+        public RelativeLayout rlPref;
 
         public ViewHolder(View v, int viewType) {
             super(v);
+            mImageView = (ImageView) v.findViewById(R.id.txt_preference_name);
+            mPrefTextView = (TextView) v.findViewById(R.id.txt_pref_category_name);
             if (viewType == 1) {
-                mTextView = (TextView) v.findViewById(R.id.txt_preference_name);
+                rlPref = (RelativeLayout)v.findViewById(R.id.rlPref);
             } else {
-                mTextView = (TextView) v;
+                rlPref = (RelativeLayout) v;
             }
 
-            mTextView.setOnClickListener(this);
+            rlPref.setOnClickListener(this);
         }
 
         @Override
@@ -85,15 +90,15 @@ public class PreferenceListAdapter extends RecyclerView.Adapter<PreferenceListAd
         // create a new view
         View parentView;
         //Log.d("CategoryAdapter","viewType is"+ viewType);
-        if (viewType == 1) {
+        //if (viewType == 1) {
             parentView = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.preference_view_type1, parent, false);
 
-        }
-        else {
-            parentView = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.preference_view_type2, parent, false);
-        }
+//        }
+//        else {
+//            parentView = LayoutInflater.from(parent.getContext())
+//                    .inflate(R.layout.preference_view_type2, parent, false);
+//        }
         // set the view's size, margins, paddings and layout parameters
         ViewHolder vh = new ViewHolder(parentView, viewType);
         return vh;
@@ -104,17 +109,26 @@ public class PreferenceListAdapter extends RecyclerView.Adapter<PreferenceListAd
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.mTextView.setText(categoryArrayList.get(position).getCategory());
+        holder.mPrefTextView.setText(categoryArrayList.get(position).getCategory());
 
-        GradientDrawable bgShape = (GradientDrawable) holder.mTextView.getBackground();
+        //imageLoader.displayImage(events.get(position).getEventLogo(), holder.imageView, AppController.getInstance().getLogoDisplayOptions());
+        if(FindAFunValidator.checkNullString(categoryArrayList.get(position).getImgPath())) {
+            Picasso.with(this.context).load(categoryArrayList.get(position).getImgPath()).fit().transform(this.transformation).placeholder(R.drawable.ab_hobbistan_logo).error(R.drawable.ab_hobbistan_logo).into(holder.mImageView);
+        } else {
+            holder.mImageView.setImageResource(R.drawable.ab_hobbistan_logo);
+        }
+
+//        GradientDrawable bgShape = (GradientDrawable) holder.mPrefTextView.getBackground();
         if (categoryArrayList.get(position).getCategoryPreference().equals("no")) {
             // holder.tickImage.setVisibility(View.INVISIBLE);
-            bgShape.setColor(context.getResources().getColor(R.color.black_semi_trans));
+            holder.rlPref.setBackgroundColor(context.getResources().getColor(R.color.white));
+//            holder.mPrefTextView.setTextColor(context.getResources().getColor(R.color.white));
         } else {
             if (context instanceof SelectPreferenceActivity) {
                 ((SelectPreferenceActivity) context).onCategorySelected(position);
             }
-            bgShape.setColor(context.getResources().getColor(R.color.preference_orange));
+//            holder.mPrefTextView.setTextColor(context.getResources().getColor(R.color.preference_orange));
+            holder.rlPref.setBackgroundColor(context.getResources().getColor(R.color.preference_orange));
         }
 
     }

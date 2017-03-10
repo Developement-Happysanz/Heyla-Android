@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.findafun.R;
@@ -203,13 +204,20 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
     public void onItemClick(View view, int position) {
 
         Category tag = preferenceAdatper.getItem(position);
-        TextView textView = (TextView) view;
-        GradientDrawable bgShape = (GradientDrawable) textView.getBackground();
+        RelativeLayout textView = (RelativeLayout) view;
+
+//        GradientDrawable bgShape = (GradientDrawable) textView.getBackground();
         if (tag.getCategoryPreference().equals("no")) {
-            bgShape.setColor(getResources().getColor(R.color.preference_orange));
+//            bgShape.setColor(getResources().getColor(R.color.preference_orange));
+            textView.setBackgroundColor(getResources().getColor(R.color.preference_orange));
+//            TextView mtextView = (TextView) view;
+//            mtextView.setTextColor(getResources().getColor(R.color.preference_orange));
             tag.setCategoryPreference("yes");
         } else {
-            bgShape.setColor(getResources().getColor(android.R.color.transparent));
+//            bgShape.setColor(getResources().getColor(R.color.white));
+            textView.setBackgroundColor(getResources().getColor(R.color.white));
+//            TextView mtextView = (TextView) view;
+//            mtextView.setTextColor(getResources().getColor(R.color.white));
             tag.setCategoryPreference("no");
         }
 //        ImageView tickImage = (ImageView) view.findViewById(R.id.tickImage);

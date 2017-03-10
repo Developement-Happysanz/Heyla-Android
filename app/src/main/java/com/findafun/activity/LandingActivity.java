@@ -95,6 +95,7 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
     public static final int TAG_FAVOURITES = 0, TAG_FEATURED = 1, TAG_ALL = 2;
     private ArrayAdapter<String> navListAdapter;
     private String[] values = {"Change City", "Profile", "Edit Preferences", "Wishlists", "Refer & Earn", "Rate Us", "Sign Out"};
+    private String[] values_guest = {"Change City", "Profile", "Edit Preferences", "Wishlists", "Refer & Earn", "Rate Us", "Login"};
     private boolean mFragmentsLoaded = false;
     TextView navUserName = null;
     TextView navUserCity = null;
@@ -337,9 +338,17 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
         //getSupportActionBar().setHomeButtonEnabled(true);
         // Initialize header and listview
         navDrawerList = (ListView) findViewById(R.id.nav_drawer_options_list);
-        NavDrawerAdapter navDrawerAdapter = new NavDrawerAdapter(getApplicationContext(), R.layout.nav_list_item, values);
-        navListAdapter = new ArrayAdapter<String>(this, R.layout.nav_list_item, values);
-        navDrawerList.setAdapter(navDrawerAdapter);
+
+        if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
+            NavDrawerAdapter navDrawerAdapter = new NavDrawerAdapter(getApplicationContext(), R.layout.nav_list_item, values);
+            navListAdapter = new ArrayAdapter<String>(this, R.layout.nav_list_item, values);
+            navDrawerList.setAdapter(navDrawerAdapter);
+        } else {
+
+            NavDrawerAdapter navDrawerAdapter = new NavDrawerAdapter(getApplicationContext(), R.layout.nav_list_item, values_guest);
+            navListAdapter = new ArrayAdapter<String>(this, R.layout.nav_list_item, values_guest);
+            navDrawerList.setAdapter(navDrawerAdapter);
+        }
         // imgNavHeaderBg = (ImageView) findViewById(R.id.img_nav_header_background);
         imgNavProfileImage = (ImageView) findViewById(R.id.img_profile_image);
         navDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
