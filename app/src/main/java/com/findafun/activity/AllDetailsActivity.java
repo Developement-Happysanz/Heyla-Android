@@ -352,7 +352,7 @@ public class AllDetailsActivity extends AppCompatActivity implements IGamificati
                 if (engagement.getEventName() != null) {
                     SpannableString ss1 = new SpannableString(engagement.getEventName());
                     ss1.setSpan(new StyleSpan(Typeface.BOLD), 0, ss1.length(), 0);
-                    eventdetail.append("You reviewed event ");
+                    eventdetail.append("You have engaged for the event ");
                     eventdetail.append(ss1);
                     // eventdetail.setText(engagement.getEventName());
                 }
