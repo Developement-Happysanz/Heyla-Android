@@ -791,7 +791,7 @@
                             android:clickable="true"
                             android:padding="3dp"
                             android:textStyle="bold"
-                            android:textColor="@color/white"
+                            android:textColor="@color/title_red1"
                             android:text="Location"
                             android:textSize="16dp" />
 
