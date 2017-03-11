@@ -586,13 +586,28 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
             @Override
             public void onClick(View v) {
 
-//                if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
+                if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
 
                     showShareList();
-//                } else {
-
-//                    AlertDialogHelper.showCompoundAlertDialog(getApplicationContext(), "Login", "Login to access", "OK", "CANCEL", 1);
-//                }
+                }
+                else {
+                    android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(EventDetailActivity.this);
+                    alertDialogBuilder.setTitle("Login");
+                    alertDialogBuilder.setMessage("Log in to Access");
+                    alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            doLogout();
+                        }
+                    });
+                    alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    alertDialogBuilder.show();
+                }
 
 
             }
@@ -602,7 +617,7 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
             @Override
             public void onClick(View v) {
 
-//                if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
+                if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
 
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(
@@ -626,10 +641,24 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
                     builder.show();
                     sendShareStatusUserActivity(3);
 
-//                } else {
-//
-//                    AlertDialogHelper.showCompoundAlertDialog(getApplicationContext(), "Login", "Login to access", "OK", "CANCEL", 1);
-//                }
+                } else {
+                    android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(EventDetailActivity.this);
+                    alertDialogBuilder.setTitle("Login");
+                    alertDialogBuilder.setMessage("Log in to Access");
+                    alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            doLogout();
+                        }
+                    });
+                    alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    alertDialogBuilder.show();
+                }
 
             }
         });
@@ -638,7 +667,7 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
             @Override
             public void onClick(View v) {
 
-//                if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
+                if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
 
                     String bookingStatus = event.getEventBookingStatus();
 
@@ -662,10 +691,24 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
 
                         // sendShareStatusUserActivity(4);
                     }
-//                } else {
-//
-//                    AlertDialogHelper.showCompoundAlertDialog(getApplicationContext(), "Login", "Login to access", "OK", "CANCEL", 1);
-//                }
+                } else {
+                    android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(EventDetailActivity.this);
+                    alertDialogBuilder.setTitle("Login");
+                    alertDialogBuilder.setMessage("Log in to Access");
+                    alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            doLogout();
+                        }
+                    });
+                    alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    alertDialogBuilder.show();
+                }
             }
         });
 
@@ -674,7 +717,7 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
             @Override
             public void onCheckedChanged(CompoundButton buttonView,
                                          boolean isChecked) {
-//                if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
+                if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
                     if (isChecked) {
                         Toast.makeText(getApplicationContext(), "You have successfully checked-in for the event - " + event.getEventName().toString() + "\nGet ready for the fun! ", Toast.LENGTH_LONG).show();
                     } else {
@@ -682,10 +725,24 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
                     }
 
                     sendShareStatusUserActivity(2);
-//                } else {
-//
-//                    AlertDialogHelper.showCompoundAlertDialog(getApplicationContext(), "Login", "Login to access", "OK", "CANCEL", 1);
-//                }
+                } else {
+                    android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(EventDetailActivity.this);
+                    alertDialogBuilder.setTitle("Login");
+                    alertDialogBuilder.setMessage("Log in to Access");
+                    alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            doLogout();
+                        }
+                    });
+                    alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    alertDialogBuilder.show();
+                }
             }
         });
 
