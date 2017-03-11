@@ -538,28 +538,47 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
         whishListBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "Bookmark Button selected" + event.getId());
-                //        getCalender();
-                if (mServiceHelper == null) {
-                    mServiceHelper = new EventServiceHelper(EventDetailActivity.this);
-                    mServiceHelper.setEventServiceListener(EventDetailActivity.this);
-                }
-                if (GamificationDataHolder.getInstance().isEventBookmarked(event.getId())) {
-                    Toast.makeText(EventDetailActivity.this, "Event already bookmarked", Toast.LENGTH_SHORT).show();
-                    int imgResource = R.drawable.ic_wishlist1_selected;
-                    whishListBtn.setCompoundDrawablesWithIntrinsicBounds(imgResource, 0, 0, 0);
-                } else {
-                    try {
-                        mServiceHelper.makeGetEventServiceCall(String.format(FindAFunConstants.ADD_EVENT_BOOKMARK,
-                                Integer.parseInt(PreferenceStorage.getUserId(EventDetailActivity.this)), Integer.parseInt((event.getId()))));
-
+                if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
+                    Log.d(TAG, "Bookmark Button selected" + event.getId());
+                    //        getCalender();
+                    if (mServiceHelper == null) {
+                        mServiceHelper = new EventServiceHelper(EventDetailActivity.this);
+                        mServiceHelper.setEventServiceListener(EventDetailActivity.this);
+                    }
+                    if (GamificationDataHolder.getInstance().isEventBookmarked(event.getId())) {
+                        Toast.makeText(EventDetailActivity.this, "Event already bookmarked", Toast.LENGTH_SHORT).show();
                         int imgResource = R.drawable.ic_wishlist1_selected;
                         whishListBtn.setCompoundDrawablesWithIntrinsicBounds(imgResource, 0, 0, 0);
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                    } else {
+                        try {
+                            mServiceHelper.makeGetEventServiceCall(String.format(FindAFunConstants.ADD_EVENT_BOOKMARK,
+                                    Integer.parseInt(PreferenceStorage.getUserId(EventDetailActivity.this)), Integer.parseInt((event.getId()))));
+
+                            int imgResource = R.drawable.ic_wishlist1_selected;
+                            whishListBtn.setCompoundDrawablesWithIntrinsicBounds(imgResource, 0, 0, 0);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
-
+                else {
+                    android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(EventDetailActivity.this);
+                    alertDialogBuilder.setTitle("Login");
+                    alertDialogBuilder.setMessage("Log in to Access");
+                    alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface arg0, int arg1) {
+                                    doLogout();
+                                }
+                            });
+                    alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+                    alertDialogBuilder.show();
+                }
             }
         });
 
@@ -973,6 +992,18 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
                 mCurrentAnimator = set;
             }
         });
+    }
+
+    private void doLogout() {
+        SharedPreferences sharedPreferences =
+                PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        sharedPreferences.edit().clear().commit();
+        TwitterUtil.getInstance().resetTwitterRequestToken();
+
+        Intent intent = new Intent(EventDetailActivity.this, SplashScreenActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
     }
 
     private void getCalender() {

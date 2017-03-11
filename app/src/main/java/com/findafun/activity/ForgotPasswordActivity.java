@@ -116,6 +116,7 @@ public class ForgotPasswordActivity extends AppCompatActivity implements View.On
                     if (((status.equalsIgnoreCase("notRegistered")) || (status.equalsIgnoreCase("error")))) {
                         forgotPasswordsuccess = false;
                         if (status.equalsIgnoreCase("notRegistered")) {
+
                             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
                             //alertDialogBuilder.setTitle("Registration Successful");
                             alertDialogBuilder.setMessage(msg);
@@ -132,6 +133,7 @@ public class ForgotPasswordActivity extends AppCompatActivity implements View.On
 
                             AlertDialog alertDialog = alertDialogBuilder.create();
                             alertDialog.show();
+
                         } else {
                             Log.d(TAG, "Show error dialog");
                             AlertDialogHelper.showSimpleAlertDialog(this, msg);

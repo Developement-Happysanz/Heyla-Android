@@ -393,7 +393,7 @@ public class AdvanceSearchAct extends AppCompatActivity implements AdapterView.O
                     findViewById(R.id.btnselectdate).setBackgroundColor(getResources().getColor(R.color.colorRed));
                     findViewById(R.id.btntomorrow).setBackgroundColor(getResources().getColor(R.color.btngreybg));
                     findViewById(R.id.btntoday).setBackgroundColor(getResources().getColor(R.color.btngreybg));
-                    final DatePickerDialog.OnDateSetListener singledate = new DatePickerDialog.OnDateSetListener() {
+                   final DatePickerDialog.OnDateSetListener singledate = new DatePickerDialog.OnDateSetListener() {
 
                         public void onDateSet(DatePicker view, int year, int month, int day) {
                             //Log.e("Singledate", "singleDate : " + singleDate);
