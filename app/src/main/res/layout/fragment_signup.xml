@@ -129,7 +129,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:visibility="gone"
-            android:text="By signing up, I agree With Hobbistan's"
+            android:text="By creating an account you agree to our"
             android:textColor="@color/colorWhite" />
 
         <TextView
@@ -198,7 +198,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="By signing up, I agree With Heyla's"
+            android:text="By creating an account you agree to our"
             android:textColor="@color/colorWhite" />
 
         <TextView
@@ -217,6 +217,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:gravity="center"
+            android:visibility="gone"
             android:text="Signup with facebook"
             android:textColor="@color/white"
             android:textSize="16dp" />
@@ -227,6 +228,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
+            android:visibility="gone"
             android:src="@drawable/facebookicon" />
 
         <LinearLayout

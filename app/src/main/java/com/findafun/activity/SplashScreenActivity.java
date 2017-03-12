@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.findafun.R;
+import com.findafun.activity.heyla.LoginDashboardActivity;
 import com.findafun.animate.ExplosionField;
 
 
@@ -32,7 +33,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                Intent i = new Intent(SplashScreenActivity.this, LoginNew.class);
+                Intent i = new Intent(SplashScreenActivity.this, LoginDashboardActivity.class);
                 startActivity(i);
                 finish();
             }

@@ -157,7 +157,7 @@ public class EventsListAdapter extends BaseAdapter {
         String end = FindAFunHelper.getDate(events.get(position).getEndDate());
 
         if( (start != null) && (end != null)) {
-            holder.txtDate.setText(start + " - "+end);
+            holder.txtDate.setText(start +"- "+ end);
         }else{
             holder.txtDate.setText("N/A");
         }

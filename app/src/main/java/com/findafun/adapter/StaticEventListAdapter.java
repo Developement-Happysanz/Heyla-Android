@@ -174,7 +174,7 @@ public class StaticEventListAdapter extends BaseAdapter {
             e.printStackTrace();
         }
         if ((startTime != null) && (end != null)) {
-            holder.txtTime.setText(startTime + "-" + endTime);
+            holder.txtTime.setText(startTime + " - " + endTime);
         }
 
         holder.txtCategory.setText(events.get(position).getCategoryName());

@@ -301,7 +301,7 @@
             android:theme="@style/AppFullScreenTheme" />
 
         <activity
-            android:name=".activity.LoginNew"
+            android:name=".activity.heyla.LoginDashboardActivity"
             android:theme="@style/AppFullScreenTheme"
             android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
@@ -310,6 +310,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".activity.heyla.LoginHeylaActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme"
+            android:windowSoftInputMode="adjustPan"></activity>
+
+        <activity
+            android:name=".activity.heyla.LoginSocialActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme"
+            android:windowSoftInputMode="adjustPan"></activity>
+
+        <activity
+            android:name=".activity.heyla.SignUpHeylaActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme"
+            android:windowSoftInputMode="adjustPan"></activity>
 
         <activity
             android:name=".activity.LoginNewActivity"
