@@ -1,5 +1,6 @@
 package com.findafun.activity.heyla;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -11,10 +12,12 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +26,7 @@ import android.util.Base64;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.android.volley.toolbox.ImageLoader;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -36,6 +40,7 @@ import com.findafun.R;
 import com.findafun.activity.LandingActivity;
 import com.findafun.activity.LoginNewActivity;
 import com.findafun.activity.SelectCityActivity;
+import com.findafun.activity.glogin.CustomVolleyRequest;
 import com.findafun.adapter.LoginNewAdapter;
 import com.findafun.adapter.SignUpNewAdapter;
 import com.findafun.bean.gamification.GamificationDataHolder;
@@ -47,10 +52,15 @@ import com.findafun.servicehelpers.SignUpServiceHelper;
 import com.findafun.serviceinterfaces.ISignUpServiceListener;
 import com.findafun.utils.FindAFunConstants;
 import com.findafun.utils.PreferenceStorage;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
+import com.google.android.gms.plus.Plus;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -79,7 +89,7 @@ public class LoginSocialActivity extends AppCompatActivity implements DialogClic
     private boolean mSignInClicked;
     private CallbackManager callbackManager;
     private boolean mResolvingError = false;
-    private static final int RC_SIGN_IN = 0;
+    private static final int RC_SIGN_IN = 100;
     private static final int REQUEST_CODE_TOKEN_AUTH = 1;
     private ConnectionResult mConnectionResult;
     String IMEINo;
@@ -91,6 +101,15 @@ public class LoginSocialActivity extends AppCompatActivity implements DialogClic
     private SignUpServiceHelper signUpServiceHelper;
 
     private int mSelectedLoginMode = 0;
+
+    //Signing Options
+    private GoogleSignInOptions gso;
+
+    //google api client
+    private GoogleApiClient mGoogleApiClient;
+
+    //Signin constant to check the activity result
+//    private int RC_SIGN_IN = 100;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -192,8 +211,34 @@ public class LoginSocialActivity extends AppCompatActivity implements DialogClic
         FacebookSdk.sdkInitialize(getApplicationContext());
         initFacebook();
 
+        //Initializing google signin option
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+
+        //Initializing google api client
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+                .build();
+
         UserLogin();
 
+    }
+
+    //This function will option signing intent
+    private void signIn() {
+
+//        mProgressDialog = new ProgressDialog(this);
+//        mProgressDialog.setIndeterminate(true);
+//        mProgressDialog.setMessage("Signing in...");
+//        mProgressDialog.show();
+
+        //Creating an intent
+        Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
+
+        //Starting intent for result
+        startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
     // Login with facebook
@@ -296,6 +341,45 @@ public class LoginSocialActivity extends AppCompatActivity implements DialogClic
             PreferenceStorage.saveLoginMode(getApplicationContext(), FindAFunConstants.FACEBOOK);
             mSelectedLoginMode = FindAFunConstants.FACEBOOK;
             PreferenceStorage.saveUserType(getApplicationContext(), "1");
+
+        } else if (logType.equalsIgnoreCase("3")) {
+
+//            Log.d(TAG, "start Google plus for logging in");
+//            LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile", "user_friends", "email"));
+//            PreferenceStorage.saveLoginMode(getApplicationContext(), FindAFunConstants.FACEBOOK);
+//            mSelectedLoginMode = FindAFunConstants.FACEBOOK;
+//            PreferenceStorage.saveUserType(getApplicationContext(), "1");
+
+            mProgressDialog = new ProgressDialog(this);
+            mProgressDialog.setIndeterminate(true);
+            mProgressDialog.setMessage("Signing in...");
+            mProgressDialog.show();
+
+            PreferenceStorage.saveLoginMode(this, FindAFunConstants.GOOGLE_PLUS);
+            PreferenceStorage.saveUserType(this, "1");
+            mSelectedLoginMode = FindAFunConstants.GOOGLE_PLUS;
+            signIn();
+
+       /*     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                PreferenceStorage.saveLoginMode(this, FindAFunConstants.GOOGLE_PLUS);
+                PreferenceStorage.saveUserType(this, "1");
+                // mSelectedLoginMode = FindAFunConstants.FACEBOOK;
+                mSelectedLoginMode = FindAFunConstants.GOOGLE_PLUS;
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.GET_ACCOUNTS) == PackageManager.PERMISSION_GRANTED) {
+                    Log.d(TAG, "initiate google plus sign up");
+//                    initiateGplusSignIn();
+                    signIn();
+                } else {
+                    Log.d(TAG, "check google permissions");
+//                    checkPermissions();
+                }
+            } else {
+                Log.d(TAG, "initiate google plus Sign in");
+//                initiateGplusSignIn();
+                signIn();
+            } */
+
+
         }
     }
 
@@ -394,28 +478,109 @@ public class LoginSocialActivity extends AppCompatActivity implements DialogClic
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
+
         if (requestCode == RC_SIGN_IN) {
-            mResolvingError = false;
-            if (resultCode == RESULT_OK) {
-                // If we have a successful result, we will want to be able to
-                // resolve any further errors, so turn on resolution with our
-                // flag.
-                mSignInClicked = true;
-                // If we have a successful result, lets call connect() again. If
-                // there are any more errors to resolve we'll get our
-                // onConnectionFailed, but if not, we'll get onConnected.
-                //mGoogleApiClient.connect();
-            } else if (resultCode != RESULT_OK) {
-                // If we've got an error we can't resolve, we're no
-                // longer in the midst of signing in, so we can stop
-                // the progress spinner.
 
-//                progressDialogHelper.hideProgressDialog();
+            //If signin
+            if (requestCode == RC_SIGN_IN) {
+                GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+                //Calling a new function to handle signin
+                handleSignInResult(result);
             }
 
-        } else if (requestCode == REQUEST_CODE_TOKEN_AUTH) {
-            if (resultCode == RESULT_OK) {
+//            mResolvingError = false;
+//            if (resultCode == RESULT_OK) {
+//                // If we have a successful result, we will want to be able to
+//                // resolve any further errors, so turn on resolution with our
+//                // flag.
+//                mSignInClicked = true;
+//                // If we have a successful result, lets call connect() again. If
+//                // there are any more errors to resolve we'll get our
+//                // onConnectionFailed, but if not, we'll get onConnected.
+//                //mGoogleApiClient.connect();
+//            } else if (resultCode != RESULT_OK) {
+//                // If we've got an error we can't resolve, we're no
+//                // longer in the midst of signing in, so we can stop
+//                // the progress spinner.
+//
+////                progressDialogHelper.hideProgressDialog();
+//            }
+
+        }
+//        else if (requestCode == REQUEST_CODE_TOKEN_AUTH) {
+//            if (resultCode == RESULT_OK) {
+//            }
+//        }
+    }
+
+    //After the signing we are calling this function
+    private void handleSignInResult(GoogleSignInResult result) {
+
+        try {
+            //If the login succeed
+            if (result.isSuccess()) {
+                //Getting google account
+                GoogleSignInAccount acct = result.getSignInAccount();
+
+                String personName = acct.getDisplayName();
+                String email = acct.getEmail();
+
+                Log.e("", "Name: " + personName + ", plusProfile: "
+                        + ", email: " + email
+                        + ", Image: ");
+                if (email != null) {
+                    PreferenceStorage.saveUserEmail(this, email);
+                }
+                if (personName != null) {
+                    PreferenceStorage.saveUserName(this, personName);
+                }
+
+                PreferenceStorage.saveSocialNetworkProfilePic(this, acct.getPhotoUrl().toString());
+//                PreferenceStorage.saveLoginMode(this, FindAFunConstants.GOOGLE_PLUS);
+//                PreferenceStorage.saveUserType(getApplicationContext(), "1");
+
+                //            Log.d(TAG, "start Google plus for logging in");
+//            LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile", "user_friends", "email"));
+//            PreferenceStorage.saveLoginMode(getApplicationContext(), FindAFunConstants.FACEBOOK);
+//            mSelectedLoginMode = FindAFunConstants.FACEBOOK;
+//            PreferenceStorage.saveUserType(getApplicationContext(), "1");
+
+                JSONObject jsonObject = new JSONObject();
+                try {
+                    jsonObject.put(FindAFunConstants.PARAMS_FUNC_NAME, "sign_in");
+                    jsonObject.put(FindAFunConstants.PARAMS_USER_NAME, email);
+                    jsonObject.put(FindAFunConstants.PARAMS_USER_PASSWORD, FindAFunConstants.DEFAULT_PASSWORD);
+                    jsonObject.put(FindAFunConstants.PARAMS_SIGN_UP_TYPE, "1");
+                    jsonObject.put(FindAFunConstants.MOBILE_TYPE, "1");
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                //  progressDialogHelper.showProgressDialog(getString(R.string.progress_loading));
+                signUpServiceHelper.makeSignUpServiceCall(jsonObject.toString());
+                // by default the profile url gives 50x50 px image only
+                // we can replace the value with whatever dimension we want by
+                // replacing sz=X
+
+                //Displaying name and email
+//            textViewName.setText(acct.getDisplayName());
+//            textViewEmail.setText(acct.getEmail());
+
+                //Initializing image loader
+//            imageLoader = CustomVolleyRequest.getInstance(this.getApplicationContext()).getImageLoader();
+
+//            imageLoader.get(acct.getPhotoUrl().toString(), ImageLoader.getImageListener(profilePhoto, R.mipmap.appicon_logo, R.mipmap.appicon_logo));
+
+                //Loading image
+//            profilePhoto.setImageUrl(acct.getPhotoUrl().toString(), imageLoader);
+
+            } else {
+                //If login fails
+                Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show();
             }
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

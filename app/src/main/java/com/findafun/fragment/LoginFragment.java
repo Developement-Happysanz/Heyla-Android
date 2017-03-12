@@ -600,6 +600,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Dia
             protected void onPreExecute() {
             }
         };
+
         task.execute();
         try {
             if (Plus.PeopleApi.getCurrentPerson(mGoogleApiClient) != null) {

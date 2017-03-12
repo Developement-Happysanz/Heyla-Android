@@ -77,7 +77,7 @@ public class LoginDashboardActivity extends AppCompatActivity implements View.On
         } else {
 
             btnFacebook = (ImageView) findViewById(R.id.frag_login_fb);
-            btnGPlus = (ImageView) findViewById(R.id.frag_login_fb);
+            btnGPlus = (ImageView) findViewById(R.id.frag_login_gplus);
             btnLogin = (ImageView) findViewById(R.id.btn_login);
             btnCreateAccount = (ImageView) findViewById(R.id.btn_create_new_account);
             txtGuestLogin = (ImageView) findViewById(R.id.btn_guest_login);
@@ -86,6 +86,7 @@ public class LoginDashboardActivity extends AppCompatActivity implements View.On
             btnCreateAccount.setOnClickListener(this);
             txtGuestLogin.setOnClickListener(this);
             btnFacebook.setOnClickListener(this);
+            btnGPlus.setOnClickListener(this);
 
             FirstTimePreference prefFirstTime = new FirstTimePreference(getApplicationContext());
 
@@ -140,6 +141,11 @@ public class LoginDashboardActivity extends AppCompatActivity implements View.On
 
                 Intent signInIntent = new Intent(getApplicationContext(), LoginSocialActivity.class);
                 signInIntent.putExtra("LoginType", "2");
+                startActivity(signInIntent);
+            } else if (v == btnGPlus) {
+
+                Intent signInIntent = new Intent(getApplicationContext(), LoginSocialActivity.class);
+                signInIntent.putExtra("LoginType", "3");
                 startActivity(signInIntent);
             }
         } else {

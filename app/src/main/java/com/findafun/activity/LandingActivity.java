@@ -30,6 +30,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -74,6 +75,7 @@ import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.lang.reflect.Field;
 
 
 public class LandingActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener, LandingPagerAdapter.onFragmentsRegisteredListener, DialogClickListener, IEventServiceListener, IGamificationServiceListener {
@@ -452,6 +454,15 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
         mSearchView.setIconifiedByDefault(true);
         mSearchView.setSearchableInfo(
                 searchManager.getSearchableInfo(getComponentName()));
+
+        AutoCompleteTextView searchTextView = (AutoCompleteTextView) mSearchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
+        try {
+            Field mCursorDrawableRes = TextView.class.getDeclaredField("mCursorDrawableRes");
+            mCursorDrawableRes.setAccessible(true);
+            mCursorDrawableRes.set(searchTextView, R.drawable.cursor); //This sets the cursor resource ID to 0 or @null which will make it visible on white background
+        } catch (Exception e) {
+        }
+
         mSearchView.setOnSearchClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
