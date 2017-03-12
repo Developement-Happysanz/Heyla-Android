@@ -570,6 +570,7 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
         whishListBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
                 Log.d(TAG, "Bookmark Button selected" + event.getId());
                 if (mServiceHelper == null) {
                     mServiceHelper = new EventServiceHelper(StaticEventDetailActivity.this);
@@ -592,17 +593,50 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
                     }
                 }
             }
+            else {
+                    android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(StaticEventDetailActivity.this);
+                    alertDialogBuilder.setTitle("Login");
+                    alertDialogBuilder.setMessage("Log in to Access");
+                    alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            doLogout();
+                        }
+                    });
+                    alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    alertDialogBuilder.show();
+                }
+        };
         });
         shareBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
+                if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
 
                     showShareList();
-//                } else {
-//
-//                    AlertDialogHelper.showCompoundAlertDialog(getApplicationContext(), "Login", "Login to access", "OK", "CANCEL", 1);
-//                }
+                } else {
+                    android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(StaticEventDetailActivity.this);
+                    alertDialogBuilder.setTitle("Login");
+                    alertDialogBuilder.setMessage("Log in to Access");
+                    alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            doLogout();
+                        }
+                    });
+                    alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    alertDialogBuilder.show();
+                }
             }
         });
 
@@ -610,7 +644,7 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
             @Override
             public void onClick(View v) {
 
-//                if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
+                if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(
                         StaticEventDetailActivity.this);
@@ -660,10 +694,24 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
 
                 sendShareStatusUserActivity(3);
 
-//                } else {
-//
-//                    AlertDialogHelper.showCompoundAlertDialog(getApplicationContext(), "Login", "Login to access", "OK", "CANCEL", 1);
-//                }
+                } else {
+                    android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(StaticEventDetailActivity.this);
+                    alertDialogBuilder.setTitle("Login");
+                    alertDialogBuilder.setMessage("Log in to Access");
+                    alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            doLogout();
+                        }
+                    });
+                    alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    alertDialogBuilder.show();
+                }
 
             }
         });
@@ -687,7 +735,7 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
             public void onCheckedChanged(CompoundButton buttonView,
                                          boolean isChecked) {
 
-//                if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
+                if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
 
 
                     if (isChecked) {
@@ -696,10 +744,24 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
                 } else {
 
                 }
-//                } else {
-//
-//                    AlertDialogHelper.showCompoundAlertDialog(getApplicationContext(), "Login", "Login to access", "OK", "CANCEL", 1);
-//                }
+                } else {
+                    android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(StaticEventDetailActivity.this);
+                    alertDialogBuilder.setTitle("Login");
+                    alertDialogBuilder.setMessage("Log in to Access");
+                    alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            doLogout();
+                        }
+                    });
+                    alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    alertDialogBuilder.show();
+                }
 
 
             }
@@ -1282,6 +1344,17 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
 
             return false;
         }
+    }
+    private void doLogout() {
+        SharedPreferences sharedPreferences =
+                PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        sharedPreferences.edit().clear().commit();
+        TwitterUtil.getInstance().resetTwitterRequestToken();
+
+        Intent intent = new Intent(StaticEventDetailActivity.this, SplashScreenActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
     }
 
 

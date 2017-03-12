@@ -94,8 +94,8 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
     private ImageView imgNavHeaderBg, imgNavProfileImage;
     public static final int TAG_FAVOURITES = 0, TAG_FEATURED = 1, TAG_ALL = 2;
     private ArrayAdapter<String> navListAdapter;
-    private String[] values = {"Change City", "Profile", "Edit Preferences", "Wishlists", "Refer & Earn", "Rate Us", "Sign Out"};
-    private String[] values_guest = {"Change City", "Profile", "Edit Preferences", "Wishlists", "Refer & Earn", "Rate Us", "Login"};
+    private String[] values = {"Change City", "Profile", "Edit Preferences", "Bookmarks", "Refer & Earn", "Rate Us", "Sign Out"};
+    private String[] values_guest = {"Change City", "Profile", "Edit Preferences", "Bookmarks", "Refer & Earn", "Rate Us", "Login"};
     private boolean mFragmentsLoaded = false;
     TextView navUserName = null;
     TextView navUserCity = null;
@@ -395,7 +395,7 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
                 Intent i = new Intent(android.content.Intent.ACTION_SEND);
                 i.setType("text/plain");
                 i.putExtra(android.content.Intent.EXTRA_SUBJECT, "Share");
-                i.putExtra(android.content.Intent.EXTRA_TEXT, "Hey! Get the Hobbistan app and win some exciting rewards. Use my promo code " + PreferenceStorage.getPromoCode(LandingActivity.this) + " http://heylaapp.com/app/referral/click.php?id=" + PreferenceStorage.getUserId(LandingActivity.this) + "");
+                i.putExtra(android.content.Intent.EXTRA_TEXT, "Hey! Get Heyla app and win some exciting rewards. Use my promo code " + PreferenceStorage.getPromoCode(LandingActivity.this) + " http://heylaapp.com/app/referral/click.php?id=" + PreferenceStorage.getUserId(LandingActivity.this) + "");
                 startActivity(Intent.createChooser(i, "Share via"));
             } else {
 
