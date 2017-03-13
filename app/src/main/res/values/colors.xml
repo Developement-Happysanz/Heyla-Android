@@ -86,6 +86,7 @@
     <color name="gender_row_color">#ededed</color>
     <color name="gamification_background">#e1e1e1</color>
     <color name="white">#fff</color>
-    <color name="btngreybg">#7c7c84</color>
+    <color name="btngreybg">#74747b</color>
+    <color name="lite_btngreybg">#a0a0a7</color>
 
 </resources>
