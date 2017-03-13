@@ -55,6 +55,7 @@
                 android:gravity="center"
                 android:text="Select day"
                 android:textColor="@color/title_red1"
+                android:textStyle="bold"
                 android:textSize="@dimen/actionbarTextSize" />
 
             <LinearLayout
@@ -74,6 +75,7 @@
                     android:background="@drawable/bg_advanced_filter_properties"
                     android:text="Today"
                     android:textAllCaps="false"
+                    android:textStyle="bold"
                     android:textColor="@color/white" />
 
                 <Button
@@ -85,6 +87,7 @@
                     android:background="@drawable/bg_advanced_filter_properties"
                     android:text="Tomorrow"
                     android:textAllCaps="false"
+                    android:textStyle="bold"
                     android:textColor="@color/white" />
 
                 <Button
@@ -96,6 +99,7 @@
                     android:background="@drawable/bg_advance_filter_orange"
                     android:text="DD-MM-YYYY"
                     android:textAllCaps="false"
+                    android:textStyle="bold"
                     android:textColor="@color/white" />
 
             </LinearLayout>
@@ -110,6 +114,7 @@
                 android:gravity="center"
                 android:text="Select Event Type"
                 android:textColor="@color/title_red1"
+                android:textStyle="bold"
                 android:textSize="@dimen/actionbarTextSize" />
 
             <Spinner
@@ -120,6 +125,7 @@
                 android:layout_below="@id/tveventtype"
                 android:spinnerMode="dialog"
                 android:layout_marginBottom="@dimen/mainmargin"
+                android:textColor="@color/text_gray"
                 android:textSize="15sp"></Spinner>
 
             <TextView
@@ -132,6 +138,7 @@
                 android:gravity="center"
                 android:text="Select Category"
                 android:textColor="@color/title_red1"
+                android:textStyle="bold"
                 android:textSize="@dimen/actionbarTextSize" />
 
             <Button
@@ -147,7 +154,7 @@
                 android:singleLine="true"
                 android:text="Select Category"
                 android:textAllCaps="false"
-                android:textColor="@color/white"
+                android:textColor="@color/text_gray"
                 android:textSize="15sp"></Button>
 
             <TextView
@@ -160,6 +167,7 @@
                 android:gravity="center"
                 android:text="Select City"
                 android:textColor="@color/title_red1"
+                android:textStyle="bold"
                 android:textSize="@dimen/actionbarTextSize" />
 
             <!-- <Spinner
@@ -183,7 +191,7 @@
                 android:inputType="textNoSuggestions"
                 android:text="Select City"
                 android:textSize="15sp"
-                android:textColor="@color/white" />
+                android:textColor="@color/text_gray" />
 
             <TextView
                 android:id="@+id/tvdaterange"
@@ -195,6 +203,7 @@
                 android:gravity="center"
                 android:text="Select Date"
                 android:textColor="@color/title_red1"
+                android:textStyle="bold"
                 android:textSize="@dimen/actionbarTextSize" />
 
             <TextView
@@ -216,7 +225,9 @@
                 android:layout_below="@id/tvfrom"
                 android:layout_marginBottom="@dimen/mainmargin"
                 android:background="@drawable/new_gradient_spinner"
-                android:textColor="@color/white"
+                android:gravity="left|center_vertical"
+                android:text="DD-MM-YYYY"
+                android:textColor="@color/text_gray"
                 android:textSize="15sp" />
 
             <TextView
@@ -237,7 +248,9 @@
                 android:layout_below="@id/tvto"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/new_gradient_spinner"
-                android:textColor="@color/white"
+                android:gravity="left|center_vertical"
+                android:text="DD-MM-YYYY"
+                android:textColor="@color/text_gray"
                 android:textSize="15sp" />
 
             <LinearLayout

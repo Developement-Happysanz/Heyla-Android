@@ -90,7 +90,7 @@ public class SignupFragment extends Fragment implements View.OnClickListener, IS
     private static final String TAG = SignupFragment.class.getName();
 
     int signUpClick = 1;
-
+    TextView txtTitle, txtName1,txtEmail, txtPassword, txtPromocode, txtAgreeing, txtTerms;
     private static final int RC_SIGN_IN = 9001;
     private GoogleSignInOptions gso;
     private static final int REQUEST_CODE_TOKEN_AUTH = 1;

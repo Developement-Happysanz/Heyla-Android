@@ -199,9 +199,9 @@
 
                     <LinearLayout
                         android:id="@+id/share_btn"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
+                        android:layout_width="50dp"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="2dp"
                         android:layout_weight="0.50"
                         android:gravity="center"
                         android:orientation="vertical">
@@ -209,7 +209,7 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="1dp"
                             android:src="@drawable/shareicon" />
 
                         <TextView
@@ -229,9 +229,9 @@
 
                     <LinearLayout
                         android:id="@+id/contact_btn"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
+                        android:layout_width="50dp"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="2dp"
                         android:layout_weight="0.50"
                         android:gravity="center"
                         android:orientation="vertical">
@@ -267,9 +267,9 @@
 
                     <LinearLayout
                         android:id="@+id/engage_btn"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
+                        android:layout_width="50dp"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="2dp"
                         android:layout_weight="0.50"
                         android:gravity="center"
                         android:orientation="vertical">
@@ -277,7 +277,7 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="2dp"
                             android:src="@drawable/interested" />
 
                         <TextView
@@ -296,9 +296,9 @@
                         android:background="@color/event_detail_bg_color"></View>
 
                     <LinearLayout
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
+                        android:layout_width="50dp"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="2dp"
                         android:layout_weight="0.50"
                         android:gravity="center"
                         android:orientation="vertical">
