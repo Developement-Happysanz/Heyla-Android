@@ -282,6 +282,7 @@ public class LoginSocialActivity extends AppCompatActivity implements DialogClic
                                             try {
                                                 jsonObject.put(FindAFunConstants.PARAMS_FUNC_NAME, "sign_in");
                                                 jsonObject.put(FindAFunConstants.PARAMS_USER_NAME, email);
+                                                jsonObject.put(FindAFunConstants.PARAMS_NAME, name);
                                                 jsonObject.put(FindAFunConstants.PARAMS_USER_PASSWORD, FindAFunConstants.DEFAULT_PASSWORD);
                                                 jsonObject.put(FindAFunConstants.PARAMS_SIGN_UP_TYPE, "1");
                                                 jsonObject.put(FindAFunConstants.MOBILE_TYPE, "1");
@@ -549,6 +550,7 @@ public class LoginSocialActivity extends AppCompatActivity implements DialogClic
                 try {
                     jsonObject.put(FindAFunConstants.PARAMS_FUNC_NAME, "sign_in");
                     jsonObject.put(FindAFunConstants.PARAMS_USER_NAME, email);
+                    jsonObject.put(FindAFunConstants.PARAMS_NAME, personName);
                     jsonObject.put(FindAFunConstants.PARAMS_USER_PASSWORD, FindAFunConstants.DEFAULT_PASSWORD);
                     jsonObject.put(FindAFunConstants.PARAMS_SIGN_UP_TYPE, "1");
                     jsonObject.put(FindAFunConstants.MOBILE_TYPE, "1");

@@ -76,7 +76,7 @@ public class FindAFunConstants {
     public static final String PARAMS_USER_NAME = "user_email";
     public static final String PARAMS_USER_ID = "user_id";
     public static final String PARAMS_USER_TYPE = "user_type";
-    public static final String PARAMS_NAME = "name";
+    public static final String PARAMS_NAME = "user_name";
     public static final String PARAMS_SIGN_UP_TYPE = "sign_up_type";
     public static final String GCM_KEY = "gcm_key";
     public static final String MOBILE_TYPE = "mobile_type";
