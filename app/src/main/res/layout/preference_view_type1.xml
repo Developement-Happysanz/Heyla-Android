@@ -3,7 +3,7 @@
     android:id="@+id/rlPref"
     android:layout_width="@dimen/preference_round_size"
     android:padding="2dp"
-    android:layout_margin="5dp"
+    android:layout_margin="20dp"
     android:layout_height="@dimen/preference_round_size">
 
     <ImageView
@@ -20,6 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:gravity="center"
         android:text="hi"
         android:textSize="14dp"
         android:textColor="@color/white"/>

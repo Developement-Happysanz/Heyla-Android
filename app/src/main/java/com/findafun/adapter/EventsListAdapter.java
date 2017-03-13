@@ -179,7 +179,7 @@ public class EventsListAdapter extends BaseAdapter {
             holder.txtTime.setText(startTime +" - "+ endTime);
         }
 
-        holder.txtCategory.setText(events.get(position).getCategoryName());
+        holder.txtCategory.setText("  "+events.get(position).getCategoryName()+"  ");
 
         //Add animation if searching
        /* if(mSearching) {
