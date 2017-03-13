@@ -2,8 +2,11 @@ package com.findafun.fragment;
 
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,14 +25,17 @@ import com.findafun.activity.CheckinsActivity;
 import com.findafun.activity.EngagementActivity;
 import com.findafun.activity.EventDetailActivity;
 import com.findafun.activity.InternBoradActivity;
+import com.findafun.activity.LandingActivity;
 import com.findafun.activity.LeaderBoardActivity;
 import com.findafun.activity.PhotosActivity;
+import com.findafun.activity.SplashScreenActivity;
 import com.findafun.bean.gamification.GamificationDataHolder;
 import com.findafun.bean.gamification.Rewards;
 import com.findafun.helper.AlertDialogHelper;
 import com.findafun.interfaces.DialogClickListener;
 import com.findafun.servicehelpers.GamificationServiceHelper;
 import com.findafun.serviceinterfaces.IGamificationServiceListener;
+import com.findafun.twitter.TwitterUtil;
 import com.findafun.utils.FindAFunConstants;
 import com.findafun.utils.PreferenceStorage;
 import com.makeramen.roundedimageview.RoundedTransformationBuilder;
@@ -206,7 +212,7 @@ public class RewardsFragment extends LandingPagerFragment implements IGamificati
         // Log.d(TAG, "Nearby fragment onCreateView called");
         View view = inflater.inflate(R.layout.rewards_layout, container, false);
 
-            initializeRewardsViews(view);
+        initializeRewardsViews(view);
 
         FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -309,10 +315,47 @@ public class RewardsFragment extends LandingPagerFragment implements IGamificati
             }
         }
 
-        if (PreferenceStorage.getUserType(getActivity()).equalsIgnoreCase("1")) {} else {
+        if (PreferenceStorage.getUserType(getActivity()).equalsIgnoreCase("1")) {
 
-            AlertDialogHelper.showCompoundAlertDialog(getActivity(), "Login", "Login to access", "OK", "CANCEL", 1);
+        } else {
+
+//            AlertDialogHelper.showCompoundAlertDialog(getActivity(), "Login", "Login to access", "OK", "CANCEL", 1);
+
+            android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(getActivity());
+            alertDialogBuilder.setTitle("Login");
+            alertDialogBuilder.setMessage("Log in to Access");
+            alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface arg0, int arg1) {
+                    doLogout();
+                }
+            });
+            alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                    Intent intent = new Intent(getActivity(), SplashScreenActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+
+                }
+            });
+            alertDialogBuilder.show();
+
+
         }
+    }
+
+    private void doLogout() {
+        SharedPreferences sharedPreferences =
+                PreferenceManager.getDefaultSharedPreferences(getActivity());
+        sharedPreferences.edit().clear().commit();
+        TwitterUtil.getInstance().resetTwitterRequestToken();
+
+        Intent intent = new Intent(getActivity(), SplashScreenActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        getActivity().finish();
     }
 
     @Override

@@ -59,12 +59,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/colorRed"
             android:ellipsize="end"
             android:singleLine="true"
             android:text=" "
             android:textColor="@color/white"
-            android:textSize="14dp"
+            android:textSize="12dp"
             android:textStyle="bold" />
 
     </RelativeLayout>

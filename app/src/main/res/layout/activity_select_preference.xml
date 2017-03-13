@@ -22,8 +22,8 @@
         android:id="@+id/listView_categories"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/oval_shape_color"
         android:layout_weight="1"
+        android:background="@color/oval_shape_color"
         android:padding="2dp" />
 
     <TextView

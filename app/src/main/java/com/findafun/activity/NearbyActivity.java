@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -51,6 +52,7 @@ public class NearbyActivity extends AppCompatActivity implements LoadMoreListVie
     private static final String TAG = NearbyActivity.class.getName();
 
     Spinner spinNearby;
+    ImageView imgMapbg;
     ListView loadMoreListView;
     View view;
     EventsListAdapter eventsListAdapter;
@@ -82,7 +84,8 @@ public class NearbyActivity extends AppCompatActivity implements LoadMoreListVie
         loadMoreListView = (ListView) findViewById(R.id.listView_events);
         //loadMoreListView.setOnLoadMoreListener(this);
         loadMoreListView.setOnItemClickListener(this);
-        mTotalEventCount = (TextView)findViewById(R.id.totalnearby);
+        mTotalEventCount = (TextView) findViewById(R.id.totalnearby);
+        imgMapbg = (ImageView) findViewById(R.id.nearby_bg);
         eventsArrayList = new ArrayList<>();
         eventServiceHelper = new EventServiceHelper(this);
         eventServiceHelper.setEventServiceListener(this);
@@ -257,7 +260,7 @@ public class NearbyActivity extends AppCompatActivity implements LoadMoreListVie
 
                     nearByDistance = distance;
                     callGetFilterService(distance);
-                   // mTotalEventCount.setText(Integer.toString(eventsArrayList.size()) + " Nearby Events");
+                    // mTotalEventCount.setText(Integer.toString(eventsArrayList.size()) + " Nearby Events");
                 }
             }
 
@@ -311,6 +314,9 @@ public class NearbyActivity extends AppCompatActivity implements LoadMoreListVie
                 if (eventsList.getEvents() != null && eventsList.getEvents().size() > 0) {
                     totalCount = eventsList.getCount();
                     //isLoadingForFirstTime = false;
+                    if (totalCount != 0) {
+                        imgMapbg.setVisibility(View.GONE);
+                    }
                     updateListAdapter(eventsList.getEvents());
                 }
 
