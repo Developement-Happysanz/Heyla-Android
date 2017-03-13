@@ -2,6 +2,7 @@ package com.findafun.activity.heyla;
 
 import android.Manifest;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.findafun.R;
 import com.findafun.activity.FirstTimePreference;
@@ -34,6 +36,7 @@ import com.findafun.utils.PreferenceStorage;
 public class LoginDashboardActivity extends AppCompatActivity implements View.OnClickListener, DialogClickListener {
 
     private static final String TAG = LoginDashboardActivity.class.getName();
+    TextView txtGFLogin;
     private ImageView imgLogin, imgCreateAccount;
     private ImageView btnFacebook, btnGPlus, txtGuestLogin;
     private ImageView btnLogin, btnCreateAccount;
@@ -81,6 +84,10 @@ public class LoginDashboardActivity extends AppCompatActivity implements View.On
             btnLogin = (ImageView) findViewById(R.id.btn_login);
             btnCreateAccount = (ImageView) findViewById(R.id.btn_create_new_account);
             txtGuestLogin = (ImageView) findViewById(R.id.btn_guest_login);
+            txtGFLogin = (TextView)findViewById(R.id.txt_gflogin);
+
+            Typeface myFont = Typeface.createFromAsset(getAssets(),"Roboto.ttf");
+            txtGFLogin.setTypeface(myFont);
 
             btnLogin.setOnClickListener(this);
             btnCreateAccount.setOnClickListener(this);
