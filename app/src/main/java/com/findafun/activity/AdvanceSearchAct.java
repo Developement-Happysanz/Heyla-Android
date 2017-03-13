@@ -231,9 +231,10 @@ public class AdvanceSearchAct extends AppCompatActivity implements AdapterView.O
         findViewById(R.id.btnfrom).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                findViewById(R.id.btnselectdate).setBackgroundColor(getResources().getColor(R.color.btngreybg));
-                findViewById(R.id.btntomorrow).setBackgroundColor(getResources().getColor(R.color.btngreybg));
-                findViewById(R.id.btntoday).setBackgroundColor(getResources().getColor(R.color.btngreybg));
+
+                findViewById(R.id.btnselectdate).setBackgroundResource(R.drawable.bg_advanced_filter_properties);
+                findViewById(R.id.btntomorrow).setBackgroundResource(R.drawable.bg_advanced_filter_properties);
+                findViewById(R.id.btntoday).setBackgroundResource(R.drawable.bg_advanced_filter_properties);
                 ((Button) findViewById(R.id.btnselectdate)).setText("DD-MM-YYYY");
 
                 singleDate = "";
@@ -285,9 +286,9 @@ public class AdvanceSearchAct extends AppCompatActivity implements AdapterView.O
         findViewById(R.id.btnto).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                findViewById(R.id.btnselectdate).setBackgroundColor(getResources().getColor(R.color.btngreybg));
-                findViewById(R.id.btntomorrow).setBackgroundColor(getResources().getColor(R.color.btngreybg));
-                findViewById(R.id.btntoday).setBackgroundColor(getResources().getColor(R.color.btngreybg));
+                findViewById(R.id.btnselectdate).setBackgroundResource(R.drawable.bg_advanced_filter_properties);
+                findViewById(R.id.btntomorrow).setBackgroundResource(R.drawable.bg_advanced_filter_properties);
+                findViewById(R.id.btntoday).setBackgroundResource(R.drawable.bg_advanced_filter_properties);
                 ((Button) findViewById(R.id.btnselectdate)).setText("DD-MM-YYYY");
                 singleDate = "";
                 todayPressed = false;
@@ -390,9 +391,9 @@ public class AdvanceSearchAct extends AppCompatActivity implements AdapterView.O
                 ((Button) findViewById(R.id.btnfrom)).setText("");
                 ((Button) findViewById(R.id.btnto)).setText("");
                 if (!datePressed) {
-                    findViewById(R.id.btnselectdate).setBackgroundColor(getResources().getColor(R.color.colorRed));
-                    findViewById(R.id.btntomorrow).setBackgroundColor(getResources().getColor(R.color.btngreybg));
-                    findViewById(R.id.btntoday).setBackgroundColor(getResources().getColor(R.color.btngreybg));
+                    findViewById(R.id.btnselectdate).setBackgroundResource(R.drawable.bg_advance_filter_orange);
+                    findViewById(R.id.btntomorrow).setBackgroundResource(R.drawable.bg_advanced_filter_properties);
+                    findViewById(R.id.btntoday).setBackgroundResource(R.drawable.bg_advanced_filter_properties);
                    final DatePickerDialog.OnDateSetListener singledate = new DatePickerDialog.OnDateSetListener() {
 
                         public void onDateSet(DatePicker view, int year, int month, int day) {
@@ -435,9 +436,9 @@ public class AdvanceSearchAct extends AppCompatActivity implements AdapterView.O
                     datePressed = true;
 
                 } else {
-                    findViewById(R.id.btnselectdate).setBackgroundColor(getResources().getColor(R.color.btngreybg));
-                    findViewById(R.id.btntomorrow).setBackgroundColor(getResources().getColor(R.color.btngreybg));
-                    findViewById(R.id.btntoday).setBackgroundColor(getResources().getColor(R.color.btngreybg));
+                    findViewById(R.id.btnselectdate).setBackgroundResource(R.drawable.bg_advanced_filter_properties);
+                    findViewById(R.id.btntomorrow).setBackgroundResource(R.drawable.bg_advanced_filter_properties);
+                    findViewById(R.id.btntoday).setBackgroundResource(R.drawable.bg_advanced_filter_properties);
                     singleDate = "";
                     datePressed = false;
                     todayPressed = false;
@@ -450,9 +451,9 @@ public class AdvanceSearchAct extends AppCompatActivity implements AdapterView.O
                 ((Button) findViewById(R.id.btnto)).setText("");
                 if (!tomorrowPressed) {
 
-                    findViewById(R.id.btnselectdate).setBackgroundColor(getResources().getColor(R.color.btngreybg));
-                    findViewById(R.id.btntomorrow).setBackgroundColor(getResources().getColor(R.color.colorRed));
-                    findViewById(R.id.btntoday).setBackgroundColor(getResources().getColor(R.color.btngreybg));
+                    findViewById(R.id.btnselectdate).setBackgroundResource(R.drawable.bg_advanced_filter_properties);
+                    findViewById(R.id.btntomorrow).setBackgroundResource(R.drawable.bg_advance_filter_orange);
+                    findViewById(R.id.btntoday).setBackgroundResource(R.drawable.bg_advanced_filter_properties);
                     // singleDate=((Button)findViewById(R.id.btntomorrow)).getText().toString();
 
                     final Calendar c = Calendar.getInstance();
@@ -481,9 +482,9 @@ public class AdvanceSearchAct extends AppCompatActivity implements AdapterView.O
                 ((Button) findViewById(R.id.btnto)).setText("");
                 ((Button) findViewById(R.id.btnselectdate)).setText("DD-MM-YYYY");
                 if (!todayPressed) {
-                    findViewById(R.id.btnselectdate).setBackgroundColor(getResources().getColor(R.color.btngreybg));
-                    findViewById(R.id.btntomorrow).setBackgroundColor(getResources().getColor(R.color.btngreybg));
-                    findViewById(R.id.btntoday).setBackgroundColor(getResources().getColor(R.color.colorRed));
+                    findViewById(R.id.btnselectdate).setBackgroundResource(R.drawable.bg_advanced_filter_properties);
+                    findViewById(R.id.btntomorrow).setBackgroundResource(R.drawable.bg_advanced_filter_properties);
+                    findViewById(R.id.btntoday).setBackgroundResource(R.drawable.bg_advance_filter_orange);
                     final Calendar c1 = Calendar.getInstance();
                     final int currentYear1 = c1.get(Calendar.YEAR);
                     final int currentMonth1 = c1.get(Calendar.MONTH) ;
@@ -494,9 +495,9 @@ public class AdvanceSearchAct extends AppCompatActivity implements AdapterView.O
                     Log.e("Singledate", "singleDate : " + singleDate);
                     todayPressed = true;
                 } else {
-                    findViewById(R.id.btnselectdate).setBackgroundColor(getResources().getColor(R.color.btngreybg));
-                    findViewById(R.id.btntomorrow).setBackgroundColor(getResources().getColor(R.color.btngreybg));
-                    findViewById(R.id.btntoday).setBackgroundColor(getResources().getColor(R.color.btngreybg));
+                    findViewById(R.id.btnselectdate).setBackgroundResource(R.drawable.bg_advanced_filter_properties);
+                    findViewById(R.id.btntomorrow).setBackgroundResource(R.drawable.bg_advanced_filter_properties);
+                    findViewById(R.id.btntoday).setBackgroundResource(R.drawable.bg_advanced_filter_properties);
                     singleDate = "";
                     todayPressed = false;
                     datePressed = false;

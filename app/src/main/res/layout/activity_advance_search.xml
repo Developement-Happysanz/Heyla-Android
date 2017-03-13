@@ -71,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:background="@color/btngreybg"
+                    android:background="@drawable/bg_advanced_filter_properties"
                     android:text="Today"
                     android:textAllCaps="false"
                     android:textColor="@color/white" />
@@ -82,7 +82,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:background="@color/btngreybg"
+                    android:background="@drawable/bg_advanced_filter_properties"
                     android:text="Tomorrow"
                     android:textAllCaps="false"
                     android:textColor="@color/white" />
@@ -93,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:background="@color/colorRed"
+                    android:background="@drawable/bg_advance_filter_orange"
                     android:text="DD-MM-YYYY"
                     android:textAllCaps="false"
                     android:textColor="@color/white" />
@@ -118,6 +118,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tveventtype"
+                android:spinnerMode="dialog"
                 android:layout_marginBottom="@dimen/mainmargin"
                 android:textSize="15sp"></Spinner>
 
@@ -174,7 +175,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvsortbycity"
-                android:background="@drawable/gradient_spinner"
+                android:background="@drawable/new_gradient_spinner"
                 android:clickable="false"
                 android:cursorVisible="false"
                 android:focusable="false"
@@ -214,7 +215,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvfrom"
                 android:layout_marginBottom="@dimen/mainmargin"
-                android:background="@drawable/gradient_spinner"
+                android:background="@drawable/new_gradient_spinner"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
@@ -235,7 +236,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvto"
                 android:layout_marginBottom="16dp"
-                android:background="@drawable/gradient_spinner"
+                android:background="@drawable/new_gradient_spinner"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
@@ -252,7 +253,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:background="@drawable/numberpickerbg"
+                    android:background="@drawable/bg_advanced_filter_cancel"
                     android:text="Cancel"
                     android:textAllCaps="false"
                     android:textColor="@color/white" />
@@ -263,7 +264,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:background="@color/colorRed"
+                    android:background="@drawable/bg_advance_filter_orange"
                     android:text="Search"
                     android:textAllCaps="false"
                     android:textColor="@color/white" />
