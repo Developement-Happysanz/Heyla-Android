@@ -36,7 +36,7 @@ import com.findafun.utils.PreferenceStorage;
 public class LoginDashboardActivity extends AppCompatActivity implements View.OnClickListener, DialogClickListener {
 
     private static final String TAG = LoginDashboardActivity.class.getName();
-    TextView txtGFLogin;
+    TextView txtGFLogin, txtOR;
     private ImageView imgLogin, imgCreateAccount;
     private ImageView btnFacebook, btnGPlus, txtGuestLogin;
     private ImageView btnLogin, btnCreateAccount;
@@ -85,10 +85,12 @@ public class LoginDashboardActivity extends AppCompatActivity implements View.On
             btnCreateAccount = (ImageView) findViewById(R.id.btn_create_new_account);
             txtGuestLogin = (ImageView) findViewById(R.id.btn_guest_login);
             txtGFLogin = (TextView)findViewById(R.id.txt_gflogin);
+            txtOR = (TextView)findViewById(R.id.txt_or);
+
 
             Typeface myFont = Typeface.createFromAsset(getAssets(),"Roboto.ttf");
             txtGFLogin.setTypeface(myFont);
-
+            txtOR.setTypeface(myFont);
             btnLogin.setOnClickListener(this);
             btnCreateAccount.setOnClickListener(this);
             txtGuestLogin.setOnClickListener(this);
