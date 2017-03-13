@@ -207,17 +207,18 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
                             android:layout_marginTop="1dp"
                             android:src="@drawable/shareicon" />
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="30dp"
+                            android:gravity="bottom"
                             android:text="SHARE"
                             android:textColor="@color/white"
-                            android:textSize="16dp"
+                            android:textSize="14dp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -237,17 +238,18 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginTop="1dp"
                             android:src="@drawable/contact" />
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="30dp"
+                            android:gravity="bottom"
                             android:text="CONTACT"
                             android:textColor="@color/white"
-                            android:textSize="16dp"
+                            android:textSize="14dp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -275,17 +277,18 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginTop="1dp"
                             android:src="@drawable/interested" />
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="30dp"
+                            android:gravity="bottom"
                             android:text="INTERESTED"
                             android:textColor="@color/white"
-                            android:textSize="16dp"
+                            android:textSize="14dp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -306,7 +309,7 @@
                         <Switch
                             android:id="@+id/checkins_btn"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="35dp"
                             android:layout_marginBottom="9dp"
                             android:checked="false"
                             android:textAllCaps="true"
@@ -317,7 +320,7 @@
                             android:layout_height="wrap_content"
                             android:text="CHECK-IN"
                             android:textColor="@color/white"
-                            android:textSize="16dp"
+                            android:textSize="14dp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
