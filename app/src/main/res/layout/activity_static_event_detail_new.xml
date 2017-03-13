@@ -143,13 +143,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:background="@android:color/transparent"
+                    android:background="@color/city_text_color"
                     android:paddingBottom="8dp"
                     android:paddingLeft="20dp"
                     android:paddingRight="10dp"
                     android:paddingTop="8dp"
                     android:textColor="@android:color/white"
-                    android:textSize="21dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
             </RelativeLayout>
@@ -186,7 +186,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="1dp"
                     android:background="@color/event_detail_bg_color"></View>
 
                 <LinearLayout
