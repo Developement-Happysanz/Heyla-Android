@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -121,6 +122,9 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
         initializeNavigationDrawer();
         initializeViews();
         context = getApplicationContext();
+        Typeface myFont = Typeface.createFromAsset(getAssets(),"fonts/Roboto.ttf");
+        navUserCity.setTypeface(myFont);
+        navUserName.setTypeface(myFont);
         eventServiceHelper = new EventServiceHelper(this);
         eventServiceHelper.setEventServiceListener(this);
         fetchBookmarks();

@@ -3,6 +3,7 @@ package com.findafun.activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -48,15 +49,18 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
     private ProgressDialogHelper progressDialogHelper;
     private MenuItem menuSet;
     private GridLayoutManager mLayoutManager;
-    private TextView txtGetStarted;
+    private TextView txtGetStarted, txtSelect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_preference);
-
+        Typeface myFont = Typeface.createFromAsset(getAssets(),"fonts/Roboto.ttf");
+        txtGetStarted.setTypeface(myFont);
         txtGetStarted = (TextView) findViewById(R.id.text_getStarted);
         txtGetStarted.setOnClickListener(this);
+        txtSelect.setTypeface(myFont);
+        txtSelect = (TextView) findViewById(R.id.text_select);
         mRecyclerView = (RecyclerView) findViewById(R.id.listView_categories);
 
         mLayoutManager = new GridLayoutManager(this, 6);

@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 
+import android.graphics.Typeface;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -78,7 +79,7 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
     private Activity activity;
     GoogleApiClient mGoogleApiClient = null;
     Location mLastLocation = null;
-    private TextView txtTaptoView;
+    private TextView txtTaptoView, autoselectCity;
     private ProgressDialog mProgressDialog = null;
     protected ProgressDialogHelper progressDialogHelper;
     private String country = null;
@@ -89,9 +90,12 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_city);
-
+        Typeface myFont = Typeface.createFromAsset(getAssets(),"fonts/Roboto.ttf");
         txtTaptoView = (TextView) findViewById(R.id.txt_swipe_up);
-
+        txtCityDropDown.setTypeface(myFont);
+        txtCountryDropDown.setTypeface(myFont);
+        txtTaptoView.setTypeface(myFont);
+        autoselectCity.setTypeface(myFont);
         mDecorView = getWindow().getDecorView();
         mDecorView.setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
@@ -129,7 +133,7 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
         eventServiceHelper.setEventServiceListener(this);
         progressDialogHelper = new ProgressDialogHelper(getApplicationContext());
 
-        TextView autoselectCity = (TextView) findViewById(R.id.auto_select_location);
+        autoselectCity = (TextView) findViewById(R.id.auto_select_location);
 
         autoselectCity.setOnClickListener(new View.OnClickListener() {
             @Override

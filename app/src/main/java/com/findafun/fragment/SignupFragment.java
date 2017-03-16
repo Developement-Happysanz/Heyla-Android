@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -103,7 +104,7 @@ public class SignupFragment extends Fragment implements View.OnClickListener, IS
     private SignUpServiceHelper signUpServiceHelper;
     private EditText edtUserName, edtPassword, name, city,edtPromocode;
     private ProgressDialogHelper progressDialogHelper;
-    private TextView txtSignUp;
+    private TextView txtSignUp, termsView, titleView, agree;
     private static GoogleApiClient mGoogleApiClient;
     private int REQUEST_SOLVE_CONNECTION = 999;
     private boolean mSignInClicked;
@@ -136,8 +137,16 @@ public class SignupFragment extends Fragment implements View.OnClickListener, IS
         checkPlayServices();
 
         viewResult = initializeViews(view);
-        // Initialize Facebook SDK
 
+        Typeface myFont = Typeface.createFromAsset(getActivity().getAssets(),"fonts/Roboto.ttf");
+        edtPassword.setTypeface(myFont);
+        edtPromocode.setTypeface(myFont);
+        edtUserName.setTypeface(myFont);
+        titleView.setTypeface(myFont);
+        agree.setTypeface(myFont);
+        termsView.setTypeface(myFont);
+
+        // Initialize Facebook SDK
         FacebookSdk.sdkInitialize(getActivity());
         try {
             PackageInfo info = getActivity().getPackageManager().getPackageInfo(
@@ -163,6 +172,7 @@ public class SignupFragment extends Fragment implements View.OnClickListener, IS
         progressDialogHelper = new ProgressDialogHelper(getActivity());
 
         return viewResult;
+
     }
 
     private boolean checkPlayServices() {
@@ -589,8 +599,9 @@ public class SignupFragment extends Fragment implements View.OnClickListener, IS
         edtPassword = (EditText) view.findViewById(R.id.editText_password);
         edtPromocode= (EditText) view.findViewById(R.id.editText_promocode);
         name = (EditText) view.findViewById(R.id.editText_name);
-
-        TextView termsView = (TextView) view.findViewById(R.id.textView_terms);
+        titleView =(TextView) view.findViewById(R.id.create_title);
+        agree = (TextView) view.findViewById(R.id.textView_agreeing_up);
+        termsView = (TextView) view.findViewById(R.id.textView_terms);
         SpannableString string = new SpannableString("Terms and conditions");
         string.setSpan(new UnderlineSpan(), 0, string.length(), 0);
         termsView.setText(string);
