@@ -3,11 +3,13 @@ package com.findafun.fragment;
 import android.Manifest;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
+import android.content.res.AssetManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -73,6 +75,8 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.Arrays;
 
+import static android.graphics.Typeface.createFromAsset;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -98,9 +102,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Dia
     //LoginButton btnFacebook;
     private Button btnSignIn;
     private SignUpServiceHelper signUpServiceHelper;
-    private EditText edtUserName, edtPassword, name, city;
+    private EditText edtUserName, edtPassword;
     private ProgressDialogHelper progressDialogHelper;
-    private TextView txtSignUp;
+    private TextView titleWel, forgotPass, txtSignUp;
     private GoogleApiClient mGoogleApiClient;
     private int REQUEST_SOLVE_CONNECTION = 999;
     private boolean mSignInClicked;
@@ -186,6 +190,11 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Dia
 
         // Inflate the layout for this fragment
         return viewResult;
+
+        //Typeface myFont = createFromAsset(getActivity().getAssets(),"Roboto.ttf" );
+        //titleWel.setTypeface(myFont);
+        //forgotPass.setTypeface(myFont);
+
     }
 
     // Initialize Views
@@ -201,7 +210,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Dia
 
         edtUserName = (EditText) view.findViewById(R.id.editText_email);
         edtPassword = (EditText) view.findViewById(R.id.editText_password);
-
+        titleWel = (TextView) view.findViewById(R.id.txt_welcome);
+        forgotPass =(TextView) view.findViewById(R.id.text_forgot);
         txtGuestLogin = (ImageView) view.findViewById(R.id.text_guest);
         //  name = (EditText) findViewById(R.id.editText_name);
 
