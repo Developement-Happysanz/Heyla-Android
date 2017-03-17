@@ -1,10 +1,18 @@
 [
     {
-        "merged": "E:\\Happy Sanz\\Palpro Tech\\Heyla\\Workspace\\Heyla\\pulltorefresh-and-loadmore\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ic_launcher.png",
-        "source": "E:\\Happy Sanz\\Palpro Tech\\Heyla\\Workspace\\Heyla\\pulltorefresh-and-loadmore\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_launcher.png"
+        "merged": "/Users/Naren/Workspace/Heyla/E:\\Happy Sanz\\Palpro Tech\\Heyla\\Workspace\\Heyla\\pulltorefresh-and-loadmore\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ic_launcher.png",
+        "source": "/Users/Naren/Workspace/Heyla/E:\\Happy Sanz\\Palpro Tech\\Heyla\\Workspace\\Heyla\\pulltorefresh-and-loadmore\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_launcher.png"
     },
     {
-        "merged": "E:\\Happy Sanz\\Palpro Tech\\Heyla\\Workspace\\Heyla\\pulltorefresh-and-loadmore\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ic_pulltorefresh_arrow.png",
-        "source": "E:\\Happy Sanz\\Palpro Tech\\Heyla\\Workspace\\Heyla\\pulltorefresh-and-loadmore\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_pulltorefresh_arrow.png"
+        "merged": "/Users/Naren/Workspace/Heyla/pulltorefresh-and-loadmore/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/ic_launcher.png",
+        "source": "/Users/Naren/Workspace/Heyla/pulltorefresh-and-loadmore/build/intermediates/bundles/debug/res/drawable-hdpi-v4/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/Naren/Workspace/Heyla/E:\\Happy Sanz\\Palpro Tech\\Heyla\\Workspace\\Heyla\\pulltorefresh-and-loadmore\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ic_pulltorefresh_arrow.png",
+        "source": "/Users/Naren/Workspace/Heyla/E:\\Happy Sanz\\Palpro Tech\\Heyla\\Workspace\\Heyla\\pulltorefresh-and-loadmore\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_pulltorefresh_arrow.png"
+    },
+    {
+        "merged": "/Users/Naren/Workspace/Heyla/pulltorefresh-and-loadmore/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/ic_pulltorefresh_arrow.png",
+        "source": "/Users/Naren/Workspace/Heyla/pulltorefresh-and-loadmore/build/intermediates/bundles/debug/res/drawable-hdpi-v4/ic_pulltorefresh_arrow.png"
     }
 ]

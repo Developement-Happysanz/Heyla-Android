@@ -1,10 +1,18 @@
 [
     {
-        "merged": "E:\\Happy Sanz\\Palpro Tech\\Heyla\\Workspace\\Heyla\\pulltorefresh-and-loadmore\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header.xml",
-        "source": "E:\\Happy Sanz\\Palpro Tech\\Heyla\\Workspace\\Heyla\\pulltorefresh-and-loadmore\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header.xml"
+        "merged": "/Users/Naren/Workspace/Heyla/E:\\Happy Sanz\\Palpro Tech\\Heyla\\Workspace\\Heyla\\pulltorefresh-and-loadmore\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header.xml",
+        "source": "/Users/Naren/Workspace/Heyla/E:\\Happy Sanz\\Palpro Tech\\Heyla\\Workspace\\Heyla\\pulltorefresh-and-loadmore\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header.xml"
     },
     {
-        "merged": "E:\\Happy Sanz\\Palpro Tech\\Heyla\\Workspace\\Heyla\\pulltorefresh-and-loadmore\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\load_more_footer.xml",
-        "source": "E:\\Happy Sanz\\Palpro Tech\\Heyla\\Workspace\\Heyla\\pulltorefresh-and-loadmore\\build\\intermediates\\bundles\\debug\\res\\layout\\load_more_footer.xml"
+        "merged": "/Users/Naren/Workspace/Heyla/E:\\Happy Sanz\\Palpro Tech\\Heyla\\Workspace\\Heyla\\pulltorefresh-and-loadmore\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\load_more_footer.xml",
+        "source": "/Users/Naren/Workspace/Heyla/E:\\Happy Sanz\\Palpro Tech\\Heyla\\Workspace\\Heyla\\pulltorefresh-and-loadmore\\build\\intermediates\\bundles\\debug\\res\\layout\\load_more_footer.xml"
+    },
+    {
+        "merged": "/Users/Naren/Workspace/Heyla/pulltorefresh-and-loadmore/build/intermediates/res/merged/androidTest/debug/layout/pull_to_refresh_header.xml",
+        "source": "/Users/Naren/Workspace/Heyla/pulltorefresh-and-loadmore/build/intermediates/bundles/debug/res/layout/pull_to_refresh_header.xml"
+    },
+    {
+        "merged": "/Users/Naren/Workspace/Heyla/pulltorefresh-and-loadmore/build/intermediates/res/merged/androidTest/debug/layout/load_more_footer.xml",
+        "source": "/Users/Naren/Workspace/Heyla/pulltorefresh-and-loadmore/build/intermediates/bundles/debug/res/layout/load_more_footer.xml"
     }
 ]
