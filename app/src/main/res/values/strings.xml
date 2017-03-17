@@ -78,7 +78,7 @@
 
     <!--live-->
     <!--<string name="google_maps_key">AIzaSyAr-fwAC4VlMY-oJufV0V6tyJnr__Ia2ag</string>-->
-    <string name="google_maps_key">AIzaSyAu_qu78gnxiWl83tifUPiXxjkVoUPHOZw</string>
+    <string name="google_maps_key">AIzaSyA6oarI_gtl1sfcA5DG1nPhi24MCizkiyM</string>
     <!--live-->
 
     <string name="gps_network_not_enabled">Enable GPS</string>

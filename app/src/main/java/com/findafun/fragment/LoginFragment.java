@@ -42,9 +42,11 @@ import com.findafun.R;
 import com.findafun.activity.ForgotPasswordActivity;
 import com.findafun.activity.LandingActivity;
 import com.findafun.activity.LoginActivity;
+import com.findafun.activity.ResetPasswordActivity;
 import com.findafun.activity.SelectCityActivity;
 import com.findafun.activity.SelectPreferenceActivity;
 import com.findafun.activity.SignUpActivity;
+import com.findafun.activity.heyla.LoginDashboardActivity;
 import com.findafun.bean.gamification.GamificationDataHolder;
 import com.findafun.helper.AlertDialogHelper;
 import com.findafun.helper.ProgressDialogHelper;
@@ -838,6 +840,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Dia
                         String occupation = userData.getString("occupation");
                         String promocode = userData.getString("promocode");
                         String userImageUrl = userData.getString("user_image");
+                        String forgotPasswordStatus = userData.getString("forgot_pass_status");
                         if ((name != null) && !(name.isEmpty()) && !name.equalsIgnoreCase("null")) {
                             PreferenceStorage.saveUserName(getActivity(), name);
                         }
@@ -872,7 +875,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Dia
                         }
                         if ((userImageUrl != null) && !(userImageUrl.isEmpty()) && !userImageUrl.equalsIgnoreCase("null")) {
                             PreferenceStorage.saveProfilePic(getActivity(), userImageUrl);
-
+                        }
+                        if ((forgotPasswordStatus != null) && !(forgotPasswordStatus.isEmpty()) && !forgotPasswordStatus.equalsIgnoreCase("null")) {
+                            PreferenceStorage.saveForgotPasswordStatus(getActivity(), forgotPasswordStatus);
                         }
 
                     } else {
@@ -896,12 +901,22 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Dia
                 e.printStackTrace();
             }
 
-            //clear out data for old Login
-            GamificationDataHolder.getInstance().clearGamificationData();
-            Intent intent = new Intent(getActivity(), SelectCityActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-            getActivity().finish();
+            if (PreferenceStorage.getForgotPasswordStatus(getActivity()).equalsIgnoreCase("1")) {
+                //clear out data for old Login
+                GamificationDataHolder.getInstance().clearGamificationData();
+                Intent intent = new Intent(getActivity(), SelectCityActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                getActivity().finish();
+            } else {
+                //clear out data for old Login
+//                GamificationDataHolder.getInstance().clearGamificationData();
+                Intent intent = new Intent(getActivity(), ResetPasswordActivity.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+//                getActivity().finish();
+            }
+
         } else {
             Log.d(TAG, "Error while sign In");
         }

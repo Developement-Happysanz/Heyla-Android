@@ -61,7 +61,7 @@ public class FindAFunConstants {
 
     //Service Params
     public static String PARAM_MESSAGE = "msg";
-    public static final String DEFAULT_PASSWORD = "hobbistan123";
+    public static final String DEFAULT_PASSWORD = "heyla123";
 
     // Alert Dialog Constants
     public static String ALERT_DIALOG_TITLE = "alertDialogTitle";
@@ -95,6 +95,7 @@ public class FindAFunConstants {
     public static final String KEY_USER_HAS_PREFERENCES = "hasPreferences";
     public static final String KEY_USER_PHONE = "phone";
     public static final String KEY_LOGIN_MODE = "loginMode";
+    public static final String KEY_FORGOT_PASSWORD_STATUS = "forgot_password_status";
     public static final String KEY_FACEBOOK_URL ="profileUrl";
     public static final String KEY_TWITTER_LOGGED_IN = "twitterLoggedIn";
     public static final String KEY_USER_GENDER ="gender";
@@ -126,7 +127,7 @@ public class FindAFunConstants {
     public static String PREFERENCE_TWITTER_OAUTH_TOKEN_SECRET="TWITTER_OAUTH_TOKEN_SECRET";
 
     // Google Project Number
-    public static final String GOOGLE_PROJECT_ID = "1026979055226";
+    public static final String GOOGLE_PROJECT_ID = "41690620391";
     public static final String MESSAGE_KEY = "message";
 
 }

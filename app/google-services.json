@@ -1,35 +1,33 @@
 {
   "project_info": {
-    "project_number": "1026979055226",
-    "firebase_url": "https://heylaapp.firebaseio.com",
-    "project_id": "heylaapp",
-    "storage_bucket": "heylaapp.appspot.com"
+    "project_number": "41690620391",
+    "project_id": "heyla-161512"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1026979055226:android:47ccefd453a4cb11",
+        "mobilesdk_app_id": "1:41690620391:android:45e23566081342ad",
         "android_client_info": {
-          "package_name": "com.palprotech.heyla"
+          "package_name": "com.findafun"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1026979055226-4ufb35efvcjr8uti8uhm48mhf505q8r0.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.palprotech.heyla",
-            "certificate_hash": "59e672459a769737479f02258a9d2b12879b06e9"
-          }
+          "client_id": "41690620391-dpe1fklb8a8379sh8mhjmpkmu0iacv34.apps.googleusercontent.com",
+          "client_type": 3
         },
         {
-          "client_id": "1026979055226-85ctjqthkol7mm96hrigdelt5snpci3d.apps.googleusercontent.com",
-          "client_type": 3
+          "client_id": "41690620391-c0qujdph4prrlmgtecjo3vc1fdds9ac7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.findafun",
+            "certificate_hash": "59e672459a769737479f02258a9d2b12879b06e9"
+          }
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAZLV8PcZw2aAc--rhs4KBqTSmn77Tci5Q"
+          "current_key": "AIzaSyCDaFtkz5dQZU3a7O6kS_-AmtX1-tAYtKc"
         }
       ],
       "services": {
@@ -37,16 +35,50 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1026979055226-85ctjqthkol7mm96hrigdelt5snpci3d.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
-          "status": 2
+          "status": 1
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:41690620391:android:47ccefd453a4cb11",
+        "android_client_info": {
+          "package_name": "com.palprotech.heyla"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "41690620391-d2lj2m73baaedps2hbqu6p5bj0m37v55.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.palprotech.heyla",
+            "certificate_hash": "59e672459a769737479f02258a9d2b12879b06e9"
+          }
+        },
+        {
+          "client_id": "41690620391-dpe1fklb8a8379sh8mhjmpkmu0iacv34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDaFtkz5dQZU3a7O6kS_-AmtX1-tAYtKc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
         }
       }
     }
