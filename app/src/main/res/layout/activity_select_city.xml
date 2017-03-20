@@ -42,6 +42,7 @@
         android:paddingTop="10dp"
         android:text="@string/select_country"
         android:textColor="@color/white"
+        android:fontFamily="sans-serif"
         android:textSize="22sp" />
 
     <EditText
@@ -85,6 +86,7 @@
             android:text="Auto-detect my location"
             android:textColor="@color/colorRed"
             android:textSize="20dp"
+            android:fontFamily="sans-serif-light"
             android:textStyle="italic|bold" />
 
         <ImageView
@@ -107,6 +109,7 @@
         android:gravity="center"
         android:padding="10dp"
         android:text="@string/tab_to_continue"
+        android:fontFamily="sans-serif"
         android:textColor="@color/white"
         android:textSize="18sp" />
 

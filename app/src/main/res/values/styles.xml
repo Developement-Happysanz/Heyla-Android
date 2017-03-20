@@ -40,7 +40,15 @@
         <item name="cornerRadius">10dp</item>
     </style>
 -->
-
+    <style name="datePickerTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/colorRed</item>
+        <item name="colorPrimaryDark">@color/colorRed</item>
+        <item name="colorAccent">@color/colorRed</item>
+        <item name="android:textColorPrimary">@color/colorRed</item>
+        <item name="android:textColorSecondary">@color/colorRed</item>
+        <item name="android:textColorTertiary">@color/colorRed</item>
+        <item name="android:colorBackground">@color/gray_2</item>
+    </style>
 
 
 

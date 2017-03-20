@@ -133,7 +133,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Dia
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_login, container, false);
-        Typeface myFont = Typeface.createFromAsset(getActivity().getAssets(),"fonts/Roboto.ttf");
         if (PreferenceStorage.getUserId(getActivity()) != null && FindAFunValidator.checkNullString(PreferenceStorage.getUserId(getActivity()))) {
             String city = PreferenceStorage.getUserCity(getActivity());
             boolean haspreferences = PreferenceStorage.isPreferencesPresent(getActivity());
@@ -184,11 +183,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Dia
             btnGPlus.setOnClickListener(this);
             btnSignIn.setOnClickListener(this);
             txtGuestLogin.setOnClickListener(this);
-            titleWel.setTypeface(myFont);
-            forgotPass.setTypeface(myFont);
-            edtPassword.setTypeface(myFont);
-            edtUserName.setTypeface(myFont);
-
             signUpServiceHelper = new SignUpServiceHelper(getActivity());
             signUpServiceHelper.setSignUpServiceListener(this);
             progressDialogHelper = new ProgressDialogHelper(getActivity());

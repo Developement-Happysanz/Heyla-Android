@@ -55,11 +55,8 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_preference);
-        Typeface myFont = Typeface.createFromAsset(getAssets(),"fonts/Roboto.ttf");
-        txtGetStarted.setTypeface(myFont);
         txtGetStarted = (TextView) findViewById(R.id.text_getStarted);
         txtGetStarted.setOnClickListener(this);
-        txtSelect.setTypeface(myFont);
         txtSelect = (TextView) findViewById(R.id.text_select);
         mRecyclerView = (RecyclerView) findViewById(R.id.listView_categories);
 

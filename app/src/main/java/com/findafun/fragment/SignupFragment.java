@@ -138,14 +138,6 @@ public class SignupFragment extends Fragment implements View.OnClickListener, IS
 
         viewResult = initializeViews(view);
 
-        Typeface myFont = Typeface.createFromAsset(getActivity().getAssets(),"fonts/Roboto.ttf");
-        edtPassword.setTypeface(myFont);
-        edtPromocode.setTypeface(myFont);
-        edtUserName.setTypeface(myFont);
-        titleView.setTypeface(myFont);
-        agree.setTypeface(myFont);
-        termsView.setTypeface(myFont);
-
         // Initialize Facebook SDK
         FacebookSdk.sdkInitialize(getActivity());
         try {

@@ -87,10 +87,6 @@ public class LoginDashboardActivity extends AppCompatActivity implements View.On
             txtGFLogin = (TextView)findViewById(R.id.txt_gflogin);
             txtOR = (TextView)findViewById(R.id.txt_or);
 
-
-            Typeface myFont = Typeface.createFromAsset(getAssets(),"fonts/Roboto.ttf");
-            txtGFLogin.setTypeface(myFont);
-            txtOR.setTypeface(myFont);
             btnLogin.setOnClickListener(this);
             btnCreateAccount.setOnClickListener(this);
             txtGuestLogin.setOnClickListener(this);

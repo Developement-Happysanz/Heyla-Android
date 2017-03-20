@@ -122,9 +122,6 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
         initializeNavigationDrawer();
         initializeViews();
         context = getApplicationContext();
-        Typeface myFont = Typeface.createFromAsset(getAssets(),"fonts/Roboto.ttf");
-        navUserCity.setTypeface(myFont);
-        navUserName.setTypeface(myFont);
         eventServiceHelper = new EventServiceHelper(this);
         eventServiceHelper.setEventServiceListener(this);
         fetchBookmarks();

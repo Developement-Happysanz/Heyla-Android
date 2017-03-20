@@ -241,7 +241,7 @@ public class AdvanceSearchAct extends AppCompatActivity implements AdapterView.O
                 todayPressed = false;
                 datePressed = false;
                 tomorrowPressed = false;
-                mFromDatePickerDialog = new DatePickerDialog(AdvanceSearchAct.this, fromdate, currentYear,
+                mFromDatePickerDialog = new DatePickerDialog(AdvanceSearchAct.this,R.style.datePickerTheme, fromdate, currentYear,
                         currentMonth, currentDay);
 
                 mFromDatePickerDialog.setButton(DatePickerDialog.BUTTON_POSITIVE, "Done", new DialogInterface.OnClickListener() {
@@ -294,7 +294,7 @@ public class AdvanceSearchAct extends AppCompatActivity implements AdapterView.O
                 todayPressed = false;
                 datePressed = false;
                 tomorrowPressed = false;
-                final DatePickerDialog dpd = new DatePickerDialog(AdvanceSearchAct.this, todate, currentYear,
+                final DatePickerDialog dpd = new DatePickerDialog(AdvanceSearchAct.this,R.style.datePickerTheme, todate, currentYear,
                         currentMonth, currentDay);
                 dpd.setButton(DatePickerDialog.BUTTON_POSITIVE, "Done", new DialogInterface.OnClickListener() {
                     @Override
@@ -413,7 +413,7 @@ public class AdvanceSearchAct extends AppCompatActivity implements AdapterView.O
                     final int currentYear2 = c2.get(Calendar.YEAR);
                     final int currentMonth2 = c2.get(Calendar.MONTH) ;
                     final int currentDay2 = (c2.get(Calendar.DAY_OF_MONTH));
-                    final DatePickerDialog dpd = new DatePickerDialog(AdvanceSearchAct.this, singledate, currentYear2,
+                    final DatePickerDialog dpd = new DatePickerDialog(AdvanceSearchAct.this,R.style.datePickerTheme, singledate, currentYear2,
                             currentMonth2, currentDay2);
                     dpd.setButton(DatePickerDialog.BUTTON_POSITIVE, "Done", new DialogInterface.OnClickListener() {
                         @Override

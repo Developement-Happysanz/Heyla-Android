@@ -90,12 +90,7 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_city);
-        Typeface myFont = Typeface.createFromAsset(getAssets(),"fonts/Roboto.ttf");
         txtTaptoView = (TextView) findViewById(R.id.txt_swipe_up);
-        txtCityDropDown.setTypeface(myFont);
-        txtCountryDropDown.setTypeface(myFont);
-        txtTaptoView.setTypeface(myFont);
-        autoselectCity.setTypeface(myFont);
         mDecorView = getWindow().getDecorView();
         mDecorView.setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
@@ -244,8 +239,8 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
             Log.d(TAG, "Available cities count" + countrySpinnerAdapter.getCount());
             AlertDialog.Builder builderSingle = new AlertDialog.Builder(this);
             View view = getLayoutInflater().inflate(R.layout.gender_header_layout, null);
-            TextView header = (TextView) view.findViewById(R.id.gender_header);
-            header.setText("Select Country");
+            TextView header1 = (TextView) view.findViewById(R.id.gender_header);
+            header1.setText("Select Country");
             builderSingle.setCustomTitle(view);
 
             builderSingle.setAdapter(countrySpinnerAdapter, new DialogInterface.OnClickListener() {
@@ -257,7 +252,7 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
                     txtCountryDropDown.clearComposingText();
                     new FetchCity().execute();
                     dialog.dismiss();
-
+                    cityList.clear();
                 }
             }).create().show();
         }
@@ -540,6 +535,7 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
                             cityList.add(jsonObject.getString("city_name"));
                         }
                         Log.d(TAG, "Received city list" + jsonArray.length());
+
                     } catch (Exception e1) {
                         e1.printStackTrace();
                     }
@@ -581,6 +577,7 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
                             countryList.add(jsonObject.getString("country_name"));
                         }
                         Log.d(TAG, "Received country list" + jsonArray.length());
+
                     } catch (Exception e1) {
                         e1.printStackTrace();
                     }

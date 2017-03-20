@@ -219,7 +219,8 @@
                             android:text="SHARE"
                             android:textColor="@color/white"
                             android:textSize="14dp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif"/>
 
                     </LinearLayout>
 
@@ -249,6 +250,7 @@
                             android:gravity="bottom"
                             android:text="CONTACT"
                             android:textColor="@color/white"
+                            android:fontFamily="sans-serif"
                             android:textSize="14dp"
                             android:textStyle="bold" />
 
@@ -289,7 +291,8 @@
                             android:text="INTERESTED"
                             android:textColor="@color/white"
                             android:textSize="14dp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif"/>
 
                     </LinearLayout>
 
@@ -321,7 +324,8 @@
                             android:text="CHECK-IN"
                             android:textColor="@color/white"
                             android:textSize="14dp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif"/>
 
                     </LinearLayout>
 
@@ -343,6 +347,7 @@
                     android:drawablePadding="10dp"
                     android:paddingLeft="5dp"
                     android:text="  Booking  "
+                    android:fontFamily="sans-serif"
                     android:textColor="@color/white"
                     android:textSize="16dp"
                     android:textStyle="bold" />
@@ -380,6 +385,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:text=""
+                        android:fontFamily="sans-serif"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
 
@@ -406,6 +412,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_toRightOf="@+id/cal_to_label"
                         android:text=""
+                        android:fontFamily="sans-serif"
                         android:textColor="@color/white"
                         android:textSize="16dp"
                         android:layout_weight="0.88" />
@@ -840,6 +847,7 @@
                                 android:paddingBottom="2dp"
                                 android:paddingTop="5dp"
                                 android:text="Expo"
+                                android:fontFamily="sans-serif-light"
                                 android:textColor="@color/white"
                                 android:textSize="16dp" />
 
@@ -854,6 +862,7 @@
                                 android:layout_marginTop="10dp"
                                 android:clickable="true"
                                 android:text="@string/viewmore"
+                                android:fontFamily="sans-serif-medium"
                                 android:textColor="#ffffff" />
 
                             <TextView
