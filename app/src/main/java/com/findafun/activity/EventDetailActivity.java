@@ -1268,6 +1268,17 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
         //testing
         int ruleid = RuleId;
         int ticketcount = 0;
+        String statusCheckins = "";
+        if(RuleId==1){
+            statusCheckins = "You have shared photo ";
+        }        if (RuleId==2) {
+            statusCheckins = "You have checked in for the ";
+        }        if (RuleId==3) {
+            statusCheckins = "You have engaged for the ";
+        } if (RuleId==3) {
+            statusCheckins = "You have engaged for the ";
+        }
+
         String activitydetail = "You have shared photo" + event.getEventName();
         int eventId = Integer.parseInt(event.getId());
         ShareServiceHelper serviceHelper = new ShareServiceHelper(this);
