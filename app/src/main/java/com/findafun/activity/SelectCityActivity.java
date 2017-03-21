@@ -133,6 +133,7 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
         autoselectCity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                cityList.clear();
                 Log.d(TAG, "fetching the current city based on current location");
                 if ((mLastLocation == null) && (mGoogleApiClient != null)) {
                     mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
@@ -236,11 +237,12 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
                 Toast.makeText(this, "Please select your city", Toast.LENGTH_SHORT).show();
             }
         } else if (v == txtCountryDropDown) {
+
             Log.d(TAG, "Available cities count" + countrySpinnerAdapter.getCount());
             AlertDialog.Builder builderSingle = new AlertDialog.Builder(this);
             View view = getLayoutInflater().inflate(R.layout.gender_header_layout, null);
-            TextView header1 = (TextView) view.findViewById(R.id.gender_header);
-            header1.setText("Select Country");
+            TextView header = (TextView) view.findViewById(R.id.gender_header);
+            header.setText("Select Country");
             builderSingle.setCustomTitle(view);
 
             builderSingle.setAdapter(countrySpinnerAdapter, new DialogInterface.OnClickListener() {
@@ -577,6 +579,7 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
                             countryList.add(jsonObject.getString("country_name"));
                         }
                         Log.d(TAG, "Received country list" + jsonArray.length());
+                        txtCityDropDown.setText("Select your city");
 
                     } catch (Exception e1) {
                         e1.printStackTrace();
