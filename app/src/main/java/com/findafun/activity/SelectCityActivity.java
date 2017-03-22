@@ -135,6 +135,7 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
             public void onClick(View v) {
                 cityList.clear();
                 Log.d(TAG, "fetching the current city based on current location");
+
                 if ((mLastLocation == null) && (mGoogleApiClient != null)) {
                     mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
                             mGoogleApiClient);
@@ -450,6 +451,11 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
 
             if ((result != null) && !(result.isEmpty())) {
                 txtCityDropDown.setText(result.toString());
+
+                country = txtCountryDropDown.getText().toString();
+                new FetchCity().execute();
+                cityList.clear();
+
             } else {
                 Toast.makeText(SelectCityActivity.this, "Unable to retrive current location", Toast.LENGTH_SHORT).show();
             }
