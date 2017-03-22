@@ -51,7 +51,8 @@
                 android:text=""
                 android:textColor="@color/title_red1"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:fontFamily="sans-serif"/>
 
             <TextView
                 android:id="@+id/rewards_user_hobby"
@@ -60,6 +61,7 @@
                 android:layout_below="@+id/rewards_user_name"
                 android:layout_centerHorizontal="true"
                 android:padding="2dp"
+                android:fontFamily="sans-serif"
                 android:text="Music" />
 
             <android.support.design.widget.FloatingActionButton
@@ -106,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
                     android:layout_marginRight="5dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="45dp"
                     android:layout_toRightOf="@+id/rewards_points_image"
                     android:padding="2dp"
                     android:singleLine="true"
@@ -125,6 +127,7 @@
                     android:layout_marginRight="3dp"
                     android:layout_marginTop="8dp"
                     android:lines="3"
+                    android:fontFamily="sans-serif-light"
                     android:text="+300 more points for next Level"
                     android:textSize="11dp" />
 
@@ -174,6 +177,7 @@
                     android:layout_marginTop="8dp"
                     android:lines="3"
                     android:text="Sports,Theatre,Comedy,+2 more"
+                    android:fontFamily="sans-serif-light"
                     android:textSize="11dp" />
 
             </RelativeLayout>
@@ -228,6 +232,7 @@
                     android:focusable="false"
                     android:lines="3"
                     android:text="position in Leaderboard"
+                    android:fontFamily="sans-serif-light"
                     android:textSize="11dp" />
 
             </RelativeLayout>

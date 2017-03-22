@@ -28,6 +28,7 @@
             android:layout_toRightOf="@+id/back_btn"
             android:padding="5dp"
             android:text="LOCAL BOARD"
+            android:fontFamily="sans-serif-medium"
             android:textColor="@color/white"
             android:textSize="22dp" />
 

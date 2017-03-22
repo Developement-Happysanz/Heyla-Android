@@ -17,6 +17,7 @@
         android:paddingRight="10dp"
         android:paddingTop="5dp"
         android:text="Suman"
+        android:fontFamily="sans-serif-medium"
         android:textColor="@color/White"
         android:textSize="15sp" />
 
@@ -29,6 +30,7 @@
         android:clickable="false"
         android:focusable="false"
         android:text=""
+        android:fontFamily="sans-serif-light"
         android:textColor="#FFFF"
         android:textSize="12sp" />
 

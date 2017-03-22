@@ -23,6 +23,7 @@
             android:layout_centerVertical="true"
             android:textColor="@color/black"
             android:layout_marginLeft="5dp"
+            android:fontFamily="sans-serif-medium"
             android:text="Favorite events "
             android:textSize="18dp" />
 
@@ -32,6 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
+            android:fontFamily="sans-serif-medium"
             android:layout_toRightOf="@+id/nearby_totalevents"
             android:text=""
             android:textColor="@color/title_red" />

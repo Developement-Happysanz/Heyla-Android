@@ -37,6 +37,7 @@
                 android:layout_toRightOf="@+id/bookings_back_btn"
                 android:padding="5dp"
                 android:text="LEADERBOARD"
+                android:fontFamily="sans-serif-medium"
                 android:textColor="@color/white"
                 android:textSize="22dp" />
 
@@ -58,6 +59,7 @@
                 android:layout_centerHorizontal="true"
                 android:padding="5dp"
                 android:text="Your rank"
+                android:fontFamily="sans-serif-medium"
                 android:textColor="@color/title_red1"
                 android:textSize="20dp" />
 
@@ -77,9 +79,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/points_label"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="6dp"
                 android:layout_toRightOf="@+id/leaderboard_image"
                 android:text="5"
+                android:fontFamily="sans-serif-medium"
                 android:textSize="50dp" />
 
             <RelativeLayout
@@ -93,6 +96,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
+                    android:fontFamily="sans-serif-medium"
                     android:text="Level:"
                     android:textSize="18dp" />
 
@@ -103,7 +107,8 @@
                     android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@+id/bookings_total_label"
                     android:padding="5dp"
-                    android:text="Ameture"
+                    android:text="Newbie"
+                    android:fontFamily="sans-serif"
                     android:textSize="18dp"
                     android:textStyle="bold" />
             </RelativeLayout>
@@ -131,6 +136,7 @@
                 android:layout_marginTop="10dp"
                 android:padding="5dp"
                 android:text="Global Leaderboard"
+                android:fontFamily="sans-serif-medium"
                 android:textColor="@color/title_red1"
                 android:textSize="20dp" />
 
@@ -158,6 +164,7 @@
                 android:layout_marginTop="10dp"
                 android:padding="5dp"
                 android:text="Local Leaderboard"
+                android:fontFamily="sans-serif-medium"
                 android:textColor="@color/title_red1"
                 android:textSize="20dp" />
 

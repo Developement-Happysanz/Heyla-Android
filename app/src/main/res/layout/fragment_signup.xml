@@ -21,6 +21,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="55dp"
             android:text="Create an account"
+            android:fontFamily="sans-serif"
             android:textColor="@color/colorWhite"
             android:textSize="30dp" />
 
@@ -45,6 +46,7 @@
             android:layout_marginTop="50dp"
             android:gravity="center"
             android:hint="Name"
+            android:fontFamily="sans-serif-light"
             android:textColor="@color/white"
             android:textColorHint="@color/bg_trans" />
 
@@ -69,6 +71,7 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:hint="E-mail id"
+            android:fontFamily="sans-serif-light"
             android:inputType="textEmailAddress"
             android:textColor="@color/white"
             android:textColorHint="@color/bg_trans" />
@@ -80,6 +83,7 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/button_rounded_white_gray_border"
             android:hint="@string/hint_password"
+            android:fontFamily="sans-serif-light"
             android:inputType="textPassword"
             android:padding="15dp"
             android:singleLine="true"
@@ -95,6 +99,7 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:hint="Password"
+            android:fontFamily="sans-serif-light"
             android:inputType="textPassword"
             android:textColor="@color/white"
             android:textColorHint="@color/bg_trans" />
@@ -120,6 +125,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:gravity="center"
+            android:fontFamily="sans-serif-light"
             android:hint="@string/hint_promocode"
             android:textColor="@color/white"
             android:textColorHint="@color/bg_trans" />
@@ -200,6 +206,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-medium"
             android:text="By creating an account you agree to our"
             android:textColor="@color/colorWhite" />
 
@@ -211,6 +218,7 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:text="Terms and Conditions"
+            android:fontFamily="sans-serif-medium"
             android:textColor="@color/colorWhite" />
 
         <TextView

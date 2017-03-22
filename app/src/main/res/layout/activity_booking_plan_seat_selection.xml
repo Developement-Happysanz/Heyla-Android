@@ -42,6 +42,7 @@
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="@dimen/actionbarTextSize"
+        android:fontFamily="sans-serif-medium"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -60,16 +61,18 @@
             android:text="Make payment for "
             android:textColor="@color/white"
             android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:text="Rupees"
             android:textColor="@color/white"
             android:textSize="35dp"
+            android:fontFamily="sans-serif-light"
             android:textStyle="bold" />
 
         <TextView
@@ -78,9 +81,10 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="15dp"
-            android:text=""
+            android:text="₹"
             android:textColor="@color/white"
             android:textSize="55dp"
+            android:fontFamily="sans-serif"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -99,7 +103,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
             android:background="@drawable/btn_full_rounded_orange"
-            android:fontFamily="sans-serif"
+            android:fontFamily="sans-serif-medium"
             android:gravity="center"
             android:text="Make Payment"
             android:textColor="@color/white"
@@ -113,7 +117,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
             android:background="@drawable/btn_full_rounded_white"
-            android:fontFamily="sans-serif"
+            android:fontFamily="sans-serif-medium"
             android:gravity="center"
             android:text="Decline"
             android:textColor="@color/black"

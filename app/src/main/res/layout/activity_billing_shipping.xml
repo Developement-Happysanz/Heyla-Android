@@ -21,6 +21,7 @@
                 android:layout_height="wrap_content"
                 android:text="Order Id : "
                 android:textSize="14sp"
+				android:fontFamily="sans-serif-medium"
                 android:textStyle="bold" />
 
             <TextView
@@ -28,6 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
+				android:fontFamily="sans-serif-medium"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -38,7 +40,8 @@
 	        android:layout_gravity="center"
 	        android:layout_marginTop="10dp"
 	        android:paddingLeft="10dp"
-	        android:text="@string/billingAddress" 
+	        android:text="@string/billingAddress"
+			android:fontFamily="sans-serif"
 	        android:textStyle="bold"/>
 	
 	    <TextView
@@ -46,6 +49,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="10dp"
 	        android:paddingLeft="10dp"
+			android:fontFamily="sans-serif-medium"
 	        android:text="@string/name" />
 	
 	    <EditText
@@ -53,7 +57,8 @@
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:ems="10" 
-	        android:text="Charli" 
+	        android:text="Charli"
+			android:fontFamily="sans-serif"
 	    />
 	    
 	    <TextView
@@ -61,13 +66,15 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="10dp"
 	        android:paddingLeft="10dp"
-	        android:text="@string/address" />
+	        android:text="@string/address"
+			android:fontFamily="sans-serif-medium"/>
 
 	    <EditText
 	        android:id="@+id/billingAddress"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:ems="10"
+			android:fontFamily="sans-serif"
 	        android:inputType="textPostalAddress"
 	        android:text="Room no 1101 near Railway station Ambad"  
 	    />
@@ -77,13 +84,15 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="10dp"
 	        android:paddingLeft="10dp"
-	        android:text="@string/country" />
+	        android:text="@string/country"
+			android:fontFamily="sans-serif-medium"/>
 	
 	    <EditText
 	        android:id="@+id/billingCountry"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:ems="10" 
+	        android:ems="10"
+			android:fontFamily="sans-serif"
 	        android:text="India"  
 	    />
 	    
@@ -92,14 +101,16 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="10dp"
 	        android:paddingLeft="10dp"
-	        android:text="@string/state" />
+	        android:text="@string/state"
+			android:fontFamily="sans-serif-medium"/>
 	
 	    <EditText
 	        android:id="@+id/billingState"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:ems="10" 
-	        android:text="MH"  
+	        android:text="MH"
+			android:fontFamily="sans-serif"
 	    />
 	    
 	    <TextView
@@ -107,14 +118,16 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="10dp"
 	        android:paddingLeft="10dp"
-	        android:text="@string/city" />
+	        android:text="@string/city"
+			android:fontFamily="sans-serif-medium"/>
 	
 	    <EditText
 	        android:id="@+id/billingCity"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:ems="10" 
-	        android:text="Indore"  
+	        android:text="Indore"
+			android:fontFamily="sans-serif"
 	    />
 	    
 	    <TextView
@@ -122,14 +135,16 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="10dp"
 	        android:paddingLeft="10dp"
-	        android:text="@string/zip" />
+	        android:text="@string/zip"
+			android:fontFamily="sans-serif-medium"/>
 	
 	    <EditText
 	        android:id="@+id/billingZip"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:ems="10" 
-	        android:text="425001"  
+	        android:text="425001"
+			android:fontFamily="sans-serif"
 	    />
 	    
 	    <TextView
@@ -137,7 +152,8 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="10dp"
 	        android:paddingLeft="10dp"
-	        android:text="@string/tel" />
+	        android:text="@string/tel"
+			android:fontFamily="sans-serif-medium"/>
 
 	    <EditText
 	        android:id="@+id/billingTel"
@@ -153,7 +169,8 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="10dp"
 	        android:paddingLeft="10dp"
-	        android:text="@string/email" />
+	        android:text="@string/email"
+			android:fontFamily="sans-serif-medium"/>
 	    
 	    <EditText
 	        android:id="@+id/billingEmail"
@@ -174,6 +191,7 @@
 	        android:layout_marginTop="10dp"
 	        android:layout_gravity="center"
 	        android:paddingLeft="10dp"
+			android:fontFamily="sans-serif-medium"
 	        android:text="@string/deliveryAddress"
 	        android:textStyle="bold" />
 	
@@ -182,7 +200,8 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="10dp"
 	        android:paddingLeft="10dp"
-	        android:text="@string/name"/>
+	        android:text="@string/name"
+			android:fontFamily="sans-serif-medium"/>
 	
 	    <EditText
 	        android:id="@+id/deliveryName"
@@ -197,7 +216,8 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="10dp"
 	        android:paddingLeft="10dp"
-	        android:text="@string/address" />
+	        android:text="@string/address"
+			android:fontFamily="sans-serif-medium"/>
 
 	    <EditText
 	        android:id="@+id/deliveryAddress"
@@ -213,14 +233,15 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="10dp"
 	        android:paddingLeft="10dp"
-	        android:text="@string/country" />
+	        android:text="@string/country"
+			android:fontFamily="sans-serif-medium"/>
 	
 	    <EditText
 	        android:id="@+id/deliveryCountry"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:ems="10" 
-	        android:text="India"  
+	        android:text="India"
 	    />
 	    
 	    <TextView
@@ -228,7 +249,8 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="10dp"
 	        android:paddingLeft="10dp"
-	        android:text="@string/state" />
+	        android:text="@string/state"
+			android:fontFamily="sans-serif-medium"/>
 	
 	    <EditText
 	        android:id="@+id/deliveryState"
@@ -243,7 +265,8 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="10dp"
 	        android:paddingLeft="10dp"
-	        android:text="@string/city" />
+	        android:text="@string/city"
+			android:fontFamily="sans-serif-medium"/>
 	
 	    <EditText
 	        android:id="@+id/deliveryCity"
@@ -258,7 +281,8 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="10dp"
 	        android:paddingLeft="10dp"
-	        android:text="@string/zip" />
+	        android:text="@string/zip"
+			android:fontFamily="sans-serif-medium"/>
 	
 	    <EditText
 	        android:id="@+id/deliveryZip"
@@ -273,7 +297,8 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="10dp"
 	        android:paddingLeft="10dp"
-	        android:text="@string/tel" />
+	        android:text="@string/tel"
+			android:fontFamily="sans-serif-medium"/>
 
 	    <EditText
 	        android:id="@+id/deliveryTel"
@@ -291,7 +316,8 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="10dp"
 	        android:paddingLeft="10dp"
-	        android:text="@string/redirect_url" />
+	        android:text="@string/redirect_url"
+			android:fontFamily="sans-serif-medium"/>
 
 	    <EditText
 	        android:id="@+id/redirectUrl"
@@ -307,7 +333,8 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="10dp"
 	        android:paddingLeft="10dp"
-	        android:text="@string/cancel_url" />
+	        android:text="@string/cancel_url"
+			android:fontFamily="sans-serif-medium"/>
 
 	    <EditText
 	        android:id="@+id/cancelUrl"
@@ -322,7 +349,8 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="10dp"
 	        android:paddingLeft="10dp"
-	        android:text="@string/rsa_url" />
+	        android:text="@string/rsa_url"
+			android:fontFamily="sans-serif-medium"/>
 
 	    <EditText
 	        android:id="@+id/rsaUrl"
@@ -351,7 +379,8 @@
 		        android:layout_height="wrap_content"
 		        android:layout_marginTop="10dp"
 		        android:paddingLeft="10dp"
-		        android:text="@string/pay_opt" />
+		        android:text="@string/pay_opt"
+				android:fontFamily="sans-serif-medium"/>
 		    
 		    <Spinner
 		        android:id="@+id/payopt"
@@ -365,7 +394,8 @@
 		        android:layout_height="wrap_content"
 		        android:layout_marginTop="10dp"
 		        android:paddingLeft="10dp"
-		        android:text="@string/card_type" />
+		        android:text="@string/card_type"
+				android:fontFamily="sans-serif-medium"/>
 		    
 		    <Spinner
 		        android:id="@+id/cardtype"
@@ -387,7 +417,8 @@
 			        android:layout_height="wrap_content"
 			        android:layout_marginTop="10dp"
 			        android:paddingLeft="10dp"
-			        android:text="@string/emi_banks" />
+			        android:text="@string/emi_banks"
+				android:fontFamily="sans-serif-medium"/>
 			    
 		    <Spinner
 		        android:id="@+id/emiBanks"
@@ -400,7 +431,8 @@
 			        android:layout_height="wrap_content"
 			        android:layout_marginTop="10dp"
 			        android:paddingLeft="10dp"
-			        android:text="@string/emi_card_name" />
+			        android:text="@string/emi_card_name"
+				android:fontFamily="sans-serif-medium"/>
 		    
 		    <Spinner
 		        android:id="@+id/emiCardName"
@@ -435,6 +467,7 @@
 		        android:layout_marginTop="10dp"
 		        android:paddingLeft="10dp"
 		        android:text="@string/card_details"
+				android:fontFamily="sans-serif-medium"
 		        android:textStyle="bold" />
 		    
 		    <TextView
@@ -442,7 +475,8 @@
 		        android:layout_height="wrap_content"
 		        android:layout_marginTop="10dp"
 		        android:paddingLeft="10dp"
-		        android:text="@string/card_number" />
+		        android:text="@string/card_number"
+				android:fontFamily="sans-serif-medium"/>
 	
 		    <EditText
 		        android:id="@+id/cardNumber"
@@ -456,7 +490,8 @@
 		        android:layout_height="wrap_content"
 		        android:layout_marginTop="10dp"
 		        android:paddingLeft="10dp"
-		        android:text="@string/card_cvv" />
+		        android:text="@string/card_cvv"
+				android:fontFamily="sans-serif-medium"/>
 	
 		    <EditText
 		        android:id="@+id/cardCVV"
@@ -470,7 +505,8 @@
 		        android:layout_height="wrap_content"
 		        android:layout_marginTop="10dp"
 		        android:paddingLeft="10dp"
-		        android:text="@string/expiry_month" />
+		        android:text="@string/expiry_month"
+				android:fontFamily="sans-serif-medium"/>
 		    
 		    <EditText
 		        android:id="@+id/expiryMonth"
@@ -484,7 +520,8 @@
 		        android:layout_height="wrap_content"
 		        android:layout_marginTop="10dp"
 		        android:paddingLeft="10dp"
-		        android:text="@string/expiry_year" />
+		        android:text="@string/expiry_year"
+				android:fontFamily="sans-serif-medium"/>
 	
 		    <EditText
 		        android:id="@+id/expiryYear"
@@ -498,7 +535,8 @@
 		        android:layout_height="wrap_content"
 		        android:layout_marginTop="10dp"
 		        android:paddingLeft="10dp"
-		        android:text="@string/issuing_bank" />
+		        android:text="@string/issuing_bank"
+				android:fontFamily="sans-serif-medium"/>
 	
 		    <EditText
 		        android:id="@+id/issuingBank"
@@ -521,7 +559,8 @@
 			        android:layout_height="wrap_content"
 			        android:layout_marginTop="10dp"
 			        android:paddingLeft="10dp"
-			        android:text="@string/card_cvv" />
+			        android:text="@string/card_cvv"
+				android:fontFamily="sans-serif-medium"/>
 	
 		    <EditText
 		        android:id="@+id/vCardCVV"
@@ -536,7 +575,8 @@
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
 		        android:text="Save Card"
-		        android:visibility="gone" />
+		        android:visibility="gone"
+			android:fontFamily="sans-serif-medium"/>
 		
 	    <Button
 	        android:id="@+id/paybutton"
@@ -545,6 +585,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginBottom="48dp"
 	        android:onClick="onClick"
-	        android:text="@string/pay_button" />
+	        android:text="@string/pay_button"
+			android:fontFamily="sans-serif-medium"/>
     </LinearLayout>
 </ScrollView>

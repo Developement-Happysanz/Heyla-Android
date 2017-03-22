@@ -17,7 +17,7 @@
             android:id="@+id/cst_action_bar_layout"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:background="@color/actionbar_color">
+            android:background="@color/title_red1">
 
             <ImageView
                 android:id="@+id/cst_back_btn"
@@ -37,7 +37,7 @@
                 android:layout_toRightOf="@+id/cst_back_btn"
                 android:padding="5dp"
                 android:text="Add Events"
-                android:textColor="@color/title_red"
+                android:textColor="@color/colorWhite"
                 android:textSize="22dp" />
 
         </RelativeLayout>

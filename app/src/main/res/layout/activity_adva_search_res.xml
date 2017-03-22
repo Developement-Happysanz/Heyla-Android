@@ -39,6 +39,7 @@
         android:minHeight="?attr/actionBarSize"
         android:padding="5dp"
         android:text="Search Result"
+        android:fontFamily="sans-serif-medium"
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="@dimen/actionbarTextSize" />

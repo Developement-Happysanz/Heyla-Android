@@ -68,7 +68,7 @@
             android:text="Name"
             android:textColor="@color/text_color"
             android:textSize="17sp"
-            android:typeface="serif" />
+            android:fontFamily="sans-serif-medium"/>
 
         <EditText
             android:id="@+id/name"
@@ -83,7 +83,7 @@
             android:text=""
             android:textColor="@color/text_gray"
             android:textSize="17sp"
-            android:typeface="serif" />
+            android:fontFamily="sans-serif"/>
     </LinearLayout>
 
     <View
@@ -107,19 +107,19 @@
             android:text="City   "
             android:textColor="@color/text_color"
             android:textSize="17sp"
-            android:typeface="serif" />
+            android:fontFamily="sans-serif-medium" />
 
         <EditText
             android:id="@+id/city"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginRight="5dp"
             android:background="@color/transparent"
             android:clickable="true"
             android:enabled="false"
             android:focusable="false"
-            android:hint=""
+            android:hint="Your City"
             android:padding="3dp"
             android:text=""
             android:textColor="@color/text_gray"
@@ -148,21 +148,21 @@
             android:text="Email"
             android:textColor="@color/text_color"
             android:textSize="17sp"
-            android:typeface="serif" />
+            android:fontFamily="sans-serif-medium"/>
 
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="35dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginRight="5dp"
             android:background="@color/transparent"
             android:enabled="false"
-            android:hint=""
+            android:hint="abc@xyz.com"
             android:padding="5dp"
             android:textColor="@color/text_gray"
             android:textSize="17sp"
-            android:typeface="serif" />
+            android:fontFamily="sans-serif"/>
     </LinearLayout>
 
     <View
@@ -191,13 +191,13 @@
                 android:text="Birthday"
                 android:textColor="@color/text_color"
                 android:textSize="17sp"
-                android:typeface="serif" />
+                android:fontFamily="sans-serif-medium" />
 
             <TextView
                 android:id="@+id/date_of_birth_val"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="22dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:background="@color/transparent"
                 android:enabled="false"
@@ -206,7 +206,7 @@
                 android:padding="3dp"
                 android:textColor="@color/text_gray"
                 android:textSize="17sp"
-                android:typeface="serif" />
+                android:fontFamily="sans-serif"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -232,13 +232,13 @@
             android:text="Gender"
             android:textColor="@color/text_color"
             android:textSize="17sp"
-            android:typeface="serif" />
+            android:fontFamily="sans-serif-medium"/>
 
         <EditText
             android:id="@+id/sex_val"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="35dp"
+            android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:background="@color/transparent"
             android:enabled="false"
@@ -247,7 +247,7 @@
             android:padding="3dp"
             android:textColor="@color/text_gray"
             android:textSize="17sp"
-            android:typeface="serif" />
+            android:fontFamily="sans-serif"/>
     </LinearLayout>
 
     <View
@@ -271,13 +271,13 @@
             android:text="Phone"
             android:textColor="@color/text_color"
             android:textSize="17sp"
-            android:typeface="serif" />
+            android:fontFamily="sans-serif-medium"/>
 
         <EditText
             android:id="@+id/phone"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="47dp"
+            android:layout_marginLeft="49dp"
             android:layout_marginRight="5dp"
             android:background="@color/transparent"
             android:enabled="false"
@@ -286,7 +286,7 @@
             android:text=""
             android:textColor="@color/text_gray"
             android:textSize="17sp"
-            android:typeface="serif" />
+            android:fontFamily="sans-serif"/>
     </LinearLayout>
 
     <View
@@ -310,13 +310,13 @@
             android:text="Occupation"
             android:textColor="@color/text_color"
             android:textSize="17sp"
-            android:typeface="serif" />
+            android:fontFamily="sans-serif-medium"/>
 
         <EditText
             android:id="@+id/occupation_val"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="2dp"
+            android:layout_marginLeft="7dp"
             android:layout_marginRight="20dp"
             android:background="@color/transparent"
             android:clickable="true"
@@ -326,7 +326,7 @@
             android:padding="3dp"
             android:textColor="@color/text_gray"
             android:textSize="17sp"
-            android:typeface="serif" />
+            android:fontFamily="sans-serif"/>
     </LinearLayout>
 
     <View
@@ -353,7 +353,7 @@
             android:text="Password"
             android:textColor="@color/text_color"
             android:textSize="17sp"
-            android:typeface="serif" />
+            android:fontFamily="sans-serif-medium"/>
 
         <EditText
             android:id="@+id/edit_password"
@@ -369,7 +369,7 @@
             android:password="true"
             android:textColor="@color/detail_color"
             android:textSize="17sp"
-            android:typeface="serif" />
+            android:fontFamily="sans-serif"/>
     </LinearLayout>
 
     <View
@@ -391,6 +391,7 @@
         android:gravity="center"
         android:padding="5dp"
         android:text="SAVE"
+        android:fontFamily="sans-serif-medium"
         android:textColor="@color/White"
         android:textSize="22dp" />
 

@@ -65,7 +65,7 @@ public class BookingPlanSeatSelectionActivity extends AppCompatActivity {
 
         txtEventName.setText(eventName);
         txtEvnetVenue.setText(eventVenue);
-        txtEventPay.setText(bookPlan.getSeatPlan() + " - Rs : " + bookPlan.getSeatRate());
+        txtEventPay.setText(bookPlan.getSeatPlan() + " - ₹ : " + bookPlan.getSeatRate());
         txtTicket.setText("" + tickets);
 
         imgPlus.setOnClickListener(new View.OnClickListener() {
@@ -75,7 +75,7 @@ public class BookingPlanSeatSelectionActivity extends AppCompatActivity {
                 count = txtCountTicket.getText().toString();
                 _count = Integer.parseInt(count);
                 _count = _count + 1;
-                txtCountTicket.setText("" + _count);
+                txtCountTicket.setText("₹" + _count);
 
                 int i = (int) rate;
 //                int pay = 0;
@@ -97,7 +97,7 @@ public class BookingPlanSeatSelectionActivity extends AppCompatActivity {
                 count = txtCountTicket.getText().toString();
                 _count = Integer.parseInt(count);
                 _count = _count - 1;
-                txtCountTicket.setText("" + _count);
+                txtCountTicket.setText("₹" + _count);
 
                 int i = (int) rate;
 //                int pay = 0;

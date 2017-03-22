@@ -16,6 +16,7 @@
             android:layout_marginBottom="70dp"
             android:layout_marginTop="80dp"
             android:text="Welcome back!"
+            android:fontFamily="sans-serif-medium"
             android:textColor="@color/white"
             android:textSize="30dp" />
 
@@ -27,6 +28,7 @@
             android:gravity="center"
             android:hint="Email ID"
             android:inputType="textEmailAddress"
+            android:fontFamily="sans-serif-light"
             android:textColor="@color/white"
             android:layout_marginBottom="20dp"
             android:textColorHint="@color/bg_trans" />
@@ -38,6 +40,7 @@
             android:gravity="center"
             android:hint="Password"
             android:inputType="textPassword"
+            android:fontFamily="sans-serif-light"
             android:layout_marginBottom="20dp"
             android:textColor="@color/white"
             android:textColorHint="@color/bg_trans" />
@@ -63,6 +66,7 @@
             android:minHeight="0dp"
             android:minWidth="0dp"
             android:text="@string/forgot_password"
+            android:fontFamily="sans-serif-medium"
             android:textColor="@color/colorWhite"
             android:textSize="16dp" />
 

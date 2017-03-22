@@ -138,6 +138,7 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
                 if ((mLastLocation == null) && (mGoogleApiClient != null)) {
                     mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
                             mGoogleApiClient);
+
                 }
 
                 if (mLastLocation != null) {
@@ -162,9 +163,11 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
                         // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
+
                 } else {
                     Log.e(TAG, "fetched location is Null");
-                    AlertDialogHelper.showSimpleAlertDialog(SelectCityActivity.this, "Current Location Not Available. Please check if Location services are turned ON");
+                    AlertDialogHelper.showSimpleAlertDialog(SelectCityActivity.this,
+                            "Current Location Not Available. Please check if Location services are turned ON");
                 }
 
             }
@@ -238,7 +241,7 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
             }
         } else if (v == txtCountryDropDown) {
 
-            Log.d(TAG, "Available cities count" + countrySpinnerAdapter.getCount());
+            Log.d(TAG, "Available countries count" + countrySpinnerAdapter.getCount());
             AlertDialog.Builder builderSingle = new AlertDialog.Builder(this);
             View view = getLayoutInflater().inflate(R.layout.gender_header_layout, null);
             TextView header = (TextView) view.findViewById(R.id.gender_header);
@@ -255,6 +258,7 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
                     new FetchCity().execute();
                     dialog.dismiss();
                     cityList.clear();
+                    txtCityDropDown.setText("Select your city");
                 }
             }).create().show();
         }
@@ -579,7 +583,6 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
                             countryList.add(jsonObject.getString("country_name"));
                         }
                         Log.d(TAG, "Received country list" + jsonArray.length());
-                        txtCityDropDown.setText("Select your city");
 
                     } catch (Exception e1) {
                         e1.printStackTrace();

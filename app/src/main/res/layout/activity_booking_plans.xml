@@ -39,6 +39,7 @@
         android:minHeight="?attr/actionBarSize"
         android:padding="5dp"
         android:text="Booking Plans"
+        android:fontFamily="sans-serif-medium"
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="@dimen/actionbarTextSize" />
@@ -68,6 +69,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="5dp"
             android:text="No Plans Found"
+            android:fontFamily="sans-serif-medium"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -82,6 +84,7 @@
             android:drawableLeft="@drawable/ab_place"
             android:gravity="center"
             android:text="No Plans Found"
+            android:fontFamily="sans-serif-light"
             android:textColor="@color/white"
             android:textSize="18dp" />
 
@@ -95,6 +98,7 @@
             android:drawableLeft="@drawable/ab_calender"
             android:gravity="center"
             android:text=""
+            android:fontFamily="sans-serif"
             android:textColor="@color/white"
             android:textSize="16dp" />
 

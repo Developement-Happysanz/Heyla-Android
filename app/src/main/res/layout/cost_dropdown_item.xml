@@ -13,7 +13,7 @@
         android:padding="15dp"
         android:text="Bang"
         android:textSize="20dp"
-        android:typeface="serif" />
+        android:fontFamily="sans-serif-medium"/>
 
     <View
         android:layout_width="match_parent"

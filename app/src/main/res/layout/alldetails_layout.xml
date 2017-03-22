@@ -29,6 +29,7 @@
             android:layout_toRightOf="@+id/bookings_back_btn"
             android:padding="5dp"
             android:text="STATISTICS"
+            android:fontFamily="sans-serif-medium"
             android:textColor="@color/white"
             android:textSize="20dp" />
     </RelativeLayout>
@@ -62,6 +63,7 @@
                     android:layout_centerHorizontal="true"
                     android:padding="5dp"
                     android:text="Total Points"
+                    android:fontFamily="sans-serif-medium"
                     android:textColor="@color/title_red1"
                     android:textSize="20dp" />
 
@@ -72,7 +74,7 @@
                     android:layout_alignLeft="@+id/points_label"
                     android:layout_alignStart="@+id/points_label"
                     android:layout_below="@+id/points_label"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="10dp"
                     android:src="@drawable/star" />
 
                 <TextView
@@ -84,6 +86,7 @@
                     android:layout_marginTop="2dp"
                     android:layout_toRightOf="@+id/leaderboard_image"
                     android:text="5"
+                    android:fontFamily="sans-serif"
                     android:textSize="50dp" />
 
                 <LinearLayout
@@ -124,6 +127,7 @@
                             android:clickable="false"
                             android:focusable="false"
                             android:padding="5dp"
+                            android:fontFamily="sans-serif"
                             android:singleLine="true"
                             android:text="0"
                             android:textSize="18dp" />
@@ -167,6 +171,7 @@
                             android:clickable="false"
                             android:focusable="false"
                             android:padding="5dp"
+                            android:fontFamily="sans-serif"
                             android:singleLine="true"
                             android:text="0"
                             android:textSize="18dp" />
@@ -210,6 +215,7 @@
                             android:layout_toRightOf="@+id/rewards_checkins_image"
                             android:clickable="false"
                             android:focusable="false"
+                            android:fontFamily="sans-serif"
                             android:padding="5dp"
                             android:singleLine="true"
                             android:text="0"
@@ -254,6 +260,7 @@
                             android:layout_toRightOf="@+id/rewards_bookings_image"
                             android:clickable="false"
                             android:focusable="false"
+                            android:fontFamily="sans-serif"
                             android:padding="5dp"
                             android:singleLine="true"
                             android:text="0"
@@ -302,6 +309,7 @@
                         android:layout_toRightOf="@+id/phot_img"
                         android:padding="5dp"
                         android:text="Photos shared"
+                        android:fontFamily="sans-serif-medium"
                         android:textColor="@color/title_red1"
                         android:textSize="18dp" />
 
@@ -314,6 +322,7 @@
                         android:layout_toRightOf="@+id/phot_label"
                         android:padding="5dp"
                         android:text="(0)"
+                        android:fontFamily="sans-serif-medium"
                         android:textColor="@color/title_red1"
                         android:textSize="18dp" />
 
@@ -332,6 +341,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
+                        android:fontFamily="sans-serif-medium"
                         android:layout_marginRight="10dp"
                         android:text="0" />
 
@@ -385,6 +395,7 @@
                         android:layout_toRightOf="@+id/engagement_img"
                         android:padding="5dp"
                         android:text="Engagements"
+                        android:fontFamily="sans-serif-medium"
                         android:textColor="@color/title_red1"
                         android:textSize="18dp" />
 
@@ -397,6 +408,7 @@
                         android:layout_toRightOf="@+id/eng_lbel"
                         android:padding="5dp"
                         android:text="(0)"
+                        android:fontFamily="sans-serif-medium"
                         android:textColor="@color/title_red1"
                         android:textSize="18dp" />
 
@@ -415,6 +427,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
+                        android:fontFamily="sans-serif-medium"
                         android:text="0" />
 
                 </RelativeLayout>
@@ -427,6 +440,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
+                    android:fontFamily="sans-serif"
                     android:layout_marginTop="10dp"></ListView>
 
             </RelativeLayout>
@@ -463,6 +477,7 @@
                         android:layout_toRightOf="@+id/checkin_img"
                         android:padding="5dp"
                         android:text="Check-ins"
+                        android:fontFamily="sans-serif-medium"
                         android:textColor="@color/title_red1"
                         android:textSize="18dp" />
 
@@ -475,6 +490,7 @@
                         android:layout_toRightOf="@+id/checkins_label"
                         android:padding="5dp"
                         android:text="(0)"
+                        android:fontFamily="sans-serif-medium"
                         android:textColor="@color/title_red1"
                         android:textSize="18dp" />
 
@@ -492,6 +508,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
+                        android:fontFamily="sans-serif-medium"
                         android:layout_marginRight="10dp"
                         android:text="0" />
 
@@ -541,6 +558,7 @@
                         android:layout_toRightOf="@+id/bookings_img"
                         android:padding="5dp"
                         android:text="Bookings"
+                        android:fontFamily="sans-serif-medium"
                         android:textColor="@color/title_red1"
                         android:textSize="18dp" />
 
@@ -552,6 +570,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_toRightOf="@+id/bookings_label"
                         android:padding="5dp"
+                        android:fontFamily="sans-serif-medium"
                         android:text="(0)"
                         android:textColor="@color/title_red1"
                         android:textSize="18dp" />
@@ -570,6 +589,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
+                        android:fontFamily="sans-serif-medium"
                         android:layout_marginRight="10dp"
                         android:text="0" />
 

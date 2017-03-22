@@ -33,6 +33,7 @@
                     android:ellipsize="end"
                     android:singleLine="true"
                     android:text=""
+                    android:fontFamily="sans-serif"
                     android:textColor="@color/text_gray"
                     android:textSize="14dp"
                     android:textStyle="bold" />
@@ -46,6 +47,7 @@
                     android:ellipsize="end"
                     android:singleLine="true"
                     android:text=""
+                    android:fontFamily="sans-serif"
                     android:textColor="@color/text_gray"
                     android:textSize="14dp"
                     android:textStyle="bold" />
