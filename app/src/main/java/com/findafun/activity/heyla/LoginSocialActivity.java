@@ -14,6 +14,7 @@ import android.content.pm.Signature;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.StrictMode;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -40,6 +41,7 @@ import com.findafun.R;
 import com.findafun.activity.LandingActivity;
 import com.findafun.activity.LoginNewActivity;
 import com.findafun.activity.SelectCityActivity;
+import com.findafun.activity.SplashScreenActivity;
 import com.findafun.activity.glogin.CustomVolleyRequest;
 import com.findafun.adapter.LoginNewAdapter;
 import com.findafun.adapter.SignUpNewAdapter;
@@ -94,6 +96,7 @@ public class LoginSocialActivity extends AppCompatActivity implements DialogClic
     private ConnectionResult mConnectionResult;
     String IMEINo;
     private String logType = "login";
+    private static int SPLASH_TIME_OUT = 2000;
 
     //Creating a broadcast receiver for gcm registration
     private BroadcastReceiver mRegistrationBroadcastReceiver;
@@ -222,7 +225,15 @@ public class LoginSocialActivity extends AppCompatActivity implements DialogClic
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
-        UserLogin();
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+
+                UserLogin();
+            }
+        }, SPLASH_TIME_OUT);
+
 
     }
 

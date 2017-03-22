@@ -771,6 +771,7 @@ public class AddEventActivity extends AppCompatActivity implements DialogClickLi
                 am_pm = "PM";
             }
 
+
             Bundle bundle = this.getArguments();
             if (bundle != null) {
                 mChosenTime = bundle.getInt("TIME", 1);
