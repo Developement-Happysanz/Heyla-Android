@@ -118,7 +118,7 @@ public class ResetPasswordActivity extends AppCompatActivity implements View.OnC
         if (validateForgotPasswordResponse(response)) {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
             alertDialogBuilder.setTitle("Password reset");
-            alertDialogBuilder.setMessage("Password reseted successfully. Perform Sign in again");
+            alertDialogBuilder.setMessage("Password successfully reset. Perform Sign in again");
             alertDialogBuilder.setPositiveButton("OK",
                     new DialogInterface.OnClickListener() {
 

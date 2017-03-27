@@ -3,6 +3,7 @@ package com.findafun.activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.util.SparseBooleanArray;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v7.app.AppCompatActivity;
@@ -49,7 +50,9 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
     private ProgressDialogHelper progressDialogHelper;
     private MenuItem menuSet;
     private GridLayoutManager mLayoutManager;
-    private TextView txtGetStarted, txtSelect;
+
+    int pos;
+    private TextView txtGetStarted, txtSelect, txtSelectAll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,8 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
         txtGetStarted = (TextView) findViewById(R.id.text_getStarted);
         txtGetStarted.setOnClickListener(this);
         txtSelect = (TextView) findViewById(R.id.text_select);
+        txtSelectAll = (TextView) findViewById(R.id.checkBox);
+        txtSelectAll.setOnClickListener(this);
         mRecyclerView = (RecyclerView) findViewById(R.id.listView_categories);
 
         mLayoutManager = new GridLayoutManager(this, 6);
@@ -239,6 +244,8 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
         }
     }
 
+    private SparseBooleanArray selectedItems;
+
     @Override
     public void onClick(View v) {
         if (v == txtGetStarted) {
@@ -263,6 +270,20 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
                 alertDialog.show();
 
             }
+        }
+
+            else if (v == txtSelectAll) {
+//            RelativeLayout txtView = (RelativeLayout)v.findViewById(R.id.listView_categories);
+            for (pos = 0; pos < categoryArrayList.size(); pos++) {
+                Category tag = preferenceAdatper.getItem(pos);
+//                txtView.setBackgroundColor(getResources().getColor(R.color.preference_orange));;
+
+                selectedList.add(tag);
+                tag.setCategoryPreference("yes");
+
+            }
+
+
         }
     }
 }

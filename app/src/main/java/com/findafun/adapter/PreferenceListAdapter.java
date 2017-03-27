@@ -68,6 +68,9 @@ public class PreferenceListAdapter extends RecyclerView.Adapter<PreferenceListAd
             if (onItemClickListener != null) {
                 onItemClickListener.onItemClick(v, getAdapterPosition());
             }
+            else {
+
+            }
         }
     }
 
@@ -161,4 +164,6 @@ public class PreferenceListAdapter extends RecyclerView.Adapter<PreferenceListAd
     public interface OnItemClickListener {
         public void onItemClick(View view, int position);
     }
+
 }
+
