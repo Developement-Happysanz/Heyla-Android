@@ -61,8 +61,8 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
         txtGetStarted = (TextView) findViewById(R.id.text_getStarted);
         txtGetStarted.setOnClickListener(this);
         txtSelect = (TextView) findViewById(R.id.text_select);
-        txtSelectAll = (TextView) findViewById(R.id.checkBox);
-        txtSelectAll.setOnClickListener(this);
+//        txtSelectAll = (TextView) findViewById(R.id.checkBox);
+//        txtSelectAll.setOnClickListener(this);
         mRecyclerView = (RecyclerView) findViewById(R.id.listView_categories);
 
         mLayoutManager = new GridLayoutManager(this, 6);
@@ -272,7 +272,7 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
             }
         }
 
-            else if (v == txtSelectAll) {
+/*            else if (v == txtSelectAll) {
 //            RelativeLayout txtView = (RelativeLayout)v.findViewById(R.id.listView_categories);
             for (pos = 0; pos < categoryArrayList.size(); pos++) {
                 Category tag = preferenceAdatper.getItem(pos);
@@ -285,5 +285,5 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
 
 
         }
-    }
+*/    }
 }
