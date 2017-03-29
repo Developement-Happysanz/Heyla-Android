@@ -169,7 +169,6 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
     public void onCategoryError(String error) {
         progressDialogHelper.hideProgressDialog();
         AlertDialogHelper.showSimpleAlertDialog(this, error);
-
     }
 
     @Override
