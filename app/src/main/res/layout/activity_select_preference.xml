@@ -36,8 +36,7 @@
         android:textSize="15sp"
         android:buttonTint="@color/title_red1"
         android:fontFamily="sans-serif-medium"
-        android:textColor="@color/title_red1"
-        android:visibility="gone"/>
+        android:textColor="@color/title_red1" />
 
     <TextView
         android:id="@+id/text_getStarted"

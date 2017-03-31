@@ -3,14 +3,12 @@ package com.findafun.activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.util.SparseBooleanArray;
-import android.graphics.Typeface;
-import android.graphics.drawable.GradientDrawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.util.SparseBooleanArray;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -50,6 +48,7 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
     private ProgressDialogHelper progressDialogHelper;
     private MenuItem menuSet;
     private GridLayoutManager mLayoutManager;
+    private boolean selval = false;
 
     int pos;
     private TextView txtGetStarted, txtSelect, txtSelectAll;
@@ -61,8 +60,8 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
         txtGetStarted = (TextView) findViewById(R.id.text_getStarted);
         txtGetStarted.setOnClickListener(this);
         txtSelect = (TextView) findViewById(R.id.text_select);
-//        txtSelectAll = (TextView) findViewById(R.id.checkBox);
-//        txtSelectAll.setOnClickListener(this);
+        txtSelectAll = (TextView) findViewById(R.id.checkBox);
+        txtSelectAll.setOnClickListener(this);
         mRecyclerView = (RecyclerView) findViewById(R.id.listView_categories);
 
         mLayoutManager = new GridLayoutManager(this, 6);
@@ -272,18 +271,27 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
             }
         }
 
-/*            else if (v == txtSelectAll) {
-//            RelativeLayout txtView = (RelativeLayout)v.findViewById(R.id.listView_categories);
-            for (pos = 0; pos < categoryArrayList.size(); pos++) {
-                Category tag = preferenceAdatper.getItem(pos);
-//                txtView.setBackgroundColor(getResources().getColor(R.color.preference_orange));;
-
-                selectedList.add(tag);
-                tag.setCategoryPreference("yes");
-
+            else if (v == txtSelectAll) {
+            if(!selval) {
+                selval = true;
+                for (pos = 0; pos < categoryArrayList.size(); pos++) {
+                    Category tag = preferenceAdatper.getItem(pos);
+                    selectedList.add(tag);
+                    tag.setCategoryPreference("yes");
+                }
             }
-
+            else {
+                selval = false;
+                for (pos = 0; pos < categoryArrayList.size(); pos++) {
+                    Category tag = preferenceAdatper.getItem(pos);
+                    tag.setCategoryPreference("no");
+                    selectedList.remove(tag);
+                }
+            }
+            Intent navigationIntent = new Intent(this, SelectPreferenceActivity.class);
+            navigationIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(navigationIntent);
 
         }
-*/    }
+    }
 }

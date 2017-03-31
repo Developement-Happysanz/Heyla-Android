@@ -1,18 +1,10 @@
 package com.findafun.adapter;
 
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -25,11 +17,6 @@ import com.makeramen.roundedimageview.RoundedTransformationBuilder;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 
 /**
@@ -39,6 +26,7 @@ public class PreferenceListAdapter extends RecyclerView.Adapter<PreferenceListAd
     private ArrayList<Category> categoryArrayList;
     private Context context;
     private OnItemClickListener onItemClickListener;
+    private View.OnClickListener onClickListener;
     private final Transformation transformation;
 
     // Provide a reference to the views for each data item
@@ -49,6 +37,7 @@ public class PreferenceListAdapter extends RecyclerView.Adapter<PreferenceListAd
         public ImageView mImageView;
         public TextView mPrefTextView;
         public RelativeLayout rlPref;
+        public RelativeLayout slPref;
 
         public ViewHolder(View v, int viewType) {
             super(v);
@@ -68,6 +57,9 @@ public class PreferenceListAdapter extends RecyclerView.Adapter<PreferenceListAd
             if (onItemClickListener != null) {
                 onItemClickListener.onItemClick(v, getAdapterPosition());
             }
+//            else {
+//                onClickListener.onClick(mImageView);
+//            }
         }
     }
 
