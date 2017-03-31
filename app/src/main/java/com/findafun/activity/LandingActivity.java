@@ -49,6 +49,7 @@ import com.findafun.fragment.StaticFragment;
 import com.findafun.helper.AlertDialogHelper;
 import com.findafun.interfaces.DialogClickListener;
 import com.findafun.pageradapter.LandingPagerAdapter;
+import com.findafun.servicehelpers.AnalyticsApplication;
 import com.findafun.servicehelpers.EventServiceHelper;
 import com.findafun.servicehelpers.ShareServiceHelper;
 import com.findafun.serviceinterfaces.IEventServiceListener;
@@ -58,6 +59,7 @@ import com.findafun.utils.AndroidMultiPartEntity;
 import com.findafun.utils.CommonUtils;
 import com.findafun.utils.FindAFunConstants;
 import com.findafun.utils.PreferenceStorage;
+import com.google.android.gms.analytics.Tracker;
 import com.google.gson.Gson;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -108,6 +110,7 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
     private String mUpdatedImageUrl = null;
     protected EventServiceHelper eventServiceHelper;
     Context context;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,6 +129,13 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
         eventServiceHelper.setEventServiceListener(this);
         fetchBookmarks();
         sendShareStatustoServer();
+
+        // [START shared_tracker]
+        // Obtain the shared Tracker instance.
+       // AnalyticsApplication application = (AnalyticsApplication) getApplication();
+       // mTracker = application.getDefaultTracker();
+        // [END shared_tracker]
+
     }
 
     private void sendShareStatustoServer() {
