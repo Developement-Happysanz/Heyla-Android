@@ -59,6 +59,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
@@ -561,6 +562,7 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
                             cityList.add(jsonObject.getString("city_name"));
                         }
+                        Collections.sort(cityList);
                         Log.d(TAG, "Received city list" + jsonArray.length());
                         isCityCheck = true;
 
