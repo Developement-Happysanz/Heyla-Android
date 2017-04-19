@@ -548,14 +548,16 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
                     if (GamificationDataHolder.getInstance().isEventBookmarked(event.getId())) {
                         Toast.makeText(EventDetailActivity.this, "Event already bookmarked", Toast.LENGTH_SHORT).show();
                         int imgResource = R.drawable.ic_wishlist1_selected;
-                        whishListBtn.setCompoundDrawablesWithIntrinsicBounds(imgResource, 0, 0, 0);
+//                        whishListBtn.setCompoundDrawablesWithIntrinsicBounds(imgResource, 0, 0, 0);
+                        whishListBtn.setBackgroundResource(imgResource);
                     } else {
                         try {
                             mServiceHelper.makeGetEventServiceCall(String.format(FindAFunConstants.ADD_EVENT_BOOKMARK,
                                     Integer.parseInt(PreferenceStorage.getUserId(EventDetailActivity.this)), Integer.parseInt((event.getId()))));
 
                             int imgResource = R.drawable.ic_wishlist1_selected;
-                            whishListBtn.setCompoundDrawablesWithIntrinsicBounds(imgResource, 0, 0, 0);
+//                            whishListBtn.setCompoundDrawablesWithIntrinsicBounds(imgResource, 0, 0, 0);
+                            whishListBtn.setBackgroundResource(imgResource);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
