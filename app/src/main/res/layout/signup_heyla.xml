@@ -15,7 +15,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="40dp"
             android:layout_marginTop="40dp"
-            android:text="Create an account"
+            android:text="Create Account"
             android:textColor="@color/white"
             android:textSize="30dp" />
 
@@ -70,12 +70,17 @@
             android:textColorHint="@color/bg_trans" />
 
         <Button
-            android:id="@+id/btn_sign_up"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/ab_create" />
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:stateListAnimator="@null"
+            android:background="@drawable/login_button"
+            android:text="Create Account"
+            android:textColor="@color/white"
+            android:foreground="?android:attr/selectableItemBackground"/>
 
         <TextView
             android:id="@+id/textView_agreeing_up"
@@ -84,7 +89,8 @@
             android:layout_gravity="center"
             android:fontFamily="sans-serif-medium"
             android:text="By signing up, I agree With Heyla's"
-            android:textColor="@color/colorWhite" />
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="15dp"/>
 
         <TextView
             android:id="@+id/textView_terms"

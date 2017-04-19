@@ -85,13 +85,17 @@
             android:textSize="16dp" />
 
         <Button
-            android:id="@+id/btn_sign_in"
-            android:layout_width="200dp"
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/login_border"
-            android:onClick="@drawable/ab_login_hey" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:stateListAnimator="@null"
+            android:background="@drawable/login_button"
+            android:text="Login"
+            android:textColor="@color/white"
+            android:foreground="?android:attr/selectableItemBackground"/>
 
         <TextView
             android:id="@+id/text_forgot"
@@ -100,7 +104,7 @@
             android:layout_below="@+id/btn_sign_in"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
             android:background="@android:color/transparent"
             android:gravity="center_horizontal"
             android:minHeight="0dp"

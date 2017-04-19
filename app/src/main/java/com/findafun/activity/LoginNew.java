@@ -25,8 +25,8 @@ public class LoginNew extends AppCompatActivity implements View.OnClickListener 
 
     private static final String TAG = LoginNew.class.getName();
     private ImageView imgLogin, imgCreateAccount;
-    private ImageView btnFacebook, btnCreateAccount;
-    private Button btnLogin;
+    private ImageView btnFacebook;
+    private Button btnLogin, btnCreateAccount;
     private static final int REQUEST_PERMISSION_All = 111;
     private static String[] PERMISSIONS_ALL = {Manifest.permission.READ_CONTACTS,
             Manifest.permission.WRITE_CONTACTS, Manifest.permission.READ_CALENDAR,
@@ -67,7 +67,7 @@ public class LoginNew extends AppCompatActivity implements View.OnClickListener 
 
             btnFacebook = (ImageView) findViewById(R.id.frag_login_fb);
             btnLogin = (Button) findViewById(R.id.btn_login);
-            btnCreateAccount = (ImageView) findViewById(R.id.btn_create_new_account);
+            btnCreateAccount = (Button) findViewById(R.id.btn_create_new_account);
 
             btnLogin.setOnClickListener(this);
             btnCreateAccount.setOnClickListener(this);

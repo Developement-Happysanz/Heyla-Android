@@ -13,10 +13,12 @@
         <ImageView
             android:id="@+id/heylalogo"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="60dp"
-            android:layout_marginTop="120dp"
+            android:layout_marginBottom="90dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
             android:src="@drawable/heyla" />
 
         <RelativeLayout
@@ -47,29 +49,34 @@
                 android:textSize="16dp"
                 android:layout_below="@+id/btn_login"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="sans-serif"/>
 
-            <ImageView
+            <Button
                 android:id="@+id/btn_create_new_account"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/ab_create_an_account"
-                android:layout_below="@+id/txt_or"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="5dp" />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
+                android:stateListAnimator="@null"
+                android:layout_below="@id/txt_or"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/login_button"
+                android:text="Create Account"
+                android:textColor="@color/white"
+                android:foreground="?android:attr/selectableItemBackground"/>
 
             <ImageView
                 android:id="@+id/btn_guest_login"
-                android:layout_width="200dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:src="@drawable/ab_guest_login"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="25dp"
                 android:layout_below="@+id/btn_create_new_account"
-                android:layout_alignLeft="@+id/btn_create_new_account"
-                android:layout_alignStart="@+id/btn_create_new_account" />
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"/>
 
             <TextView
                 android:layout_width="200dp"
@@ -82,7 +89,9 @@
                 android:id="@+id/textView2"
                 android:layout_alignBottom="@+id/btn_guest_login"
                 android:layout_alignLeft="@+id/btn_guest_login"
-                android:layout_alignStart="@+id/btn_guest_login" />
+                android:layout_alignStart="@+id/btn_guest_login"
+                android:layout_alignEnd="@+id/btn_guest_login"
+                android:layout_alignRight="@+id/btn_guest_login"/>
 
             <TextView
                 android:layout_width="200dp"
@@ -127,22 +136,17 @@
                 android:src="@drawable/gplus"
                 android:layout_marginTop="22dp"
                 android:layout_below="@+id/txt_gflogin"
-                android:layout_toRightOf="@+id/frag_login_fb"
-                android:layout_toEndOf="@+id/frag_login_fb"
-                android:layout_marginLeft="34dp"
-                android:layout_marginStart="34dp" />
+                android:layout_centerHorizontal="true"
+                android:paddingLeft="90dp"/>
 
             <ImageView
                 android:id="@+id/frag_login_fb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_centerHorizontal="true"
                 android:src="@drawable/facebookicon"
                 android:layout_alignTop="@+id/frag_login_gplus"
-                android:layout_alignLeft="@+id/btn_guest_login"
-                android:layout_alignStart="@+id/btn_guest_login"
-                android:layout_marginLeft="42dp"
-                android:layout_marginStart="42dp" />
+                android:paddingRight="90dp"/>
 
         </RelativeLayout>
     </LinearLayout>
