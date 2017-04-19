@@ -59,6 +59,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
@@ -84,6 +85,8 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
     protected ProgressDialogHelper progressDialogHelper;
     private String country = null;
     private String userType = null;
+    private Boolean isCountryCheck = false;
+    private Boolean isCityCheck = false;
 
 
     @Override
@@ -211,26 +214,20 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
         if (v == txtCityDropDown) {
-
-            if (citySpinnerAdapter.getCount() == 0) {
-                Toast.makeText(this, "Please select your country", Toast.LENGTH_SHORT).show();
+            if (isCountryCheck) {
+                loadCitySpinner();
             } else {
-                Log.d(TAG, "Available cities count" + citySpinnerAdapter.getCount());
-                AlertDialog.Builder builderSingle = new AlertDialog.Builder(this);
-                View view = getLayoutInflater().inflate(R.layout.gender_header_layout, null);
-                TextView header = (TextView) view.findViewById(R.id.gender_header);
-                header.setText("Select City");
-                builderSingle.setCustomTitle(view);
-
-                builderSingle.setAdapter(citySpinnerAdapter, new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        txtCityDropDown.setText(citySpinnerAdapter.getItem(which).toString());
-                        txtCityDropDown.clearComposingText();
-                        dialog.dismiss();
+                country = txtCountryDropDown.getText().toString();
+                if (!country.equalsIgnoreCase("")) {
+                    if (!isCityCheck) {
+                        new FetchCity().execute();
                     }
-                }).create().show();
+                }
+                if (citySpinnerAdapter.getCount() == 0 && (country == null && country.isEmpty())) {
+                    Toast.makeText(this, "Please select your country", Toast.LENGTH_SHORT).show();
+                } else {
+                    loadCitySpinner();
+                }
             }
         } else if (v == txtTaptoView) {
             Log.d(TAG, "Swipe up detected");
@@ -241,7 +238,7 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
                 Toast.makeText(this, "Please select your city", Toast.LENGTH_SHORT).show();
             }
         } else if (v == txtCountryDropDown) {
-
+            isCountryCheck = true;
             Log.d(TAG, "Available countries count" + countrySpinnerAdapter.getCount());
             AlertDialog.Builder builderSingle = new AlertDialog.Builder(this);
             View view = getLayoutInflater().inflate(R.layout.gender_header_layout, null);
@@ -263,6 +260,25 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
                 }
             }).create().show();
         }
+    }
+
+    private void loadCitySpinner() {
+        Log.d(TAG, "Available cities count" + citySpinnerAdapter.getCount());
+        AlertDialog.Builder builderSingle = new AlertDialog.Builder(this);
+        View view = getLayoutInflater().inflate(R.layout.gender_header_layout, null);
+        TextView header = (TextView) view.findViewById(R.id.gender_header);
+        header.setText("Select City");
+        builderSingle.setCustomTitle(view);
+
+        builderSingle.setAdapter(citySpinnerAdapter, new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                txtCityDropDown.setText(citySpinnerAdapter.getItem(which).toString());
+                txtCityDropDown.clearComposingText();
+                dialog.dismiss();
+            }
+        }).create().show();
     }
 
     private void updateUserCity() {
@@ -546,7 +562,9 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
                             cityList.add(jsonObject.getString("city_name"));
                         }
+                        Collections.sort(cityList);
                         Log.d(TAG, "Received city list" + jsonArray.length());
+                        isCityCheck = true;
 
                     } catch (Exception e1) {
                         e1.printStackTrace();

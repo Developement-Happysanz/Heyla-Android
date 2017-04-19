@@ -55,8 +55,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_weight="3"
-                    android:background="@drawable/ic_wishlist1"
-                    android:onClick="@drawable/ic_wishlist1_selected" />
+                    android:background="@drawable/ic_wishlist1" />
 
 
                 <!--banner-->
@@ -214,12 +213,12 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="30dp"
+                            android:fontFamily="sans-serif"
                             android:gravity="bottom"
                             android:text="SHARE"
                             android:textColor="@color/white"
                             android:textSize="14dp"
-                            android:textStyle="bold"
-                            android:fontFamily="sans-serif"/>
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -246,10 +245,10 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="30dp"
+                            android:fontFamily="sans-serif"
                             android:gravity="bottom"
                             android:text="CONTACT"
                             android:textColor="@color/white"
-                            android:fontFamily="sans-serif"
                             android:textSize="14dp"
                             android:textStyle="bold" />
 
@@ -286,12 +285,12 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="30dp"
+                            android:fontFamily="sans-serif"
                             android:gravity="bottom"
                             android:text="INTERESTED"
                             android:textColor="@color/white"
                             android:textSize="14dp"
-                            android:textStyle="bold"
-                            android:fontFamily="sans-serif"/>
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -320,11 +319,11 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
                             android:text="CHECK-IN"
                             android:textColor="@color/white"
                             android:textSize="14dp"
-                            android:textStyle="bold"
-                            android:fontFamily="sans-serif"/>
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -344,9 +343,9 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/shape_rounded_blue_btn"
                     android:drawablePadding="10dp"
+                    android:fontFamily="sans-serif-medium"
                     android:paddingLeft="5dp"
                     android:text="  Booking  "
-                    android:fontFamily="sans-serif-medium"
                     android:textColor="@color/white"
                     android:textSize="16dp"
                     android:textStyle="bold" />
@@ -383,8 +382,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
-                        android:text=""
                         android:fontFamily="sans-serif"
+                        android:text=""
                         android:textColor="@color/white"
                         android:textSize="16dp" />
 
@@ -410,11 +409,11 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="5dp"
                         android:layout_toRightOf="@+id/cal_to_label"
-                        android:text=""
+                        android:layout_weight="0.88"
                         android:fontFamily="sans-serif"
+                        android:text=""
                         android:textColor="@color/white"
-                        android:textSize="16dp"
-                        android:layout_weight="0.88" />
+                        android:textSize="16dp" />
 
                 </LinearLayout>
 
@@ -468,10 +467,10 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="5dp"
+                        android:layout_weight="0.85"
                         android:text="00"
                         android:textColor="@color/white"
-                        android:textSize="16dp"
-                        android:layout_weight="0.85" />
+                        android:textSize="16dp" />
 
                 </LinearLayout>
 
@@ -842,11 +841,11 @@
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
                                 android:layout_marginTop="5dp"
+                                android:fontFamily="sans-serif-light"
                                 android:maxLines="2"
                                 android:paddingBottom="2dp"
                                 android:paddingTop="5dp"
                                 android:text="Expo"
-                                android:fontFamily="sans-serif-light"
                                 android:textColor="@color/white"
                                 android:textSize="16dp" />
 
@@ -860,8 +859,8 @@
                                 android:layout_marginRight="20dp"
                                 android:layout_marginTop="10dp"
                                 android:clickable="true"
-                                android:text="@string/viewmore"
                                 android:fontFamily="sans-serif-medium"
+                                android:text="@string/viewmore"
                                 android:textColor="#ffffff" />
 
                             <TextView
