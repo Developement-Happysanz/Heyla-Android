@@ -2,7 +2,6 @@ package com.findafun.activity.heyla;
 
 import android.Manifest;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,13 +9,13 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.findafun.R;
 import com.findafun.activity.FirstTimePreference;
 import com.findafun.activity.LandingActivity;
-import com.findafun.activity.LoginNew;
 import com.findafun.activity.LoginNewActivity;
 import com.findafun.activity.SelectCityActivity;
 import com.findafun.activity.SelectPreferenceActivity;
@@ -24,7 +23,6 @@ import com.findafun.helper.AlertDialogHelper;
 import com.findafun.interfaces.DialogClickListener;
 import com.findafun.servicehelpers.SignUpServiceHelper;
 import com.findafun.utils.CommonUtils;
-import com.findafun.utils.FindAFunConstants;
 import com.findafun.utils.FindAFunValidator;
 import com.findafun.utils.PermissionUtil;
 import com.findafun.utils.PreferenceStorage;
@@ -37,9 +35,9 @@ public class LoginDashboardActivity extends AppCompatActivity implements View.On
 
     private static final String TAG = LoginDashboardActivity.class.getName();
     TextView txtGFLogin, txtOR;
-    private ImageView imgLogin, imgCreateAccount;
+    private ImageView imgLogin, imgCreateAccount, btnCreateAccount;
     private ImageView btnFacebook, btnGPlus, txtGuestLogin;
-    private ImageView btnLogin, btnCreateAccount;
+    private Button btnLogin;
     private static final int REQUEST_PERMISSION_All = 111;
     private static String[] PERMISSIONS_ALL = {Manifest.permission.READ_CONTACTS,
             Manifest.permission.WRITE_CONTACTS, Manifest.permission.READ_CALENDAR,
@@ -82,7 +80,7 @@ public class LoginDashboardActivity extends AppCompatActivity implements View.On
 
             btnFacebook = (ImageView) findViewById(R.id.frag_login_fb);
             btnGPlus = (ImageView) findViewById(R.id.frag_login_gplus);
-            btnLogin = (ImageView) findViewById(R.id.btn_login);
+            btnLogin = (Button) findViewById(R.id.btn_login);
             btnCreateAccount = (ImageView) findViewById(R.id.btn_create_new_account);
             txtGuestLogin = (ImageView) findViewById(R.id.btn_guest_login);
             txtGFLogin = (TextView)findViewById(R.id.txt_gflogin);

@@ -1,8 +1,18 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/ab_login_hey_no_color" android:state_focused="true" android:state_pressed="false" />
-    <item android:drawable="@drawable/ab_login_hey" android:state_focused="true" android:state_pressed="true" />
-    <item android:drawable="@drawable/ab_login_hey" android:state_focused="false" android:state_pressed="true" />
-    <item android:drawable="@drawable/ab_login_hey_no_color" />
+    <item
+        android:drawable="@drawable/btn_custom_nocolour"
+        android:state_focused="true"
+        android:state_pressed="false" />
+    <item
+        android:drawable="@drawable/btn_custom_colour"
+        android:state_focused="true"
+        android:state_pressed="true" />
+    <item
+        android:drawable="@drawable/btn_custom_colour"
+        android:state_focused="false"
+        android:state_pressed="true" />
+    <item
+        android:drawable="@drawable/btn_custom_nocolour" />
 </selector>
 
 <!--<selector xmlns:android="http://schemas.android.com/apk/res/android">-->

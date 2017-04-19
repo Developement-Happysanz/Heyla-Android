@@ -13,10 +13,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.findafun.R;
-import com.findafun.activity.heyla.Login;
-import com.findafun.activity.heyla.Signup;
-import com.findafun.helper.AlertDialogHelper;
-import com.findafun.utils.CommonUtils;
 import com.findafun.utils.FindAFunValidator;
 import com.findafun.utils.PermissionUtil;
 import com.findafun.utils.PreferenceStorage;
@@ -29,8 +25,8 @@ public class LoginNew extends AppCompatActivity implements View.OnClickListener 
 
     private static final String TAG = LoginNew.class.getName();
     private ImageView imgLogin, imgCreateAccount;
-    private ImageView btnFacebook;
-    private ImageView btnLogin, btnCreateAccount;
+    private ImageView btnFacebook, btnCreateAccount;
+    private Button btnLogin;
     private static final int REQUEST_PERMISSION_All = 111;
     private static String[] PERMISSIONS_ALL = {Manifest.permission.READ_CONTACTS,
             Manifest.permission.WRITE_CONTACTS, Manifest.permission.READ_CALENDAR,
@@ -70,7 +66,7 @@ public class LoginNew extends AppCompatActivity implements View.OnClickListener 
         } else {
 
             btnFacebook = (ImageView) findViewById(R.id.frag_login_fb);
-            btnLogin = (ImageView) findViewById(R.id.btn_login);
+            btnLogin = (Button) findViewById(R.id.btn_login);
             btnCreateAccount = (ImageView) findViewById(R.id.btn_create_new_account);
 
             btnLogin.setOnClickListener(this);
