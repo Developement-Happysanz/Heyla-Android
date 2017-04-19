@@ -64,7 +64,6 @@ import com.findafun.R;
 import com.findafun.app.AppController;
 import com.findafun.bean.events.Event;
 import com.findafun.bean.gamification.GamificationDataHolder;
-import com.findafun.helper.AlertDialogHelper;
 import com.findafun.helper.FindAFunHelper;
 import com.findafun.photowidget.ImageInfo;
 import com.findafun.servicehelpers.EventServiceHelper;
@@ -538,6 +537,7 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
         whishListBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
                     Log.d(TAG, "Bookmark Button selected" + event.getId());
                     //        getCalender();

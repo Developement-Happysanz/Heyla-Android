@@ -42,13 +42,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/flavorDebug/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/flavorDebug/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/flavorDebug/shaders" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/androidTest/flavor/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/androidTest/flavor/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/flavor/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/androidTest/flavor/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/androidTest/flavor/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/flavor/debug" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/androidTest/flavor/debug" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/testFlavorDebug/res" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/testFlavorDebug/resources" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/testFlavorDebug/assets" type="java-test-resource" />
@@ -56,6 +49,13 @@
       <sourceFolder url="file://$MODULE_DIR$/src/testFlavorDebug/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/testFlavorDebug/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/testFlavorDebug/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/androidTest/flavor/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/androidTest/flavor/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/flavor/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/androidTest/flavor/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/androidTest/flavor/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/flavor/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/androidTest/flavor/debug" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/flavor/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/flavor/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/flavor/assets" type="java-resource" />
@@ -115,7 +115,6 @@
       <excludeFolder url="file://$MODULE_DIR$/build/apk" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/assets" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/blame" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/builds" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/classes" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-classes" />
@@ -136,7 +135,6 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/symbols" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/transforms" />
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
-      <excludeFolder url="file://$MODULE_DIR$/build/reports" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
     <orderEntry type="jdk" jdkName="Android API 23 Platform" jdkType="Android SDK" />
@@ -192,6 +190,5 @@
     <orderEntry type="library" exported="" name="httpmime-4.3.6" level="project" />
     <orderEntry type="library" exported="" name="play-services-panorama-8.3.0" level="project" />
     <orderEntry type="module" module-name="pulltorefresh-and-loadmore" exported="" />
-    <orderEntry type="library" exported="" name="support-v4-13.0.0" level="project" />
   </component>
 </module>

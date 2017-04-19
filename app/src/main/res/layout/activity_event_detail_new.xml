@@ -56,7 +56,6 @@
                     android:layout_marginTop="10dp"
                     android:layout_weight="3"
                     android:background="@drawable/ic_wishlist1"
-                    android:drawablePadding="100dp"
                     android:onClick="@drawable/ic_wishlist1_selected" />
 
 
