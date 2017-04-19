@@ -81,7 +81,7 @@ public class CompoundAlertDialogFragment extends DialogFragment {
                 sharedPreferences.edit().clear().commit();
                 TwitterUtil.getInstance().resetTwitterRequestToken();
 
-                Intent navigationIntent = new Intent(getApplicationContext(), LoginNew.class);
+                Intent navigationIntent = new Intent(getApplicationContext(), SplashScreenActivity.class);
                 navigationIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(navigationIntent);
                 getActivity().finish();
