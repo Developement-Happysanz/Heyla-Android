@@ -58,6 +58,7 @@ public class LoginDashboardActivity extends AppCompatActivity implements View.On
         if (PreferenceStorage.getUserId(getApplicationContext()) != null && FindAFunValidator.checkNullString(PreferenceStorage.getUserId(getApplicationContext()))) {
             String city = PreferenceStorage.getUserCity(getApplicationContext());
             boolean haspreferences = PreferenceStorage.isPreferencesPresent(getApplicationContext());
+
             if (FindAFunValidator.checkNullString(city) && haspreferences) {
                 Intent intent = new Intent(getApplicationContext(), LandingActivity.class);
                 startActivity(intent);
