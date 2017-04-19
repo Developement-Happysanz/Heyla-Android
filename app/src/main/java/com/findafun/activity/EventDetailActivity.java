@@ -537,7 +537,6 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
         whishListBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
                     Log.d(TAG, "Bookmark Button selected" + event.getId());
                     //        getCalender();

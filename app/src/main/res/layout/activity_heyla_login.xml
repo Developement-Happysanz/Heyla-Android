@@ -101,7 +101,7 @@
             android:id="@+id/text_forgot"
             android:layout_width="240dp"
             android:layout_height="22dp"
-            android:layout_below="@+id/btn_sign_in"
+            android:layout_below="@+id/btn_login"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="25dp"

@@ -80,7 +80,7 @@ public class LoginDashboardActivity extends AppCompatActivity implements View.On
 
             btnFacebook = (ImageView) findViewById(R.id.frag_login_fb);
             btnGPlus = (ImageView) findViewById(R.id.frag_login_gplus);
-            btnLogin = (Button) findViewById(R.id.btn_login);
+            btnLogin = (Button) findViewById(R.id.btn_sign_in);
             btnCreateAccount = (Button) findViewById(R.id.btn_create_new_account);
             txtGuestLogin = (ImageView) findViewById(R.id.btn_guest_login);
             txtGFLogin = (TextView)findViewById(R.id.txt_gflogin);
