@@ -100,7 +100,7 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
     public static final int TAG_FAVOURITES = 0, TAG_FEATURED = 1, TAG_ALL = 2;
     private ArrayAdapter<String> navListAdapter;
     private String[] values = {"Change City", "Profile", "Edit Preferences", "Bookmarks", "Refer & Earn", "Rate Us", "Sign Out"};
-    private String[] values_guest = {"Change City", "Profile", "Edit Preferences", "Bookmarks", "Refer & Earn", "Rate Us", "Login"};
+    private String[] values_guest = {"Change City", "Profile", "Edit Preferences", "Bookmarks", "Refer & Earn", "Rate Us", "Login/Signup"};
     private boolean mFragmentsLoaded = false;
     TextView navUserName = null;
     TextView navUserCity = null;
@@ -147,6 +147,7 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
         serviceHelper.postShareDetails(String.format(FindAFunConstants.SHARE_EVENT_LOGIN_COUNT_URL, eventId, Integer.parseInt(PreferenceStorage.getUserId(this)),
                 ruleid, Uri.encode(activitydetail), ticketcount), this);
     }
+
 
     @Override
     public void onBackPressed() {

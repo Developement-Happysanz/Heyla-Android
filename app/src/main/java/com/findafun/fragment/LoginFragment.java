@@ -839,6 +839,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Dia
                         String promocode = userData.getString("promocode");
                         String userImageUrl = userData.getString("user_image");
                         String forgotPasswordStatus = userData.getString("forgot_pass_status");
+
                         if ((name != null) && !(name.isEmpty()) && !name.equalsIgnoreCase("null")) {
                             PreferenceStorage.saveUserName(getActivity(), name);
                         }

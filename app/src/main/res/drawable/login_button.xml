@@ -1,0 +1,13 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ab_login_hey_no_color" android:state_focused="true" android:state_pressed="false" />
+    <item android:drawable="@drawable/ab_login_hey" android:state_focused="true" android:state_pressed="true" />
+    <item android:drawable="@drawable/ab_login_hey" android:state_focused="false" android:state_pressed="true" />
+    <item android:drawable="@drawable/ab_login_hey_no_color" />
+</selector>
+
+<!--<selector xmlns:android="http://schemas.android.com/apk/res/android">-->
+<!--<item android:drawable="@drawable/ab_login_hey" android:state_focused="true" android:state_pressed="false" />-->
+<!--<item android:drawable="@drawable/login_button_gradient" android:state_focused="true" android:state_pressed="true" />-->
+<!--<item android:drawable="@drawable/login_button_gradient" android:state_focused="false" android:state_pressed="true" />-->
+<!--<item android:drawable="@drawable/ab_login_hey" />-->
+<!--</selector>-->
