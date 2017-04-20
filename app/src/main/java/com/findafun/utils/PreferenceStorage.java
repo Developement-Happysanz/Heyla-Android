@@ -208,6 +208,21 @@ public class PreferenceStorage {
         editor.commit();
     }
 
+    public static String getForgotPasswordStatusEnable(Context context) {
+        SharedPreferences sharedPreferences = PreferenceManager
+                .getDefaultSharedPreferences(context);
+        String url = sharedPreferences.getString(FindAFunConstants.KEY_FORGOT_PASSWORD_STATUS, "");
+        return url;
+    }
+
+    public static void saveForgotPasswordStatusEnable(Context context, String url) {
+        SharedPreferences sharedPreferences = PreferenceManager
+                .getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(FindAFunConstants.KEY_FORGOT_PASSWORD_STATUS, url);
+        editor.commit();
+    }
+
     public static void saveSocialNetworkProfilePic(Context context, String url) {
         SharedPreferences sharedPreferences = PreferenceManager
                 .getDefaultSharedPreferences(context);

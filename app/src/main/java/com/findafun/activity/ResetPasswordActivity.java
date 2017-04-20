@@ -46,7 +46,8 @@ public class ResetPasswordActivity extends AppCompatActivity implements View.OnC
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_password);
-
+//        doLogout();
+        PreferenceStorage.saveForgotPasswordStatusEnable(this, "no");
         initializeViews();
         signUpServiceHelper = new SignUpServiceHelper(this);
         signUpServiceHelper.setForgotPasswordServiceListener(this);
@@ -135,6 +136,7 @@ public class ResetPasswordActivity extends AppCompatActivity implements View.OnC
 
                         @Override
                         public void onClick(DialogInterface arg0, int arg1) {
+                            PreferenceStorage.saveForgotPasswordStatusEnable(getApplicationContext(), "yes");
                             doLogout();
                         }
                     });

@@ -909,11 +909,11 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Dia
                 getActivity().finish();
             } else {
                 //clear out data for old Login
-//                GamificationDataHolder.getInstance().clearGamificationData();
+                GamificationDataHolder.getInstance().clearGamificationData();
                 Intent intent = new Intent(getActivity(), ResetPasswordActivity.class);
-//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
-//                getActivity().finish();
+                getActivity().finish();
             }
 
         } else {
