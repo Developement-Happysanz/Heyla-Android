@@ -387,13 +387,14 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
-        android:background="@color/city_text_color"
+        android:background="@color/preference_orange"
         android:gravity="center"
         android:padding="5dp"
         android:text="SAVE"
         android:fontFamily="sans-serif-medium"
         android:textColor="@color/White"
         android:textSize="22dp" />
+
 
     <View
         android:layout_width="match_parent"

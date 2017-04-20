@@ -29,11 +29,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="error_occured">Failed to connect to the server. Please try again.</string>
     <string name="empty" />
-    <string name="alert_button_ok">Ok</string>
+    <string name="alert_button_ok">OK</string>
     <string name="enter_user_name">User name cannot be empty</string>
     <string name="email_empty_str">Email Id cannot be empty</string>
     <string name="enter_valid_email">Please enter a valid email address</string>
     <string name="enter_password">Password cannot be empty</string>
+    <string name="min_pass_length">Short passwords are easy to guess! Try one with at least 8 characters...</string>
     <string name="password_mismatch">Password mismatch</string>
     <string name="progress_loading">Loading...</string>
     <string name="no_connectivity">Please check your internet connectivity and try again.</string>

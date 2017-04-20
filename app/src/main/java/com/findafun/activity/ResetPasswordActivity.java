@@ -37,6 +37,7 @@ public class ResetPasswordActivity extends AppCompatActivity implements View.OnC
 
     private static final String TAG = ResetPasswordActivity.class.getName();
     private Button btnReset;
+    private int minchar = 8;
     private EditText edtNewPassword, edtRetypePassword;
     private ProgressDialogHelper progressDialogHelper;
     private SignUpServiceHelper signUpServiceHelper;
@@ -91,13 +92,23 @@ public class ResetPasswordActivity extends AppCompatActivity implements View.OnC
         if (!FindAFunValidator.checkNullString(this.edtNewPassword.getText().toString().trim())) {
             AlertDialogHelper.showSimpleAlertDialog(this, this.getResources().getString(R.string.enter_password));
             return false;
-        } else if (!FindAFunValidator.checkNullString(this.edtRetypePassword.getText().toString().trim())) {
+        }
+
+        else if (!FindAFunValidator.checkNullString(this.edtRetypePassword.getText().toString().trim())) {
             AlertDialogHelper.showSimpleAlertDialog(this, this.getResources().getString(R.string.enter_password));
             return false;
-        } else if (!this.edtNewPassword.getText().toString().trim().contentEquals(this.edtRetypePassword.getText().toString().trim())) {
+        }
+        else if (!FindAFunValidator.checkStringMinLength(minchar, this.edtNewPassword.getText().toString().trim())) {
+            AlertDialogHelper.showSimpleAlertDialog(this, this.getResources().getString(R.string.min_pass_length));
+            return false;
+        }
+
+        else if (!this.edtNewPassword.getText().toString().trim().contentEquals(this.edtRetypePassword.getText().toString().trim())) {
             AlertDialogHelper.showSimpleAlertDialog(this, this.getResources().getString(R.string.password_mismatch));
             return false;
-        } else {
+        }
+
+        else {
             return true;
         }
     }

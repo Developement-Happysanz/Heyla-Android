@@ -505,6 +505,7 @@ public class AdvanceSearchAct extends AppCompatActivity implements AdapterView.O
                 }
                 break;
             case R.id.btnapply:
+                findViewById(R.id.btnapply).setBackgroundResource(R.drawable.bg_advanced_filter_properties);
                 String eventType = spinEventType.getSelectedItem().toString();
                 String city = txtCityDropDown.getText().toString();
 //                String city = spincity.getSelectedItem().toString();
@@ -575,6 +576,8 @@ public class AdvanceSearchAct extends AppCompatActivity implements AdapterView.O
 
                 break;
             case R.id.btncancel:
+                findViewById(R.id.btncancel).setBackgroundResource(R.drawable.bg_advance_filter_orange);
+                findViewById(R.id.btnapply).setBackgroundResource(R.drawable.bg_advanced_filter_properties);
                 finish();
                 break;
             case R.id.catgoryspinner:
