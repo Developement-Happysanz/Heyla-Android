@@ -204,6 +204,60 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
         }
     }
 
+    private SparseBooleanArray selectedItems;
+
+    @Override
+    public void onClick(View v) {
+        if (v == txtGetStarted) {
+            if (selectedList.size() > 0) {
+                setPreferences();
+            } else {
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+                //alertDialogBuilder.setTitle("Registration Successful");
+                alertDialogBuilder.setTitle("No Preference selected");
+                alertDialogBuilder.setMessage("Please select atleast one Preference");
+                alertDialogBuilder.setPositiveButton("OK",
+                        new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        });
+
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
+            }
+        } else if (v == txtSelectAll) {
+            if (!selval) {
+                selval = true;
+                for (pos = 0; pos < categoryArrayList.size(); pos++) {
+                    Category tag = preferenceAdatper.getItem(pos);
+                    selectedList.add(tag);
+                    tag.setCategoryPreference("yes");
+
+//                    categoryArrayList.remove(pos);
+//                    mRecyclerView.removeViewAt(pos);
+//                    preferenceAdatper.notifyItemRemoved(pos);
+//                    preferenceAdatper.notifyItemRangeChanged(pos, categoryArrayList.size());
+                    preferenceAdatper.notifyDataSetChanged();
+                }
+            } else {
+                selval = false;
+                for (pos = 0; pos < categoryArrayList.size(); pos++) {
+                    Category tag = preferenceAdatper.getItem(pos);
+                    tag.setCategoryPreference("no");
+                    selectedList.remove(tag);
+                    preferenceAdatper.notifyDataSetChanged();
+                }
+            }
+//            Intent navigationIntent = new Intent(this, SelectPreferenceActivity.class);
+//            navigationIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//            startActivity(navigationIntent);
+
+        }
+    }
+
     @Override
     public void onItemClick(View view, int position) {
 
@@ -239,58 +293,6 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
             selectedList.remove(tag);
         } else {
             selectedList.add(tag);
-        }
-    }
-
-    private SparseBooleanArray selectedItems;
-
-    @Override
-    public void onClick(View v) {
-        if (v == txtGetStarted) {
-            if (selectedList.size() > 0) {
-                setPreferences();
-            } else {
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-                //alertDialogBuilder.setTitle("Registration Successful");
-                alertDialogBuilder.setTitle("No Preference selected");
-                alertDialogBuilder.setMessage("Please select atleast one Preference");
-                alertDialogBuilder.setPositiveButton("OK",
-                        new DialogInterface.OnClickListener() {
-
-                            @Override
-                            public void onClick(DialogInterface arg0, int arg1) {
-
-
-                            }
-                        });
-
-                AlertDialog alertDialog = alertDialogBuilder.create();
-                alertDialog.show();
-
-            }
-        }
-
-            else if (v == txtSelectAll) {
-            if(!selval) {
-                selval = true;
-                for (pos = 0; pos < categoryArrayList.size(); pos++) {
-                    Category tag = preferenceAdatper.getItem(pos);
-                    selectedList.add(tag);
-                    tag.setCategoryPreference("yes");
-                }
-            }
-            else {
-                selval = false;
-                for (pos = 0; pos < categoryArrayList.size(); pos++) {
-                    Category tag = preferenceAdatper.getItem(pos);
-                    tag.setCategoryPreference("no");
-                    selectedList.remove(tag);
-                }
-            }
-            Intent navigationIntent = new Intent(this, SelectPreferenceActivity.class);
-            navigationIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP|Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(navigationIntent);
-
         }
     }
 }
