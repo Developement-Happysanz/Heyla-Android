@@ -247,7 +247,7 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
                 for (pos = 0; pos < categoryArrayList.size(); pos++) {
                     Category tag = preferenceAdatper.getItem(pos);
                     tag.setCategoryPreference("no");
-                    selectedList.remove(tag);
+                    selectedList.removeAll(selectedList);
                     preferenceAdatper.notifyDataSetChanged();
                 }
             }
@@ -271,12 +271,14 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
 //            TextView mtextView = (TextView) view;
 //            mtextView.setTextColor(getResources().getColor(R.color.preference_orange));
             tag.setCategoryPreference("yes");
+            selectedList.add(tag);
         } else {
 //            bgShape.setColor(getResources().getColor(R.color.white));
             textView.setBackgroundColor(getResources().getColor(R.color.white));
 //            TextView mtextView = (TextView) view;
 //            mtextView.setTextColor(getResources().getColor(R.color.white));
             tag.setCategoryPreference("no");
+            selectedList.remove(tag);
         }
 //        ImageView tickImage = (ImageView) view.findViewById(R.id.tickImage);
 //        ImageView logoImage = (ImageView) view.findViewById(R.id.img_category);
@@ -289,10 +291,10 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
 //            tag.setCategoryPreference("no");
 //            logoImage.setAlpha((float) 1);
 //        }
-        if (selectedList.contains(tag)) {
-            selectedList.remove(tag);
-        } else {
-            selectedList.add(tag);
-        }
+//        if (selectedList.contains(tag)) {
+//            selectedList.remove(tag);
+//        } else {
+//            selectedList.add(tag);
+//        }
     }
 }
