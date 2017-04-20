@@ -194,7 +194,6 @@
                     android:orientation="horizontal"
                     android:weightSum="1">
 
-
                     <LinearLayout
                         android:id="@+id/share_btn"
                         android:layout_width="50dp"
@@ -258,7 +257,9 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/event_detail_bg_color"></View>
+                    android:background="@color/event_detail_bg_color">
+
+                </View>
 
 
                 <LinearLayout

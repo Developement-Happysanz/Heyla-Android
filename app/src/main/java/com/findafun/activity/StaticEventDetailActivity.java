@@ -571,29 +571,28 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
             @Override
             public void onClick(View v) {
                 if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
-                Log.d(TAG, "Bookmark Button selected" + event.getId());
-                if (mServiceHelper == null) {
-                    mServiceHelper = new EventServiceHelper(StaticEventDetailActivity.this);
-                    mServiceHelper.setEventServiceListener(StaticEventDetailActivity.this);
+                    Log.d(TAG, "Bookmark Button selected" + event.getId());
+                    if (mServiceHelper == null) {
+                        mServiceHelper = new EventServiceHelper(StaticEventDetailActivity.this);
+                        mServiceHelper.setEventServiceListener(StaticEventDetailActivity.this);
 
-                }
-                if (GamificationDataHolder.getInstance().isEventBookmarked(event.getId())) {
-                    Toast.makeText(StaticEventDetailActivity.this, "Event already bookmarked", Toast.LENGTH_SHORT).show();
-                    int imgResource = R.drawable.ic_wishlist1_selected;
-                    whishListBtn.setCompoundDrawablesWithIntrinsicBounds(imgResource, 0, 0, 0);
-
-                } else {
-                    try {
-                        mServiceHelper.makeGetEventServiceCall(String.format(FindAFunConstants.ADD_EVENT_BOOKMARK,
-                                Integer.parseInt(PreferenceStorage.getUserId(StaticEventDetailActivity.this)), Integer.parseInt((event.getId()))));
+                    }
+                    if (GamificationDataHolder.getInstance().isEventBookmarked(event.getId())) {
+                        Toast.makeText(StaticEventDetailActivity.this, "Event already bookmarked", Toast.LENGTH_SHORT).show();
                         int imgResource = R.drawable.ic_wishlist1_selected;
                         whishListBtn.setCompoundDrawablesWithIntrinsicBounds(imgResource, 0, 0, 0);
-                    } catch (Exception e) {
-                        e.printStackTrace();
+
+                    } else {
+                        try {
+                            mServiceHelper.makeGetEventServiceCall(String.format(FindAFunConstants.ADD_EVENT_BOOKMARK,
+                                    Integer.parseInt(PreferenceStorage.getUserId(StaticEventDetailActivity.this)), Integer.parseInt((event.getId()))));
+                            int imgResource = R.drawable.ic_wishlist1_selected;
+                            whishListBtn.setCompoundDrawablesWithIntrinsicBounds(imgResource, 0, 0, 0);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
-                }
-            }
-            else {
+                } else {
                     android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(StaticEventDetailActivity.this);
                     alertDialogBuilder.setTitle("Login");
                     alertDialogBuilder.setMessage("Log in to Access");
@@ -611,14 +610,39 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
                     });
                     alertDialogBuilder.show();
                 }
-        };
+            }
+
+            ;
         });
         shareBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
 
-                    showShareList();
+//                    showShareList();
+
+//                    Intent waIntent = new Intent(Intent.ACTION_SEND);
+//                    waIntent.setType("text/plain");
+                    SpannableString content = new SpannableString("http://www.heylaapp.com/");
+                    content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+                    String text = event.getEventName() + "\n" + event.getDescription() + "\n" + content;
+//                    PackageInfo info = pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
+                    //Check if package exists or not. If not then code
+                    //in catch block will be called
+//                    waIntent.setPackage("com.whatsapp");
+//                    waIntent.putExtra(Intent.EXTRA_TEXT, text);
+//                    startActivity(Intent.createChooser(waIntent, "Share with"));
+
+
+                    Intent i = new Intent(android.content.Intent.ACTION_SEND);
+                    i.setType("text/plain");
+                    i.putExtra(android.content.Intent.EXTRA_SUBJECT, "Share with");
+                    i.putExtra(android.content.Intent.EXTRA_TEXT, text);
+                    startActivity(Intent.createChooser(i, "Share via"));
+
+                    sendShareStatus();
+
                 } else {
                     android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(StaticEventDetailActivity.this);
                     alertDialogBuilder.setTitle("Login");
@@ -646,26 +670,26 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
 
                 if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(
-                        StaticEventDetailActivity.this);
-                builder.setTitle("Events");
+                    AlertDialog.Builder builder = new AlertDialog.Builder(
+                            StaticEventDetailActivity.this);
+                    builder.setTitle("Events");
 
-                builder.setMessage("Making your presense for the event?");
+                    builder.setMessage("Making your presense for the event?");
 
-                builder.setPositiveButton("May Be",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,
-                                                int which) {
-                                Toast.makeText(getApplicationContext(), "Thanks for your interest.", Toast.LENGTH_LONG).show();
-                            }
-                        });
-                builder.setNegativeButton("Not Now",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,
-                                                int which) {
-                                Toast.makeText(getApplicationContext(), "Wish to see you soon.", Toast.LENGTH_LONG).show();
-                            }
-                        });
+                    builder.setPositiveButton("May Be",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog,
+                                                    int which) {
+                                    Toast.makeText(getApplicationContext(), "Thanks for your interest.", Toast.LENGTH_LONG).show();
+                                }
+                            });
+                    builder.setNegativeButton("Not Now",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog,
+                                                    int which) {
+                                    Toast.makeText(getApplicationContext(), "Wish to see you soon.", Toast.LENGTH_LONG).show();
+                                }
+                            });
 
 
 
@@ -689,10 +713,10 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
                             }
                         });
 */
-                builder.show();
+                    builder.show();
 
 
-                sendShareStatusUserActivity(3);
+                    sendShareStatusUserActivity(3);
 
                 } else {
                     android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(StaticEventDetailActivity.this);
@@ -739,11 +763,11 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
 
 
                     if (isChecked) {
-                    Toast.makeText(getApplicationContext(), "You have successfully checked-in for the event - " + event.getEventName().toString() + "\nGet ready for the fun! ", Toast.LENGTH_LONG).show();
-                    sendShareStatusUserActivity(2);
-                } else {
+                        Toast.makeText(getApplicationContext(), "You have successfully checked-in for the event - " + event.getEventName().toString() + "\nGet ready for the fun! ", Toast.LENGTH_LONG).show();
+                        sendShareStatusUserActivity(2);
+                    } else {
 
-                }
+                    }
                 } else {
                     android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(StaticEventDetailActivity.this);
                     alertDialogBuilder.setTitle("Login");
@@ -1345,6 +1369,7 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
             return false;
         }
     }
+
     private void doLogout() {
         SharedPreferences sharedPreferences =
                 PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
