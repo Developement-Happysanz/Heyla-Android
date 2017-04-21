@@ -114,6 +114,10 @@ public class EventServiceHelper {
             if (!eventType.equalsIgnoreCase("")) {
                 jsonObject.accumulate("event_type", eventType);
             }
+            String eventTypeCategory = PreferenceStorage.getFilterEventTypeCategory(context);
+            if (!eventType.equalsIgnoreCase("")) {
+                jsonObject.accumulate("event_type_category", eventTypeCategory);
+            }
             String catgry = PreferenceStorage.getFilterCatgry(context);
             if (!catgry.equalsIgnoreCase("")) {
                 jsonObject.accumulate("selected_category", catgry);
