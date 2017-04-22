@@ -136,11 +136,37 @@
                 android:textSize="15sp"></Spinner>
 
             <TextView
-                android:id="@+id/tvsortbycategory"
+                android:id="@+id/tveventtypecategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_below="@id/eventtypespinner"
+                android:layout_marginBottom="@dimen/mainmargin"
+                android:gravity="center"
+                android:text="Select Event Category"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/title_red1"
+                android:textStyle="bold"
+                android:textSize="@dimen/actionbarTextSize" />
+
+            <Spinner
+                android:id="@+id/eventtypespinnercategory"
+                style="@style/spinner_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tveventtypecategory"
+                android:spinnerMode="dialog"
+                android:fontFamily="sans-serif"
+                android:layout_marginBottom="@dimen/mainmargin"
+                android:textColor="@color/text_gray"
+                android:textSize="15sp"></Spinner>
+
+            <TextView
+                android:id="@+id/tvsortbycategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/eventtypespinnercategory"
                 android:layout_marginBottom="@dimen/mainmargin"
                 android:gravity="center"
                 android:text="Select Category"

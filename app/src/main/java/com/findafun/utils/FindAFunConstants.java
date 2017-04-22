@@ -55,9 +55,11 @@ public class FindAFunConstants {
     public static final String TODATE = "todate";
     public static final String FILTERCITY = "filtercity";
     public static final String FILTEREVENTTYPE = "filtereventtype";
+    public static final String FILTEREVENTTYPECATEGORY = "filtereventtypecategory";
     public static final String FILTERCAT = "filtercat";
     public static final String FILTERCITYINDEX = "filtercityindex";
     public static final String FILTEREVENTTYPEINDEX = "filtereventtypeindex";
+    public static final String FILTEREVENTTYPECATEGORYINDEX = "filtereventtypecategoryindex";
 
     //Service Params
     public static String PARAM_MESSAGE = "msg";

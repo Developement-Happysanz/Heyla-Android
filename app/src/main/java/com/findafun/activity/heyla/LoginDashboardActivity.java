@@ -17,6 +17,7 @@ import com.findafun.R;
 import com.findafun.activity.FirstTimePreference;
 import com.findafun.activity.LandingActivity;
 import com.findafun.activity.LoginNewActivity;
+import com.findafun.activity.ResetPasswordActivity;
 import com.findafun.activity.SelectCityActivity;
 import com.findafun.activity.SelectPreferenceActivity;
 import com.findafun.helper.AlertDialogHelper;
@@ -55,9 +56,14 @@ public class LoginDashboardActivity extends AppCompatActivity implements View.On
 
         if (PreferenceStorage.getUserId(getApplicationContext()) != null && FindAFunValidator.checkNullString(PreferenceStorage.getUserId(getApplicationContext()))) {
             String city = PreferenceStorage.getUserCity(getApplicationContext());
+            String isResetOver = PreferenceStorage.getForgotPasswordStatusEnable(getApplicationContext());
             boolean haspreferences = PreferenceStorage.isPreferencesPresent(getApplicationContext());
 
-            if (FindAFunValidator.checkNullString(city) && haspreferences) {
+            if (isResetOver.equalsIgnoreCase("no")) {
+                Intent intent = new Intent(getApplicationContext(), ResetPasswordActivity.class);
+                startActivity(intent);
+                this.finish();
+            } else if (FindAFunValidator.checkNullString(city) && haspreferences) {
                 Intent intent = new Intent(getApplicationContext(), LandingActivity.class);
                 startActivity(intent);
                 this.finish();
@@ -83,8 +89,8 @@ public class LoginDashboardActivity extends AppCompatActivity implements View.On
             btnLogin = (Button) findViewById(R.id.btn_sign_in);
             btnCreateAccount = (Button) findViewById(R.id.btn_create_new_account);
             txtGuestLogin = (ImageView) findViewById(R.id.btn_guest_login);
-            txtGFLogin = (TextView)findViewById(R.id.txt_gflogin);
-            txtOR = (TextView)findViewById(R.id.txt_or);
+            txtGFLogin = (TextView) findViewById(R.id.txt_gflogin);
+            txtOR = (TextView) findViewById(R.id.txt_or);
 
             btnLogin.setOnClickListener(this);
             btnCreateAccount.setOnClickListener(this);

@@ -140,6 +140,7 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
     int curRate;
     private int mShortAnimationDuration;
     Button whishListBtn;
+    String bookingStatus = "0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -509,7 +510,7 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
         Button bookingBtn = (Button) findViewById(R.id.booking_btn);
         Switch checkinsBtn = (Switch) findViewById(R.id.checkins_btn);
 
-        String bookingStatus = event.getEventBookingStatus();
+        bookingStatus = event.getEventBookingStatus();
 
         if (bookingStatus.equalsIgnoreCase("1")) {
             bookingBtn.setVisibility(View.VISIBLE);
