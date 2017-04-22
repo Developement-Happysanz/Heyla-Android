@@ -22,6 +22,7 @@ import android.widget.ImageView;
 import com.findafun.R;
 import com.findafun.app.AppController;
 import com.findafun.bean.events.Event;
+import com.findafun.helper.TouchImageView;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
@@ -36,8 +37,8 @@ public class BannerList extends AppCompatActivity {
     private int mShortAnimationDuration = 500;
     static int zoomVal = 1;
     Gallery gallery;
-    ImageView imageView;
-    View imageView_zoom;
+    TouchImageView imageView;
+    TouchImageView imageView_zoom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,25 +46,33 @@ public class BannerList extends AppCompatActivity {
         setContentView(R.layout.activity_banner_list);
         event = (Event) getIntent().getSerializableExtra("eventObj");
 
-        imageView = (ImageView) findViewById(R.id.banner_list);
-        imageView_zoom = (ImageView) findViewById(R.id.banner_list);
+        imageView = (TouchImageView) findViewById(R.id.banner_list);
+        imageView_zoom = (TouchImageView) findViewById(R.id.banner_list);
         gallery = (Gallery) findViewById(R.id.gallery_list);
         if (event.getEventLogo().contains(".")) {
             imgList.add(0, event.getEventLogo());
         }
-        if (event.getEventLogo_1().contains(".")) {
+        else if (event.getEventLogo_1().contains(".")) {
             imgList.add(1, event.getEventLogo_1());
         }
-        if (event.getEventLogo_2().contains(".")) {
+        else if (event.getEventLogo_2().contains(".")) {
             imgList.add(2, event.getEventLogo_2());
         }
+        else if (event.getEventLogo_3().contains(".")) {
+            imgList.add(3, event.getEventLogo_3());
+        }
 
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                zoomImageFromThumb(imageView_zoom, zoomVal);
-            }
-        });
+        else if (event.getEventLogo_4().contains(".")) {
+            imgList.add(4, event.getEventLogo_4());
+        }
+
+
+//        imageView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                zoomImageFromThumb(imageView_zoom, zoomVal);
+//            }
+//        });
 
 
         gallery.setAdapter(new ImageAdapter(this));
@@ -98,7 +107,7 @@ public class BannerList extends AppCompatActivity {
             mCurrentAnimator.cancel();
         }
         // Load the high-resolution "zoomed-in" image.
-        final ImageView expandedImageView = (ImageView) findViewById(
+        final ImageView expandedImageView = (TouchImageView) findViewById(
                 R.id.banner_list_zoom);
       /*  final LinearLayout container_expandedImageView = (LinearLayout) findViewById(
                 R.id.container_expanded_image);*/

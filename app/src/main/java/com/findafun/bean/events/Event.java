@@ -58,6 +58,14 @@ public class Event implements Serializable {
     @Expose
     private String eventLogo_2;
 
+    @SerializedName("event_logo_3")
+    @Expose
+    private String eventLogo_3;
+
+    @SerializedName("event_logo_4")
+    @Expose
+    private String eventLogo_4;
+
     @SerializedName("event_banner")
     @Expose
     private String eventBanner;
@@ -322,6 +330,32 @@ public class Event implements Serializable {
      */
     public void setEventLogo_2(String eventLogo_2) {
         this.eventLogo_2 = eventLogo_2;
+    }
+
+    /**
+     * @return The eventLogo_3
+     */
+    public String getEventLogo_3() {
+        return eventLogo_3;
+    }
+    /**
+     * @param eventLogo_3 The eventLogo_3
+     */
+    public void setEventLogo_3(String eventLogo_3) {
+        this.eventLogo_3 = eventLogo_3;
+    }
+
+    /**
+     * @return The eventLogo_4
+     */
+    public String getEventLogo_4() {
+        return eventLogo_4;
+    }
+    /**
+     * @param eventLogo_4 The eventLogo_4
+     */
+    public void setEventLogo_4(String eventLogo_4) {
+        this.eventLogo_4 = eventLogo_4;
     }
 
     /**
