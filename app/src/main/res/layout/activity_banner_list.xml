@@ -1,45 +1,92 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/banner_container"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:background="@color/black"
     android:orientation="vertical">
 
-    <com.findafun.helper.TouchImageView
-        android:id="@+id/banner_list"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="@color/white"
-        android:paddingBottom="5dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="5dp"
-        android:scaleType="matrix"/>
-
-    <com.findafun.helper.TouchImageView
-        android:id="@+id/banner_list_zoom"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="@color/white"
-        android:scaleType="matrix"
-        android:visibility="gone"
-        />
-
-    <Gallery
-        android:id="@+id/gallery_list"
+    <com.findafun.helper.AViewFlipper
+        android:id="@+id/banner_new"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:background="@color/black"
-        android:paddingTop="20dp"
-        android:visibility="gone"
-        />
+        android:layout_height="match_parent">
 
-</RelativeLayout>
+        <com.findafun.helper.TouchImageView
+            android:id="@+id/banner_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/black"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:scaleType="matrix"/>
+
+        <com.findafun.helper.TouchImageView
+            android:id="@+id/banner_list1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/black"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:scaleType="matrix"/>
+
+        <com.findafun.helper.TouchImageView
+            android:id="@+id/banner_list2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/black"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:scaleType="matrix"/>
+
+        <com.findafun.helper.TouchImageView
+            android:id="@+id/banner_list3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/black"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:scaleType="matrix"/>
+
+        <com.findafun.helper.TouchImageView
+            android:id="@+id/banner_list4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/black"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:scaleType="matrix"/>
+
+    </com.findafun.helper.AViewFlipper>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabDots"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        app:tabGravity="center"
+        app:tabBackground="@drawable/footer_selector"
+        app:tabIndicatorHeight="0dp"/>
+
+</LinearLayout>

@@ -293,7 +293,7 @@
 
         <activity android:name=".activity.PictureDetailsActivity" />
 
-        <activity android:name=".activity.BannerList" />
+        <activity android:name=".activity.BannerListNew" />
 
         <activity
             android:name=".activity.AddEventActivity"

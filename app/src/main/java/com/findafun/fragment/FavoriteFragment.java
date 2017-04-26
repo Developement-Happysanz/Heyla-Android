@@ -4,7 +4,6 @@ import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,19 +13,14 @@ import android.location.Location;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.costum.android.widget.LoadMoreListView;
 import com.findafun.R;
-import com.findafun.activity.AddEventActivity;
 import com.findafun.activity.EventDetailActivity;
 import com.findafun.activity.NearbyActivity;
 import com.findafun.bean.events.Event;
@@ -185,8 +179,8 @@ public class FavoriteFragment extends LandingPagerFragment implements OnMapReady
         mselectednearbyicon = getActivity().getResources().getDrawable(R.drawable.nearby_selected);
         munselectednearbyicon = getActivity().getResources().getDrawable(R.drawable.nearby_unselected);
 
-        mselectedlocationicon = getActivity().getResources().getDrawable(R.drawable.map_selected);
-        munselectedlocationicon = getActivity().getResources().getDrawable(R.drawable.map_unselected);
+        mselectedlocationicon = getActivity().getResources().getDrawable(R.drawable.test2);
+        munselectedlocationicon = getActivity().getResources().getDrawable(R.drawable.test1);
 
         mselectedlisticon = getActivity().getResources().getDrawable(R.drawable.list_selected);
         munselectedlisticon = getActivity().getResources().getDrawable(R.drawable.list_unselected);

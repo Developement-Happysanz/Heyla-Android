@@ -53,7 +53,6 @@ import com.findafun.adapter.BannerAdapter;
 import com.findafun.app.AppController;
 import com.findafun.bean.events.Event;
 import com.findafun.bean.gamification.GamificationDataHolder;
-import com.findafun.helper.AlertDialogHelper;
 import com.findafun.helper.FindAFunHelper;
 import com.findafun.photowidget.ImageInfo;
 import com.findafun.servicehelpers.EventServiceHelper;
@@ -153,7 +152,7 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
         event = (Event) getIntent().getSerializableExtra("eventObj");
         populateData();
 
-        if (curRate == 2) {
+        if (curRate == 10) {
             fetchAppRate();
         }
 
@@ -418,6 +417,17 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
             banner_image_three.setVisibility(View.GONE);
         }
 
+        if (event.getEventLogo_3().contains(".")) {
+            uImageLoader.displayImage(event.getEventLogo_3(), banner_image_four);
+        } else {
+            banner_image_four.setVisibility(View.GONE);
+        }
+        if (event.getEventLogo_4().contains(".")) {
+            uImageLoader.displayImage(event.getEventLogo_4(), banner_image_five);
+        } else {
+            banner_image_five.setVisibility(View.GONE);
+        }
+
 
         imgList.add(0, event.getEventLogo());
         imgList.add(1, "http://placehold.it/120x120&text=image2");
@@ -540,7 +550,8 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
         // banner_image_one.set
         banner_image_two = (ImageView) findViewById(R.id.banner_image_two);
         banner_image_three = (ImageView) findViewById(R.id.banner_image_three);
-
+        banner_image_four = (ImageView) findViewById(R.id.banner_image_four);
+        banner_image_five = (ImageView) findViewById(R.id.banner_image_five);
         count_layout = (LinearLayout) findViewById(R.id.image_count);
         txtViewMore = (TextView) findViewById(R.id.seemore);
 
@@ -887,7 +898,7 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
 */
 
 
-        count = 3;// imgEventBanner.getAdapter().getCount();
+        count = 5;// imgEventBanner.getAdapter().getCount();
         page_text = new TextView[count];
         for (int i = 0; i < count; i++) {
             page_text[i] = new TextView(this);
@@ -921,7 +932,7 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
             imgEventBanner.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(StaticEventDetailActivity.this, BannerList.class);
+                    Intent intent = new Intent(StaticEventDetailActivity.this, BannerListNew.class);
                     intent.putExtra("eventObj", event);
                     startActivity(intent);
                 }
