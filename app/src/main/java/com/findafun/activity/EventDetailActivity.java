@@ -420,6 +420,18 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
         } else {
             banner_image_three.setVisibility(View.GONE);
         }
+        if (event.getEventLogo_3().contains(".")) {
+            uImageLoader.displayImage(event.getEventLogo_3(), banner_image_four);
+        } else {
+            banner_image_four.setVisibility(View.GONE);
+        }
+        if (event.getEventLogo_4().contains(".")) {
+            uImageLoader.displayImage(event.getEventLogo_4(), banner_image_five);
+        } else {
+            banner_image_five.setVisibility(View.GONE);
+        }
+
+
         //  uImageLoader.displayImage("http://placehold.it/120x120&text=image4",banner_image_four);
         //   uImageLoader.displayImage("http://placehold.it/120x120&text=image5",banner_image_five);
         imgList.add(0, event.getEventLogo());

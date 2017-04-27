@@ -36,7 +36,8 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:paddingTop="5dp"
-            android:scaleType="matrix"/>
+            android:scaleType="matrix"
+            android:visibility="gone"/>
 
         <com.findafun.helper.TouchImageView
             android:id="@+id/banner_list2"
@@ -49,7 +50,8 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:paddingTop="5dp"
-            android:scaleType="matrix"/>
+            android:scaleType="matrix"
+            android:visibility="gone"/>
 
         <com.findafun.helper.TouchImageView
             android:id="@+id/banner_list3"
@@ -62,7 +64,8 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:paddingTop="5dp"
-            android:scaleType="matrix"/>
+            android:scaleType="matrix"
+            android:visibility="gone"/>
 
         <com.findafun.helper.TouchImageView
             android:id="@+id/banner_list4"
@@ -75,18 +78,9 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:paddingTop="5dp"
-            android:scaleType="matrix"/>
+            android:scaleType="matrix"
+            android:visibility="gone"/>
 
     </com.findafun.helper.AViewFlipper>
-
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tabDots"
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
-        app:tabGravity="center"
-        app:tabBackground="@drawable/footer_selector"
-        app:tabIndicatorHeight="0dp"/>
 
 </LinearLayout>

@@ -401,30 +401,37 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
         if (event.getEventLogo().contains(".")) {
             uImageLoader.displayImage(event.getEventLogo(), banner_image_one);
         }
+
         if (event.getEventLogo_1().contains(".")) {
             uImageLoader.displayImage(event.getEventLogo_1(), banner_image_two);
             imgEventBanner.startFlipping();
-        } else {
+        }
 
+        else {
             banner_image_two.setVisibility(View.GONE);
             imgEventBanner.stopFlipping();
-
         }
 
         if (event.getEventLogo_2().contains(".")) {
             uImageLoader.displayImage(event.getEventLogo_2(), banner_image_three);
-        } else {
+        }
+        else {
             banner_image_three.setVisibility(View.GONE);
         }
 
         if (event.getEventLogo_3().contains(".")) {
             uImageLoader.displayImage(event.getEventLogo_3(), banner_image_four);
-        } else {
+        }
+
+        else {
             banner_image_four.setVisibility(View.GONE);
         }
+
         if (event.getEventLogo_4().contains(".")) {
             uImageLoader.displayImage(event.getEventLogo_4(), banner_image_five);
-        } else {
+        }
+
+        else {
             banner_image_five.setVisibility(View.GONE);
         }
 
@@ -898,7 +905,7 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
 */
 
 
-        count = 5;// imgEventBanner.getAdapter().getCount();
+        count = imgList.size();
         page_text = new TextView[count];
         for (int i = 0; i < count; i++) {
             page_text[i] = new TextView(this);

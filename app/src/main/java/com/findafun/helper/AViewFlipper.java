@@ -1,12 +1,13 @@
 package com.findafun.helper;
 
-
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.widget.ViewFlipper;
+
+import com.findafun.R;
 
 public class AViewFlipper extends ViewFlipper {
 
@@ -24,7 +25,7 @@ public class AViewFlipper extends ViewFlipper {
         int width = getWidth();
 
         float margin = 2;
-        float radius = 5;
+        float radius = 7;
         float cx = (width / 2) - ((radius + margin) * 2 * getChildCount() / 2);
         float cy = getHeight() - 15;
 
@@ -34,12 +35,15 @@ public class AViewFlipper extends ViewFlipper {
         {
             if (i == getDisplayedChild())
             {
-                paint.setColor(Color.BLUE);
+                int color = ContextCompat.getColor(getContext(), R.color.apptheme_primary);
+                paint.setColor(color);
                 canvas.drawCircle(cx, cy, radius, paint);
 
             } else
             {
-                paint.setColor(Color.GRAY);
+
+                int color1 = ContextCompat.getColor(getContext(), R.color.white);
+                paint.setColor(color1);
                 canvas.drawCircle(cx, cy, radius, paint);
             }
             cx += 2 * (radius + margin);
