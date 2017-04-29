@@ -154,7 +154,7 @@ public class BannerListNew extends AppCompatActivity {
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
                                float velocityY) {
 
-            float sensitvity = 50;
+            float sensitvity = 350;
             if ((e1.getX() - e2.getX()) > sensitvity) {
                 SwipeLeft();
             } else if ((e2.getX() - e1.getX()) > sensitvity) {
