@@ -19,7 +19,7 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="60dip"
-            android:background="@color/city_text_color" />
+            android:background="@color/city_text_color_black" />
 
         <android.support.v4.view.ViewPager
             android:id="@+id/viewPager"
