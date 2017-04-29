@@ -2,6 +2,7 @@
 <resources>
 
     <color name="apptheme_primary">#fa6e04</color>
+    <color name="apptheme_primary_black">#3b3a3a</color>
     <!--<color name="apptheme_primary">#0f0e0e</color>-->
     <color name="apptheme_primary_dark">#3c3c3c</color>
     <color name="yellow_bg">#FECF05</color>
@@ -44,6 +45,7 @@
     <!-- Select City -->
     <color name="orange">#EA3b21</color>
     <color name="city_text_color">#26313c</color>
+    <color name="city_text_color_black">#030303</color>
     <!--<color name="city_text_color">#D9212C</color>-->
     <!--<color name="city_text_color">#ff4500</color>-->
     <color name="gplus_red">#D24749</color>

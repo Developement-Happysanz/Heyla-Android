@@ -99,8 +99,8 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
     private ImageView imgNavHeaderBg, imgNavProfileImage;
     public static final int TAG_FAVOURITES = 0, TAG_FEATURED = 1, TAG_ALL = 2;
     private ArrayAdapter<String> navListAdapter;
-    private String[] values = {"Change City", "Profile", "Edit Preferences", "Bookmarks", "Refer & Earn", "Rate Us", "Sign Out"};
-    private String[] values_guest = {"Change City", "Profile", "Edit Preferences", "Bookmarks", "Refer & Earn", "Rate Us", "Login/Signup"};
+    private String[] values = {"Change City", "Profile", "Edit Preferences", "Bookmarks", "Rate Us", "Sign Out"}; //"Refer & Earn"
+    private String[] values_guest = {"Change City", "Profile", "Edit Preferences", "Bookmarks", "Rate Us", "Login/Signup"};
     private boolean mFragmentsLoaded = false;
     TextView navUserName = null;
     TextView navUserCity = null;
@@ -118,8 +118,9 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
         setContentView(R.layout.activity_landing);
         toolbar = (Toolbar) findViewById(R.id.activity_toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_navigation_drawer);
+        toolbar.setNavigationIcon(R.drawable.appicon_new);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
+//        getSupportActionBar().setHomeAsUpIndicator(R.drawable.appicon);
         // getSupportActionBar().setLogo(R.drawable.ic_navigation_drawer);
         //initialize navigation drawer
         initializeNavigationDrawer();
@@ -135,6 +136,13 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
        // AnalyticsApplication application = (AnalyticsApplication) getApplication();
        // mTracker = application.getDefaultTracker();
         // [END shared_tracker]
+
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                return true;
+            }
+        });
 
     }
 
@@ -307,10 +315,12 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
 
     private void initializeNavigationDrawer() {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+//        mDrawerToggle.setDrawerIndicatorEnabled(false); //disable "hamburger to arrow" drawable
+//        mDrawerToggle.setHomeAsUpIndicator(R.drawable.appicon); //set your own
         mDrawerToggle = new ActionBarDrawerToggle(
                 this,
                 mDrawerLayout,
-                toolbar,
+                null,
                 R.string.drawer_open,
                 R.string.drawer_close
         ) {
@@ -404,7 +414,9 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
 
                 AlertDialogHelper.showCompoundAlertDialog(this, "Login", "Login to access", "OK", "CANCEL", 1);
             }
-        } else if (position == 4) {
+        }
+
+        /*else if (position == 4) {
             if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
                 Intent i = new Intent(android.content.Intent.ACTION_SEND);
                 i.setType("text/plain");
@@ -415,10 +427,12 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
 
                 AlertDialogHelper.showCompoundAlertDialog(this, "Login", "Login to access", "OK", "CANCEL", 1);
             }
-        } else if (position == 5) {
+        } */
+
+        else if (position == 4) {
             Log.d(TAG, "Rate Us");
             rateUs();
-        } else if (position == 6) {
+        } else if (position == 5) {
             Log.d(TAG, "Perform Logout");
             doLogout();
         }
