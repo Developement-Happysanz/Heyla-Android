@@ -119,7 +119,7 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
         toolbar = (Toolbar) findViewById(R.id.activity_toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.appicon_new);
-//        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 //        getSupportActionBar().setHomeAsUpIndicator(R.drawable.appicon);
         // getSupportActionBar().setLogo(R.drawable.ic_navigation_drawer);
         //initialize navigation drawer
@@ -137,12 +137,12 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
        // mTracker = application.getDefaultTracker();
         // [END shared_tracker]
 
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                return true;
-            }
-        });
+//        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+//            @Override
+//            public boolean onMenuItemClick(MenuItem item) {
+//                return true;
+//            }
+//        });
 
     }
 
@@ -320,7 +320,7 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
         mDrawerToggle = new ActionBarDrawerToggle(
                 this,
                 mDrawerLayout,
-                null,
+                toolbar,
                 R.string.drawer_open,
                 R.string.drawer_close
         ) {
