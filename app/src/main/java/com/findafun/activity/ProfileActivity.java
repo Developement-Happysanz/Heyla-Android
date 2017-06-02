@@ -900,7 +900,7 @@ public class ProfileActivity extends AppCompatActivity implements DialogClickLis
             mOccupation.setTextColor(color);
             mProfileImage.setEnabled(false);
             mEditmode = false;
-            AlertDialogHelper.showSimpleAlertDialog(this, "Profile updated succesfully");
+            AlertDialogHelper.showSimpleAlertDialog(this, "Profile updated successfully");
             mActualFilePath = null;
 
         }

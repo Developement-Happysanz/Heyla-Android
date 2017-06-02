@@ -1,14 +1,11 @@
 package com.findafun.activity;
 
-import android.app.Dialog;
 import android.app.SearchManager;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
-import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -18,7 +15,6 @@ import android.preference.PreferenceManager;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
@@ -28,7 +24,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -49,7 +44,6 @@ import com.findafun.fragment.StaticFragment;
 import com.findafun.helper.AlertDialogHelper;
 import com.findafun.interfaces.DialogClickListener;
 import com.findafun.pageradapter.LandingPagerAdapter;
-import com.findafun.servicehelpers.AnalyticsApplication;
 import com.findafun.servicehelpers.EventServiceHelper;
 import com.findafun.servicehelpers.ShareServiceHelper;
 import com.findafun.serviceinterfaces.IEventServiceListener;
@@ -683,7 +677,6 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
             mFragmentsLoaded = true;
         }
     }
-
     public void doLogout() {
         SharedPreferences sharedPreferences =
                 PreferenceManager.getDefaultSharedPreferences(this);
