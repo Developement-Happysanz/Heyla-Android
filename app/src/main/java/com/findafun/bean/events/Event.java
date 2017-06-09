@@ -310,6 +310,7 @@ public class Event implements Serializable {
      * @return The eventLogo_1
      */
     public String getEventLogo_1() {
+
         return eventLogo_1;
     }
     /**
@@ -323,6 +324,7 @@ public class Event implements Serializable {
      * @return The eventLogo_2
      */
     public String getEventLogo_2() {
+
         return eventLogo_2;
     }
     /**
@@ -336,6 +338,7 @@ public class Event implements Serializable {
      * @return The eventLogo_3
      */
     public String getEventLogo_3() {
+
         return eventLogo_3;
     }
     /**
@@ -349,6 +352,7 @@ public class Event implements Serializable {
      * @return The eventLogo_4
      */
     public String getEventLogo_4() {
+
         return eventLogo_4;
     }
     /**

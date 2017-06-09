@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/activity_toolbar"
         android:divider="@color/light_line_color"
-        android:dividerHeight="1dp">
+        android:dividerHeight="20dp">
 
     </ListView>
 
