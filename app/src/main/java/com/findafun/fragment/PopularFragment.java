@@ -204,6 +204,7 @@ public class PopularFragment extends LandingPagerFragment implements OnMapReadyC
                 mTotalEventCount.setText(Integer.toString(eventsArrayList.size()) + " Nearby Events"); */
 
                 performSlideLeftAnimation();
+                mMapView.setVisibility(View.GONE);
                 mLocationBtn.setBackgroundDrawable(mLocationUnselected);
                 listAppearence.setBackgroundDrawable(mListUnselected);
                 listAppearenceNearBy.setBackgroundDrawable(mNearbyTabSelected);

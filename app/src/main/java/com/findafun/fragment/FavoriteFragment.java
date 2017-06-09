@@ -254,6 +254,7 @@ public class FavoriteFragment extends LandingPagerFragment implements OnMapReady
                 }*/
 
                 performSlideLeftAnimation();
+                mMapView.setVisibility(View.GONE);
                 mLocationBtn.setBackgroundDrawable(mLocationUnselected);
                 listAppearence.setBackgroundDrawable(mListUnselected);
                 listAppearenceNearBy.setBackgroundDrawable(mNearbyTabSelected);

@@ -34,6 +34,7 @@ import com.findafun.bean.events.EventList;
 import com.findafun.helper.AlertDialogHelper;
 import com.findafun.helper.LocationHelper;
 import com.findafun.helper.ProgressDialogHelper;
+import com.findafun.interfaces.DialogClickListener;
 import com.findafun.servicehelpers.EventServiceHelper;
 import com.findafun.utils.CommonUtils;
 import com.findafun.utils.FindAFunConstants;
@@ -64,7 +65,7 @@ import java.util.List;
  * Created by Data Crawl 6 on 14-05-2016.
  */
 public class StaticFragment extends LandingPagerFragment implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener, AdapterView.OnItemClickListener {
+        GoogleApiClient.OnConnectionFailedListener, AdapterView.OnItemClickListener,DialogClickListener {
 
     private static final String TAG = StaticFragment.class.getName();
     private MapView mMapView_hp = null;
@@ -236,11 +237,12 @@ public class StaticFragment extends LandingPagerFragment implements OnMapReadyCa
                 mTotalEventCount_hp.setText(Integer.toString(eventsArrayList.size()) + " Hotspot Events"); */
 
                 performSlideLeftAnimation();
+                mMapView_hp.setVisibility(View.GONE);
                 mLocationBtn_hp.setBackgroundDrawable(mLocationUnselected_hp);
-                listAppearence.setBackgroundDrawable(mListUnselected_hp);
-                listAppearenceNearBy.setBackgroundDrawable(mNearbyTabSelected);
                 mLocationBtn_hp.setImageDrawable(munselectedlocationicon_hp);
+                listAppearence.setBackgroundDrawable(mListUnselected_hp);
                 listAppearence.setImageDrawable(munselectedlisticon_hp);
+                listAppearenceNearBy.setBackgroundDrawable(mNearbyTabSelected);
                 listAppearenceNearBy.setImageDrawable(mselectednearbyicon);
 
                 Intent addEventIntent = new Intent(getActivity(), NearbyStaticActivity.class);
@@ -257,11 +259,12 @@ public class StaticFragment extends LandingPagerFragment implements OnMapReadyCa
 
                 mMapView_hp.setVisibility(View.VISIBLE);
                 performSlideLeftAnimation();
+
                 mLocationBtn_hp.setBackgroundDrawable(mLocationSelected_hp);
-                listAppearence.setBackgroundDrawable(mListUnselected_hp);
-                listAppearenceNearBy.setBackgroundDrawable(mNearbyTabUnselected);
                 mLocationBtn_hp.setImageDrawable(mselectedlocationicon_hp);
+                listAppearence.setBackgroundDrawable(mListUnselected_hp);
                 listAppearence.setImageDrawable(munselectedlisticon_hp);
+                listAppearenceNearBy.setBackgroundDrawable(mNearbyTabUnselected);
                 listAppearenceNearBy.setImageDrawable(munselectednearbyicon);
 
                 mTotalEventCount_hp.setText(Integer.toString(eventsArrayList.size()) + " Hotspot Events");
@@ -277,11 +280,12 @@ public class StaticFragment extends LandingPagerFragment implements OnMapReadyCa
             public void onClick(View v) {
                 //mMapView.setVisibility(View.GONE);
                 performSlideRightAnimation();
+
                 mLocationBtn_hp.setBackgroundDrawable(mLocationUnselected_hp);
-                listAppearence.setBackgroundDrawable(mListSelected_hp);
-                listAppearenceNearBy.setBackgroundDrawable(mNearbyTabUnselected);
                 mLocationBtn_hp.setImageDrawable(munselectedlocationicon_hp);
+                listAppearence.setBackgroundDrawable(mListSelected_hp);
                 listAppearence.setImageDrawable(mselectedlisticon_hp);
+                listAppearenceNearBy.setBackgroundDrawable(mNearbyTabUnselected);
                 listAppearenceNearBy.setImageDrawable(munselectednearbyicon);
 
                 mTotalEventCount_hp.setText(Integer.toString(eventsArrayList.size()) + " Hotspot Events");
@@ -831,5 +835,15 @@ public class StaticFragment extends LandingPagerFragment implements OnMapReadyCa
         // intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(intent);
 //        // getActivity().overridePendingTransition(R.anim.slide_left, R.anim.slide_right);
+    }
+
+    @Override
+    public void onAlertPositiveClicked(int tag) {
+
+    }
+
+    @Override
+    public void onAlertNegativeClicked(int tag) {
+
     }
 }
