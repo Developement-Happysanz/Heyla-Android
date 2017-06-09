@@ -66,9 +66,6 @@ public class FavoriteFragment extends LandingPagerFragment implements OnMapReady
     private boolean mMapLoaded = false;
     Location mLastLocation = null;
     private ImageButton mLocationBtn;
-    final ImageButton listAppearence = (ImageButton) view.findViewById(R.id.nearby_grid_view_btn);
-
-    final ImageButton listAppearenceNearBy = (ImageButton) view.findViewById(R.id.nearby_list_btn);
     private List<Marker> mAddedMarkers = new ArrayList<Marker>();
     private HashMap<LatLng, Event> mDisplayedEvents = new HashMap<LatLng, Event>();
     private boolean mAddddLocations = true;
@@ -192,6 +189,10 @@ public class FavoriteFragment extends LandingPagerFragment implements OnMapReady
 
         mTotalEventCount = (TextView) view.findViewById(R.id.nearby_totalevents);
         mLocationBtn = (ImageButton) view.findViewById(R.id.nearby_location_btn);
+
+        final ImageButton listAppearence = (ImageButton) view.findViewById(R.id.nearby_grid_view_btn);
+
+        final ImageButton listAppearenceNearBy = (ImageButton) view.findViewById(R.id.nearby_list_btn);
 
 
         listAppearenceNearBy.setOnClickListener(new View.OnClickListener() {
@@ -397,12 +398,6 @@ public class FavoriteFragment extends LandingPagerFragment implements OnMapReady
         super.onResume();
         Log.d(TAG, "onResume called");
         mMapView.onResume();
-        mLocationBtn.setBackgroundDrawable(mLocationSelected);
-        listAppearence.setBackgroundDrawable(mListUnselected);
-        listAppearenceNearBy.setBackgroundDrawable(mNearbyTabUnselected);
-        mLocationBtn.setImageDrawable(mselectedlocationicon);
-        listAppearence.setImageDrawable(munselectedlisticon);
-        listAppearenceNearBy.setImageDrawable(munselectednearbyicon);
 
         if ((mGoogleApiClient != null) && !mGoogleApiClient.isConnected()) {
             Log.d(TAG, "make api connect");
