@@ -404,12 +404,10 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
 
         if (event.getEventLogo_1().contains(".")) {
             uImageLoader.displayImage(event.getEventLogo_1(), banner_image_two);
-            imgEventBanner.startFlipping();
         }
 
         else {
             banner_image_two.setVisibility(View.GONE);
-            imgEventBanner.stopFlipping();
         }
 
         if (event.getEventLogo_2().contains(".")) {
