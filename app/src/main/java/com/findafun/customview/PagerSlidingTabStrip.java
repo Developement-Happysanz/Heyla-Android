@@ -93,8 +93,8 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
     private boolean textAllCaps = true;
 
     private int scrollOffset = 52;
-    private int indicatorHeight = 6;
-    private int underlineHeight = 2;
+    private int indicatorHeight = 0;
+    private int underlineHeight = 0;
     private int dividerPadding = 0;
     private int tabPadding = 0;
     private int dividerWidth = 0;
@@ -256,7 +256,6 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
     private void addIconTab(final int position, int resId) {
 
         ImageButton tab = new ImageButton(getContext());
-
         tab.setImageResource(resId);
 
         addTab(position, tab);

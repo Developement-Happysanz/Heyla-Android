@@ -23,7 +23,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhite">#FFFFFFFF</color>
     <!--<color name="colorRed">#e94229</color>-->
     <color name="colorRed">#ed652f</color>
     <color name="colorGreen">#6CAE4C</color>
@@ -61,7 +61,7 @@
     <color name="Pink">#F50057</color>
     <color name="Yellow">#FFF0F0</color>
     <color name="Black">#000000</color>
-    <color name="new_black">#34000000</color>
+    <color name="new_black">#41000000</color>
     <color name="White">#FFFFFF</color>
     <color name="tab_back">#E93A23</color>
     <color name="text_color">#ed652f</color>
