@@ -55,6 +55,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.Gson;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -65,7 +66,7 @@ import java.util.List;
  * Created by Data Crawl 6 on 14-05-2016.
  */
 public class StaticFragment extends LandingPagerFragment implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener, AdapterView.OnItemClickListener,DialogClickListener {
+        GoogleApiClient.OnConnectionFailedListener, AdapterView.OnItemClickListener, DialogClickListener {
 
     private static final String TAG = StaticFragment.class.getName();
     private MapView mMapView_hp = null;
@@ -116,7 +117,7 @@ public class StaticFragment extends LandingPagerFragment implements OnMapReadyCa
     protected ProgressDialogHelper progressDialogHelperHot;
     protected boolean isLoadingForFirstTime = true;
     Handler mHandler = new Handler();
-   // private TextView mNoEventsFound = null;
+    // private TextView mNoEventsFound = null;
 
     private int distanceFlag = 1;
 
@@ -142,10 +143,10 @@ public class StaticFragment extends LandingPagerFragment implements OnMapReadyCa
     protected void initializeHotspotViews() {
         Log.d(TAG, "initialize pull to refresh view");
         loadMoreListView = (LoadMoreListView) view.findViewById(R.id.listView_events);
-      //  mNoEventsFound = (TextView) view.findViewById(R.id.no_home_events);
-      //  if (mNoEventsFound != null)
-      //      mNoEventsFound.setVisibility(View.GONE);
-       //  loadMoreListView.setOnLoadMoreListener(this);
+        //  mNoEventsFound = (TextView) view.findViewById(R.id.no_home_events);
+        //  if (mNoEventsFound != null)
+        //      mNoEventsFound.setVisibility(View.GONE);
+        //  loadMoreListView.setOnLoadMoreListener(this);
         loadMoreListView.setOnItemClickListener(this);
         eventsArrayList = new ArrayList<>();
     }
@@ -211,30 +212,6 @@ public class StaticFragment extends LandingPagerFragment implements OnMapReadyCa
         listAppearenceNearBy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               /* performSlideRightAnimation();
-                mLocationBtn_hp.setBackgroundDrawable(mLocationUnselected_hp);
-                listAppearence.setBackgroundDrawable(mListUnselected_hp);
-                listAppearenceNearBy.setBackgroundDrawable(mNearbyTabSelected);
-
-                mLocationBtn_hp.setImageDrawable(munselectedlocationicon_hp);
-                listAppearence.setImageDrawable(munselectedlisticon_hp);
-                listAppearenceNearBy.setImageDrawable(mselectednearbyicon);
-
-                mTotalEventCount_hp.setText(Integer.toString(eventsArrayList.size())+ " Nearby Events");*/
-             /*   distanceFlag = 2;
-                LocationHelper.FindLocationManager(getContext());
-
-                mMapView_hp.setVisibility(View.VISIBLE);
-                performSlideLeftAnimation();
-
-                mLocationBtn_hp.setBackgroundDrawable(mLocationUnselected_hp);
-                listAppearence.setBackgroundDrawable(mListUnselected_hp);
-                listAppearenceNearBy.setBackgroundDrawable(mNearbyTabSelected);
-                mLocationBtn_hp.setImageDrawable(munselectedlocationicon_hp);
-                listAppearence.setImageDrawable(munselectedlisticon_hp);
-                listAppearenceNearBy.setImageDrawable(mselectednearbyicon);
-
-                mTotalEventCount_hp.setText(Integer.toString(eventsArrayList.size()) + " Hotspot Events"); */
 
                 performSlideLeftAnimation();
                 mMapView_hp.setVisibility(View.GONE);
@@ -246,7 +223,6 @@ public class StaticFragment extends LandingPagerFragment implements OnMapReadyCa
                 listAppearenceNearBy.setImageDrawable(mselectednearbyicon);
 
                 Intent addEventIntent = new Intent(getActivity(), NearbyStaticActivity.class);
-                //navigationIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(addEventIntent);
             }
         });
@@ -278,7 +254,6 @@ public class StaticFragment extends LandingPagerFragment implements OnMapReadyCa
         listAppearence.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //mMapView.setVisibility(View.GONE);
                 performSlideRightAnimation();
 
                 mLocationBtn_hp.setBackgroundDrawable(mLocationUnselected_hp);
@@ -442,7 +417,6 @@ public class StaticFragment extends LandingPagerFragment implements OnMapReadyCa
             }
         });
         anim.start();
-        //alphaAnim.start();
     }
 
     @Override
@@ -504,91 +478,117 @@ public class StaticFragment extends LandingPagerFragment implements OnMapReadyCa
 
 
     @Override
-    public void onEventResponse(JSONObject response) {
+    public void onEventResponse(final JSONObject response) {
         Log.d(TAG, "Received Nearby events");
         // super.onEventResponse(response);
         progressDialogHelperHot.hideProgressDialog();
-         loadMoreListView.onLoadMoreComplete();
-        Gson gson = new Gson();
-        EventList eventsList = gson.fromJson(response.toString(), EventList.class);
-        if (eventsList != null) {
-            Log.d(TAG, "fetched all event list count" + eventsList.getCount());
-        }
-        int totalNearbyCount = 0;
-        if (eventsList.getEvents() != null && eventsList.getEvents().size() > 0) {
-            if (mLastLocation_hp != null) {
-                Log.d(TAG, "Location is set");
-                ArrayList<Event> mNearbyLIst = new ArrayList<Event>();
-                Location temEventLoc = new Location("temp");
-                //Only add those locations which are within 35km
-                int i = 0;
-                for (Event event : eventsList.getEvents()) {
-                    //Testing. remove later
-                   /* if(latitude.get(i) != null){
-                        event.setEventLatitude(latitude.get(i));
-                    }
-                    if(longitude.get(i) != null){
-                        event.setEventLongitude(longitude.get(i));
-                    }*/
-                    //end of testing
-                    mTotalReceivedEvents_hp++;
+        loadMoreListView.onLoadMoreComplete();
+//        if (validateSignInResponse(response)) {
+            Gson gson = new Gson();
+            EventList eventsList = gson.fromJson(response.toString(), EventList.class);
+            if (eventsList != null) {
+                Log.d(TAG, "fetched all event list count" + eventsList.getCount());
+            }
+            int totalNearbyCount = 0;
+            if (eventsList.getEvents() != null && eventsList.getEvents().size() > 0) {
+                if (mLastLocation_hp != null) {
+                    Log.d(TAG, "Location is set");
+                    ArrayList<Event> mNearbyLIst = new ArrayList<Event>();
+                    Location temEventLoc = new Location("temp");
+                    //Only add those locations which are within 35km
+                    int i = 0;
+                    for (Event event : eventsList.getEvents()) {
+                        mTotalReceivedEvents_hp++;
 
-                    if ((event.getEventLatitude() != null) && (event.getEventLongitude() != null)) {
-                        temEventLoc.setLatitude(Double.parseDouble(event.getEventLatitude()));
-                        temEventLoc.setLongitude(Double.parseDouble(event.getEventLongitude()));
-                        float distance = mLastLocation_hp.distanceTo(temEventLoc);
-                        Log.d(TAG, "calculated distance is" + distance);
-                        //if(distance < (350 * 1000)){
-                        if (distanceFlag == 2) {
-                            if (distance < (5 * 1000)) {
+                        if ((event.getEventLatitude() != null) && (event.getEventLongitude() != null)) {
+                            temEventLoc.setLatitude(Double.parseDouble(event.getEventLatitude()));
+                            temEventLoc.setLongitude(Double.parseDouble(event.getEventLongitude()));
+                            float distance = mLastLocation_hp.distanceTo(temEventLoc);
+                            Log.d(TAG, "calculated distance is" + distance);
+                            //if(distance < (350 * 1000)){
+                            if (distanceFlag == 2) {
+                                if (distance < (5 * 1000)) {
+                                    mNearbyLIst.add(event);
+                                }
+                            } else {
                                 mNearbyLIst.add(event);
                             }
-                        } else {
-                            mNearbyLIst.add(event);
+                            //}
                         }
-                        //}
+                        i++;
                     }
-                    i++;
-                }
-                totalNearbyCount = mNearbyLIst.size();
-                Log.d(TAG, "Total event close by 35km " + totalNearbyCount);
-                isLoadingForFirstTime = false;
-                totalCount = eventsList.getCount();
-                updateListAdapter(mNearbyLIst);
-                if (mTotalReceivedEvents_hp < totalCount) {
-                    Log.d(TAG, "fetch remaining events");
-                    if (eventsArrayList.size() < 10) {
+                    totalNearbyCount = mNearbyLIst.size();
+                    Log.d(TAG, "Total event close by 35km " + totalNearbyCount);
+                    isLoadingForFirstTime = false;
+                    totalCount = eventsList.getCount();
+                    updateListAdapter(mNearbyLIst);
+                    if (mTotalReceivedEvents_hp < totalCount) {
+                        Log.d(TAG, "fetch remaining events");
+                        if (eventsArrayList.size() < 10) {
 
-                        pageNumber = (mTotalReceivedEvents_hp / 10) + 1;
+                            pageNumber = (mTotalReceivedEvents_hp / 10) + 1;
 
-                        Log.d(TAG, "Page number" + pageNumber);
-                        makeEventListServiceCall(pageNumber);
+                            Log.d(TAG, "Page number" + pageNumber);
+                            makeEventListServiceCall(pageNumber);
+                        }
+                    } else {
+                        Log.d(TAG, "Total received count greater than total count");
                     }
                 } else {
-                    Log.d(TAG, "Total received count greater than total count");
-                }
-            } else {
 
-                isLoadingForFirstTime = false;
-                totalCount = eventsList.getCount();
-                updateListAdapter(eventsList.getEvents());
+                    isLoadingForFirstTime = false;
+                    totalCount = eventsList.getCount();
+                    updateListAdapter(eventsList.getEvents());
+                }
+            }
+            // Updates the location and zoom of the MapView
+
+            if (totalCount > 0) {
+                mLocationBtn_hp.setEnabled(true);
+            } else {
+                mAddddLocations_hp = true;
+            }
+            mTotalEventCount_hp.setText(Integer.toString(eventsArrayList.size()) + " Hotspot Events");
+
+//        } else {
+//            Log.d(TAG, "Error while sign In");
+//        }
+    }
+
+    private boolean validateSignInResponse(JSONObject response) {
+        boolean signInsuccess = false;
+        if ((response != null)) {
+            try {
+                String status = response.getString("status");
+                String msg = response.getString(FindAFunConstants.PARAM_MESSAGE);
+                Log.d(TAG, "status val" + status + "msg" + msg);
+
+                if ((status != null)) {
+                    if (((status.equalsIgnoreCase("activationError")) || (status.equalsIgnoreCase("alreadyRegistered")) ||
+                            (status.equalsIgnoreCase("notRegistered")) || (status.equalsIgnoreCase("error")))) {
+                        signInsuccess = false;
+                        Log.d(TAG, "Show error dialog");
+                        AlertDialogHelper.showSimpleAlertDialog(getActivity(), msg);
+
+                    } else {
+                        signInsuccess = true;
+
+                    }
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
         }
-        // Updates the location and zoom of the MapView
 
-        if (totalCount > 0) {
-            mLocationBtn_hp.setEnabled(true);
-        } else {
-            mAddddLocations_hp = true;
-        }
-        mTotalEventCount_hp.setText(Integer.toString(eventsArrayList.size()) + " Hotspot Events");
+        return signInsuccess;
     }
 
     @Override
-    public void onEventError(String error) {
+    public void onEventError(final String error) {
         super.onEventError(error);
         progressDialogHelperHot.hideProgressDialog();
-          loadMoreListView.onLoadMoreComplete();
+        loadMoreListView.onLoadMoreComplete();
+        AlertDialogHelper.showSimpleAlertDialog(getActivity(), error);
         if (totalCount > 0) {
             mLocationBtn_hp.setEnabled(true);
         }
@@ -614,13 +614,11 @@ public class StaticFragment extends LandingPagerFragment implements OnMapReadyCa
     public void makeEventListServiceCallHot(int pageNumber) {
         if ((pageNumber != -1) && (pageNumber >= 0 && pageNumber <= 6)) {
 
-//                    Log.d(TAG, "fetch Hotspot events");
-            eventServiceHelper.makeGetEventServiceCall(String.format(FindAFunConstants.GET_STATIC_EVENTS, Integer.parseInt(PreferenceStorage.getUserId(getActivity())), pageNumber, PreferenceStorage.getUserCity(getActivity())));
-            //  getTransparent();
+            eventServiceHelper.makeGetStaticEventServiceCall(String.format(FindAFunConstants.GET_STATIC_EVENTS, Integer.parseInt(PreferenceStorage.getUserId(getActivity())), pageNumber, PreferenceStorage.getUserCity(getActivity())));
 
         } else {
             Log.d(TAG, "ignoring this page");
-              loadMoreListView.onLoadMoreComplete();
+            loadMoreListView.onLoadMoreComplete();
             progressDialogHelperHot.hideProgressDialog();
         }
     }
@@ -657,8 +655,6 @@ public class StaticFragment extends LandingPagerFragment implements OnMapReadyCa
 
     protected void updateListAdapter(ArrayList<Event> eventsArrayList) {
         this.eventsArrayList.addAll(eventsArrayList);
-       // if (mNoEventsFound != null)
-      //      mNoEventsFound.setVisibility(View.GONE);
 
         if (eventsListAdapter == null) {
             eventsListAdapter = new StaticEventListAdapter(getActivity(), this.eventsArrayList);
@@ -674,14 +670,13 @@ public class StaticFragment extends LandingPagerFragment implements OnMapReadyCa
 
             mLastLocation_hp = LocationServices.FusedLocationApi.getLastLocation(
                     mGoogleApiClient_hp);
-            // Log.e(TAG, "Current location is" + "Lat" + String.valueOf(mLastLocation.getLatitude()) + "Long" + String.valueOf(mLastLocation.getLongitude()));
+
             if (mLocationProgress_hp != null) {
                 mLocationProgress_hp.cancel();
             }
             if (mNearbySelected_hp && (mLastLocation_hp != null)) {
                 mTotalReceivedEvents_hp = 0;
                 super.callGetEventService(1);
-                // getNearbyLIst(2);
             }
             if (mLastLocation_hp == null) {
                 Log.e(TAG, "Received location is null");
@@ -807,12 +802,6 @@ public class StaticFragment extends LandingPagerFragment implements OnMapReadyCa
                 // mMapLoaded = true;
                 Log.d(TAG, "Map loaded");
 
-                /*if ( mGoogleApiClient.isConnected() &&(mLastLocation != null) && (!mDisplayCurrentLocation)) {
-                    showMyLocation();
-                    // mLatitudeText.setText(String.valueOf(mLastLocation.getLatitude()));
-                    //mLongitudeText.setText(String.valueOf(mLastLocation.getLongitude()));
-                }*/
-
             }
         });
     }
@@ -832,9 +821,8 @@ public class StaticFragment extends LandingPagerFragment implements OnMapReadyCa
 
         Intent intent = new Intent(getActivity(), StaticEventDetailActivity.class);
         intent.putExtra("eventObj", event);
-        // intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+
         startActivity(intent);
-//        // getActivity().overridePendingTransition(R.anim.slide_left, R.anim.slide_right);
     }
 
     @Override

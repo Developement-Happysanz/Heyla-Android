@@ -35,6 +35,7 @@ import com.findafun.utils.FindAFunConstants;
 import com.findafun.utils.PreferenceStorage;
 import com.google.gson.Gson;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -254,27 +255,58 @@ public class LandingPagerFragment extends Fragment implements IEventServiceListe
     public void onEventResponse(final JSONObject response) {
 
         Log.d("ajazFilterresponse : ", response.toString());
+        if (validateSignInResponse(response)) {
+            mHandler.post(new Runnable() {
+                @Override
+                public void run() {
+                    progressDialogHelper.hideProgressDialog();
+                    loadMoreListView.onLoadMoreComplete();
 
-        mHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                progressDialogHelper.hideProgressDialog();
-                loadMoreListView.onLoadMoreComplete();
-
-                Gson gson = new Gson();
-                EventList eventsList = gson.fromJson(response.toString(), EventList.class);
-                if (eventsList.getEvents() != null && eventsList.getEvents().size() > 0) {
-                    if (mNoEventsFound != null)
-                        mNoEventsFound.setVisibility(View.GONE);
-                    totalCount = eventsList.getCount();
-                    isLoadingForFirstTime = false;
-                    updateListAdapter(eventsList.getEvents());
-                } else {
-                    if (mNoEventsFound != null)
-                        mNoEventsFound.setVisibility(View.VISIBLE);
+                    Gson gson = new Gson();
+                    EventList eventsList = gson.fromJson(response.toString(), EventList.class);
+                    if (eventsList.getEvents() != null && eventsList.getEvents().size() > 0) {
+                        if (mNoEventsFound != null)
+                            mNoEventsFound.setVisibility(View.GONE);
+                        totalCount = eventsList.getCount();
+                        isLoadingForFirstTime = false;
+                        updateListAdapter(eventsList.getEvents());
+                    } else {
+                        if (mNoEventsFound != null)
+                            mNoEventsFound.setVisibility(View.VISIBLE);
+                    }
                 }
+            });
+        } else {
+            Log.d(TAG, "Error while sign In");
+        }
+    }
+
+    private boolean validateSignInResponse(JSONObject response) {
+        boolean signInsuccess = false;
+        if ((response != null)) {
+            try {
+                String status = response.getString("status");
+                String msg = response.getString(FindAFunConstants.PARAM_MESSAGE);
+                Log.d(TAG, "status val" + status + "msg" + msg);
+
+                if ((status != null)) {
+                    if (((status.equalsIgnoreCase("activationError")) || (status.equalsIgnoreCase("alreadyRegistered")) ||
+                            (status.equalsIgnoreCase("notRegistered")) || (status.equalsIgnoreCase("error")))) {
+                        signInsuccess = false;
+                        Log.d(TAG, "Show error dialog");
+                        AlertDialogHelper.showSimpleAlertDialog(getActivity(), msg);
+
+                    } else {
+                        signInsuccess = true;
+
+                    }
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-        });
+        }
+
+        return signInsuccess;
     }
 
     @Override
@@ -282,9 +314,13 @@ public class LandingPagerFragment extends Fragment implements IEventServiceListe
         mHandler.post(new Runnable() {
             @Override
             public void run() {
-                progressDialogHelper.hideProgressDialog();
-                loadMoreListView.onLoadMoreComplete();
-                AlertDialogHelper.showSimpleAlertDialog(getActivity(), error);
+                try {
+                    progressDialogHelper.hideProgressDialog();
+                    loadMoreListView.onLoadMoreComplete();
+                    AlertDialogHelper.showSimpleAlertDialog(getActivity(), error);
+                } catch (Exception ex) {
+//                    AlertDialogHelper.showSimpleAlertDialog(getActivity(), error);
+                }
             }
         });
     }
