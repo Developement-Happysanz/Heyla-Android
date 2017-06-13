@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/apptheme_primary_black"
     android:padding="2dp"
     android:layout_marginBottom="30dp"
     android:descendantFocusability="blocksDescendants"
@@ -10,34 +9,15 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal">
+        android:layout_height="190dp">
 
-        <TextView
-            android:id="@+id/txt_event_name"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="15dp"
-            android:ellipsize="end"
-            android:singleLine="true"
-            android:text=""
-            android:textColor="@color/white"
-            android:textSize="14dp"
-            android:textStyle="bold"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:fontFamily="sans-serif-medium"
-            android:layout_toLeftOf="@+id/event_paid_btn"
-            android:layout_toStartOf="@+id/event_paid_btn" />
 
         <Button
             android:id="@+id/event_paid_btn"
             android:layout_width="54dp"
             android:layout_height="26dp"
             android:layout_alignParentRight="true"
-            android:layout_centerInParent="true"
+            android:layout_marginTop="15dp"
             android:layout_gravity="right"
             android:layout_marginRight="15dp"
             android:background="@drawable/shape_rounded_blue_btn"
@@ -46,19 +26,15 @@
             android:text=""
             android:textAllCaps="true"
             android:textColor="#ffffff"
-            android:textSize="12dp" />
+            android:textSize="15dp" />
 
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="140dp">
 
         <ImageView
             android:id="@+id/img_logo"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="190dp"
             android:layout_gravity="center_vertical" />
+
 
         <TextView
             android:id="@+id/txt_event_category"
@@ -69,11 +45,73 @@
             android:background="@color/colorRed"
             android:ellipsize="end"
             android:singleLine="true"
-            android:text=" "
+            android:text="AAAAAAAAAAAAAAA"
             android:fontFamily="sans-serif-medium"
             android:textColor="@color/white"
             android:textSize="12dp"
+            android:visibility="gone"
             android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/new_black"
+            android:orientation="horizontal"
+
+            android:layout_alignParentBottom="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_event_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_alignParentTop="true"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium" />
+
+                <TextView
+                    android:id="@+id/txt_event_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_gravity="center"
+                    android:layout_alignParentBottom="true"
+                    android:drawablePadding="3dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:paddingRight="5dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:id="@+id/txt_event_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="center"
+                    android:layout_alignTop="@+id/txt_event_date"
+                    android:drawablePadding="3dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="@android:color/white"
+                    android:textSize="11dp" />
+            </RelativeLayout>
+
+        </LinearLayout>
 
     </RelativeLayout>
 
@@ -165,51 +203,5 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/city_text_color"
-        android:orientation="horizontal"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/txt_event_date"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_alignParentLeft="true"
-                android:layout_gravity="center"
-
-                android:drawablePadding="3dp"
-                android:ellipsize="end"
-                android:gravity="center"
-                android:paddingRight="5dp"
-                android:fontFamily="sans-serif-medium"
-                android:singleLine="true"
-                android:textColor="@android:color/white"
-                android:textSize="11dp" />
-
-            <TextView
-                android:id="@+id/txt_event_time"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_alignParentRight="true"
-                android:layout_gravity="center"
-
-                android:drawablePadding="3dp"
-                android:ellipsize="end"
-                android:gravity="center"
-                android:paddingLeft="5dp"
-                android:singleLine="true"
-                android:fontFamily="sans-serif-medium"
-                android:textColor="@android:color/white"
-                android:textSize="11dp" />
-        </RelativeLayout>
-
-    </LinearLayout>
 
 </LinearLayout>

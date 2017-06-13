@@ -138,7 +138,7 @@ public class ProfileActivity extends AppCompatActivity implements DialogClickLis
     private UploadFileToServer mUploadTask = null;
     private Handler mHandler = new Handler();
     private String mUpdatedImageUrl = null;
-
+    final Context context = this;
     private final String MOBILE_NUM_PATTERN = "/^\\d{3}-\\d{3}-\\d{4}$/";
 
     @Override
@@ -243,12 +243,11 @@ public class ProfileActivity extends AppCompatActivity implements DialogClickLis
         mBirthday = (TextView) findViewById(R.id.date_of_birth_val);
         mDateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
 
-        citySpinnerAdapter = new CitySpinnerAdapter(this, R.layout.city_dropdown_item, cityList);
 
         city.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showCityList();
+                AlertDialogHelper.showSimpleAlertDialog(context, "Go to SELECT CITY to change");
             }
         });
         String birthdayval = PreferenceStorage.getUserBirthday(this);
