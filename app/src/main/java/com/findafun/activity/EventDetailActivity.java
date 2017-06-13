@@ -222,8 +222,7 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
             test = 0;
             editor.putInt("rate", test);
             editor.commit();
-        }
-        else {
+        } else {
             test++;
             //   Toast.makeText(this, "Hello There " + test, Toast.LENGTH_SHORT).show();
             editor.putInt("rate", test);
@@ -409,8 +408,7 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
         }
         if (event.getEventLogo_1().contains(".")) {
             uImageLoader.displayImage(event.getEventLogo_1(), banner_image_two);
-        }
-        else{
+        } else {
             banner_image_two.setVisibility(View.GONE);
         }
         if (event.getEventLogo_2().contains(".")) {
@@ -508,8 +506,9 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
         LinearLayout shareBtn = (LinearLayout) findViewById(R.id.share_btn);
         LinearLayout contactBtn = (LinearLayout) findViewById(R.id.contact_btn);
         LinearLayout engageBtn = (LinearLayout) findViewById(R.id.engage_btn);
+        LinearLayout checkinsBtn = (LinearLayout) findViewById(R.id.engage_btn);
         Button bookingBtn = (Button) findViewById(R.id.booking_btn);
-        Switch checkinsBtn = (Switch) findViewById(R.id.checkins_btn);
+//        Switch checkinsBtn = (Switch) findViewById(R.id.checkins_btn);
 
         bookingStatus = event.getEventBookingStatus();
 
@@ -550,23 +549,22 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
                             e.printStackTrace();
                         }
                     }
-                }
-                else {
+                } else {
                     android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(EventDetailActivity.this);
                     alertDialogBuilder.setTitle("Login");
                     alertDialogBuilder.setMessage("Log in to Access");
                     alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface arg0, int arg1) {
-                                    doLogout();
-                                }
-                            });
+                        @Override
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            doLogout();
+                        }
+                    });
                     alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                                    dialog.dismiss();
-                                }
-                            });
+                            dialog.dismiss();
+                        }
+                    });
                     alertDialogBuilder.show();
                 }
             }
@@ -593,7 +591,6 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
 //                    startActivity(Intent.createChooser(waIntent, "Share with"));
 
 
-
                     Intent i = new Intent(android.content.Intent.ACTION_SEND);
                     i.setType("text/plain");
                     i.putExtra(android.content.Intent.EXTRA_SUBJECT, "Share with");
@@ -601,8 +598,7 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
                     startActivity(Intent.createChooser(i, "Share via"));
 
                     sendShareStatus();
-                }
-                else {
+                } else {
                     android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(EventDetailActivity.this);
                     alertDialogBuilder.setTitle("Login");
                     alertDialogBuilder.setMessage("Log in to Access");
@@ -724,7 +720,40 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
             }
         });
 
-        checkinsBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        checkinsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
+//                    if (isChecked) {
+                    Toast.makeText(getApplicationContext(), "You have successfully checked-in for the event - " + event.getEventName().toString() + "\nGet ready for the fun! ", Toast.LENGTH_LONG).show();
+//                    } else {
+
+//                    }
+
+                    sendShareStatusUserActivity(2);
+                } else {
+                    android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(EventDetailActivity.this);
+                    alertDialogBuilder.setTitle("Login");
+                    alertDialogBuilder.setMessage("Log in to Access");
+                    alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            doLogout();
+                        }
+                    });
+                    alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    alertDialogBuilder.show();
+                }
+            }
+        });
+
+     /*   checkinsBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
             public void onCheckedChanged(CompoundButton buttonView,
@@ -756,7 +785,7 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
                     alertDialogBuilder.show();
                 }
             }
-        });
+        }); */
 
         contactBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -999,13 +1028,16 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
         int ruleid = RuleId;
         int ticketcount = 0;
         String statusCheckins = "";
-        if(RuleId==1){
+        if (RuleId == 1) {
             statusCheckins = "You have shared photo ";
-        }        if (RuleId==2) {
+        }
+        if (RuleId == 2) {
             statusCheckins = "You have checked in for the ";
-        }        if (RuleId==3) {
+        }
+        if (RuleId == 3) {
             statusCheckins = "You have engaged for the ";
-        } if (RuleId==3) {
+        }
+        if (RuleId == 3) {
             statusCheckins = "You have engaged for the ";
         }
 

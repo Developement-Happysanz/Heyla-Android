@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="230dp"
+    android:layout_height="250dp"
     android:background="@drawable/user_background_heyla"
     android:orientation="vertical">
 
@@ -10,49 +10,55 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
-        android:visibility="gone"
-        android:background="@color/title_red1" />
+        android:layout_centerInParent="true"
+        android:background="@color/title_red1"
+        android:visibility="gone" />
 
     <com.findafun.customview.CircleImageView
         android:id="@+id/img_profile_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
         android:src="@drawable/ic_profile"></com.findafun.customview.CircleImageView>
 
     <TextView
         android:id="@+id/user_profile_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/img_profile_image"
-        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif"
         android:singleLine="true"
         android:text="Name"
-        android:fontFamily="sans-serif"
         android:textColor="@android:color/white"
-        android:textSize="21dp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
-
-    <ImageView
-        android:layout_width="23dp"
-        android:layout_height="23dp"
-        android:layout_toLeftOf="@id/txt_city_name"
-        android:layout_alignBottom="@id/txt_city_name"
-        android:background="@drawable/img_city"/>
-
-    <TextView
-        android:id="@+id/txt_city_name"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:layout_below="@+id/user_profile_name"
-        android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true"
-        android:text="City"
-        android:fontFamily="sans-serif-medium"
-        android:textColor="@android:color/white"
-        android:textSize="18sp" />
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_gravity="center"
+            android:background="@drawable/img_city" />
+
+        <TextView
+            android:id="@+id/txt_city_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="City"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
 
 </RelativeLayout>

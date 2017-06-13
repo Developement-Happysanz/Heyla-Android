@@ -68,14 +68,29 @@
     <string name="by_agreeing">By Signing up, I agree to Heyla\'s</string>
     <string name="terms_and_conditions">Terms and conditions</string>
     <string name="wishlist">Wishlist</string>
-    <string name="share">Share</string>
-    <string name="contact">Contact</string>
-    <string name="from">From</string>
-    <string name="till">Till</string>
+
+
     <string name="get_started">Get Started</string>
     <string name="title_activity_profile">Profile</string>
     <string name="title_activity_addEvent">Add Events</string>
     <string name="title_activity_maps">Map</string>
+
+    <!-- Event Detail Page -->
+    <string name="share">Share</string>
+    <string name="contact">Contact</string>
+    <string name="interested">Interested</string>
+    <string name="checkin">Check-in</string>
+    <string name="booking">Booking</string>
+    <string name="from">From</string>
+    <string name="till">Till</string>
+    <string name="hyphen">-</string>
+    <string name="zero">00</string>
+    <string name="location">Location</string>
+    <string name="expo">Expo</string>
+    <string name="invite">Invite</string>
+    <string name="na">N/A</string>
+    <string name="bookmark">Bookmark</string>
+    <!---->
 
     <!--live-->
     <!--<string name="google_maps_key">AIzaSyAr-fwAC4VlMY-oJufV0V6tyJnr__Ia2ag</string>-->
