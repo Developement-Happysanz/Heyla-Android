@@ -1,12 +1,10 @@
 package com.findafun.activity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.util.Log;
@@ -21,14 +19,12 @@ import com.findafun.R;
 import com.findafun.adapter.BookingPlanAdapter;
 import com.findafun.bean.events.BookPlan;
 import com.findafun.bean.events.BookPlanList;
-import com.findafun.bean.events.Event;
 import com.findafun.helper.AlertDialogHelper;
 import com.findafun.helper.ProgressDialogHelper;
 import com.findafun.servicehelpers.EventServiceHelper;
 import com.findafun.serviceinterfaces.IEventServiceListener;
 import com.findafun.utils.CommonUtils;
 import com.findafun.utils.FindAFunConstants;
-import com.findafun.utils.PreferenceStorage;
 import com.google.gson.Gson;
 
 import org.json.JSONObject;
@@ -122,6 +118,13 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
         //    PreferenceStorage.IsFilterApply(this, false);
         callGetFilterService();
         //}
+
+        findViewById(R.id.back_res).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     public void callGetFilterService() {

@@ -2,21 +2,21 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_make_payment"
+    android:background="@color/gray_1"
     android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_result"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorRed"
-        android:minHeight="?attr/actionBarSize"></android.support.v7.widget.Toolbar>
+    <include
+        android:id="@+id/activity_toolbar"
+        layout="@layout/tool_bar" />
 
     <ImageView
         android:id="@+id/back_res"
-        android:layout_width="30dp"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:minHeight="?attr/actionBarSize"
         android:src="@drawable/ic_arrow_back_white_48dp" />
 
@@ -35,6 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-medium"
         android:gravity="center"
         android:minHeight="?attr/actionBarSize"
         android:padding="5dp"
@@ -42,89 +43,100 @@
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="@dimen/actionbarTextSize"
-        android:fontFamily="sans-serif-medium"
         android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar_result"
-        android:background="@color/trans_light"
+        android:layout_below="@+id/activity_toolbar"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_rounded_dark_white"
         android:gravity="center"
         android:orientation="vertical">
 
-        <TextView
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/img_cc" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="sans-serif"
+                android:text="Make payment for Rupees"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹"
+                android:textColor="@color/black"
+                android:textSize="55dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="55dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:layout_marginTop="30dp"
-            android:text="Make payment for "
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:fontFamily="sans-serif-medium"
-            android:textStyle="bold" />
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="15dp"
-            android:text="Rupees"
-            android:textColor="@color/white"
-            android:textSize="35dp"
-            android:fontFamily="sans-serif-light"
-            android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnPayment"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/btn_full_rounded_orange"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="Make Payment"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/amount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="15dp"
-            android:text="₹"
-            android:textColor="@color/white"
-            android:textSize="55dp"
-            android:fontFamily="sans-serif"
-            android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnDecline"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_full_rounded_white"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="Decline"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/btnPayment"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/btn_full_rounded_orange"
-            android:fontFamily="sans-serif-medium"
-            android:gravity="center"
-            android:text="Make Payment"
-            android:textColor="@color/white"
-            android:textSize="15dp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btnDecline"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/btn_full_rounded_white"
-            android:fontFamily="sans-serif-medium"
-            android:gravity="center"
-            android:text="Decline"
-            android:textColor="@color/black"
-            android:textSize="15dp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/event_detail"

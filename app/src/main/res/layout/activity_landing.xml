@@ -46,8 +46,8 @@
             android:layout_height="0dp"
             android:layout_gravity="start"
             android:layout_weight="1"
-            android:background="@color/nav_back_ground_color"
-            android:divider="@color/nav_row_color"
+            android:background="@color/black"
+            android:divider="@color/black"
             android:dividerHeight="1dp"
             android:scrollbars="vertical" />
 
