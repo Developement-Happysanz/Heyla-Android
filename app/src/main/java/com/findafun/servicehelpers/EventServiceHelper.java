@@ -11,6 +11,7 @@ import com.findafun.R;
 import com.findafun.activity.LandingActivity;
 import com.findafun.app.AppController;
 import com.findafun.serviceinterfaces.IEventServiceListener;
+import com.findafun.serviceinterfaces.IStaticServiceListener;
 import com.findafun.utils.FindAFunConstants;
 import com.findafun.utils.PreferenceStorage;
 
@@ -35,6 +36,7 @@ public class EventServiceHelper {
     private String TAG = LandingActivity.class.getSimpleName();
     private Context context;
     IEventServiceListener eventServiceListener;
+//    IStaticServiceListener staticServiceListener;
 
     public EventServiceHelper(Context context) {
         this.context = context;
@@ -73,6 +75,54 @@ public class EventServiceHelper {
                         eventServiceListener.onEventError(context.getResources().getString(R.string.error_occured));
                         e.printStackTrace();
                     } catch (JSONException e) {
+                        eventServiceListener.onEventError(context.getResources().getString(R.string.error_occured));
+                        e.printStackTrace();
+                    }
+
+                } else {
+                    eventServiceListener.onEventError(context.getResources().getString(R.string.error_occured));
+                }
+            }
+        });
+
+        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(0, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+        // Adding request to request queue
+        AppController.getInstance().addToRequestQueue(jsonObjectRequest);
+
+    }
+
+    public void makeGetStaticEventServiceCall(String URL) {
+        Log.d(TAG, "Events URL" + URL);
+        final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
+                URL, (String) null,
+                new com.android.volley.Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d(TAG, "ajaz : " + response.toString());
+                        if(response != null) {
+                            eventServiceListener.onEventResponse(response);
+                        }
+                    }
+                }, new com.android.volley.Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d(TAG, "error is" + error.getLocalizedMessage());
+                if (error.networkResponse != null && error.networkResponse.data != null) {
+
+                    try {
+                        String responseBody = new String(error.networkResponse.data, "utf-8");
+                        Log.d(TAG, "error response body is" + responseBody);
+                        JSONObject jsonObject = new JSONObject(responseBody);
+                        eventServiceListener.onEventError(jsonObject.getString(FindAFunConstants.PARAM_MESSAGE));
+                    }
+                    catch (UnsupportedEncodingException e) {
+                        eventServiceListener.onEventError(context.getResources().getString(R.string.error_occured));
+                        e.printStackTrace();
+                    }
+                    catch (JSONException e) {
                         eventServiceListener.onEventError(context.getResources().getString(R.string.error_occured));
                         e.printStackTrace();
                     }
@@ -134,8 +184,6 @@ public class EventServiceHelper {
             if (!todate.equalsIgnoreCase("")) {
                 jsonObject.accumulate("to_date", todate);
             }
-
-
 
             // jsonObject.accumulate("twitter", person.getTwitter());
 
