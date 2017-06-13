@@ -27,20 +27,21 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/img_profile_image"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:singleLine="true"
         android:text="Name"
         android:fontFamily="sans-serif"
         android:textColor="@android:color/white"
-        android:textSize="21dp"
+        android:textSize="25dp"
         android:textStyle="bold" />
 
 
     <ImageView
-        android:layout_width="23dp"
-        android:layout_height="23dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_toLeftOf="@id/txt_city_name"
-        android:layout_alignBottom="@id/txt_city_name"
+
+        android:layout_alignTop="@id/txt_city_name"
         android:background="@drawable/img_city"/>
 
     <TextView
@@ -48,10 +49,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/user_profile_name"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="2dp"
         android:layout_centerHorizontal="true"
         android:text="City"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="sans-serif"
         android:textColor="@android:color/white"
         android:textSize="18sp" />
 

@@ -7,18 +7,14 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -30,18 +26,14 @@ import com.findafun.bean.events.Event;
 import com.findafun.bean.events.EventList;
 import com.findafun.helper.AlertDialogHelper;
 import com.findafun.helper.LocationHelper;
-
 import com.findafun.utils.CommonUtils;
 import com.findafun.utils.FindAFunConstants;
 import com.findafun.utils.PreferenceStorage;
 import com.google.android.gms.common.ConnectionResult;
-
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -154,16 +146,17 @@ public class PopularFragment extends LandingPagerFragment implements OnMapReadyC
 
         mLocationUnselected = getActivity().getResources().getDrawable(R.drawable.btn_square_white);
         mLocationSelected = getActivity().getResources().getDrawable(R.drawable.btn_square_red);
+
         mListUnselected = getActivity().getResources().getDrawable(R.drawable.btn_rounded_white_right);
         mListSelected = getActivity().getResources().getDrawable(R.drawable.btn_rounded_red_rightside);
 
-        mselectednearbyicon = getActivity().getResources().getDrawable(R.drawable.nearby_selected);
+        mselectednearbyicon = getActivity().getResources().getDrawable(R.drawable.nearby_unselected);
         munselectednearbyicon = getActivity().getResources().getDrawable(R.drawable.nearby_unselected);
 
-        mselectedlocationicon = getActivity().getResources().getDrawable(R.drawable.map_selected);
+        mselectedlocationicon = getActivity().getResources().getDrawable(R.drawable.map_unselected);
         munselectedlocationicon = getActivity().getResources().getDrawable(R.drawable.map_unselected);
 
-        mselectedlisticon = getActivity().getResources().getDrawable(R.drawable.list_selected);
+        mselectedlisticon = getActivity().getResources().getDrawable(R.drawable.list_unselected);
         munselectedlisticon = getActivity().getResources().getDrawable(R.drawable.list_unselected);
 
         mMapIcon = BitmapDescriptorFactory.fromResource(R.drawable.location_dot_img);

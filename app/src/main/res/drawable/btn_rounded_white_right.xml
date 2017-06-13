@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <corners android:bottomLeftRadius="1dp" android:topLeftRadius="1dp"
-        android:topRightRadius="25dp" android:bottomRightRadius="25dp"></corners>
-    <solid android:color="@color/White"></solid>
-    <size android:width="50dp" android:height="30dp"></size>
-    <stroke android:width="0.75dp" android:color="@color/oval_shape_color"></stroke>
+    <corners
+        android:bottomLeftRadius="0dp"
+        android:bottomRightRadius="5dp"
+        android:topLeftRadius="0dp"
+        android:topRightRadius="5dp">
+    </corners>
+    <solid
+        android:color="@color/transparent">
+    </solid>
+    <size android:width="30dp"
+        android:height="20dp">
+    </size>
+    <stroke android:width="0.75dp"
+        android:color="@color/oval_shape_color">
+    </stroke>
 
 </shape>

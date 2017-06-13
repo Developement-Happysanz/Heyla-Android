@@ -23,7 +23,7 @@
             android:layout_centerVertical="true"
             android:textColor="@color/white"
             android:layout_marginLeft="5dp"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="sans-serif"
             android:text="Favorite events "
             android:textSize="18dp" />
 
@@ -40,40 +40,33 @@
 
         <ImageButton
             android:id="@+id/nearby_grid_view_btn"
-            android:layout_width="60dp"
-            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
+            android:layout_marginLeft="-1dp"
             android:background="@drawable/list_icon_background"
-            android:paddingBottom="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="5dp"
-            android:paddingTop="10dp"
+            android:layout_centerInParent="true"
             android:src="@drawable/list_unselected" />
 
         <ImageButton
             android:id="@+id/nearby_list_btn"
-            android:layout_width="60dp"
-            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
             android:layout_toLeftOf="@+id/nearby_location_btn"
             android:background="@drawable/location_icon_background"
-            android:paddingBottom="10dp"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:paddingTop="8dp"
+            android:layout_centerInParent="true"
             android:src="@drawable/nearby_unselected" />
 
         <ImageButton
             android:id="@+id/nearby_location_btn"
-            android:layout_width="60dp"
-            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="-1dp"
             android:layout_toLeftOf="@+id/nearby_grid_view_btn"
             android:background="@drawable/nearby_icon_background"
-            android:paddingBottom="10dp"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:paddingTop="8dp"
-            android:src="@drawable/map_unselected1" />
+            android:layout_centerInParent="true"
+            android:src="@drawable/map_unselected" />
 
     </RelativeLayout>
 

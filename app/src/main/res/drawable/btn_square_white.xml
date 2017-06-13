@@ -5,10 +5,10 @@
         android:bottomRightRadius="1dp"
         android:topLeftRadius="1dp"
         android:topRightRadius="1dp"></corners>
-    <solid android:color="@color/White"></solid>
+    <solid android:color="@color/transparent"></solid>
     <size
-        android:width="50dp"
-        android:height="30dp"></size>
+        android:width="30dp"
+        android:height="20dp"></size>
     <stroke
         android:width="0.75dp"
         android:color="@color/oval_shape_color"></stroke>

@@ -176,13 +176,13 @@ public class FavoriteFragment extends LandingPagerFragment implements OnMapReady
         mListUnselected = getActivity().getResources().getDrawable(R.drawable.btn_rounded_white_right);
         mListSelected = getActivity().getResources().getDrawable(R.drawable.btn_rounded_red_rightside);
 
-        mselectednearbyicon = getActivity().getResources().getDrawable(R.drawable.nearby_selected);
+        mselectednearbyicon = getActivity().getResources().getDrawable(R.drawable.nearby_unselected);
         munselectednearbyicon = getActivity().getResources().getDrawable(R.drawable.nearby_unselected);
 
-        mselectedlocationicon = getActivity().getResources().getDrawable(R.drawable.test2);
-        munselectedlocationicon = getActivity().getResources().getDrawable(R.drawable.test1);
+        mselectedlocationicon = getActivity().getResources().getDrawable(R.drawable.map_unselected);
+        munselectedlocationicon = getActivity().getResources().getDrawable(R.drawable.map_unselected);
 
-        mselectedlisticon = getActivity().getResources().getDrawable(R.drawable.list_selected);
+        mselectedlisticon = getActivity().getResources().getDrawable(R.drawable.list_unselected);
         munselectedlisticon = getActivity().getResources().getDrawable(R.drawable.list_unselected);
 
         mMapIcon = BitmapDescriptorFactory.fromResource(R.drawable.location_dot_img);

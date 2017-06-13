@@ -72,8 +72,13 @@ public class HotspotFragment extends StaticEventFragment implements OnMapReadyCa
     private Drawable  mLocationSelected_hp = null;
     private Drawable  mListUnselected_hp = null;
     private Drawable mListSelected_hp = null;
+    private Drawable  mNearbyTabUnselected_hp = null;
+    private Drawable  mNearbyTabSelected_hp = null;
+
 
     //icons
+    private Drawable mselectednearbyicon_hp = null;
+    private Drawable munselectednearbyicon_hp = null;
     private Drawable mselectedlocationicon_hp = null;
     private Drawable munselectedlocationicon_hp = null;
     private Drawable mselectedlisticon_hp = null;
@@ -121,14 +126,28 @@ public class HotspotFragment extends StaticEventFragment implements OnMapReadyCa
         mMapView_hp = (MapView) view.findViewById(R.id.mapview);
         mMapView_hp.onCreate(savedInstanceState);
         setUpGoogleMaps();
-        mLocationUnselected_hp = getActivity().getResources().getDrawable(R.drawable.btn_rounded_white);
-        mLocationSelected_hp = getActivity().getResources().getDrawable(R.drawable.btn_rounded_red);
+
+        mNearbyTabUnselected_hp = getActivity().getResources().getDrawable(R.drawable.btn_rounded_white);
+        mNearbyTabSelected_hp = getActivity().getResources().getDrawable(R.drawable.btn_rounded_red);
+
+        mLocationUnselected_hp = getActivity().getResources().getDrawable(R.drawable.btn_square_white);
+        mLocationSelected_hp = getActivity().getResources().getDrawable(R.drawable.btn_square_red);
+
         mListUnselected_hp = getActivity().getResources().getDrawable(R.drawable.btn_rounded_white_right);
         mListSelected_hp = getActivity().getResources().getDrawable(R.drawable.btn_rounded_red_rightside);
-        mselectedlocationicon_hp = getActivity().getResources().getDrawable(R.drawable.location_tab_selected);
-        munselectedlocationicon_hp = getActivity().getResources().getDrawable(R.drawable.location_tab_unselected);
-        mselectedlisticon_hp = getActivity().getResources().getDrawable(R.drawable.list_white_selected);
-        munselectedlisticon_hp = getActivity().getResources().getDrawable(R.drawable.list_white_unselected);
+
+        mselectednearbyicon_hp = getActivity().getResources().getDrawable(R.drawable.nearby_unselected);
+        munselectednearbyicon_hp = getActivity().getResources().getDrawable(R.drawable.nearby_unselected);
+
+        mselectedlocationicon_hp = getActivity().getResources().getDrawable(R.drawable.map_unselected);
+        munselectedlocationicon_hp = getActivity().getResources().getDrawable(R.drawable.map_unselected);
+
+        mselectedlisticon_hp = getActivity().getResources().getDrawable(R.drawable.list_unselected);
+        munselectedlisticon_hp = getActivity().getResources().getDrawable(R.drawable.list_unselected);
+
+
+
+
         mMapIcon_hp = BitmapDescriptorFactory.fromResource(R.drawable.location_dot_img);
 
         mTotalEventCount_hp = (TextView) view.findViewById(R.id.nearby_totalevents);

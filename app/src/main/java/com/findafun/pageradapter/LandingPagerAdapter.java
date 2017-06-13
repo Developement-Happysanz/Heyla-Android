@@ -38,15 +38,15 @@ public class LandingPagerAdapter extends FragmentPagerAdapter implements PagerSl
         instantiated = false;
         this.context = context;
 
-        mTabResources.add(R.drawable.favorite_new_unselected);
-        mTabResources.add(R.drawable.popular_new_unselected);
-        mTabResources.add(R.drawable.hotspot_new_unselected);
-        mTabResources.add(R.drawable.leaderboard_new_unselected);
+        mTabResources.add(R.drawable.favselect);
+        mTabResources.add(R.drawable.popularselect);
+        mTabResources.add(R.drawable.hotselect);
+        mTabResources.add(R.drawable.leaderboardselect);
 
-        mUnselectedTabResources.add(R.drawable.favorite_new_selected);
-        mUnselectedTabResources.add(R.drawable.popular_new_selected);
-        mUnselectedTabResources.add(R.drawable.hotspot_new_selected);
-        mUnselectedTabResources.add(R.drawable.leaderboard_new_selected);
+        mUnselectedTabResources.add(R.drawable.favdeselect);
+        mUnselectedTabResources.add(R.drawable.populardeselect);
+        mUnselectedTabResources.add(R.drawable.hotdeselect);
+        mUnselectedTabResources.add(R.drawable.leaderboarddeselect);
 
 
 
