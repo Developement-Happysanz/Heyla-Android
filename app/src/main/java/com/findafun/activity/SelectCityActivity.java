@@ -325,6 +325,7 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
 
         String stringUri;
         stringUri = uri.toString();
+        PreferenceStorage.saveUserCity(getApplicationContext(), cityVal);
 
         SignUpServiceHelper mServiceHelper = new SignUpServiceHelper(this);
         mServiceHelper.updateUserProfile(stringUri, this);

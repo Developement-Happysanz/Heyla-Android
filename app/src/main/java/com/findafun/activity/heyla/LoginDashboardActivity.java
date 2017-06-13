@@ -2,6 +2,7 @@ package com.findafun.activity.heyla;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -53,6 +54,9 @@ public class LoginDashboardActivity extends AppCompatActivity implements View.On
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_dashboard);
+
+        doesUserHavePermission();
+        doesUserHavePermission1();
 
         if (PreferenceStorage.getUserId(getApplicationContext()) != null && FindAFunValidator.checkNullString(PreferenceStorage.getUserId(getApplicationContext()))) {
             String city = PreferenceStorage.getUserCity(getApplicationContext());
@@ -106,6 +110,18 @@ public class LoginDashboardActivity extends AppCompatActivity implements View.On
                 }
             }
         }
+    }
+
+    private boolean doesUserHavePermission() {
+        int result = getApplicationContext().checkCallingOrSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION);
+        return result == PackageManager.PERMISSION_GRANTED;
+    }
+
+    private boolean doesUserHavePermission1() {
+
+        int result1 = getApplicationContext().checkCallingOrSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION);
+
+        return result1 == PackageManager.PERMISSION_GRANTED;
     }
 
     private void requestAllPermissions() {

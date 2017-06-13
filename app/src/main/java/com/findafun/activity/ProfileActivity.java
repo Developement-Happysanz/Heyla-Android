@@ -247,7 +247,7 @@ public class ProfileActivity extends AppCompatActivity implements DialogClickLis
         city.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialogHelper.showSimpleAlertDialog(context, "Go to SELECT CITY to change");
+                AlertDialogHelper.showSimpleAlertDialog(context, "Change your city using \n\nChange City Menu");
             }
         });
         String birthdayval = PreferenceStorage.getUserBirthday(this);

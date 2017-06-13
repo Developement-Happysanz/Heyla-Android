@@ -482,8 +482,8 @@ public class StaticFragment extends LandingPagerFragment implements OnMapReadyCa
         Log.d(TAG, "Received Nearby events");
         // super.onEventResponse(response);
         progressDialogHelperHot.hideProgressDialog();
+        loadMoreListView.onLoadMoreComplete();
 //        if (validateSignInResponse(response)) {
-            loadMoreListView.onLoadMoreComplete();
             Gson gson = new Gson();
             EventList eventsList = gson.fromJson(response.toString(), EventList.class);
             if (eventsList != null) {

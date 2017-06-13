@@ -1,9 +1,11 @@
 package com.findafun.activity;
 
+import android.Manifest;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -124,11 +126,13 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
         eventServiceHelper.setEventServiceListener(this);
         fetchBookmarks();
         sendShareStatustoServer();
+        doesUserHavePermission();
+        doesUserHavePermission1();
 
         // [START shared_tracker]
         // Obtain the shared Tracker instance.
-       // AnalyticsApplication application = (AnalyticsApplication) getApplication();
-       // mTracker = application.getDefaultTracker();
+        // AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        // mTracker = application.getDefaultTracker();
         // [END shared_tracker]
 
 //        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
@@ -138,6 +142,18 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
 //            }
 //        });
 
+    }
+
+    private boolean doesUserHavePermission() {
+        int result = context.checkCallingOrSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION);
+        return result == PackageManager.PERMISSION_GRANTED;
+    }
+
+    private boolean doesUserHavePermission1() {
+
+        int result1 = context.checkCallingOrSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION);
+
+        return result1 == PackageManager.PERMISSION_GRANTED;
     }
 
     private void sendShareStatustoServer() {
@@ -677,6 +693,7 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
             mFragmentsLoaded = true;
         }
     }
+
     public void doLogout() {
         SharedPreferences sharedPreferences =
                 PreferenceManager.getDefaultSharedPreferences(this);

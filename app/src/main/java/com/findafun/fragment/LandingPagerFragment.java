@@ -314,9 +314,13 @@ public class LandingPagerFragment extends Fragment implements IEventServiceListe
         mHandler.post(new Runnable() {
             @Override
             public void run() {
-                progressDialogHelper.hideProgressDialog();
-                loadMoreListView.onLoadMoreComplete();
-                AlertDialogHelper.showSimpleAlertDialog(getActivity(), error);
+                try {
+                    progressDialogHelper.hideProgressDialog();
+                    loadMoreListView.onLoadMoreComplete();
+                    AlertDialogHelper.showSimpleAlertDialog(getActivity(), error);
+                } catch (Exception ex) {
+//                    AlertDialogHelper.showSimpleAlertDialog(getActivity(), error);
+                }
             }
         });
     }
