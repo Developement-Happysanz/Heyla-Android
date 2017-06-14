@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,8 +50,8 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
     protected boolean isLoadingForFirstTime = true;
     Handler mHandler = new Handler();
     private SearchView mSearchView = null;
-    TextView txtEventName, txtEvnetVenue, txtEventDate;
-    TextView txtOne, txtTwo, txtThree, txtFour, txtFive, txtSix, txtSeven, txtEight, txtNine, txtTen, txtSelectedQunatity;
+    TextView txtEventName, txtEvnetVenue, txtEventDate, numTicketcount;
+    ImageView CountIncrease, CountDecrease;
     Button btnProceed;
     int selectedTicket = 0;
     private BookPlan bookPlan = null;
@@ -66,19 +67,11 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
         txtEventName = (TextView) findViewById(R.id.event_name);
         txtEvnetVenue = (TextView) findViewById(R.id.event_venue);
         txtEventDate = (TextView) findViewById(R.id.event_when);
-
-        txtOne = (TextView) findViewById(R.id.txtOne);
-        txtTwo = (TextView) findViewById(R.id.txtTwo);
-        txtThree = (TextView) findViewById(R.id.txtThree);
-        txtFour = (TextView) findViewById(R.id.txtFour);
-        txtFive = (TextView) findViewById(R.id.txtFive);
-        txtSix = (TextView) findViewById(R.id.txtSix);
-        txtSeven = (TextView) findViewById(R.id.txtSeven);
-        txtEight = (TextView) findViewById(R.id.txtEight);
-        txtNine = (TextView) findViewById(R.id.txtNine);
-        txtTen = (TextView) findViewById(R.id.txtTen);
-        txtSelectedQunatity = (TextView) findViewById(R.id.txtSelectedTicket);
+        numTicketcount = (TextView) findViewById(R.id.tcktcount);
+        numTicketcount.setText("0");
         btnProceed = (Button) findViewById(R.id.proceed_btn);
+        CountDecrease = (ImageView) findViewById(R.id.count_decrease);
+        CountIncrease = (ImageView) findViewById(R.id.count_increase);
 
         loadMoreListView.setOnLoadMoreListener(this);
         loadMoreListView.setOnItemClickListener(this);
@@ -91,17 +84,21 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
         eventVenue = getIntent().getStringExtra("eventVenue");
         eventDate = getIntent().getStringExtra("eventStartEndDate");
 
-        txtOne.setOnClickListener(this);
-        txtTwo.setOnClickListener(this);
-        txtThree.setOnClickListener(this);
-        txtFour.setOnClickListener(this);
-        txtFive.setOnClickListener(this);
-        txtSix.setOnClickListener(this);
-        txtSeven.setOnClickListener(this);
-        txtEight.setOnClickListener(this);
-        txtNine.setOnClickListener(this);
-        txtTen.setOnClickListener(this);
-        txtSelectedQunatity.setOnClickListener(this);
+        CountIncrease.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                totalCount++;
+                numTicketcount.setText(totalCount);
+            }
+        });
+        CountDecrease.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                totalCount--;
+                numTicketcount.setText(totalCount);
+            }
+        });
+
         btnProceed.setOnClickListener(this);
 
         txtEventName.setText(eventName);
@@ -118,13 +115,6 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
         //    PreferenceStorage.IsFilterApply(this, false);
         callGetFilterService();
         //}
-
-        findViewById(R.id.back_res).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
     }
 
     public void callGetFilterService() {
@@ -145,186 +135,87 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
 
     @Override
     public void onClick(View v) {
-        if (v == txtOne) {
-
-            selectedTicket = Integer.parseInt(txtOne.getText().toString());
-            txtSelectedQunatity.setText(txtOne.getText().toString());
-
-            txtOne.setBackgroundResource(R.drawable.btn_square_red);
-            txtTwo.setBackgroundResource(R.drawable.button_rounded_white);
-            txtThree.setBackgroundResource(R.drawable.button_rounded_white);
-            txtFour.setBackgroundResource(R.drawable.button_rounded_white);
-            txtFive.setBackgroundResource(R.drawable.button_rounded_white);
-            txtSix.setBackgroundResource(R.drawable.button_rounded_white);
-            txtSeven.setBackgroundResource(R.drawable.button_rounded_white);
-            txtEight.setBackgroundResource(R.drawable.button_rounded_white);
-            txtNine.setBackgroundResource(R.drawable.button_rounded_white);
-            txtTen.setBackgroundResource(R.drawable.button_rounded_white);
-
-            flagTicket = "yes";
-
-        } else if (v == txtTwo) {
-            selectedTicket = Integer.parseInt(txtTwo.getText().toString());
-            txtSelectedQunatity.setText(txtTwo.getText().toString());
-
-            txtOne.setBackgroundResource(R.drawable.btn_square_red);
-            txtTwo.setBackgroundResource(R.drawable.btn_square_red);
-            txtThree.setBackgroundResource(R.drawable.button_rounded_white);
-            txtFour.setBackgroundResource(R.drawable.button_rounded_white);
-            txtFive.setBackgroundResource(R.drawable.button_rounded_white);
-            txtSix.setBackgroundResource(R.drawable.button_rounded_white);
-            txtSeven.setBackgroundResource(R.drawable.button_rounded_white);
-            txtEight.setBackgroundResource(R.drawable.button_rounded_white);
-            txtNine.setBackgroundResource(R.drawable.button_rounded_white);
-            txtTen.setBackgroundResource(R.drawable.button_rounded_white);
-
-            flagTicket = "yes";
-
-        } else if (v == txtThree) {
-            selectedTicket = Integer.parseInt(txtThree.getText().toString());
-            txtSelectedQunatity.setText(txtThree.getText().toString());
-
-            txtOne.setBackgroundResource(R.drawable.btn_square_red);
-            txtTwo.setBackgroundResource(R.drawable.btn_square_red);
-            txtThree.setBackgroundResource(R.drawable.btn_square_red);
-            txtFour.setBackgroundResource(R.drawable.button_rounded_white);
-            txtFive.setBackgroundResource(R.drawable.button_rounded_white);
-            txtSix.setBackgroundResource(R.drawable.button_rounded_white);
-            txtSeven.setBackgroundResource(R.drawable.button_rounded_white);
-            txtEight.setBackgroundResource(R.drawable.button_rounded_white);
-            txtNine.setBackgroundResource(R.drawable.button_rounded_white);
-            txtTen.setBackgroundResource(R.drawable.button_rounded_white);
-
-            flagTicket = "yes";
-
-        } else if (v == txtFour) {
-            selectedTicket = Integer.parseInt(txtFour.getText().toString());
-            txtSelectedQunatity.setText(txtFour.getText().toString());
-
-            txtOne.setBackgroundResource(R.drawable.btn_square_red);
-            txtTwo.setBackgroundResource(R.drawable.btn_square_red);
-            txtThree.setBackgroundResource(R.drawable.btn_square_red);
-            txtFour.setBackgroundResource(R.drawable.btn_square_red);
-            txtFive.setBackgroundResource(R.drawable.button_rounded_white);
-            txtSix.setBackgroundResource(R.drawable.button_rounded_white);
-            txtSeven.setBackgroundResource(R.drawable.button_rounded_white);
-            txtEight.setBackgroundResource(R.drawable.button_rounded_white);
-            txtNine.setBackgroundResource(R.drawable.button_rounded_white);
-            txtTen.setBackgroundResource(R.drawable.button_rounded_white);
-
-            flagTicket = "yes";
-
-        } else if (v == txtFive) {
-            selectedTicket = Integer.parseInt(txtFive.getText().toString());
-            txtSelectedQunatity.setText(txtFive.getText().toString());
-
-            txtOne.setBackgroundResource(R.drawable.btn_square_red);
-            txtTwo.setBackgroundResource(R.drawable.btn_square_red);
-            txtThree.setBackgroundResource(R.drawable.btn_square_red);
-            txtFour.setBackgroundResource(R.drawable.btn_square_red);
-            txtFive.setBackgroundResource(R.drawable.btn_square_red);
-            txtSix.setBackgroundResource(R.drawable.button_rounded_white);
-            txtSeven.setBackgroundResource(R.drawable.button_rounded_white);
-            txtEight.setBackgroundResource(R.drawable.button_rounded_white);
-            txtNine.setBackgroundResource(R.drawable.button_rounded_white);
-            txtTen.setBackgroundResource(R.drawable.button_rounded_white);
-
-            flagTicket = "yes";
-
-        } else if (v == txtSix) {
-            selectedTicket = Integer.parseInt(txtSix.getText().toString());
-            txtSelectedQunatity.setText(txtSix.getText().toString());
-
-            txtOne.setBackgroundResource(R.drawable.btn_square_red);
-            txtTwo.setBackgroundResource(R.drawable.btn_square_red);
-            txtThree.setBackgroundResource(R.drawable.btn_square_red);
-            txtFour.setBackgroundResource(R.drawable.btn_square_red);
-            txtFive.setBackgroundResource(R.drawable.btn_square_red);
-            txtSix.setBackgroundResource(R.drawable.btn_square_red);
-            txtSeven.setBackgroundResource(R.drawable.button_rounded_white);
-            txtEight.setBackgroundResource(R.drawable.button_rounded_white);
-            txtNine.setBackgroundResource(R.drawable.button_rounded_white);
-            txtTen.setBackgroundResource(R.drawable.button_rounded_white);
-
-            flagTicket = "yes";
-
-        } else if (v == txtSeven) {
-            selectedTicket = Integer.parseInt(txtSeven.getText().toString());
-            txtSelectedQunatity.setText(txtSeven.getText().toString());
-
-            txtOne.setBackgroundResource(R.drawable.btn_square_red);
-            txtTwo.setBackgroundResource(R.drawable.btn_square_red);
-            txtThree.setBackgroundResource(R.drawable.btn_square_red);
-            txtFour.setBackgroundResource(R.drawable.btn_square_red);
-            txtFive.setBackgroundResource(R.drawable.btn_square_red);
-            txtSix.setBackgroundResource(R.drawable.btn_square_red);
-            txtSeven.setBackgroundResource(R.drawable.btn_square_red);
-            txtEight.setBackgroundResource(R.drawable.button_rounded_white);
-            txtNine.setBackgroundResource(R.drawable.button_rounded_white);
-            txtTen.setBackgroundResource(R.drawable.button_rounded_white);
-
-            flagTicket = "yes";
-
-        } else if (v == txtEight) {
-            selectedTicket = Integer.parseInt(txtEight.getText().toString());
-            txtSelectedQunatity.setText(txtEight.getText().toString());
-
-            txtOne.setBackgroundResource(R.drawable.btn_square_red);
-            txtTwo.setBackgroundResource(R.drawable.btn_square_red);
-            txtThree.setBackgroundResource(R.drawable.btn_square_red);
-            txtFour.setBackgroundResource(R.drawable.btn_square_red);
-            txtFive.setBackgroundResource(R.drawable.btn_square_red);
-            txtSix.setBackgroundResource(R.drawable.btn_square_red);
-            txtSeven.setBackgroundResource(R.drawable.btn_square_red);
-            txtEight.setBackgroundResource(R.drawable.btn_square_red);
-            txtNine.setBackgroundResource(R.drawable.button_rounded_white);
-            txtTen.setBackgroundResource(R.drawable.button_rounded_white);
-
-            flagTicket = "yes";
-
-        } else if (v == txtNine) {
-            selectedTicket = Integer.parseInt(txtNine.getText().toString());
-            txtSelectedQunatity.setText(txtNine.getText().toString());
-
-            txtOne.setBackgroundResource(R.drawable.btn_square_red);
-            txtTwo.setBackgroundResource(R.drawable.btn_square_red);
-            txtThree.setBackgroundResource(R.drawable.btn_square_red);
-            txtFour.setBackgroundResource(R.drawable.btn_square_red);
-            txtFive.setBackgroundResource(R.drawable.btn_square_red);
-            txtSix.setBackgroundResource(R.drawable.btn_square_red);
-            txtSeven.setBackgroundResource(R.drawable.btn_square_red);
-            txtEight.setBackgroundResource(R.drawable.btn_square_red);
-            txtNine.setBackgroundResource(R.drawable.btn_square_red);
-            txtTen.setBackgroundResource(R.drawable.button_rounded_white);
-
-            flagTicket = "yes";
-
-        } else if (v == txtTen) {
-
-            selectedTicket = Integer.parseInt(txtTen.getText().toString());
-            txtSelectedQunatity.setText(txtTen.getText().toString());
-
-            txtOne.setBackgroundResource(R.drawable.btn_square_red);
-            txtTwo.setBackgroundResource(R.drawable.btn_square_red);
-            txtThree.setBackgroundResource(R.drawable.btn_square_red);
-            txtFour.setBackgroundResource(R.drawable.btn_square_red);
-            txtFive.setBackgroundResource(R.drawable.btn_square_red);
-            txtSix.setBackgroundResource(R.drawable.btn_square_red);
-            txtSeven.setBackgroundResource(R.drawable.btn_square_red);
-            txtEight.setBackgroundResource(R.drawable.btn_square_red);
-            txtNine.setBackgroundResource(R.drawable.btn_square_red);
-            txtTen.setBackgroundResource(R.drawable.btn_square_red);
-
-            flagTicket = "yes";
-
-        } else if (v == txtSelectedQunatity) {
-
-        } else if (v == btnProceed) {
+//        if (v == txtOne) {
+//
+//            selectedTicket = Integer.parseInt(txtOne.getText().toString());
+//            txtSelectedQunatity.setText(txtOne.getText().toString());
+//
+//            flagTicket = "yes";
+//
+//        } else if (v == txtTwo) {
+//            selectedTicket = Integer.parseInt(txtTwo.getText().toString());
+//            txtSelectedQunatity.setText(txtTwo.getText().toString());
+//
+//
+//            flagTicket = "yes";
+//
+//        } else if (v == txtThree) {
+//            selectedTicket = Integer.parseInt(txtThree.getText().toString());
+//            txtSelectedQunatity.setText(txtThree.getText().toString());
+//
+//
+//            flagTicket = "yes";
+//
+//        } else if (v == txtFour) {
+//            selectedTicket = Integer.parseInt(txtFour.getText().toString());
+//            txtSelectedQunatity.setText(txtFour.getText().toString());
+//
+//
+//            flagTicket = "yes";
+//
+//        } else if (v == txtFive) {
+//            selectedTicket = Integer.parseInt(txtFive.getText().toString());
+//            txtSelectedQunatity.setText(txtFive.getText().toString());
+//
+//
+//            flagTicket = "yes";
+//
+//        } else if (v == txtSix) {
+//            selectedTicket = Integer.parseInt(txtSix.getText().toString());
+//            txtSelectedQunatity.setText(txtSix.getText().toString());
+//
+//
+//            flagTicket = "yes";
+//
+//        } else if (v == txtSeven) {
+//            selectedTicket = Integer.parseInt(txtSeven.getText().toString());
+//            txtSelectedQunatity.setText(txtSeven.getText().toString());
+//
+//
+//            flagTicket = "yes";
+//
+//        } else if (v == txtEight) {
+//            selectedTicket = Integer.parseInt(txtEight.getText().toString());
+//            txtSelectedQunatity.setText(txtEight.getText().toString());
+//
+//
+//            flagTicket = "yes";
+//
+//        } else if (v == txtNine) {
+//            selectedTicket = Integer.parseInt(txtNine.getText().toString());
+//            txtSelectedQunatity.setText(txtNine.getText().toString());
+//
+//
+//            flagTicket = "yes";
+//
+//        } else if (v == txtTen) {
+//
+//            selectedTicket = Integer.parseInt(txtTen.getText().toString());
+//            txtSelectedQunatity.setText(txtTen.getText().toString());
+//
+//
+//            flagTicket = "yes";
+//
+//        } else if (v == txtSelectedQunatity) {
+//
+//        }
+        if (v == btnProceed) {
 
             if ((flagPlan.equalsIgnoreCase("no")) || (flagTicket.equalsIgnoreCase("no"))) {
                 Toast.makeText(this, "Select ticket or plan", Toast.LENGTH_SHORT)
                         .show();
             } else {
+                        selectedTicket = totalCount;
 
                 double _rate = 0.0;
                 _rate = Double.parseDouble(rate);
@@ -451,6 +342,8 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
             bookingPlanAdapter.exitSearch();
             bookingPlanAdapter.notifyDataSetChanged();
         }
-
     }
+
 }
+
+
