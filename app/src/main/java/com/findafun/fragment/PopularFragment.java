@@ -141,23 +141,25 @@ public class PopularFragment extends LandingPagerFragment implements OnMapReadyC
         mMapView = (MapView) view.findViewById(R.id.mapview);
         mMapView.onCreate(savedInstanceState);
         setUpGoogleMaps();
-        mNearbyTabUnselected = getActivity().getResources().getDrawable(R.drawable.btn_rounded_white);
-        mNearbyTabSelected = getActivity().getResources().getDrawable(R.drawable.btn_rounded_red);
 
-        mLocationUnselected = getActivity().getResources().getDrawable(R.drawable.btn_square_white);
-        mLocationSelected = getActivity().getResources().getDrawable(R.drawable.btn_square_red);
+        mNearbyTabUnselected = getActivity().getResources().getDrawable(R.drawable.btn_rounded_red);
+        mNearbyTabSelected = getActivity().getResources().getDrawable(R.drawable.btn_rounded_white);
 
-        mListUnselected = getActivity().getResources().getDrawable(R.drawable.btn_rounded_white_right);
-        mListSelected = getActivity().getResources().getDrawable(R.drawable.btn_rounded_red_rightside);
+        mLocationUnselected = getActivity().getResources().getDrawable(R.drawable.btn_square_red);
+        mLocationSelected = getActivity().getResources().getDrawable(R.drawable.btn_square_white);
 
-        mselectednearbyicon = getActivity().getResources().getDrawable(R.drawable.nearby_unselected);
+        mListUnselected = getActivity().getResources().getDrawable(R.drawable.btn_rounded_red_rightside);
+        mListSelected = getActivity().getResources().getDrawable(R.drawable.btn_rounded_white_right);
+
+        mselectednearbyicon = getActivity().getResources().getDrawable(R.drawable.nearby_selected);
         munselectednearbyicon = getActivity().getResources().getDrawable(R.drawable.nearby_unselected);
 
-        mselectedlocationicon = getActivity().getResources().getDrawable(R.drawable.map_unselected);
+        mselectedlocationicon = getActivity().getResources().getDrawable(R.drawable.map_selected);
         munselectedlocationicon = getActivity().getResources().getDrawable(R.drawable.map_unselected);
 
-        mselectedlisticon = getActivity().getResources().getDrawable(R.drawable.list_unselected);
+        mselectedlisticon = getActivity().getResources().getDrawable(R.drawable.list_selected);
         munselectedlisticon = getActivity().getResources().getDrawable(R.drawable.list_unselected);
+
 
         mMapIcon = BitmapDescriptorFactory.fromResource(R.drawable.location_dot_img);
 

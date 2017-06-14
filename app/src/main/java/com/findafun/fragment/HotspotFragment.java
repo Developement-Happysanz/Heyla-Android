@@ -127,25 +127,6 @@ public class HotspotFragment extends StaticEventFragment implements OnMapReadyCa
         mMapView_hp.onCreate(savedInstanceState);
         setUpGoogleMaps();
 
-        mNearbyTabUnselected_hp = getActivity().getResources().getDrawable(R.drawable.btn_rounded_white);
-        mNearbyTabSelected_hp = getActivity().getResources().getDrawable(R.drawable.btn_rounded_red);
-
-        mLocationUnselected_hp = getActivity().getResources().getDrawable(R.drawable.btn_square_white);
-        mLocationSelected_hp = getActivity().getResources().getDrawable(R.drawable.btn_square_red);
-
-        mListUnselected_hp = getActivity().getResources().getDrawable(R.drawable.btn_rounded_white_right);
-        mListSelected_hp = getActivity().getResources().getDrawable(R.drawable.btn_rounded_red_rightside);
-
-        mselectednearbyicon_hp = getActivity().getResources().getDrawable(R.drawable.nearby_unselected);
-        munselectednearbyicon_hp = getActivity().getResources().getDrawable(R.drawable.nearby_unselected);
-
-        mselectedlocationicon_hp = getActivity().getResources().getDrawable(R.drawable.map_unselected);
-        munselectedlocationicon_hp = getActivity().getResources().getDrawable(R.drawable.map_unselected);
-
-        mselectedlisticon_hp = getActivity().getResources().getDrawable(R.drawable.list_unselected);
-        munselectedlisticon_hp = getActivity().getResources().getDrawable(R.drawable.list_unselected);
-
-
 
 
         mMapIcon_hp = BitmapDescriptorFactory.fromResource(R.drawable.location_dot_img);

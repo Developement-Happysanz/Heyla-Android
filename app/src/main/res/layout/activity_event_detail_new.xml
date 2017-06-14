@@ -36,7 +36,7 @@
                     android:layout_marginEnd="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/ic_wishlist1" />
+                    android:background="@drawable/bookmark_unselected" />
 
 
                 <!--banner-->

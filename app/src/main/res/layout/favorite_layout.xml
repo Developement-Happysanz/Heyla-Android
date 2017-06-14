@@ -49,7 +49,7 @@
             android:layout_marginLeft="-1dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/list_icon_background"
-            android:src="@drawable/list_unselected" />
+            android:src="@drawable/list_selected" />
 
         <ImageButton
             android:id="@+id/nearby_list_btn"

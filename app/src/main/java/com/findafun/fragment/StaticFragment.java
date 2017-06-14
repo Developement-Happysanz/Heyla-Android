@@ -19,13 +19,11 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.costum.android.widget.LoadMoreListView;
 import com.findafun.R;
 import com.findafun.activity.AddEventActivity;
-import com.findafun.activity.NearbyActivity;
 import com.findafun.activity.NearbyStaticActivity;
 import com.findafun.activity.StaticEventDetailActivity;
 import com.findafun.adapter.StaticEventListAdapter;
@@ -183,13 +181,14 @@ public class StaticFragment extends LandingPagerFragment implements OnMapReadyCa
         mMapView_hp.onCreate(savedInstanceState);
         setUpGoogleMaps();
 
-        mNearbyTabUnselected = getActivity().getResources().getDrawable(R.drawable.btn_rounded_white);
-        mNearbyTabSelected = getActivity().getResources().getDrawable(R.drawable.btn_rounded_red);
+        mNearbyTabUnselected = getActivity().getResources().getDrawable(R.drawable.btn_rounded_red);
+        mNearbyTabSelected = getActivity().getResources().getDrawable(R.drawable.btn_rounded_white);
 
-        mLocationUnselected_hp = getActivity().getResources().getDrawable(R.drawable.btn_square_white);
-        mLocationSelected_hp = getActivity().getResources().getDrawable(R.drawable.btn_square_red);
-        mListUnselected_hp = getActivity().getResources().getDrawable(R.drawable.btn_rounded_white_right);
-        mListSelected_hp = getActivity().getResources().getDrawable(R.drawable.btn_rounded_red_rightside);
+        mLocationUnselected_hp = getActivity().getResources().getDrawable(R.drawable.btn_square_red);
+        mLocationSelected_hp = getActivity().getResources().getDrawable(R.drawable.btn_square_white);
+
+        mListUnselected_hp = getActivity().getResources().getDrawable(R.drawable.btn_rounded_red_rightside);
+        mListSelected_hp = getActivity().getResources().getDrawable(R.drawable.btn_rounded_white_right);
 
         mselectednearbyicon = getActivity().getResources().getDrawable(R.drawable.nearby_selected);
         munselectednearbyicon = getActivity().getResources().getDrawable(R.drawable.nearby_unselected);

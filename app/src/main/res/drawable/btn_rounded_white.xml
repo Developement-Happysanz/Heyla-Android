@@ -4,13 +4,13 @@
         android:bottomLeftRadius="5dp"
         android:bottomRightRadius="0dp"
         android:topLeftRadius="5dp"
-        android:topRightRadius="0dp"></corners>
-    <solid android:color="@color/transparent"></solid>
+        android:topRightRadius="0dp"/>
+    <solid android:color="@color/white"/>
     <size
         android:width="30dp"
-        android:height="20dp"></size>
+        android:height="20dp"/>
     <stroke
         android:width="0.75dp"
-        android:color="@color/oval_shape_color"></stroke>
+        android:color="@color/oval_shape_color"/>
 
 </shape>
