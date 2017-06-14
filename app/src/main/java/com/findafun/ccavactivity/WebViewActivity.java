@@ -72,6 +72,7 @@ public class WebViewActivity extends Activity {
                 vEncVal.append(ServiceUtility.addToPostParams(AvenuesParams.AMOUNT, mainIntent.getStringExtra(AvenuesParams.AMOUNT)));
                 vEncVal.append(ServiceUtility.addToPostParams(AvenuesParams.CURRENCY, mainIntent.getStringExtra(AvenuesParams.CURRENCY)));
                 encVal = RSAUtility.encrypt(vEncVal.substring(0, vEncVal.length() - 1), vResponse);
+//                Toast.makeText(getApplicationContext(), "status", Toast.LENGTH_SHORT).show();
             }
 
             return null;
@@ -99,11 +100,11 @@ public class WebViewActivity extends Activity {
                     } else {
                         status = "Status Not Known!";
                     }
-                    //Toast.makeText(getApplicationContext(), status, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), status, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), StatusActivity.class);
                     intent.putExtra("transStatus", status);
                     startActivity(intent);
-                    finish();
+//                    finish();
                 }
             }
 

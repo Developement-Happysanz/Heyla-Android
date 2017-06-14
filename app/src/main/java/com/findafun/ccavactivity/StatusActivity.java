@@ -15,12 +15,12 @@ public class StatusActivity extends Activity {
 	public void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_status_ns);
-		
+
+//		Toast.makeText(getApplicationContext(), "status", Toast.LENGTH_SHORT).show();
 		Intent mainIntent = getIntent();
 		TextView tv4 = (TextView) findViewById(R.id.textView1);
 		tv4.setText(mainIntent.getStringExtra("transStatus"));
-
-		finish();
+//		finish();
 
 
 	}

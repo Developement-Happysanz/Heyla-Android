@@ -6,6 +6,9 @@ public class AvenuesParams {
     public static final String MERCHANT_ID = "merchant_id";
     public static final String ORDER_ID = "order_id";
     public static final String AMOUNT = "amount";
+
+    public static final String MERCH_PARAM1 = "merch_param1";
+
     public static final String CURRENCY = "currency";
     public static final String ENC_VAL = "enc_val";
     public static final String REDIRECT_URL = "redirect_url";

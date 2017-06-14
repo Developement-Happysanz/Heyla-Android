@@ -354,7 +354,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Dia
             } else if (view == txtSignUp) {
                 Intent signUpIntent = new Intent(getActivity(), SignUpActivity.class);
                 startActivity(signUpIntent);
-            } else if (view == btnGPlus) {
+            }
+            else if (view == btnGPlus) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     PreferenceStorage.saveLoginMode(getActivity(), FindAFunConstants.GOOGLE_PLUS);
                     PreferenceStorage.saveUserType(getActivity(), "1");
