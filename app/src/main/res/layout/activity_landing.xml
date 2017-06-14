@@ -18,7 +18,7 @@
         <com.findafun.customview.PagerSlidingTabStrip
             android:id="@+id/tabs"
             android:layout_width="match_parent"
-            android:layout_height="60dip"
+            android:layout_height="50dip"
             android:background="@color/apptheme_primary" />
 
         <android.support.v4.view.ViewPager

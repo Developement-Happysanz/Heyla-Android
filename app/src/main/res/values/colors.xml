@@ -62,6 +62,7 @@
     <color name="Yellow">#FFF0F0</color>
     <color name="Black">#000000</color>
     <color name="new_black">#41000000</color>
+    <color name="new_black1">#53000000</color>
     <color name="White">#FFFFFF</color>
     <color name="tab_back">#E93A23</color>
     <color name="text_color">#ed652f</color>

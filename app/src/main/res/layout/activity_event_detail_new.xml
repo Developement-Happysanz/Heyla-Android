@@ -3,7 +3,7 @@
     android:id="@+id/event_detail_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/White"
+    android:background="@color/gray_1"
     android:orientation="vertical"
     tools:context="com.findafun.activity.EventDetailActivity">
 
@@ -14,12 +14,12 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/White">
+        android:background="@color/gray_1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/bg_gray"
+            android:background="@color/gray_1"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -119,6 +119,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
+                    android:gravity="center"
                     android:background="@color/white"
                     android:paddingEnd="20dp"
                     android:paddingLeft="10dp"
@@ -303,9 +304,10 @@
                 android:weightSum="1">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
                     android:layout_marginEnd="5dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginRight="5dp"
                     android:contentDescription="@string/accept"
                     android:src="@drawable/eventscreendate_icon" />
@@ -359,8 +361,9 @@
                 android:weightSum="1">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginRight="5dp"
                     android:contentDescription="@string/accept"
@@ -413,8 +416,9 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginRight="5dp"
                     android:contentDescription="@string/accept"
@@ -449,8 +453,9 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginRight="5dp"
                     android:contentDescription="@string/accept"
