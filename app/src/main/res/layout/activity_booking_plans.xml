@@ -104,7 +104,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="390dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <TextView
@@ -121,6 +121,17 @@
                     android:textColor="@color/black"
                     android:textSize="16dp" />
 
+                <EditText
+                    android:id="@+id/book_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/transparent"
+                    android:layout_marginTop="10dp"
+                    android:focusable="false"
+                    android:hint="Select Date"
+                    android:textSize="25dp"
+                    android:textColor="@color/black"/>
 
                 <com.costum.android.widget.LoadMoreListView
                     android:id="@+id/listView_plans"
@@ -130,6 +141,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
                     android:divider="@color/white"
+                    android:background="@drawable/bg_key"
                     android:dividerHeight="0dp" />
 
                 <TextView
@@ -162,7 +174,8 @@
                         android:layout_gravity="center"
                         android:background="@drawable/btn_square_white"
                         android:gravity="center"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:textSize="25dp"/>
 
                     <ImageView
                         android:id="@+id/count_increase"

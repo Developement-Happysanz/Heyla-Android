@@ -39,7 +39,7 @@
     <!-- Divider color -->
     <color name="yellow_divider">#F6E256</color>
 
-    <color name="pressed_color">#28e2e4e7</color>
+    <color name="pressed_color">#ed652f</color>
     <color name="default_color">#01ede9e9</color>
 
     <!-- Select City -->

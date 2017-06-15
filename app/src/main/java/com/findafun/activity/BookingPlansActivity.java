@@ -1,5 +1,6 @@
 package com.findafun.activity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -13,6 +14,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,7 +35,10 @@ import com.google.gson.Gson;
 
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * Created by Nandha on 11-12-2016.
@@ -53,6 +59,7 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
     Handler mHandler = new Handler();
     private SearchView mSearchView = null;
     TextView txtEventName, txtEvnetVenue, txtEventDate, numTicketcount;
+    EditText txtBookingDate;
     ImageView CountIncrease, CountDecrease;
     Button btnProceed;
     int selectedTicket = 0;
@@ -69,6 +76,7 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
         txtEventName = (TextView) findViewById(R.id.event_name);
         txtEvnetVenue = (TextView) findViewById(R.id.event_venue);
         txtEventDate = (TextView) findViewById(R.id.event_when);
+        txtBookingDate = (EditText) findViewById(R.id.book_date);
         numTicketcount = (TextView) findViewById(R.id.tcktcount);
         btnProceed = (Button) findViewById(R.id.proceed_btn);
         CountDecrease = (ImageView) findViewById(R.id.count_decrease);
@@ -128,7 +136,43 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
         //    PreferenceStorage.IsFilterApply(this, false);
         callGetFilterService();
         //}
+        final Calendar myCalendar = Calendar.getInstance();
+
+        final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+                // TODO Auto-generated method stub
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, monthOfYear);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updateLabel();
+            }
+
+        };
+
+        txtBookingDate.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                new DatePickerDialog(BookingPlansActivity.this, date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
+    private void updateLabel() {
+
+        String myFormat = "dd/mm/yyyy"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.UK);
+
+        edittext.setText(sdf.format(myCalendar.getTime()));
     }
+
+    }
+
 
     public void callGetFilterService() {
         /*if(eventsListAdapter != null){
