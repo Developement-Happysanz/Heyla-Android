@@ -22,7 +22,7 @@
             android:layout_marginTop="55dp"
             android:text="Create Account"
             android:fontFamily="sans-serif"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/apptheme_primary"
             android:textSize="30dp" />
 
         <EditText
@@ -203,7 +203,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/login_button"
             android:text="Create Account"
-            android:textColor="@color/white"
+            android:textColor="@color/login_text"
             android:foreground="?android:attr/selectableItemBackground"/>
 
         <TextView

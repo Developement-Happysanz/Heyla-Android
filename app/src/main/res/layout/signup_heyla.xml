@@ -79,7 +79,7 @@
             android:stateListAnimator="@null"
             android:background="@drawable/login_button"
             android:text="Create Account"
-            android:textColor="@color/white"
+            android:textColor="@color/login_text"
             android:foreground="?android:attr/selectableItemBackground"/>
 
         <TextView

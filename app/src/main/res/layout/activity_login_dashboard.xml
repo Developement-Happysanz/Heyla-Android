@@ -39,7 +39,7 @@
                 android:background="@drawable/login_button"
                 android:fontFamily="sans-serif-condensed"
                 android:text="Sign In"
-                android:textColor="@color/white"
+                android:textColor="@color/login_text"
                 android:textSize="23dp"
                 android:textStyle="bold" />
 
@@ -70,7 +70,7 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 android:stateListAnimator="@null"
                 android:text="Sign UP"
-                android:textColor="@color/white"
+                android:textColor="@color/login_text"
                 android:textSize="23dp"
                 android:textStyle="bold" />
 

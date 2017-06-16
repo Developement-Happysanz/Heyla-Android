@@ -96,6 +96,7 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
     private Animator mCurrentAnimator;
     private static final String TAG = EventDetailActivity.class.getName();
     private Event event;
+    private ImageView Checkin_img;
     private TextView txtEventName, txtEventCategory, txtEventDesc, txtEventVenue, txtEventStartDate, txtEventEndDate, txtEventStartTime, txtEventEndTime;
     private TextView txtEventTime, txtEventDate, txtEventEntry, txtEventContact, txtEventEmail, txtWebSite;
     private TextView txtViewMore, txtViewLess;
@@ -496,7 +497,7 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
         txtEventEntry = (TextView) findViewById(R.id.txt_event_entry);
         txtEventEmail = (TextView) findViewById(R.id.txt_contact_mail);
         //txtWebSite = (TextView) findViewById(R.id.txt_website);
-
+        Checkin_img = (ImageView) findViewById(R.id.chckin);
         mShortAnimationDuration = getResources().getInteger(
                 android.R.integer.config_shortAnimTime);
 
@@ -504,7 +505,7 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
         LinearLayout shareBtn = (LinearLayout) findViewById(R.id.share_btn);
         LinearLayout contactBtn = (LinearLayout) findViewById(R.id.contact_btn);
         LinearLayout engageBtn = (LinearLayout) findViewById(R.id.engage_btn);
-        LinearLayout checkinsBtn = (LinearLayout) findViewById(R.id.engage_btn);
+        final LinearLayout checkinsBtn = (LinearLayout) findViewById(R.id.engage_btn);
         Button bookingBtn = (Button) findViewById(R.id.booking_btn);
 //        Switch checkinsBtn = (Switch) findViewById(R.id.checkins_btn);
 
@@ -724,6 +725,8 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
 
                 if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
 //                    if (isChecked) {
+                    int imgResource = R.drawable.ic_checkin_selected;
+                    Checkin_img.setBackgroundResource(imgResource);
                     Toast.makeText(getApplicationContext(), "You have successfully checked-in for the event - " + event.getEventName().toString() + "\nGet ready for the fun! ", Toast.LENGTH_LONG).show();
 //                    } else {
 

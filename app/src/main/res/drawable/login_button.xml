@@ -4,11 +4,11 @@
         android:state_focused="true"
         android:state_pressed="false" />
     <item
-        android:drawable="@drawable/btn_custom_colour"
+        android:drawable="@drawable/btn_custom_nocolour"
         android:state_focused="true"
         android:state_pressed="true" />
     <item
-        android:drawable="@drawable/btn_custom_colour"
+        android:drawable="@drawable/btn_custom_nocolour"
         android:state_focused="false"
         android:state_pressed="true" />
     <item
