@@ -5,7 +5,6 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="AppTheme.Gallery" parent="Theme.AppCompat.NoActionBar">
-    </style>
+    <style name="AppTheme.Gallery" parent="Theme.AppCompat.NoActionBar"></style>
 
 </resources>

@@ -33,15 +33,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:backgroundTint="@color/apptheme_primary"
             android:gravity="center"
             android:hint="@string/hint_email"
             android:inputType="textEmailAddress"
             android:padding="15dp"
             android:textColor="@color/white"
             android:singleLine="true"
-            android:fontFamily="sans-serif-light"
+            android:fontFamily="sans-serif"
             android:textSize="14sp"
-            android:textColorHint="@color/bg_trans" />
+            android:textColorHint="@color/apptheme_primary" />
 
         <EditText
             android:id="@+id/editText_password"

@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root"
     android:layout_width="match_parent"
@@ -6,11 +7,48 @@
     android:background="@drawable/logo_splash"
     tools:context="com.findafun.activity.SplashScreenActivity">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:adjustViewBounds="true"
-        android:src="@drawable/logo_splash"
-        android:visibility="gone" />
+    <TextView
+        android:id="@+id/welcome_splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:text="Welcome to"
+        android:textColor="@color/white"
+        android:textSize="35dp" />
+
+    <TextView
+        android:id="@+id/heyla_splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/welcome_splash"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:text="HEYLA"
+        android:textColor="@color/white"
+        android:textSize="65dp" />
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/avi"
+        style="@style/AVLoadingIndicatorView"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignBottom="@+id/loading_splash"
+        android:layout_toRightOf="@+id/loading_splash"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="-2dp"
+        app:indicatorColor="@color/apptheme_primary"
+        app:indicatorName="BallPulseIndicator" />
+
+    <TextView
+        android:id="@+id/loading_splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="Loading"
+        android:textColor="@color/apptheme_primary"
+        android:textSize="25dp" />
+
 </RelativeLayout>

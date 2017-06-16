@@ -22,8 +22,8 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginBottom="50dp"
-            android:text="Welcome back!"
             android:fontFamily="sans-serif"
+            android:text="Welcome back!"
             android:textColor="@color/white"
             android:textSize="30dp" />
 
@@ -31,29 +31,30 @@
             android:id="@+id/editText_email1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
             android:background="@drawable/button_rounded_white_gray_border"
             android:hint="@string/hint_email"
             android:inputType="textEmailAddress"
             android:padding="15dp"
             android:singleLine="true"
             android:textColorHint="@color/text_gray"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:visibility="gone" />
 
         <EditText
             android:id="@+id/editText_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="sans-serif"
+            android:backgroundTint="@color/apptheme_primary"
             android:gravity="center"
             android:hint="@string/hint_email"
-            android:fontFamily="sans-serif-light"
             android:inputType="textEmailAddress"
             android:padding="15dp"
             android:textColor="@color/white"
-            android:singleLine="true"
-            android:textSize="14sp"
-            android:textColorHint="@color/bg_trans" />
+            android:textColorHint="@color/bg_trans"
+            android:textCursorDrawable="@null"
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/editText_password1"
@@ -65,26 +66,27 @@
             android:hint="@string/hint_password"
             android:inputType="textPassword"
             android:padding="15dp"
-            android:visibility="gone"
             android:singleLine="true"
-            android:textColorHint="@color/text_gray"
-            android:textSize="14sp" />
+            android:textColorHint="@color/apptheme_primary"
+            android:textSize="14sp"
+            android:visibility="gone" />
 
         <EditText
             android:id="@+id/editText_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="25dp"
-            android:layout_gravity="center"
+            android:fontFamily="sans-serif"
+            android:backgroundTint="@color/apptheme_primary"
             android:gravity="center"
             android:hint="@string/hint_password"
-            android:fontFamily="sans-serif-light"
             android:inputType="textPassword"
-            android:textColor="@color/white"
             android:padding="15dp"
-            android:singleLine="true"
-            android:textColorHint="@color/text_gray"
+            android:textColor="@color/white"
+            android:textColorHint="@color/bg_trans"
+            android:textCursorDrawable="@null"
             android:textSize="14sp" />
 
     </LinearLayout>
@@ -99,7 +101,6 @@
             android:id="@+id/btn_sign_in1"
             android:layout_width="140dp"
             android:layout_height="33dp"
-            android:visibility="gone"
             android:layout_below="@+id/editText_password"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
@@ -109,7 +110,8 @@
             android:text="Sign In"
             android:textAllCaps="false"
             android:textColor="@color/colorWhite"
-            android:textSize="16dp" />
+            android:textSize="16dp"
+            android:visibility="gone" />
 
         <Button
             android:id="@+id/btn_sign_in"
@@ -118,12 +120,12 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            android:stateListAnimator="@null"
             android:layout_marginTop="20dp"
             android:background="@drawable/login_button"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:stateListAnimator="@null"
             android:text="Login"
-            android:textColor="@color/white"
-            android:foreground="?android:attr/selectableItemBackground"/>
+            android:textColor="@color/white" />
 
 
         <TextView
@@ -135,11 +137,11 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"
             android:background="@android:color/transparent"
+            android:fontFamily="sans-serif"
             android:gravity="center_horizontal"
             android:minHeight="0dp"
             android:minWidth="0dp"
             android:text="@string/forgot_password"
-            android:fontFamily="sans-serif"
             android:textColor="@color/colorWhite"
             android:textSize="16dp" />
 
@@ -154,11 +156,11 @@
             android:background="@android:color/transparent"
             android:minHeight="0dp"
             android:minWidth="0dp"
-            android:visibility="gone"
             android:src="@drawable/or_symbol"
             android:text="Sign In"
             android:textColor="@color/colorWhite"
-            android:textSize="16dp" />
+            android:textSize="16dp"
+            android:visibility="gone" />
 
         <TextView
             android:layout_width="150dp"
@@ -166,9 +168,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:text="Login with facebook"
-            android:visibility="gone"
             android:textColor="@color/white"
-            android:textSize="16dp" />
+            android:textSize="16dp"
+            android:visibility="gone" />
 
 
         <LinearLayout
@@ -192,20 +194,20 @@
                 android:drawablePadding="2dp"
                 android:minHeight="30dp"
                 android:minWidth="30dp"
-                android:visibility="gone"
                 android:text="Facebook"
                 android:textAllCaps="false"
                 android:textColor="@color/colorPrimary"
-                android:textSize="10dp" />
+                android:textSize="10dp"
+                android:visibility="gone" />
 
             <ImageView
                 android:id="@+id/frag_login_fb"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                android:visibility="gone"
                 android:layout_marginTop="5dp"
-                android:src="@drawable/facebookicon" />
+                android:src="@drawable/facebookicon"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/frag_login_google1"
@@ -221,11 +223,11 @@
                 android:drawablePadding="2dp"
                 android:minHeight="30dp"
                 android:minWidth="30dp"
-                android:visibility="gone"
                 android:text="Google+"
                 android:textAllCaps="false"
                 android:textColor="@color/colorRed"
-                android:textSize="10dp" />
+                android:textSize="10dp"
+                android:visibility="gone" />
 
             <ImageView
                 android:id="@+id/frag_login_google"
@@ -234,8 +236,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:drawablePadding="2dp"
-                android:visibility="gone"
-                android:src="@drawable/googleplusicon" />
+                android:src="@drawable/googleplusicon"
+                android:visibility="gone" />
         </LinearLayout>
 
         <TextView
@@ -245,14 +247,14 @@
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:visibility="gone"
             android:background="@android:color/transparent"
             android:gravity="center_horizontal"
             android:minHeight="0dp"
             android:minWidth="0dp"
             android:text="@string/guest_login"
             android:textColor="@color/colorWhite"
-            android:textSize="16dp" />
+            android:textSize="16dp"
+            android:visibility="gone" />
 
         <ImageView
             android:id="@+id/text_guest"
@@ -260,8 +262,8 @@
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:visibility="gone"
-            android:src="@drawable/ab_guest_login" />
+            android:src="@drawable/ab_guest_login"
+            android:visibility="gone" />
 
         <TextView
             android:layout_width="200dp"
@@ -269,9 +271,9 @@
             android:layout_gravity="center"
             android:background="@color/white"
             android:text=""
-            android:visibility="gone"
             android:textColor="@color/white"
-            android:textSize="16dp" />
+            android:textSize="16dp"
+            android:visibility="gone" />
 
     </LinearLayout>
 

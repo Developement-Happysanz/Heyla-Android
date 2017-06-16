@@ -162,17 +162,13 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
+    }
 
     private void updateLabel() {
 
         String myFormat = "dd/mm/yyyy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.UK);
-
-        edittext.setText(sdf.format(myCalendar.getTime()));
     }
-
-    }
-
 
     public void callGetFilterService() {
         /*if(eventsListAdapter != null){

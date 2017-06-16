@@ -36,9 +36,9 @@ import com.findafun.utils.PreferenceStorage;
 public class LoginDashboardActivity extends AppCompatActivity implements View.OnClickListener, DialogClickListener {
 
     private static final String TAG = LoginDashboardActivity.class.getName();
-    TextView txtGFLogin, txtOR;
+    TextView txtGFLogin, txtOR, txtGuestLogin;
     private ImageView imgLogin, imgCreateAccount;
-    private ImageView btnFacebook, btnGPlus, txtGuestLogin;
+    private ImageView btnFacebook, btnGPlus;
     private Button btnLogin, btnCreateAccount;
     private static final int REQUEST_PERMISSION_All = 111;
     private static String[] PERMISSIONS_ALL = {Manifest.permission.READ_CONTACTS,
@@ -92,7 +92,7 @@ public class LoginDashboardActivity extends AppCompatActivity implements View.On
             btnGPlus = (ImageView) findViewById(R.id.frag_login_gplus);
             btnLogin = (Button) findViewById(R.id.btn_sign_in);
             btnCreateAccount = (Button) findViewById(R.id.btn_create_new_account);
-            txtGuestLogin = (ImageView) findViewById(R.id.btn_guest_login);
+            txtGuestLogin = (TextView) findViewById(R.id.btn_guest_login);
             txtGFLogin = (TextView) findViewById(R.id.txt_gflogin);
             txtOR = (TextView) findViewById(R.id.txt_or);
 
