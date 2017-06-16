@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/apptheme_primary"
-            android:minHeight="?attr/actionBarSize"></android.support.v7.widget.Toolbar>
+            android:minHeight="?attr/actionBarSize"/>
 
         <ImageView
             android:id="@+id/back_res"
@@ -89,6 +89,8 @@
                 android:text="No Plans Found"
                 android:textColor="@color/white"
                 android:textSize="18dp" />
+
+
 
         </LinearLayout>
 

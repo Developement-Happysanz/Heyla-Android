@@ -35,9 +35,13 @@ import com.google.gson.Gson;
 
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 /**
@@ -65,13 +69,14 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
     int selectedTicket = 0;
     private BookPlan bookPlan = null;
     private String rate;
-    private String flagPlan = "no", flagTicket = "no";
+    private String flagPlan = "no", flagTicket = "no", flagBookingDate = "no";
+    int year, month, day;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_plans);
-        //getSupportActionBar().hide();
+
         loadMoreListView = (LoadMoreListView) findViewById(R.id.listView_plans);
         txtEventName = (TextView) findViewById(R.id.event_name);
         txtEvnetVenue = (TextView) findViewById(R.id.event_venue);
@@ -81,7 +86,7 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
         btnProceed = (Button) findViewById(R.id.proceed_btn);
         CountDecrease = (ImageView) findViewById(R.id.count_decrease);
         CountIncrease = (ImageView) findViewById(R.id.count_increase);
-        numTicketcount.setFilters(new InputFilter[]{ new InputFilterMinMax("1", "10")});
+        numTicketcount.setFilters(new InputFilter[]{new InputFilterMinMax("1", "10")});
         loadMoreListView.setOnLoadMoreListener(this);
         loadMoreListView.setOnItemClickListener(this);
         bookPlanArrayList = new ArrayList<>();
@@ -93,28 +98,68 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
         eventVenue = getIntent().getStringExtra("eventVenue");
         eventDate = getIntent().getStringExtra("eventStartEndDate");
 
-        CountIncrease.setOnClickListener(new View.OnClickListener() {
+        CountDecrease.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                totalCount++;
-                numTicketcount.setText(String.valueOf(totalCount));
-                if (totalCount == 0) {
-                    flagTicket = "no";
+
+                String stringTicketCount = numTicketcount.getText().toString();
+                int getTicketCount = Integer.parseInt(stringTicketCount);
+                int setTicketCount = 0;
+
+                if (getTicketCount > 0 & getTicketCount <= 10) {
+                    CountDecrease.setEnabled(true);
+                    CountIncrease.setEnabled(true);
                 }
-                else {
+
+                if (getTicketCount == 0) {
+                    CountDecrease.setEnabled(false);
+                } else {
+                    setTicketCount = getTicketCount - 1;
+                    if (setTicketCount == 1) {
+                        CountDecrease.setEnabled(false);
+                        String setValue = String.valueOf(setTicketCount);
+                        numTicketcount.setText(setValue);
+                    } else {
+                        String setValue = String.valueOf(setTicketCount);
+                        numTicketcount.setText(setValue);
+                    }
+                    totalCount = setTicketCount;
+                }
+
+                if (setTicketCount == 0) {
+                    flagTicket = "no";
+                    numTicketcount.setText("0");
+                } else {
                     flagTicket = "yes";
                 }
             }
         });
-        CountDecrease.setOnClickListener(new View.OnClickListener() {
+
+        CountIncrease.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                totalCount--;
-                numTicketcount.setText(String.valueOf(totalCount));
-                if (totalCount == 0) {
-                    flagTicket = "no";
+
+                String stringTicketCount = numTicketcount.getText().toString();
+                int getTicketCount = Integer.parseInt(stringTicketCount);
+                int setTicketCount = 0;
+
+                if (getTicketCount > 0 & getTicketCount <= 10) {
+                    CountDecrease.setEnabled(true);
+                    CountIncrease.setEnabled(true);
                 }
-                else {
+
+                if (getTicketCount == 10) {
+                    CountIncrease.setEnabled(false);
+                } else {
+                    CountIncrease.setEnabled(true);
+                    setTicketCount = getTicketCount + 1;
+                    numTicketcount.setText(String.valueOf(setTicketCount));
+                    totalCount = setTicketCount;
+                }
+
+                if (setTicketCount == 0) {
+                    flagTicket = "no";
+                } else {
                     flagTicket = "yes";
                 }
             }
@@ -136,38 +181,105 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
         //    PreferenceStorage.IsFilterApply(this, false);
         callGetFilterService();
         //}
-        final Calendar myCalendar = Calendar.getInstance();
-
-        final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
-
-            @Override
-            public void onDateSet(DatePicker view, int year, int monthOfYear,
-                                  int dayOfMonth) {
-                // TODO Auto-generated method stub
-                myCalendar.set(Calendar.YEAR, year);
-                myCalendar.set(Calendar.MONTH, monthOfYear);
-                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                updateLabel();
-            }
-
-        };
 
         txtBookingDate.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                new DatePickerDialog(BookingPlansActivity.this, date, myCalendar
-                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+
+                showDateDialog();
             }
         });
     }
 
-    private void updateLabel() {
+    private void showDateDialog() {
 
-        String myFormat = "dd/mm/yyyy"; //In which you need put here
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.UK);
+        final DatePickerDialog datePickerDialog = new DatePickerDialog(BookingPlansActivity.this, new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker datePicker, int selectedYear, int selectedMonth, int selectedDate) {
+
+                year = selectedYear;
+                month = selectedMonth;
+                day = selectedDate;
+                DecimalFormat mFormat = new DecimalFormat("00");
+                ((EditText) findViewById(R.id.book_date)).setText(new StringBuilder().append(mFormat.format(day)).append("/")
+                        .append(mFormat.format(month + 1)).append("/").append(mFormat.format(year)));
+
+                String bookDate = ((EditText) findViewById(R.id.book_date)).getText().toString();
+                if (bookDate.equalsIgnoreCase("")) {
+                    flagBookingDate = "no";
+                } else {
+                    flagBookingDate = "yes";
+                }
+            }
+        }, year, month, day);
+
+        String today = new SimpleDateFormat("dd/MM/yyyy", Locale.UK).format(Calendar.getInstance().getTime());
+
+        String[] parts = eventDate.split("-");
+
+        String StartDate = trimDateString(parts[0]);
+        String EndDate = trimDateString(parts[1]);
+        int minMax[] = new int[2];
+
+        if (today.compareTo(StartDate) > 0) {
+            System.out.println("Today is after StartDate");
+            minMax[0] = 0; //today
+            minMax[1] = dateDifference(today, EndDate); //endDate
+        } else if (today.compareTo(StartDate) < 0) {
+            System.out.println("Today is before StartDate");
+            minMax[0] = dateDifference(today, StartDate); //startDate
+            minMax[1] = dateDifference(today, EndDate); //endDate
+        } else {
+            System.out.println("Today is equal to StartDate");
+            minMax[0] = 0; //today
+            minMax[1] = dateDifference(today, EndDate); //endDate
+        }
+
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.DATE, minMax[0]);
+        datePickerDialog.getDatePicker().setMinDate(c.getTimeInMillis());
+        c.add(Calendar.DATE, minMax[1]);
+        datePickerDialog.getDatePicker().setMaxDate(c.getTimeInMillis());
+        datePickerDialog.show();
+    }
+
+    private int dateDifference(String min, String max) {
+
+        SimpleDateFormat myFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.UK);
+        int i = 0;
+        try {
+            Date minDate = myFormat.parse(min);
+            Date maxDate = myFormat.parse(max);
+            long diff = maxDate.getDate() - minDate.getDate();
+            i = (int) diff;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return i;
+    }
+
+    private String trimDateString(String getDate) {
+        DecimalFormat mFormat = new DecimalFormat("00");
+        mFormat.format(Double.valueOf(year));
+        String trimString = getDate.trim();
+        String replaceString = trimString.replaceAll("  ", " ");
+        String formatedDate = "";
+        try {
+            DateFormat formatter = new SimpleDateFormat("MMM dd,yyyy");
+            Date date = (Date) formatter.parse(replaceString);
+            System.out.println(date);
+
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(date);
+            formatedDate = mFormat.format(cal.get(Calendar.DATE)) + "/" + mFormat.format((cal.get(Calendar.MONTH) + 1)) + "/" + mFormat.format(cal.get(Calendar.YEAR));
+            System.out.println("formatedDate : " + formatedDate);
+        } catch (Exception ex) {
+        }
+
+        return formatedDate;
     }
 
     public void callGetFilterService() {
@@ -188,87 +300,13 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
 
     @Override
     public void onClick(View v) {
-//        if (v == txtOne) {
-//
-//            selectedTicket = Integer.parseInt(txtOne.getText().toString());
-//            txtSelectedQunatity.setText(txtOne.getText().toString());
-//
-//            flagTicket = "yes";
-//
-//        } else if (v == txtTwo) {
-//            selectedTicket = Integer.parseInt(txtTwo.getText().toString());
-//            txtSelectedQunatity.setText(txtTwo.getText().toString());
-//
-//
-//            flagTicket = "yes";
-//
-//        } else if (v == txtThree) {
-//            selectedTicket = Integer.parseInt(txtThree.getText().toString());
-//            txtSelectedQunatity.setText(txtThree.getText().toString());
-//
-//
-//            flagTicket = "yes";
-//
-//        } else if (v == txtFour) {
-//            selectedTicket = Integer.parseInt(txtFour.getText().toString());
-//            txtSelectedQunatity.setText(txtFour.getText().toString());
-//
-//
-//            flagTicket = "yes";
-//
-//        } else if (v == txtFive) {
-//            selectedTicket = Integer.parseInt(txtFive.getText().toString());
-//            txtSelectedQunatity.setText(txtFive.getText().toString());
-//
-//
-//            flagTicket = "yes";
-//
-//        } else if (v == txtSix) {
-//            selectedTicket = Integer.parseInt(txtSix.getText().toString());
-//            txtSelectedQunatity.setText(txtSix.getText().toString());
-//
-//
-//            flagTicket = "yes";
-//
-//        } else if (v == txtSeven) {
-//            selectedTicket = Integer.parseInt(txtSeven.getText().toString());
-//            txtSelectedQunatity.setText(txtSeven.getText().toString());
-//
-//
-//            flagTicket = "yes";
-//
-//        } else if (v == txtEight) {
-//            selectedTicket = Integer.parseInt(txtEight.getText().toString());
-//            txtSelectedQunatity.setText(txtEight.getText().toString());
-//
-//
-//            flagTicket = "yes";
-//
-//        } else if (v == txtNine) {
-//            selectedTicket = Integer.parseInt(txtNine.getText().toString());
-//            txtSelectedQunatity.setText(txtNine.getText().toString());
-//
-//
-//            flagTicket = "yes";
-//
-//        } else if (v == txtTen) {
-//
-//            selectedTicket = Integer.parseInt(txtTen.getText().toString());
-//            txtSelectedQunatity.setText(txtTen.getText().toString());
-//
-//
-//            flagTicket = "yes";
-//
-//        } else if (v == txtSelectedQunatity) {
-//
-//        }
+
         if (v == btnProceed) {
 
-            if ((flagPlan.equalsIgnoreCase("no")) || (flagTicket.equalsIgnoreCase("no"))) {
-                Toast.makeText(this, "Select ticket or plan", Toast.LENGTH_SHORT)
-                        .show();
+            if ((flagPlan.equalsIgnoreCase("no")) || (flagTicket.equalsIgnoreCase("no")) || (flagBookingDate.equalsIgnoreCase("no"))) {
+                Toast.makeText(this, "Select ticket or plan", Toast.LENGTH_SHORT).show();
             } else {
-                        selectedTicket = totalCount;
+                selectedTicket = totalCount;
 
                 double _rate = 0.0;
                 _rate = Double.parseDouble(rate);
@@ -418,7 +456,8 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
                 int input = Integer.parseInt(dest.toString() + source.toString());
                 if (isInRange(min, max, input))
                     return null;
-            } catch (NumberFormatException nfe) { }
+            } catch (NumberFormatException nfe) {
+            }
             return "";
         }
 
