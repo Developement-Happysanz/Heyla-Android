@@ -505,7 +505,7 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
         LinearLayout shareBtn = (LinearLayout) findViewById(R.id.share_btn);
         LinearLayout contactBtn = (LinearLayout) findViewById(R.id.contact_btn);
         LinearLayout engageBtn = (LinearLayout) findViewById(R.id.engage_btn);
-        final LinearLayout checkinsBtn = (LinearLayout) findViewById(R.id.engage_btn);
+        final LinearLayout checkinsBtn = (LinearLayout) findViewById(R.id.checkins_btn);
         Button bookingBtn = (Button) findViewById(R.id.booking_btn);
 //        Switch checkinsBtn = (Switch) findViewById(R.id.checkins_btn);
 

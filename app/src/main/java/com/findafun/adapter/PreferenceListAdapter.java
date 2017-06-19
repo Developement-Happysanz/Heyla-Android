@@ -34,7 +34,7 @@ public class PreferenceListAdapter extends RecyclerView.Adapter<PreferenceListAd
     // you provide access to all the views for a data item in a view holder
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         // each data item is just a string in this case
-        public ImageView mImageView;
+        public ImageView mImageView, Selecttick;
         public TextView mPrefTextView;
         public RelativeLayout rlPref;
         public RelativeLayout slPref;
@@ -43,6 +43,7 @@ public class PreferenceListAdapter extends RecyclerView.Adapter<PreferenceListAd
             super(v);
             mImageView = (ImageView) v.findViewById(R.id.txt_preference_name);
             mPrefTextView = (TextView) v.findViewById(R.id.txt_pref_category_name);
+            Selecttick = (ImageView) v.findViewById(R.id.pref_tick);
             if (viewType == 1) {
                 rlPref = (RelativeLayout)v.findViewById(R.id.rlPref);
             } else {
@@ -113,14 +114,17 @@ public class PreferenceListAdapter extends RecyclerView.Adapter<PreferenceListAd
 //        GradientDrawable bgShape = (GradientDrawable) holder.mPrefTextView.getBackground();
         if (categoryArrayList.get(position).getCategoryPreference().equals("no")) {
             // holder.tickImage.setVisibility(View.INVISIBLE);
-            holder.rlPref.setBackgroundColor(context.getResources().getColor(R.color.white));
-//            holder.mPrefTextView.setTextColor(context.getResources().getColor(R.color.white));
+//            holder.rlPref.setBackgroundColor(context.getResources().getColor(R.color.white));
+            holder.mPrefTextView.setTextColor(context.getResources().getColor(R.color.black));
+            holder.Selecttick.setVisibility(View.GONE);
+
         } else {
             if (context instanceof SelectPreferenceActivity) {
                 ((SelectPreferenceActivity) context).onCategorySelected(position);
             }
+            holder.Selecttick.setVisibility(View.VISIBLE);
 //            holder.mPrefTextView.setTextColor(context.getResources().getColor(R.color.preference_orange));
-            holder.rlPref.setBackgroundColor(context.getResources().getColor(R.color.preference_orange));
+//            holder.rlPref.setBackgroundColor(context.getResources().getColor(R.color.preference_orange));
         }
 
     }

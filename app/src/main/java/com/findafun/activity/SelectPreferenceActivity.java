@@ -12,6 +12,7 @@ import android.util.SparseBooleanArray;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -49,7 +50,7 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
     private MenuItem menuSet;
     private GridLayoutManager mLayoutManager;
     private boolean selval = false;
-
+    private ImageView PrefSelect;
     int pos;
     private TextView txtGetStarted, txtSelect, txtSelectAll;
 
@@ -63,7 +64,7 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
         txtSelectAll = (TextView) findViewById(R.id.checkBox);
         txtSelectAll.setOnClickListener(this);
         mRecyclerView = (RecyclerView) findViewById(R.id.listView_categories);
-
+        PrefSelect = (ImageView) findViewById(R.id.pref_tick);
         mLayoutManager = new GridLayoutManager(this, 6);
         mLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
@@ -267,16 +268,17 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
 //        GradientDrawable bgShape = (GradientDrawable) textView.getBackground();
         if (tag.getCategoryPreference().equals("no")) {
 //            bgShape.setColor(getResources().getColor(R.color.preference_orange));
-            textView.setBackgroundColor(getResources().getColor(R.color.preference_orange));
+//            textView.setBackgroundColor(getResources().getColor(R.color.preference_orange));
 //            TextView mtextView = (TextView) view;
 //            mtextView.setTextColor(getResources().getColor(R.color.preference_orange));
+            int imgResource = R.drawable.preference_screenselected;
+            PrefSelect.setBackgroundResource(imgResource);
             tag.setCategoryPreference("yes");
             selectedList.add(tag);
         } else {
 //            bgShape.setColor(getResources().getColor(R.color.white));
-            textView.setBackgroundColor(getResources().getColor(R.color.white));
+//            textView.setBackgroundColor(getResources().getColor(R.color.black));
 //            TextView mtextView = (TextView) view;
-//            mtextView.setTextColor(getResources().getColor(R.color.white));
             tag.setCategoryPreference("no");
             selectedList.remove(tag);
         }

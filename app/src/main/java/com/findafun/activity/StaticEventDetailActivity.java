@@ -33,10 +33,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
@@ -96,7 +94,7 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
     private Animator mCurrentAnimator;
     private static final String TAG = StaticEventDetailActivity.class.getName();
     private Event event;
-    private TextView txtEventName, txtEventCategory, txtEventDesc, txtEventVenue, txtEventStartDate, txtEventEndDate, txtEventStartTime, txtEventEndTime;
+    private TextView txtEventName, txtEventCategory, txtEventDesc, txtEventVenue, txtEventStartTime, txtEventEndTime;
     private TextView txtEventTime, txtEventDate, txtEventEntry, txtEventContact, txtEventEmail, txtWebSite;
     private TextView txtViewMore, txtViewLess;
     private ViewFlipper imgEventBanner;
@@ -104,7 +102,7 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
     LinearLayout count_layout;
     int count = 0;
     static TextView page_text[];
-
+    private ImageView Checkin_img;
     ImageLoader uImageLoader = AppController.getInstance().getUniversalImageLoader();
     private GoogleApiClient mGoogleApiClient;
     private Location mLastLocation;
@@ -352,12 +350,12 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
         String dateDetails = null;
         String start = FindAFunHelper.getDate(event.getStartDate());
         String end = FindAFunHelper.getDate(event.getEndDate());
-        if (start != null) {
-            txtEventStartDate.setText(start);
-        }
-        if ((end != null)) {
-            txtEventEndDate.setText(end);
-        }
+//        if (start != null) {
+//            txtEventStartDate.setText(start);
+//        }
+//        if ((end != null)) {
+//            txtEventEndDate.setText(end);
+//        }
         if (event.getEvent_cost() != null) {
             txtEventEntry.setText(event.getEvent_cost());
         }
@@ -559,7 +557,7 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
         banner_image_five = (ImageView) findViewById(R.id.banner_image_five);
         count_layout = (LinearLayout) findViewById(R.id.image_count);
         txtViewMore = (TextView) findViewById(R.id.seemore);
-
+        Checkin_img = (ImageView) findViewById(R.id.chckin);
         txtViewLess = (TextView) findViewById(R.id.seeless);
         txtEventName = (TextView) findViewById(R.id.txt_event_name);
         // txtEventDesc = (TextView) findViewById(R.id.txt_event_desc);
@@ -581,7 +579,7 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
 
         LinearLayout engageBtn = (LinearLayout) findViewById(R.id.engage_btn);
         Button bookingBtn = (Button) findViewById(R.id.booking_btn);
-        Switch checkinsBtn = (Switch) findViewById(R.id.checkins_btn);
+        LinearLayout checkinsBtn = (LinearLayout) findViewById(R.id.checkins_btn);
 
         whishListBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -769,21 +767,20 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
         });
 
 
-        checkinsBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
+        checkinsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView,
-                                         boolean isChecked) {
+            public void onClick(View v) {
 
                 if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
+//                    if (isChecked) {
+                    int imgResource = R.drawable.ic_checkin_selected;
+                    Checkin_img.setBackgroundResource(imgResource);
+                    Toast.makeText(getApplicationContext(), "You have successfully checked-in for the event - " + event.getEventName().toString() + "\nGet ready for the fun! ", Toast.LENGTH_LONG).show();
+//                    } else {
 
+//                    }
 
-                    if (isChecked) {
-                        Toast.makeText(getApplicationContext(), "You have successfully checked-in for the event - " + event.getEventName().toString() + "\nGet ready for the fun! ", Toast.LENGTH_LONG).show();
-                        sendShareStatusUserActivity(2);
-                    } else {
-
-                    }
+                    sendShareStatusUserActivity(2);
                 } else {
                     android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(StaticEventDetailActivity.this);
                     alertDialogBuilder.setTitle("Login");
@@ -802,8 +799,6 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
                     });
                     alertDialogBuilder.show();
                 }
-
-
             }
         });
 
@@ -876,8 +871,8 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
             }
         });
 
-        txtEventStartDate = (TextView) findViewById(R.id.txt_calander);
-        txtEventEndDate = (TextView) findViewById(R.id.cal_to_val);
+        //txtEventStartDate = (TextView) findViewById(R.id.txt_calander);
+        //txtEventEndDate = (TextView) findViewById(R.id.cal_to_val);
         txtEventStartTime = (TextView) findViewById(R.id.txt_clock_from_val);
         txtEventEndTime = (TextView) findViewById(R.id.clock_to_val);
         imgEventBanner = (ViewFlipper) findViewById(R.id.banner_one);
