@@ -683,6 +683,7 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
                         // Toast.makeText(getApplicationContext(), "Book this event", Toast.LENGTH_LONG).show();
 
                         Intent intent = new Intent(getApplicationContext(), BookingPlansActivity.class);
+                        intent.putExtra("eventObj",event);
                         intent.putExtra("eventId", event.getId());
                         intent.putExtra("eventName", event.getEventName());
                         intent.putExtra("eventVenue", event.getEventVenue());

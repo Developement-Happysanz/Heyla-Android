@@ -36,14 +36,15 @@ public class InitialScreenActivity extends Activity {
         Bundle b = getIntent().getExtras();
         eventRate = b.getDouble("eventRate");
         tickets = getIntent().getDoubleExtra("ticketRate", 0.00);
+        String orderIdValue = getIntent().getStringExtra("orderId");
         //eventRate = getIntent().getDoubleExtra("eventRate");
         //amount.setText(""+eventRate);
         amount.setText("" + tickets);
         int i = 0;
 
         //generating order number
-        Integer randomNum = ServiceUtility.randInt(0, 9999999);
-        orderId.setText(randomNum.toString() + "-" + PreferenceStorage.getUserId(getApplicationContext()));
+//        Integer randomNum = ServiceUtility.randInt(0, 9999999);
+        orderId.setText(orderIdValue);
 
         callPayment();
     }

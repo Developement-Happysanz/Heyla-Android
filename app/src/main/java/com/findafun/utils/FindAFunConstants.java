@@ -28,7 +28,7 @@ public class FindAFunConstants {
     public static final String GET_CITY_NEW_URL = BASE_URL + "api.php?func_name=getCitynew&country=%s";
     public static final String GET_COUNTRY_URL = BASE_URL + "api.php?func_name=getCountry";
     public static final String UPDATE_PROFILE_URL = "http://heylaapp.com/app/api.php?func_name=updateProfile&user_email=%s&user_name=%s&user_id=%d&user_city=%s&user_gender=%s&user_birthday=%s&user_occupation=%s&user_phone=%s";
-//    public static final String UPDATE_PROFILE_URL = "http://heylaapp.com/app/api.php?func_name=updateProfile&user_email=%s&user_name=%s&user_id=%d&user_password=%s&user_city=%s&user_gender=%s&user_birthday=%s&user_occupation=%s&user_phone=%s";
+    //    public static final String UPDATE_PROFILE_URL = "http://heylaapp.com/app/api.php?func_name=updateProfile&user_email=%s&user_name=%s&user_id=%d&user_password=%s&user_city=%s&user_gender=%s&user_birthday=%s&user_occupation=%s&user_phone=%s";
     public static final String ADD_EVENT_URL = "http://heylaapp.com/app/api.php?func_name=user_add_event&event_type=%d&txtEvent=%s&cboCategory=%s&cboCity=%s&txtVenue=%s&txtAddress=%s&txtDescription=%s&cboCost=%s&txtSdate=%s&txtEdate=%s&cboStime=%s&cboEtime=%s&txtLatitude=%s&txtLongitude=%s&txtPhone=%s&txtPerson=%s&txtEmail=%s&txtpic1=%s&txtpic2=%s&txtpic3=%s";
     public static final String UPDATE_CITY = "http://heylaapp.com/app/api.php?func_name=update_usercity&user_id=%d&city=%s&country=%s&user_type=%d";
     public static final String UPLOAD_PROFILE_IMAGE = BASE_URL + "upload.php?user_id=%d";
@@ -36,8 +36,9 @@ public class FindAFunConstants {
     public static final String ADD_EVENT_BOOKMARK = BASE_URL + "api.php?func_name=add_event_bookmark&user_id=%d&event_id=%d";
     public static final String SAVE_REVIEW = BASE_URL + "api.php?func_name=add_review&user_id=%d&event_id=%d&comments=%s&ratings=%d";
     public static final String NEARBY_DISTANCE_RADIATION = BASE_URL + "api.php?func_name=nearby_gmap&event_latitude=%s&event_longitude=%s&distance=%s&event_type=%s";
+    public static final String BOOKING_TICKET = BASE_URL + "api.php?func_name=booking_add&order_id=%s&event_id=%s&plan_id=%s&user_id=%s&no_seats=%s&booking_date=%s&amount=%s";
 
-    public static final String GET_REWARDS =  BASE_URL + "fetchActivity.php?getUserPointsDetail=true&id=%d";
+    public static final String GET_REWARDS = BASE_URL + "fetchActivity.php?getUserPointsDetail=true&id=%d";
     public static final String GET_LEADER_BOARD = BASE_URL + "fetchActivity.php?getLeaderBoard=true";
     public static final String GET_LOCAL_LEADER_BOARD = BASE_URL + "fetchActivity.php?getLeaderBoardcity=true&id=%s";
     public static final String GET_INTERN_BOARD = BASE_URL + "fetchActivity.php?getInternboard=true&id=%s";
@@ -84,6 +85,9 @@ public class FindAFunConstants {
     public static final String MOBILE_TYPE = "mobile_type";
     public static final String PARAMS_USER_PASSWORD = "user_password";
 
+    // Booking tickets params
+//    public static final String PARAMS_FUNC_NAME = "func_name";
+
     // Preferences
     public static final String KEY_USER_ID = "user_id";
     public static final String KEY_USER_TYPE = "user_type";
@@ -98,22 +102,22 @@ public class FindAFunConstants {
     public static final String KEY_USER_PHONE = "phone";
     public static final String KEY_LOGIN_MODE = "loginMode";
     public static final String KEY_FORGOT_PASSWORD_STATUS = "forgot_password_status";
-    public static final String KEY_FACEBOOK_URL ="profileUrl";
+    public static final String KEY_FACEBOOK_URL = "profileUrl";
     public static final String KEY_TWITTER_LOGGED_IN = "twitterLoggedIn";
-    public static final String KEY_USER_GENDER ="gender";
-    public static final String KEY_USER_PROMOCODE ="promocode";
+    public static final String KEY_USER_GENDER = "gender";
+    public static final String KEY_USER_PROMOCODE = "promocode";
     public static final String KEY_USER_BIRTHDAY = "birthday";
     public static final String KEY_USER_OCCUPATION = "occupation";
     public static final String KEY_SOCIAL_NETWORK_URL = "socialNetworkPicUrl";
-    public static final String KEY_LAST_SHARED_TIME ="timeEventShared";
+    public static final String KEY_LAST_SHARED_TIME = "timeEventShared";
     public static final String KEY_EVENT_SHARED_COUNT = "eventSharedCount";
     public static final String ISFILTERAPPLY = "ISFILTERAPPLY";
     public static final String SINGLEDATEFILTER = "SINGLEDATEFILTER";
 
     //Loginmode constants
-    public static final int FACEBOOK =1;
-    public static final int NORMAL_SIGNUP =2;
-    public static final int GOOGLE_PLUS =3;
+    public static final int FACEBOOK = 1;
+    public static final int NORMAL_SIGNUP = 2;
+    public static final int GOOGLE_PLUS = 3;
 
     public static final long TWENTY4HOURS = 24 * 60 * 60 * 1000;//24 hours in milli seconds format
 
@@ -125,8 +129,8 @@ public class FindAFunConstants {
     // Twitter oauth urls
     public static final String URL_TWITTER_AUTH = "auth_url";
     public static final String URL_TWITTER_OAUTH_VERIFIER = "oauth_verifier";
-    public static String PREFERENCE_TWITTER_OAUTH_TOKEN="TWITTER_OAUTH_TOKEN";
-    public static String PREFERENCE_TWITTER_OAUTH_TOKEN_SECRET="TWITTER_OAUTH_TOKEN_SECRET";
+    public static String PREFERENCE_TWITTER_OAUTH_TOKEN = "TWITTER_OAUTH_TOKEN";
+    public static String PREFERENCE_TWITTER_OAUTH_TOKEN_SECRET = "TWITTER_OAUTH_TOKEN_SECRET";
 
     // Google Project Number
     public static final String GOOGLE_PROJECT_ID = "41690620391";

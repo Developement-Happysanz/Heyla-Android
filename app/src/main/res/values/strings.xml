@@ -280,10 +280,15 @@
         <item>Bars / Pubs</item>
     </string-array>
 
-    <string name="fav">Favourite</string>
-    <string name="pop">Popular</string>
-    <string name="hot">Hotspot</string>
-    <string name="lead">Leaderboard</string>
+    <!--<string name="fav">Favourite</string>-->
+    <!--<string name="pop">Popular</string>-->
+    <!--<string name="hot">Hotspot</string>-->
+    <!--<string name="lead">Leaderboard</string>-->
+
+    <string name="fav">HEYLA</string>
+    <string name="pop">HEYLA</string>
+    <string name="hot">HEYLA</string>
+    <string name="lead">HEYLA</string>
 
     <string name="event_name">event name cannot be empty</string>
     <string name="event_category">Select any category</string>

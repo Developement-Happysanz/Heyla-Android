@@ -25,6 +25,7 @@ import com.findafun.R;
 import com.findafun.adapter.BookingPlanAdapter;
 import com.findafun.bean.events.BookPlan;
 import com.findafun.bean.events.BookPlanList;
+import com.findafun.bean.events.Event;
 import com.findafun.helper.AlertDialogHelper;
 import com.findafun.helper.ProgressDialogHelper;
 import com.findafun.servicehelpers.EventServiceHelper;
@@ -67,6 +68,7 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
     ImageView CountIncrease, CountDecrease;
     Button btnProceed;
     int selectedTicket = 0;
+    private Event event;
     private BookPlan bookPlan = null;
     private String rate;
     private String flagPlan = "no", flagTicket = "no", flagBookingDate = "no";
@@ -93,6 +95,7 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
         eventServiceHelper = new EventServiceHelper(this);
         eventServiceHelper.setEventServiceListener(this);
         progressDialogHelper = new ProgressDialogHelper(this);
+        event = (Event) getIntent().getSerializableExtra("eventObj");
         eventId = getIntent().getStringExtra("eventId");
         eventName = getIntent().getStringExtra("eventName");
         eventVenue = getIntent().getStringExtra("eventVenue");
@@ -314,10 +317,12 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
                 Double value = selectedTicket * _rate;
 
                 Intent intent = new Intent(getApplicationContext(), BookingPlanSeatSelectionActivity.class);
+                intent.putExtra("eventObj",event);
                 intent.putExtra("planObj", bookPlan);
                 intent.putExtra("eventName", eventName);
                 intent.putExtra("eventVenue", eventVenue);
                 intent.putExtra("eventTickets", value);
+                intent.putExtra("eventDate",txtBookingDate.getText().toString());
                 // intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION); && (selectedTicket > 0
                 startActivity(intent);
 //                finish();
