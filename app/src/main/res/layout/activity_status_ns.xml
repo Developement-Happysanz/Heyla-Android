@@ -1,14 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:background="@drawable/pay_bg">
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="238dp"
-        android:layout_height="40dp"
-        android:layout_x="55dp"
-        android:layout_y="157dp" />
 
-</AbsoluteLayout>
+    <RelativeLayout
+        android:id="@+id/pay_frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/btn_custom_white">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="238dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:hint="Payment Successful"
+            android:textColor="@color/black"
+            android:textSize="35dp" />
+
+        <TextView
+            android:id="@+id/ordernum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="35dp"
+            android:text="Order number        :"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/payid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ordernum"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="Payment ID            :"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/transdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/payid"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="Transaction Date  :"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/payamt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/transdate"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="Amount                   :"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/paystatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/payamt"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="Status                      :"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txt_ordernum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView1"
+            android:layout_toRightOf="@+id/ordernum"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="35dp"
+            android:textSize="20dp"
+            android:hint="Order number"/>
+
+        <TextView
+            android:id="@+id/txt_payid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ordernum"
+            android:layout_alignTop="@+id/payid"
+            android:layout_marginLeft="15dp"
+            android:textSize="20dp"
+            android:hint="Order number"/>
+
+        <TextView
+            android:id="@+id/txt_transdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ordernum"
+            android:layout_alignTop="@+id/transdate"
+            android:layout_marginLeft="15dp"
+            android:textSize="20dp"
+            android:hint="Order number"/>
+
+        <TextView
+            android:id="@+id/txt_payamt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ordernum"
+            android:layout_alignTop="@+id/payamt"
+            android:layout_marginLeft="15dp"
+            android:textSize="20dp"
+            android:hint="Order number"/>
+
+        <TextView
+            android:id="@+id/txt_paystatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ordernum"
+            android:layout_alignTop="@+id/paystatus"
+            android:layout_marginLeft="15dp"
+            android:textSize="20dp"
+            android:hint="Order number"/>
+
+        <Button
+            android:id="@+id/pay_done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/paystatus"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/btn_payment"
+            android:text="OK"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/img_success"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/pay_frame"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-50dp"
+        android:foreground="@drawable/success" />
+
+    <ImageView
+        android:id="@+id/img_fail"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/pay_frame"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-50dp"
+        android:foreground="@drawable/failure" />
+
+</RelativeLayout>
