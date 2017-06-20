@@ -1,8 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_social"
+    android:background="@drawable/ab_app_bg"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/heyla_splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="150dp"
+        android:text="HEYLA"
+        android:textColor="@color/white"
+        android:textSize="65dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/sign_in_load"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Signing in"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/apptheme_primary"
+            android:textSize="25dp" />
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/avi"
+            style="@style/AVLoadingIndicatorView"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignBottom="@+id/sign_in_load"
+            android:layout_marginBottom="-2dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/sign_in_load"
+            app:indicatorColor="@color/apptheme_primary"
+            app:indicatorName="BallPulseIndicator" />
+
+
+    </RelativeLayout>
 </LinearLayout>

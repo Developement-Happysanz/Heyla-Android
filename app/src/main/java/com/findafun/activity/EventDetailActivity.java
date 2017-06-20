@@ -726,8 +726,8 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
 
                 if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
 //                    if (isChecked) {
-                    int imgResource = R.drawable.ic_checkin_selected;
-                    Checkin_img.setBackgroundResource(imgResource);
+                    int imgResource1 = R.drawable.ic_checkin_selected;
+                    Checkin_img.setBackgroundResource(imgResource1);
                     Toast.makeText(getApplicationContext(), "You have successfully checked-in for the event - " + event.getEventName().toString() + "\nGet ready for the fun! ", Toast.LENGTH_LONG).show();
 //                    } else {
 

@@ -58,9 +58,9 @@ public class PreferenceListAdapter extends RecyclerView.Adapter<PreferenceListAd
             if (onItemClickListener != null) {
                 onItemClickListener.onItemClick(v, getAdapterPosition());
             }
-//            else {
-//                onClickListener.onClick(mImageView);
-//            }
+            else {
+                onClickListener.onClick(Selecttick);
+            }
         }
     }
 
