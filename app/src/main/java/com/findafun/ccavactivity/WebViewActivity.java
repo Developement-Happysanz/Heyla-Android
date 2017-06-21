@@ -104,7 +104,7 @@ public class WebViewActivity extends Activity {
                     Intent intent = new Intent(getApplicationContext(), StatusActivity.class);
                     intent.putExtra("transStatus", status);
                     startActivity(intent);
-//                    finish();
+                    finish();
                 }
             }
 

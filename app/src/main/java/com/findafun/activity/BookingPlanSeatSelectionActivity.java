@@ -154,7 +154,7 @@ public class BookingPlanSeatSelectionActivity extends AppCompatActivity implemen
                 b.putDouble("eventRate", _pay);
                 // intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
-//                finish();
+                finish();
             }
         });
 

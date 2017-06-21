@@ -26,10 +26,12 @@ public class LandingPagerAdapter extends FragmentPagerAdapter implements PagerSl
 
     Context context;
     SparseArray<Fragment> registeredFragments = new SparseArray<Fragment>();
-//    private final String[] TITLES = {"FAVOURITES","POPULAR", "HOTSPOT", "LEADERBOARD"};
-    private final String[] TITLES = {"HEYLA", "HEYLA", "HEYLA", "HEYLA"};
+    private final String[] TITLES = {"FAVOURITES","POPULAR", "HOTSPOT", "LEADERBOARD"};
+    private final String[] TITLES1 = {"HEYLA", "HEYLA", "HEYLA", "HEYLA"};
+//    private List<String> mTabResources = new ArrayList<String>();
     private List<Integer> mTabResources = new ArrayList<Integer>();
     private List<Integer> mUnselectedTabResources = new ArrayList<Integer>();
+//    private List<String> mUnselectedTabResources = new ArrayList<String>();
     onFragmentsRegisteredListener onFragmentsRegisteredListener;
     private boolean instantiated;
 
@@ -39,17 +41,36 @@ public class LandingPagerAdapter extends FragmentPagerAdapter implements PagerSl
         instantiated = false;
         this.context = context;
 
-        mTabResources.add(R.drawable.favselect);
-        mTabResources.add(R.drawable.popularselect);
-        mTabResources.add(R.drawable.hotselect);
-        mTabResources.add(R.drawable.leaderboardselect);
+        mTabResources.add(R.string.fav);
+        mTabResources.add(R.string.pop);
+        mTabResources.add(R.string.hot);
+        mTabResources.add(R.string.lead);
 
-        mUnselectedTabResources.add(R.drawable.favdeselect);
-        mUnselectedTabResources.add(R.drawable.populardeselect);
-        mUnselectedTabResources.add(R.drawable.hotdeselect);
-        mUnselectedTabResources.add(R.drawable.leaderboarddeselect);
+        mUnselectedTabResources.add(R.string.fav);
+        mUnselectedTabResources.add(R.string.pop);
+        mUnselectedTabResources.add(R.string.hot);
+        mUnselectedTabResources.add(R.string.lead);
+
+//        mTabResources.add(R.drawable.favselect);
+//        mTabResources.add(R.drawable.popularselect);
+//        mTabResources.add(R.drawable.hotselect);
+//        mTabResources.add(R.drawable.leaderboardselect);
+//
+//        mUnselectedTabResources.add(R.drawable.favdeselect);
+//        mUnselectedTabResources.add(R.drawable.populardeselect);
+//        mUnselectedTabResources.add(R.drawable.hotdeselect);
+//        mUnselectedTabResources.add(R.drawable.leaderboarddeselect);
 
 
+//        mTabResources.add(R.drawable.favselect);
+//        mTabResources.add(R.drawable.popularselect);
+//        mTabResources.add(R.drawable.hotselect);
+//        mTabResources.add(R.drawable.leaderboardselect);
+//
+//        mUnselectedTabResources.add(R.drawable.favdeselect);
+//        mUnselectedTabResources.add(R.drawable.populardeselect);
+//        mUnselectedTabResources.add(R.drawable.hotdeselect);
+//        mUnselectedTabResources.add(R.drawable.leaderboarddeselect);
 
 
         /*mTabResources.add(R.drawable.home_tab_selected);

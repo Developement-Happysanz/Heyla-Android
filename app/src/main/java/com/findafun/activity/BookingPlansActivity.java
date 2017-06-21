@@ -325,7 +325,7 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
                 intent.putExtra("eventDate",txtBookingDate.getText().toString());
                 // intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION); && (selectedTicket > 0
                 startActivity(intent);
-//                finish();
+                finish();
 
 //                Toast.makeText(this, "Select ticket plan" + value, Toast.LENGTH_SHORT).show();
 

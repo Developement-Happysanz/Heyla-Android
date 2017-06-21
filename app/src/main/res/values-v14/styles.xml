@@ -82,8 +82,8 @@
     <style name="TextAppearance.Widget.Event.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <!--Any text styling can be done here-->
         <item name="android:textStyle">normal</item>
-        <item name="android:gravity">center</item>
-        <item name="android:layout_gravity">center</item>
+
+
         <item name="android:textSize">@dimen/event_title_text_size</item>
     </style>
 

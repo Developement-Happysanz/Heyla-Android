@@ -114,6 +114,7 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
         setContentView(R.layout.activity_landing);
         toolbar = (Toolbar) findViewById(R.id.activity_toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("HEYLA");
         toolbar.setNavigationIcon(R.drawable.appicon_new);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 //        getSupportActionBar().setHomeAsUpIndicator(R.drawable.appicon);
@@ -638,7 +639,7 @@ public class LandingActivity extends AppCompatActivity implements ViewPager.OnPa
         if (landingPagerAdapter != null) {
             mPagerSlidingTabStrip.notifyDataSetChanged();
 
-            getSupportActionBar().setTitle(landingPagerAdapter.getPageTitle(position));
+            getSupportActionBar().setTitle("HEYLA");
             if (position == 3) { //Rewards Fragment. So search bar is not needed
                 if (mSearchView != null) {
                     mSearchView.setVisibility(View.GONE);

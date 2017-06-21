@@ -22,6 +22,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.Typeface;
@@ -58,6 +59,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
     public interface IconTabProvider {
         int getPageIconResId(int position);
+
         int getCurrentPaeIconResId(int position);
     }
 
@@ -93,13 +95,13 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
     private boolean textAllCaps = true;
 
     private int scrollOffset = 52;
-    private int indicatorHeight = 0;
-    private int underlineHeight = 0;
+    private int indicatorHeight = 2;
+    private int underlineHeight = 1;
     private int dividerPadding = 0;
     private int tabPadding = 0;
     private int dividerWidth = 0;
 
-    private int tabTextSize = 14;
+    private int tabTextSize = 11;
     private int tabTextColor = 0xFFFFFFFF;
     private Typeface tabTypeface = null;
     private int tabTypefaceStyle = Typeface.NORMAL;
@@ -199,7 +201,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
     }
 
     public void notifyDataSetChanged() {
-        Log.d(TAG,"notify data set changed");
+        Log.d(TAG, "notify data set changed");
 
         tabsContainer.removeAllViews();
 
@@ -209,14 +211,16 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         for (int i = 0; i < tabCount; i++) {
 
             if (pager.getAdapter() instanceof IconTabProvider) {
-                if(i == selectedPos){
-                    Log.d(TAG,"fetching currently selected image"+ i);
-                    addIconTab(i, ((IconTabProvider) pager.getAdapter()).getCurrentPaeIconResId(i));
-                }else {
-                    addIconTab(i, ((IconTabProvider) pager.getAdapter()).getPageIconResId(i));
+                if (i == selectedPos) {
+                    Log.d(TAG, "fetching currently selected image" + i);
+                    addTextTab(i, pager.getAdapter().getPageTitle(i).toString(), "selected");
+//                    addIconTab(i, ((IconTabProvider) pager.getAdapter()).getCurrentPaeIconResId(i));
+                } else {
+                    addTextTab(i, pager.getAdapter().getPageTitle(i).toString(), "nonselected");
+//                    addIconTab(i, ((IconTabProvider) pager.getAdapter()).getPageIconResId(i));
                 }
             } else {
-                addTextTab(i, pager.getAdapter().getPageTitle(i).toString());
+                addTextTab(i, pager.getAdapter().getPageTitle(i).toString(), "selected");
             }
 
         }
@@ -243,12 +247,21 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
     }
 
-    private void addTextTab(final int position, String title) {
+    private void addTextTab(final int position, String title, String backgroundColor) {
 
+        String colorcode = "#ffffff";
+        if (backgroundColor.equalsIgnoreCase("selected")) {
+            colorcode = "#ffff00";
+        } else {
+            colorcode = "#fff000";
+        }
         TextView tab = new TextView(getContext());
         tab.setText(title);
         tab.setGravity(Gravity.CENTER);
+        tab.setTextColor(Color.parseColor("#000000"));
+        tab.setBackgroundColor(Color.parseColor(colorcode));
         tab.setSingleLine();
+        tab.setTextSize(10);
 
         addTab(position, tab);
     }
@@ -278,46 +291,43 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
                 isFirstRunExplore = TransPrefs.getBoolean("isFirstRunExplore", true);
 
 
-
-
-
-                final Dialog dialog = new Dialog(getContext(),android.R.style.Theme_Translucent);
+                final Dialog dialog = new Dialog(getContext(), android.R.style.Theme_Translucent);
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.getWindow().setLayout(ViewPager.LayoutParams.MATCH_PARENT, ViewPager.LayoutParams.MATCH_PARENT);
                 dialog.setContentView(R.layout.transparent_favourite);
 
 
-        if(position==0) {
-            if (isFirstRunFavourite) {
+                if (position == 0) {
+                    if (isFirstRunFavourite) {
 
 
-                dialog.show();
+                        dialog.show();
 
 
-                final TextView txtFavorite = (TextView) dialog.findViewById(R.id.trans_favorite);
+                        final TextView txtFavorite = (TextView) dialog.findViewById(R.id.trans_favorite);
 
-                txtFavorite.setVisibility(VISIBLE);
-                txtFavorite.setOnClickListener(new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                        txtFavorite.setVisibility(VISIBLE);
+                        txtFavorite.setOnClickListener(new OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                dialog.dismiss();
+
+                            }
+                        });
+
+                        isFirstRunFavourite = false;
+                        TransPrefs.edit().putBoolean("isFirstRunFavourite", isFirstRunFavourite).commit();
+
+
+                    } else {
                         dialog.dismiss();
 
                     }
-                });
 
-                isFirstRunFavourite=false;
-                TransPrefs.edit().putBoolean("isFirstRunFavourite", isFirstRunFavourite).commit();
+                }
 
 
-            } else {
-                dialog.dismiss();
-
-            }
-
-        }
-
-
-                if(position==1) {
+                if (position == 1) {
                     if (isFirstRunPopular) {
 
 
@@ -334,7 +344,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
                             }
                         });
-                        isFirstRunPopular=false;
+                        isFirstRunPopular = false;
                         TransPrefs.edit().putBoolean("isFirstRunPopular", isFirstRunPopular).commit();
 
 
@@ -346,8 +356,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
                 }
 
 
-
-                if(position==2) {
+                if (position == 2) {
                     if (isFirstRunHotspot) {
 
 
@@ -364,7 +373,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
                             }
                         });
-                        isFirstRunHotspot=false;
+                        isFirstRunHotspot = false;
                         TransPrefs.edit().putBoolean("isFirstRunHotspot", isFirstRunHotspot).commit();
 
 
@@ -376,7 +385,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
                 }
 
 
-                if(position==3) {
+                if (position == 3) {
                     if (isFirstRunExplore) {
 
 
@@ -393,7 +402,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
                             }
                         });
-                        isFirstRunExplore=false;
+                        isFirstRunExplore = false;
                         TransPrefs.edit().putBoolean("isFirstRunExplore", isFirstRunExplore).commit();
 
 
