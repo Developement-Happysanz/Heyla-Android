@@ -139,6 +139,9 @@ public class FindAFunConstants {
     // Booking Status
 
     public static final String KEY_ORDER_ID = "order_id";
+    public static final String KEY_PAYMENT_AMOUNT = "eventRate";
+    public static final String KEY_TRANSACTION_DATE = "eventDate";
+
 
 }
 

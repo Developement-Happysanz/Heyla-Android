@@ -559,4 +559,34 @@ public class PreferenceStorage {
         String orderId = sharedPreferences.getString(FindAFunConstants.KEY_ORDER_ID, "");
         return orderId;
     }
+
+    public static void savePaymentAmount(Context context, String eventRate) {
+        SharedPreferences sharedPreferences = PreferenceManager
+                .getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(FindAFunConstants.KEY_PAYMENT_AMOUNT, eventRate);
+        editor.commit();
+    }
+
+    public static String getPaymentAmount(Context context) {
+        SharedPreferences sharedPreferences = PreferenceManager
+                .getDefaultSharedPreferences(context);
+        String paymentAmount = sharedPreferences.getString(FindAFunConstants.KEY_PAYMENT_AMOUNT, "");
+        return paymentAmount;
+    }
+
+    public static void saveTransactionDate(Context context, String eventDate) {
+        SharedPreferences sharedPreferences = PreferenceManager
+                .getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(FindAFunConstants.KEY_TRANSACTION_DATE, eventDate);
+        editor.commit();
+    }
+
+    public static String getTransactionDate(Context context) {
+        SharedPreferences sharedPreferences = PreferenceManager
+                .getDefaultSharedPreferences(context);
+        String transactionDate = sharedPreferences.getString(FindAFunConstants.KEY_TRANSACTION_DATE, "");
+        return transactionDate;
+    }
 }

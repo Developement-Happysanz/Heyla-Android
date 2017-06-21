@@ -38,7 +38,11 @@ public class StatusActivity extends Activity {
         PaymentId.setText(AvenuesParams.ORDER_ID);
         TransactionDate.setText(AvenuesParams.ORDER_ID);
         PaymentAmount.setText(AvenuesParams.AMOUNT);
+        PaymentDone = (Button) findViewById(R.id.pay_done);
+
         String getOrderId = PreferenceStorage.getOrderId(getApplicationContext());
+        String getPaymentAmount = PreferenceStorage.getPaymentAmount(getApplicationContext());
+        String getTransactionDate = PreferenceStorage.getTransactionDate(getApplicationContext());
 
 
         tv4.setText(mainIntent.getStringExtra("transStatus"));
@@ -46,24 +50,35 @@ public class StatusActivity extends Activity {
         switch (tv4.getText().toString()) {
             case "Transaction Declined!":
                 Success.setVisibility(View.INVISIBLE);
-                PaymentStatus.setText("Failed!");
+                PaymentStatus.setText("Failed");
                 OrderNum.setText(getOrderId);
+                PaymentAmount.setText(getPaymentAmount);
+                TransactionDate.setText(getTransactionDate);
                 break;
             case "Transaction Successful!":
                 Failure.setVisibility(View.INVISIBLE);
-                PaymentStatus.setText("Success!");
+                PaymentStatus.setText("Success");
                 OrderNum.setText(getOrderId);
+                PaymentAmount.setText(getPaymentAmount);
+                TransactionDate.setText(getTransactionDate);
                 break;
             case "Transaction Cancelled!":
                 Success.setVisibility(View.INVISIBLE);
-                PaymentStatus.setText("Canceled!");
+                PaymentStatus.setText("Canceled");
                 OrderNum.setText(getOrderId);
+                PaymentAmount.setText(getPaymentAmount);
+                TransactionDate.setText(getTransactionDate);
                 break;
             default:
                 break;
         }
 
-//		finish();
+        PaymentDone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 
     }

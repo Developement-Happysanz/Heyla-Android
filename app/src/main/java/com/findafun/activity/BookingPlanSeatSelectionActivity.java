@@ -23,7 +23,6 @@ import com.findafun.utils.CommonUtils;
 import com.findafun.utils.FindAFunConstants;
 import com.findafun.utils.PreferenceStorage;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 
@@ -225,8 +224,9 @@ public class BookingPlanSeatSelectionActivity extends AppCompatActivity implemen
         intent.putExtra("ticketRate", tickets);
         intent.putExtra("orderId", orderId);
         Bundle b = new Bundle();
-        b.putDouble("eventRate", _pay);
+        b.putDouble("eventRate", pay);
         PreferenceStorage.saveOrderId(getApplicationContext(),""+orderId);
+        PreferenceStorage.savePaymentAmount(getApplicationContext(),""+pay);
         // intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(intent);
         finish();

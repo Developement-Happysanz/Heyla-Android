@@ -32,6 +32,7 @@ import com.findafun.servicehelpers.EventServiceHelper;
 import com.findafun.serviceinterfaces.IEventServiceListener;
 import com.findafun.utils.CommonUtils;
 import com.findafun.utils.FindAFunConstants;
+import com.findafun.utils.PreferenceStorage;
 import com.google.gson.Gson;
 
 import org.json.JSONObject;
@@ -323,6 +324,8 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
                 intent.putExtra("eventVenue", eventVenue);
                 intent.putExtra("eventTickets", value);
                 intent.putExtra("eventDate",txtBookingDate.getText().toString());
+                String today = new SimpleDateFormat("dd/MM/yyyy", Locale.UK).format(Calendar.getInstance().getTime());
+                PreferenceStorage.saveTransactionDate(getApplicationContext(),today);
                 // intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION); && (selectedTicket > 0
                 startActivity(intent);
                 finish();
