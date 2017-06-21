@@ -236,12 +236,11 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
                     Category tag = preferenceAdatper.getItem(pos);
                     selectedList.add(tag);
                     tag.setCategoryPreference("yes");
-
+                    preferenceAdatper.notifyDataSetChanged();
 //                    categoryArrayList.remove(pos);
 //                    mRecyclerView.removeViewAt(pos);
 //                    preferenceAdatper.notifyItemRemoved(pos);
 //                    preferenceAdatper.notifyItemRangeChanged(pos, categoryArrayList.size());
-                    preferenceAdatper.notifyDataSetChanged();
                 }
             } else {
                 selval = false;
@@ -252,6 +251,7 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
                     preferenceAdatper.notifyDataSetChanged();
                 }
             }
+            preferenceAdatper.notifyDataSetChanged();
 //            Intent navigationIntent = new Intent(this, SelectPreferenceActivity.class);
 //            navigationIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 //            startActivity(navigationIntent);
@@ -271,18 +271,17 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
 //            textView.setBackgroundColor(getResources().getColor(R.color.preference_orange));
 //            TextView mtextView = (TextView) view;
 //            mtextView.setTextColor(getResources().getColor(R.color.preference_orange));
-            int imgResource = R.drawable.preference_screenselected;
 //            PrefSelect.setBackgroundResource(imgResource);
             tag.setCategoryPreference("yes");
             selectedList.add(tag);
-            preferenceAdatper.notifyDataSetChanged();
+            preferenceAdatper.notifyItemChanged(position);
         } else {
 //            bgShape.setColor(getResources().getColor(R.color.white));
 //            textView.setBackgroundColor(getResources().getColor(R.color.black));
 //            TextView mtextView = (TextView) view;
             tag.setCategoryPreference("no");
             selectedList.remove(tag);
-            preferenceAdatper.notifyDataSetChanged();
+            preferenceAdatper.notifyItemChanged(position);
         }
 //        ImageView tickImage = (ImageView) view.findViewById(R.id.tickImage);
 //        ImageView logoImage = (ImageView) view.findViewById(R.id.img_category);
