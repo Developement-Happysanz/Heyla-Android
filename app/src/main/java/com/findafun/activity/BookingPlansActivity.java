@@ -35,6 +35,8 @@ import com.findafun.utils.FindAFunConstants;
 import com.findafun.utils.PreferenceStorage;
 import com.google.gson.Gson;
 
+import org.joda.time.DateTime;
+import org.joda.time.Days;
 import org.json.JSONObject;
 
 import java.text.DateFormat;
@@ -108,14 +110,14 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
 
                 String stringTicketCount = numTicketcount.getText().toString();
                 int getTicketCount = Integer.parseInt(stringTicketCount);
-                int setTicketCount = 0;
+                int setTicketCount = 1;
 
-                if (getTicketCount > 0 & getTicketCount <= 10) {
+                if (getTicketCount >= 1 & getTicketCount <= 10) {
                     CountDecrease.setEnabled(true);
                     CountIncrease.setEnabled(true);
                 }
 
-                if (getTicketCount == 0) {
+                if (getTicketCount == 1) {
                     CountDecrease.setEnabled(false);
                 } else {
                     setTicketCount = getTicketCount - 1;
@@ -132,7 +134,7 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
 
                 if (setTicketCount == 0) {
                     flagTicket = "no";
-                    numTicketcount.setText("0");
+//                    numTicketcount.setText("0");
                 } else {
                     flagTicket = "yes";
                 }
@@ -218,35 +220,49 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
                 }
             }
         }, year, month, day);
+        try {
+            String today = new SimpleDateFormat("dd/MM/yyyy", Locale.UK).format(Calendar.getInstance().getTime());
 
-        String today = new SimpleDateFormat("dd/MM/yyyy", Locale.UK).format(Calendar.getInstance().getTime());
+            String[] parts = eventDate.split("-");
 
-        String[] parts = eventDate.split("-");
+            String StartDate = trimDateString(parts[0]);
+            String EndDate = trimDateString(parts[1]);
+            DateFormat format = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
 
-        String StartDate = trimDateString(parts[0]);
-        String EndDate = trimDateString(parts[1]);
-        int minMax[] = new int[2];
+            Date dateStart = format.parse(StartDate);
+            Date dateEnd = format.parse(EndDate);
+            Date dateToday = format.parse(today);
+//            int dateMargin = currentDate.compareTo(eventDate);
+            DateTime dt1 = new DateTime(dateToday);
+            DateTime dt2 = new DateTime(dateStart);
+           int getDate = Days.daysBetween(dt1, dt2).getDays();
 
-        if (today.compareTo(StartDate) > 0) {
-            System.out.println("Today is after StartDate");
-            minMax[0] = 0; //today
-            minMax[1] = dateDifference(today, EndDate); //endDate
-        } else if (today.compareTo(StartDate) < 0) {
-            System.out.println("Today is before StartDate");
-            minMax[0] = dateDifference(today, StartDate); //startDate
-            minMax[1] = dateDifference(today, EndDate); //endDate
-        } else {
-            System.out.println("Today is equal to StartDate");
-            minMax[0] = 0; //today
-            minMax[1] = dateDifference(today, EndDate); //endDate
+
+            int minMax[] = new int[2];
+
+            if (getDate > 0) {
+                System.out.println("Today is after StartDate");
+                minMax[0] = dateDifference(today, StartDate); //today
+                minMax[1] = dateDifference(today, EndDate); //endDate
+            } else if (getDate < 0) {
+                System.out.println("Today is before StartDate");
+                minMax[0] = 0;; //startDate
+                minMax[1] = dateDifference(today, EndDate); //endDate
+            } else {
+                System.out.println("Today is equal to StartDate");
+                minMax[0] = 0; //today
+                minMax[1] = dateDifference(today, EndDate); //endDate
+            }
+
+            Calendar c = Calendar.getInstance();
+            c.add(Calendar.DATE, minMax[0]);
+            datePickerDialog.getDatePicker().setMinDate(c.getTimeInMillis());
+            c.add(Calendar.DATE, minMax[1]);
+            datePickerDialog.getDatePicker().setMaxDate(c.getTimeInMillis());
+            datePickerDialog.show();
+        } catch (Exception ex) {
+
         }
-
-        Calendar c = Calendar.getInstance();
-        c.add(Calendar.DATE, minMax[0]);
-        datePickerDialog.getDatePicker().setMinDate(c.getTimeInMillis());
-        c.add(Calendar.DATE, minMax[1]);
-        datePickerDialog.getDatePicker().setMaxDate(c.getTimeInMillis());
-        datePickerDialog.show();
     }
 
     private int dateDifference(String min, String max) {
@@ -256,8 +272,9 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
         try {
             Date minDate = myFormat.parse(min);
             Date maxDate = myFormat.parse(max);
-            long diff = maxDate.getDate() - minDate.getDate();
-            i = (int) diff;
+            DateTime dt1 = new DateTime(minDate);
+            DateTime dt2 = new DateTime(maxDate);
+            i = Days.daysBetween(dt1, dt2).getDays();
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -318,14 +335,14 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
                 Double value = selectedTicket * _rate;
 
                 Intent intent = new Intent(getApplicationContext(), BookingPlanSeatSelectionActivity.class);
-                intent.putExtra("eventObj",event);
+                intent.putExtra("eventObj", event);
                 intent.putExtra("planObj", bookPlan);
                 intent.putExtra("eventName", eventName);
                 intent.putExtra("eventVenue", eventVenue);
                 intent.putExtra("eventTickets", value);
-                intent.putExtra("eventDate",txtBookingDate.getText().toString());
+                intent.putExtra("eventDate", txtBookingDate.getText().toString());
                 String today = new SimpleDateFormat("dd/MM/yyyy", Locale.UK).format(Calendar.getInstance().getTime());
-                PreferenceStorage.saveTransactionDate(getApplicationContext(),today);
+                PreferenceStorage.saveTransactionDate(getApplicationContext(), today);
                 // intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION); && (selectedTicket > 0
                 startActivity(intent);
                 finish();

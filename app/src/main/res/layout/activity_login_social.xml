@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ab_app_bg"
+    android:clickable="false"
     android:orientation="vertical">
 
     <TextView
@@ -25,10 +26,10 @@
             android:id="@+id/sign_in_load"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Signing in"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp"
+            android:text="Signing in"
             android:textColor="@color/apptheme_primary"
             android:textSize="25dp" />
 
