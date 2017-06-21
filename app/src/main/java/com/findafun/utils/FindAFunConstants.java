@@ -136,5 +136,9 @@ public class FindAFunConstants {
     public static final String GOOGLE_PROJECT_ID = "41690620391";
     public static final String MESSAGE_KEY = "message";
 
+    // Booking Status
+
+    public static final String KEY_ORDER_ID = "order_id";
+
 }
 

@@ -145,16 +145,17 @@ public class BookingPlanSeatSelectionActivity extends AppCompatActivity implemen
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), InitialScreenActivity.class);
-                intent.putExtra("planObj", bookPlan);
-                intent.putExtra("eventName", eventName);
-                intent.putExtra("eventVenue", eventVenue);
-                intent.putExtra("orderId", orderId);
-                Bundle b = new Bundle();
-                b.putDouble("eventRate", _pay);
-                // intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(intent);
-                finish();
+//                Intent intent = new Intent(getApplicationContext(), InitialScreenActivity.class);
+//                intent.putExtra("planObj", bookPlan);
+//                intent.putExtra("eventName", eventName);
+//                intent.putExtra("eventVenue", eventVenue);
+//                intent.putExtra("orderId", orderId);
+//                Bundle b = new Bundle();
+//                b.putDouble("eventRate", _pay);
+//
+//                // intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+//                startActivity(intent);
+//                finish();
             }
         });
 
@@ -225,6 +226,7 @@ public class BookingPlanSeatSelectionActivity extends AppCompatActivity implemen
         intent.putExtra("orderId", orderId);
         Bundle b = new Bundle();
         b.putDouble("eventRate", _pay);
+        PreferenceStorage.saveOrderId(getApplicationContext(),""+orderId);
         // intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(intent);
         finish();

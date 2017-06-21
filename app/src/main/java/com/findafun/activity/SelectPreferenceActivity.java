@@ -272,15 +272,17 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
 //            TextView mtextView = (TextView) view;
 //            mtextView.setTextColor(getResources().getColor(R.color.preference_orange));
             int imgResource = R.drawable.preference_screenselected;
-            PrefSelect.setBackgroundResource(imgResource);
+//            PrefSelect.setBackgroundResource(imgResource);
             tag.setCategoryPreference("yes");
             selectedList.add(tag);
+            preferenceAdatper.notifyDataSetChanged();
         } else {
 //            bgShape.setColor(getResources().getColor(R.color.white));
 //            textView.setBackgroundColor(getResources().getColor(R.color.black));
 //            TextView mtextView = (TextView) view;
             tag.setCategoryPreference("no");
             selectedList.remove(tag);
+            preferenceAdatper.notifyDataSetChanged();
         }
 //        ImageView tickImage = (ImageView) view.findViewById(R.id.tickImage);
 //        ImageView logoImage = (ImageView) view.findViewById(R.id.img_category);

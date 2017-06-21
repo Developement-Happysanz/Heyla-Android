@@ -45,7 +45,8 @@
             android:layout_marginTop="10dp"
             android:text="Payment ID            :"
             android:textColor="@color/black"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/transdate"
@@ -85,51 +86,52 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textView1"
-            android:layout_toRightOf="@+id/ordernum"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="35dp"
-            android:textSize="20dp"
-            android:hint="Order number"/>
+            android:layout_toRightOf="@+id/ordernum"
+            android:hint="Order number"
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/txt_payid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/ordernum"
             android:layout_alignTop="@+id/payid"
             android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/ordernum"
+            android:hint="Order number"
             android:textSize="20dp"
-            android:hint="Order number"/>
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/txt_transdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/ordernum"
             android:layout_alignTop="@+id/transdate"
             android:layout_marginLeft="15dp"
-            android:textSize="20dp"
-            android:hint="Order number"/>
+            android:layout_toRightOf="@+id/ordernum"
+            android:hint="Order number"
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/txt_payamt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/ordernum"
             android:layout_alignTop="@+id/payamt"
             android:layout_marginLeft="15dp"
-            android:textSize="20dp"
-            android:hint="Order number"/>
+            android:layout_toRightOf="@+id/ordernum"
+            android:hint="Order number"
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/txt_paystatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/ordernum"
             android:layout_alignTop="@+id/paystatus"
             android:layout_marginLeft="15dp"
-            android:textSize="20dp"
-            android:hint="Order number"/>
+            android:layout_toRightOf="@+id/ordernum"
+            android:hint="Order number"
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/pay_done"

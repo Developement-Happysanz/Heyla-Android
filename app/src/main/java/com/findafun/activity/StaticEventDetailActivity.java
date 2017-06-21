@@ -774,7 +774,7 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
                 if (PreferenceStorage.getUserType(getApplicationContext()).equalsIgnoreCase("1")) {
 //                    if (isChecked) {
                     int imgResource = R.drawable.ic_checkin_selected;
-                    Checkin_img.setBackgroundResource(imgResource);
+                    Checkin_img.setImageResource(R.drawable.ic_checkin_selected);
                     Toast.makeText(getApplicationContext(), "You have successfully checked-in for the event - " + event.getEventName().toString() + "\nGet ready for the fun! ", Toast.LENGTH_LONG).show();
 //                    } else {
 

@@ -542,4 +542,21 @@ public class PreferenceStorage {
         String userId = sharedPreferences.getString(FindAFunConstants.FILTERCAT, "");
         return userId;
     }
+
+    // Booking Status check
+
+    public static void saveOrderId(Context context, String orderID) {
+        SharedPreferences sharedPreferences = PreferenceManager
+                .getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(FindAFunConstants.KEY_ORDER_ID, orderID);
+        editor.commit();
+    }
+
+    public static String getOrderId(Context context) {
+        SharedPreferences sharedPreferences = PreferenceManager
+                .getDefaultSharedPreferences(context);
+        String orderId = sharedPreferences.getString(FindAFunConstants.KEY_ORDER_ID, "");
+        return orderId;
+    }
 }

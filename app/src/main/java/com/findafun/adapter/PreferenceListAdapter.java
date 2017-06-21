@@ -58,9 +58,9 @@ public class PreferenceListAdapter extends RecyclerView.Adapter<PreferenceListAd
             if (onItemClickListener != null) {
                 onItemClickListener.onItemClick(v, getAdapterPosition());
             }
-            else {
-                onClickListener.onClick(Selecttick);
-            }
+//            else {
+//                onClickListener.onClick(Selecttick);
+//            }
         }
     }
 
@@ -115,7 +115,7 @@ public class PreferenceListAdapter extends RecyclerView.Adapter<PreferenceListAd
         if (categoryArrayList.get(position).getCategoryPreference().equals("no")) {
             // holder.tickImage.setVisibility(View.INVISIBLE);
 //            holder.rlPref.setBackgroundColor(context.getResources().getColor(R.color.white));
-            holder.mPrefTextView.setTextColor(context.getResources().getColor(R.color.black));
+//            holder.mPrefTextView.setTextColor(context.getResources().getColor(R.color.black));
             holder.Selecttick.setVisibility(View.GONE);
 
         } else {

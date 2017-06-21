@@ -11,10 +11,11 @@ import android.widget.Toast;
 
 import com.findafun.R;
 import com.findafun.ccavutility.AvenuesParams;
+import com.findafun.utils.PreferenceStorage;
 
 public class StatusActivity extends Activity {
 
-    private TextView tv4,OrderNum,PaymentId, TransactionDate, PaymentAmount, PaymentStatus;
+    private TextView tv4, OrderNum, PaymentId, TransactionDate, PaymentAmount, PaymentStatus;
     private Button PaymentDone;
     private ImageView Success, Failure;
 
@@ -33,27 +34,32 @@ public class StatusActivity extends Activity {
         PaymentStatus = (TextView) findViewById(R.id.txt_paystatus);
         Success = (ImageView) findViewById(R.id.img_success);
         Failure = (ImageView) findViewById(R.id.img_fail);
-        OrderNum.setText(AvenuesParams.MERCHANT_ID);
+//        OrderNum.setText(AvenuesParams.MERCHANT_ID);
         PaymentId.setText(AvenuesParams.ORDER_ID);
         TransactionDate.setText(AvenuesParams.ORDER_ID);
         PaymentAmount.setText(AvenuesParams.AMOUNT);
+        String getOrderId = PreferenceStorage.getOrderId(getApplicationContext());
 
 
         tv4.setText(mainIntent.getStringExtra("transStatus"));
-		switch (tv4.getText().toString()) {
-            case "Transaction Declined!" :
+
+        switch (tv4.getText().toString()) {
+            case "Transaction Declined!":
                 Success.setVisibility(View.INVISIBLE);
                 PaymentStatus.setText("Failed!");
+                OrderNum.setText(getOrderId);
                 break;
-            case "Transaction Successful!" :
+            case "Transaction Successful!":
                 Failure.setVisibility(View.INVISIBLE);
                 PaymentStatus.setText("Success!");
+                OrderNum.setText(getOrderId);
                 break;
-            case "Transaction Cancelled!" :
+            case "Transaction Cancelled!":
                 Success.setVisibility(View.INVISIBLE);
                 PaymentStatus.setText("Canceled!");
+                OrderNum.setText(getOrderId);
                 break;
-            default :
+            default:
                 break;
         }
 
