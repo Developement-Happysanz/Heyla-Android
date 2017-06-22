@@ -28,6 +28,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.net.URI;
 
 /**
  * Created by zahid.r on 10/30/2015.
@@ -48,8 +49,12 @@ public class EventServiceHelper {
 
     public void makeGetEventServiceCall(String URL) {
         Log.d(TAG, "Events URL" + URL);
+        String baseURL = "";
+        try {
+            URI uri = new URI(URL.replace(" ", "%20"));
+            baseURL = uri.toString();
         final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                URL, (String) null,
+                baseURL, (String) null,
                 new com.android.volley.Response.Listener<JSONObject>() {
 
                     @Override
@@ -89,7 +94,8 @@ public class EventServiceHelper {
 
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(jsonObjectRequest);
-
+        } catch (Exception ex) {
+        }
     }
 
     public void makeGetStaticEventServiceCall(String URL) {

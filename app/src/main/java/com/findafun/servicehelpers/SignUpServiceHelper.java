@@ -49,7 +49,7 @@ public class SignUpServiceHelper {
     }
 
     public void makeSignUpServiceCall(String params) {
-        Log.d(TAG,"making sign in request"+ params);
+        Log.d(TAG, "making sign in request" + params);
         final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
                 FindAFunConstants.GET_SIGN_UP_URL, params,
                 new com.android.volley.Response.Listener<JSONObject>() {
@@ -64,7 +64,7 @@ public class SignUpServiceHelper {
             @Override
             public void onErrorResponse(VolleyError error) {
                 if (error.networkResponse != null && error.networkResponse.data != null) {
-                    Log.d(TAG,"error during sign up"+ error.getLocalizedMessage());
+                    Log.d(TAG, "error during sign up" + error.getLocalizedMessage());
 
                     try {
                         String responseBody = new String(error.networkResponse.data, "utf-8");
@@ -94,10 +94,8 @@ public class SignUpServiceHelper {
     }
 
 
-
-
-    public void saveEvents(String url, final IServiceListener listener){
-        Log.d(TAG,"AddEvent URL"+ url);
+    public void saveEvents(String url, final IServiceListener listener) {
+        Log.d(TAG, "AddEvent URL" + url);
         final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
                 url, (String) null,
                 new com.android.volley.Response.Listener<JSONObject>() {
@@ -107,10 +105,10 @@ public class SignUpServiceHelper {
                         Log.d(TAG, response.toString());
                         try {
                             //Parse the response and convert to Java class
-                            listener.onSuccess(0,response);
+                            listener.onSuccess(0, response);
 
-                        }catch(Exception e){
-                            Log.d(TAG,"Exception while parsing");
+                        } catch (Exception e) {
+                            Log.d(TAG, "Exception while parsing");
                             e.printStackTrace();
                             listener.onError("JSON Parser error");
                         }
@@ -146,69 +144,75 @@ public class SignUpServiceHelper {
     }
 
 
-    public void updateUserProfile(String url, final IServiceListener listener){
-        Log.d(TAG,"updateprofile URL"+ url);
+    public void updateUserProfile(String url, final IServiceListener listener) {
+        Log.d(TAG, "updateprofile URL" + url);
+        String baseURL = "";
+        try {
+            URI uri = new URI(url.replace(" ", "%20"));
+            baseURL = uri.toString();
 
-        final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                url, (String) null,
-                new com.android.volley.Response.Listener<JSONObject>() {
+            final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
+                    baseURL, (String) null,
+                    new com.android.volley.Response.Listener<JSONObject>() {
 
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.d(TAG, response.toString());
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            Log.d(TAG, response.toString());
+                            try {
+                                //Parse the response and convert to Java class
+                                listener.onSuccess(0, response);
+
+                            } catch (Exception e) {
+                                Log.d(TAG, "Exception while parsing");
+                                e.printStackTrace();
+                                listener.onError("JSON Parser error");
+                            }
+                        }
+                    }, new com.android.volley.Response.ErrorListener() {
+
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    if (error.networkResponse != null && error.networkResponse.data != null) {
+
                         try {
-                            //Parse the response and convert to Java class
-                            listener.onSuccess(0,response);
-
-                        }catch(Exception e){
-                            Log.d(TAG,"Exception while parsing");
+                            String responseBody = new String(error.networkResponse.data, "utf-8");
+                            JSONObject jsonObject = new JSONObject(responseBody);
+                            listener.onError(jsonObject.getString(FindAFunConstants.PARAM_MESSAGE));
+                        } catch (UnsupportedEncodingException e) {
+                            listener.onError(context.getResources().getString(R.string.error_occured));
                             e.printStackTrace();
-                            listener.onError("JSON Parser error");
+                        } catch (JSONException e) {
+                            listener.onError(context.getResources().getString(R.string.error_occured));
+                            e.printStackTrace();
                         }
-                    }
-                }, new com.android.volley.Response.ErrorListener() {
 
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                if (error.networkResponse != null && error.networkResponse.data != null) {
-
-                    try {
-                        String responseBody = new String(error.networkResponse.data, "utf-8");
-                        JSONObject jsonObject = new JSONObject(responseBody);
-                        listener.onError(jsonObject.getString(FindAFunConstants.PARAM_MESSAGE));
-                    } catch (UnsupportedEncodingException e) {
+                    } else {
                         listener.onError(context.getResources().getString(R.string.error_occured));
-                        e.printStackTrace();
-                    } catch (JSONException e) {
-                        listener.onError(context.getResources().getString(R.string.error_occured));
-                        e.printStackTrace();
                     }
-
-                } else {
-                    listener.onError(context.getResources().getString(R.string.error_occured));
                 }
-            }
-        });
+            });
 
-        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(0, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+            jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(0, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
-        // Adding request to request queue
-        AppController.getInstance().addToRequestQueue(jsonObjectRequest);
+            // Adding request to request queue
+            AppController.getInstance().addToRequestQueue(jsonObjectRequest);
+        } catch (Exception ex) {
+        }
     }
 
-    public void uploadUserImage(String url, final String image, final IServiceListener listener){
-        Log.d(TAG,"uploading user image"+ url);
-       // StringRequest request = new StringRequest(Request.Method.POST,url,params,new Res)
+    public void uploadUserImage(String url, final String image, final IServiceListener listener) {
+        Log.d(TAG, "uploading user image" + url);
+        // StringRequest request = new StringRequest(Request.Method.POST,url,params,new Res)
 
-            //Showing the progress dialog
+        //Showing the progress dialog
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String s) {
                         //Disimissing the progress dialog
-                        Log.d(TAG, "Succesfully uploaded the image"+ s);
-                       listener.onSuccess(0,s);
+                        Log.d(TAG, "Succesfully uploaded the image" + s);
+                        listener.onSuccess(0, s);
 
                     }
                 },
@@ -216,18 +220,18 @@ public class SignUpServiceHelper {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
                         //Dismissing the progress dialog
-                        Log.e(TAG,"error loading image"+ volleyError.getLocalizedMessage());
+                        Log.e(TAG, "error loading image" + volleyError.getLocalizedMessage());
                         listener.onError(volleyError.getLocalizedMessage());
                     }
-                }){
+                }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 //Converting Bitmap to String
-                Log.d(TAG,"getting image parameters");
+                Log.d(TAG, "getting image parameters");
 
 
                 //Creating parameters
-                Map<String,String> params = new Hashtable<String, String>();
+                Map<String, String> params = new Hashtable<String, String>();
 
                 //Adding parameters
                 params.put("fileToUpload", image);
@@ -243,7 +247,7 @@ public class SignUpServiceHelper {
     }
 
     public void makeForgotPasswordServiceCall(String params) {
-        Log.d(TAG,"making forgot password request"+ params);
+        Log.d(TAG, "making forgot password request" + params);
         final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
                 FindAFunConstants.GET_SIGN_UP_URL, params,
                 new com.android.volley.Response.Listener<JSONObject>() {
@@ -258,7 +262,7 @@ public class SignUpServiceHelper {
             @Override
             public void onErrorResponse(VolleyError error) {
                 if (error.networkResponse != null && error.networkResponse.data != null) {
-                    Log.d(TAG,"error during sign up"+ error.getLocalizedMessage());
+                    Log.d(TAG, "error during sign up" + error.getLocalizedMessage());
 
                     try {
                         String responseBody = new String(error.networkResponse.data, "utf-8");
@@ -296,7 +300,7 @@ public class SignUpServiceHelper {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.d(TAG, "ajaz : " + response.toString());
-                        if(response != null) {
+                        if (response != null) {
                             signUpServiceListener.onSignUp(response);
                         }
                     }

@@ -237,6 +237,11 @@ public class LoginSocialActivity extends AppCompatActivity implements DialogClic
 
     }
 
+    @Override
+    public void onBackPressed() {
+
+    }
+
     //This function will option signing intent
     private void signIn() {
 
