@@ -112,6 +112,7 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
         }
 
         totalCount = setTicketCount;
+        flagTicket = "yes";
 
         CountDecrease.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -252,7 +253,7 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
             if (getDate > 0) {
                 System.out.println("Today is after StartDate");
                 minMax[0] = dateDifference(today, StartDate); //today
-                minMax[1] = dateDifference(today, EndDate); //endDate
+                minMax[1] = dateDifference(StartDate, EndDate); //endDate
             } else if (getDate < 0) {
                 System.out.println("Today is before StartDate");
                 minMax[0] = 0;; //startDate

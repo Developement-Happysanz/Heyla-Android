@@ -47,6 +47,7 @@ import com.findafun.serviceinterfaces.IServiceListener;
 import com.findafun.utils.AndroidMultiPartEntity;
 import com.findafun.utils.CommonUtils;
 import com.findafun.utils.FindAFunConstants;
+import com.findafun.utils.FindAFunValidator;
 import com.findafun.utils.PreferenceStorage;
 import com.squareup.picasso.Picasso;
 
@@ -687,14 +688,14 @@ public class ProfileActivity extends AppCompatActivity implements DialogClickLis
             } catch (ParseException e) {
                 e.printStackTrace();
             } finally {
-                mDatePicker = new DatePickerDialog(this,R.style.datePickerTheme, this, year, month, day);
+                mDatePicker = new DatePickerDialog(this, R.style.datePickerTheme, this, year, month, day);
                 mDatePicker.show();
 
             }
         } else {
             Log.d(TAG, "show default date");
 
-            mDatePicker = new DatePickerDialog(this,R.style.datePickerTheme, this, year, month, day);
+            mDatePicker = new DatePickerDialog(this, R.style.datePickerTheme, this, year, month, day);
             mDatePicker.show();
         }
     }
@@ -736,12 +737,28 @@ public class ProfileActivity extends AppCompatActivity implements DialogClickLis
         String emailVal = email.getText().toString();
         String phoneVal = phone.getText().toString();
         String cityVal = city.getText().toString();
-        int loginMode = PreferenceStorage.getLoginMode(this);
         String passwordVal = FindAFunConstants.DEFAULT_PASSWORD;
         String genderval = mSex.getText().toString();
         String birthday = mBirthday.getText().toString();
         passwordVal = password.getText().toString();
         String occupation = mOccupation.getText().toString();
+
+
+        if (validateFields()) {
+            String url = String.format(FindAFunConstants.UPDATE_PROFILE_URL, emailVal, Uri.encode(nameVal),
+                    Integer.parseInt(PreferenceStorage.getUserId(this)), cityVal, genderval, birthday, Uri.encode(occupation), phoneVal);
+
+            SignUpServiceHelper mServiceHelper = new SignUpServiceHelper(this);
+            mServiceHelper.updateUserProfile(url, this);
+
+            //}
+        }
+
+    }
+
+    private boolean validateFields() {
+        int loginMode = PreferenceStorage.getLoginMode(this);
+        String passwordVal = FindAFunConstants.DEFAULT_PASSWORD;
         if (loginMode == 2) {
             String pwd = password.getText().toString();
             if ((pwd != null) && !(pwd.isEmpty())) {
@@ -751,48 +768,38 @@ public class ProfileActivity extends AppCompatActivity implements DialogClickLis
             }
         }
 
-
-        if( (nameVal == null) || (nameVal.isEmpty())){
+        if (!FindAFunValidator.checkNullString(this.name.getText().toString().trim())) {
             AlertDialogHelper.showSimpleAlertDialog(this, "Enter valid name");
+            return false;
 
+        } else if (!FindAFunValidator.checkNullString(this.email.getText().toString().trim())) {
+            AlertDialogHelper.showSimpleAlertDialog(this, "Enter valid email");
+            return false;
+
+        } else if (!FindAFunValidator.checkNullString(this.phone.getText().toString().trim())) {
+            AlertDialogHelper.showSimpleAlertDialog(this, "Enter valid phone number");
+            return false;
+
+        } else if (!FindAFunValidator.checkNullString(this.city.getText().toString().trim())) {
+            AlertDialogHelper.showSimpleAlertDialog(this, "Enter valid City");
+            return false;
+
+        } else if ((loginMode == 2) && !FindAFunValidator.checkNullString(this.city.getText().toString().trim())) {//signed using user name
+
+            AlertDialogHelper.showSimpleAlertDialog(this, "Enter valid passsword");
+            return false;
+        } else if (!FindAFunValidator.checkNullString(this.mBirthday.getText().toString().trim())) {
+            AlertDialogHelper.showSimpleAlertDialog(this, "Select valid Birth Date");
+            return false;
+        } else if (!FindAFunValidator.checkNullString(this.mSex.getText().toString().trim())) {
+            AlertDialogHelper.showSimpleAlertDialog(this, "Select valid gender");
+            return false;
+        } else if (!FindAFunValidator.checkNullString(this.mOccupation.getText().toString().trim())) {
+            AlertDialogHelper.showSimpleAlertDialog(this, "Select valid gender");
+            return false;
+        } else {
+            return true;
         }
-        else if( (emailVal == null) || (emailVal.isEmpty())){
-            AlertDialogHelper.showSimpleAlertDialog(this,"Enter valid email");
-
-        }
-        else if( (phoneVal == null) || (phoneVal.isEmpty())){
-            AlertDialogHelper.showSimpleAlertDialog(this,"Enter valid phone number");
-
-        }
-        else if( (cityVal == null) || (cityVal.isEmpty())){
-            AlertDialogHelper.showSimpleAlertDialog(this,"Enter valid City");
-
-        }
-        else if( (loginMode == 2) && (( (passwordVal == null) || (passwordVal.isEmpty())))){//signed using user name
-
-                AlertDialogHelper.showSimpleAlertDialog(this,"Enter valid passsword");
-
-
-
-        }else if( (birthday == null) || (birthday.isEmpty())){
-            AlertDialogHelper.showSimpleAlertDialog(this,"Select valid Birth Date");
-        }
-        else if( (genderval == null) || (genderval.isEmpty())){
-            AlertDialogHelper.showSimpleAlertDialog(this,"Select valid gender");
-        }
-        else if( (occupation == null) || (occupation.isEmpty())){
-            AlertDialogHelper.showSimpleAlertDialog(this,"Select valid gender");
-        }
-
-
-        String url = String.format(FindAFunConstants.UPDATE_PROFILE_URL, emailVal, Uri.encode(nameVal),
-                Integer.parseInt(PreferenceStorage.getUserId(this)), cityVal, genderval, birthday, Uri.encode(occupation), phoneVal);
-
-        SignUpServiceHelper mServiceHelper = new SignUpServiceHelper(this);
-        mServiceHelper.updateUserProfile(url, this);
-
-        //}
-
     }
 
     private boolean shouldUploadSocialNetworkPic() {
