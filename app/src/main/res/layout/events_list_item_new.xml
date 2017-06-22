@@ -11,22 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="190dp">
 
-        <Button
-            android:id="@+id/event_paid_btn"
-            android:layout_width="54dp"
-            android:layout_height="26dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="15dp"
-            android:layout_gravity="right"
-            android:layout_marginRight="15dp"
-            android:background="@drawable/shape_rounded_blue_btn"
-            android:gravity="center"
-            android:fontFamily="sans-serif"
-            android:text=""
-            android:textAllCaps="true"
-            android:textColor="@color/white"
-            android:textSize="15dp" />
-
         <ImageView
             android:id="@+id/img_logo"
             android:layout_width="match_parent"
@@ -106,6 +90,22 @@
             </RelativeLayout>
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/event_paid_btn"
+            android:layout_width="54dp"
+            android:layout_height="26dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/shape_rounded_blue_btn"
+            android:gravity="center"
+            android:fontFamily="sans-serif"
+            android:text=""
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
 
     </RelativeLayout>
 

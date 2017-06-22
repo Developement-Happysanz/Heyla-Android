@@ -210,7 +210,7 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
     @Override
     public void onClick(View v) {
         if (v == txtGetStarted) {
-            if (selectedList.size() > 4) {
+            if (selectedList.size() >= 4) {
                 setPreferences();
             } else {
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);

@@ -15,13 +15,13 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.costum.android.widget.LoadMoreListView;
 import com.findafun.R;
 import com.findafun.adapter.BookingPlanAdapter;
+import com.findafun.app.AppController;
 import com.findafun.bean.events.BookPlan;
 import com.findafun.bean.events.BookPlanList;
 import com.findafun.bean.events.Event;
@@ -33,6 +33,7 @@ import com.findafun.utils.CommonUtils;
 import com.findafun.utils.FindAFunConstants;
 import com.findafun.utils.PreferenceStorage;
 import com.google.gson.Gson;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import org.joda.time.DateTime;
 import org.joda.time.Days;
@@ -67,8 +68,7 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
     private SearchView mSearchView = null;
     TextView txtEventName, txtEvnetVenue, txtEventDate, numTicketcount;
     EditText txtBookingDate;
-    ImageView CountIncrease, CountDecrease;
-    LinearLayout bookingImage;
+    ImageView CountIncrease, CountDecrease, bookingImage;
     Button btnProceed;
     int selectedTicket = 0;
     private Event event;
@@ -98,14 +98,19 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
         eventServiceHelper = new EventServiceHelper(this);
         eventServiceHelper.setEventServiceListener(this);
         progressDialogHelper = new ProgressDialogHelper(this);
+
         event = (Event) getIntent().getSerializableExtra("eventObj");
         eventId = getIntent().getStringExtra("eventId");
         eventName = getIntent().getStringExtra("eventName");
         eventVenue = getIntent().getStringExtra("eventVenue");
         eventDate = getIntent().getStringExtra("eventStartEndDate");
-        int res = getIntent().getExtras().getInt("resourseInt");
-        bookingImage = (LinearLayout) findViewById(R.id.event_booking_img);
-        bookingImage.setBackgroundResource(res);
+
+        bookingImage = (ImageView) findViewById(R.id.event_booking_img);
+        ImageLoader uImageLoader = AppController.getInstance().getUniversalImageLoader();
+        if (event.getEventLogo().contains(".")) {
+            uImageLoader.displayImage(event.getEventLogo(), bookingImage);
+        }
+
         totalCount = setTicketCount;
 
         CountDecrease.setOnClickListener(new View.OnClickListener() {
