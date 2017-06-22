@@ -690,6 +690,7 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
                         String start = FindAFunHelper.getDate(event.getStartDate());
                         String end = FindAFunHelper.getDate(event.getEndDate());
                         intent.putExtra("eventStartEndDate", start + " - " + end);
+                        intent.putExtra("resourseInt", event.getEventLogo());
 
                         // intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(intent);

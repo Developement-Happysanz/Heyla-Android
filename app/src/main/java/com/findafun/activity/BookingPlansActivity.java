@@ -8,8 +8,6 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
-import android.text.InputFilter;
-import android.text.Spanned;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,6 +15,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -67,6 +66,7 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
     TextView txtEventName, txtEvnetVenue, txtEventDate, numTicketcount;
     EditText txtBookingDate;
     ImageView CountIncrease, CountDecrease;
+    LinearLayout bookingImage;
     Button btnProceed;
     int selectedTicket = 0;
     private Event event;
@@ -89,7 +89,6 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
         btnProceed = (Button) findViewById(R.id.proceed_btn);
         CountDecrease = (ImageView) findViewById(R.id.count_decrease);
         CountIncrease = (ImageView) findViewById(R.id.count_increase);
-        numTicketcount.setFilters(new InputFilter[]{new InputFilterMinMax("1", "10")});
         loadMoreListView.setOnLoadMoreListener(this);
         loadMoreListView.setOnItemClickListener(this);
         bookPlanArrayList = new ArrayList<>();
@@ -101,6 +100,9 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
         eventName = getIntent().getStringExtra("eventName");
         eventVenue = getIntent().getStringExtra("eventVenue");
         eventDate = getIntent().getStringExtra("eventStartEndDate");
+        int res = getIntent().getExtras().getInt("resourseInt");
+        bookingImage = (LinearLayout) findViewById(R.id.event_booking_img);
+        bookingImage.setBackgroundResource(res);
 
         CountDecrease.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -441,36 +443,6 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
         if (bookingPlanAdapter != null) {
             bookingPlanAdapter.exitSearch();
             bookingPlanAdapter.notifyDataSetChanged();
-        }
-    }
-
-    public class InputFilterMinMax implements InputFilter {
-
-        private int min, max;
-
-        public InputFilterMinMax(int min, int max) {
-            this.min = min;
-            this.max = max;
-        }
-
-        public InputFilterMinMax(String min, String max) {
-            this.min = Integer.parseInt(min);
-            this.max = Integer.parseInt(max);
-        }
-
-        @Override
-        public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
-            try {
-                int input = Integer.parseInt(dest.toString() + source.toString());
-                if (isInRange(min, max, input))
-                    return null;
-            } catch (NumberFormatException nfe) {
-            }
-            return "";
-        }
-
-        private boolean isInRange(int a, int b, int c) {
-            return b > a ? c >= a && c <= b : c >= b && c <= a;
         }
     }
 }

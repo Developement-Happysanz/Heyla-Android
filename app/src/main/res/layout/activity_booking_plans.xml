@@ -60,7 +60,7 @@
                 android:dividerHeight="4dp" />-->
 
         <LinearLayout
-            android:id="@+id/event_detail"
+            android:id="@+id/event_booking_img"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:layout_below="@id/toolbar_result"
@@ -97,7 +97,7 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/event_detail"
+            android:layout_below="@+id/event_booking_img"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="-20dp"
@@ -224,7 +224,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@+id/event_detail"
+            android:layout_below="@+id/event_booking_img"
             android:layout_marginBottom="20dp"
             android:background="@color/bg_gray"
             android:visibility="gone" />
