@@ -346,7 +346,8 @@ public class LoginSocialActivity extends AppCompatActivity implements DialogClic
 
             signUpServiceHelper.makeGetEventServiceCall(String.format(FindAFunConstants.GUEST_LOGIN, IMEI, GCMKey, "1"));
 
-        } else if (logType.equalsIgnoreCase("2")) {
+        }
+        else if (logType.equalsIgnoreCase("2")) {
 
             mProgressDialog = new ProgressDialog(this);
             mProgressDialog.setIndeterminate(true);

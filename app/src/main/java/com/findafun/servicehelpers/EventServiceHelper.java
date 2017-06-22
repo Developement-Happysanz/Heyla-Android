@@ -100,8 +100,12 @@ public class EventServiceHelper {
 
     public void makeGetStaticEventServiceCall(String URL) {
         Log.d(TAG, "Events URL" + URL);
+        String baseURL = "";
+        try {
+            URI uri = new URI(URL.replace(" ", "%20"));
+            baseURL = uri.toString();
         final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                URL, (String) null,
+                baseURL, (String) null,
                 new com.android.volley.Response.Listener<JSONObject>() {
 
                     @Override
@@ -143,7 +147,8 @@ public class EventServiceHelper {
 
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(jsonObjectRequest);
-
+        } catch (Exception ex) {
+        }
     }
 
     public String makeRawRequest(String Url) {

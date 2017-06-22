@@ -76,6 +76,7 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
     private String rate;
     private String flagPlan = "no", flagTicket = "no", flagBookingDate = "no";
     int year, month, day;
+    int setTicketCount = 1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -105,6 +106,7 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
         int res = getIntent().getExtras().getInt("resourseInt");
         bookingImage = (LinearLayout) findViewById(R.id.event_booking_img);
         bookingImage.setBackgroundResource(res);
+        totalCount = setTicketCount;
 
         CountDecrease.setOnClickListener(new View.OnClickListener() {
             @Override

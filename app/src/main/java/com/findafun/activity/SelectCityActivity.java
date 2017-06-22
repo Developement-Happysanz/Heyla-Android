@@ -155,28 +155,13 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
                             mLastLocation.getLatitude(), mLastLocation.getLongitude());
                     cst.execute();
 
-                    String lo = null;
-                    try {
-                        if (cst.get() != null) {
-                            lo = cst.get().toString();
-                        }
-                    } catch (InterruptedException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    } catch (ExecutionException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
-
                 } else {
                     Log.e(TAG, "fetched location is Null");
                     AlertDialogHelper.showSimpleAlertDialog(SelectCityActivity.this,
                             "Current Location Not Available. Please check if Location services are turned ON");
                 }
-
             }
         });
-
     }
 
     protected void buildGoogleApiClient() {
@@ -239,6 +224,7 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
             }
         } else if (v == txtCountryDropDown) {
             isCountryCheck = true;
+
             Log.d(TAG, "Available countries count" + countrySpinnerAdapter.getCount());
             AlertDialog.Builder builderSingle = new AlertDialog.Builder(this);
             View view = getLayoutInflater().inflate(R.layout.gender_header_layout, null);
@@ -579,6 +565,7 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
         @Override
         protected void onPostExecute(String result) {
             citySpinnerAdapter = new CitySpinnerAdapter(activity, android.R.layout.simple_spinner_dropdown_item, cityList);
+            progressDialogHelper.hideProgressDialog();
         }
 
         @Override

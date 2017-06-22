@@ -751,8 +751,8 @@ public class ProfileActivity extends AppCompatActivity implements DialogClickLis
             }
         }
 
-/*
-        if( (fieldVal == null) || (fieldVal.isEmpty())){
+
+        if( (nameVal == null) || (nameVal.isEmpty())){
             AlertDialogHelper.showSimpleAlertDialog(this, "Enter valid name");
 
         }
@@ -782,7 +782,7 @@ public class ProfileActivity extends AppCompatActivity implements DialogClickLis
         }
         else if( (occupation == null) || (occupation.isEmpty())){
             AlertDialogHelper.showSimpleAlertDialog(this,"Select valid gender");
-        }*/
+        }
 
 
         String url = String.format(FindAFunConstants.UPDATE_PROFILE_URL, emailVal, Uri.encode(nameVal),
