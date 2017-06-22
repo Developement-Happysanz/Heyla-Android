@@ -32,7 +32,7 @@ import org.json.JSONObject;
 
 public class BookingPlanSeatSelectionActivity extends AppCompatActivity implements ISignUpServiceListener {
 
-    private String eventName, eventVenue, eventBookingDate;
+    private String eventName, eventVenue, eventBookingDate,noOfTickets;
     private static final String TAG = "BookingPlanSeatSelectionActivity";
     private TextView txtEventName, txtEvnetVenue, txtEventPay, txtCountTicket, txtTicket;
     private ImageView imgPlus, imgMinus;
@@ -44,7 +44,7 @@ public class BookingPlanSeatSelectionActivity extends AppCompatActivity implemen
     private Event event;
     int pay = 0;
     double _pay = 0.00;
-    Double tickets;
+    double ticketsRate;
     protected ProgressDialogHelper progressDialogHelper;
     private SignUpServiceHelper signUpServiceHelper;
     String orderId;
@@ -73,7 +73,8 @@ public class BookingPlanSeatSelectionActivity extends AppCompatActivity implemen
         bookPlan = (BookPlan) getIntent().getSerializableExtra("planObj");
         eventName = getIntent().getStringExtra("eventName");
         eventVenue = getIntent().getStringExtra("eventVenue");
-        tickets = getIntent().getDoubleExtra("eventTickets", 0.00);
+        ticketsRate = getIntent().getDoubleExtra("eventTicketsRate", 0.00);
+        noOfTickets = getIntent().getStringExtra("eventNoOfTicket");
         eventBookingDate = getIntent().getStringExtra("eventDate");
         String _rate = bookPlan.getSeatRate();
         rate = Double.parseDouble(_rate);
@@ -93,7 +94,7 @@ public class BookingPlanSeatSelectionActivity extends AppCompatActivity implemen
         txtEventName.setText(eventName);
         txtEvnetVenue.setText(eventVenue);
         txtEventPay.setText(bookPlan.getSeatPlan() + " - ₹ : " + bookPlan.getSeatRate());
-        txtTicket.setText("" + tickets);
+        txtTicket.setText("" + ticketsRate);
 
         imgPlus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -196,7 +197,7 @@ public class BookingPlanSeatSelectionActivity extends AppCompatActivity implemen
 //                jsonObject.put(FindAFunConstants.PARAM_CLASS_ID, PreferenceStorage.getStudentClassIdPreference(getApplicationContext()));
 //                jsonObject.put(FindAFunConstants.PARAM_STUDENT_ID, PreferenceStorage.getStudentEnrollIdPreference(getApplicationContext()));
                 progressDialogHelper.showProgressDialog(getString(R.string.progress_loading));
-                signUpServiceHelper.makeGetEventServiceCall(String.format(FindAFunConstants.BOOKING_TICKET, orderId, event.getId(), bookPlan.getId(), Integer.parseInt(PreferenceStorage.getUserId(getApplicationContext())), tickets, eventBookingDate, _pay));
+                signUpServiceHelper.makeGetEventServiceCall(String.format(FindAFunConstants.BOOKING_TICKET, orderId, event.getId(), bookPlan.getId(), Integer.parseInt(PreferenceStorage.getUserId(getApplicationContext())), noOfTickets, eventBookingDate, ticketsRate));
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -221,7 +222,7 @@ public class BookingPlanSeatSelectionActivity extends AppCompatActivity implemen
         intent.putExtra("planObj", bookPlan);
         intent.putExtra("eventName", eventName);
         intent.putExtra("eventVenue", eventVenue);
-        intent.putExtra("ticketRate", tickets);
+        intent.putExtra("ticketRate", ticketsRate);
         intent.putExtra("orderId", orderId);
         Bundle b = new Bundle();
         b.putDouble("eventRate", pay);

@@ -245,7 +245,7 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
 //            int dateMargin = currentDate.compareTo(eventDate);
             DateTime dt1 = new DateTime(dateToday);
             DateTime dt2 = new DateTime(dateStart);
-           int getDate = Days.daysBetween(dt1, dt2).getDays();
+            int getDate = Days.daysBetween(dt1, dt2).getDays();
 
 
             int minMax[] = new int[2];
@@ -256,7 +256,8 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
                 minMax[1] = dateDifference(StartDate, EndDate); //endDate
             } else if (getDate < 0) {
                 System.out.println("Today is before StartDate");
-                minMax[0] = 0;; //startDate
+                minMax[0] = 0;
+                ; //startDate
                 minMax[1] = dateDifference(today, EndDate); //endDate
             } else {
                 System.out.println("Today is equal to StartDate");
@@ -338,18 +339,21 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
                 Toast.makeText(this, "Select ticket or plan", Toast.LENGTH_SHORT).show();
             } else {
                 selectedTicket = totalCount;
+                String totalTicketNo = numTicketcount.getText().toString();
+                int noOfTicket = Integer.parseInt(totalTicketNo);
 
                 double _rate = 0.0;
                 _rate = Double.parseDouble(rate);
 
-                Double value = selectedTicket * _rate;
+                Double totalRate = noOfTicket * _rate;
 
                 Intent intent = new Intent(getApplicationContext(), BookingPlanSeatSelectionActivity.class);
                 intent.putExtra("eventObj", event);
                 intent.putExtra("planObj", bookPlan);
                 intent.putExtra("eventName", eventName);
                 intent.putExtra("eventVenue", eventVenue);
-                intent.putExtra("eventTickets", value);
+                intent.putExtra("eventTicketsRate", totalRate);
+                intent.putExtra("eventNoOfTicket", totalTicketNo);
                 intent.putExtra("eventDate", txtBookingDate.getText().toString());
                 String today = new SimpleDateFormat("dd/MM/yyyy", Locale.UK).format(Calendar.getInstance().getTime());
                 PreferenceStorage.saveTransactionDate(getApplicationContext(), today);
