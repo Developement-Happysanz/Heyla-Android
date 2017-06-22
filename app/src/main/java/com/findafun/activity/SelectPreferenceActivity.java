@@ -210,13 +210,13 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
     @Override
     public void onClick(View v) {
         if (v == txtGetStarted) {
-            if (selectedList.size() > 0) {
+            if (selectedList.size() > 4) {
                 setPreferences();
             } else {
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
                 //alertDialogBuilder.setTitle("Registration Successful");
-                alertDialogBuilder.setTitle("No Preference selected");
-                alertDialogBuilder.setMessage("Please select atleast one Preference");
+                alertDialogBuilder.setTitle("Not enough categories selected");
+                alertDialogBuilder.setMessage("Please select atleast four categories");
                 alertDialogBuilder.setPositiveButton("OK",
                         new DialogInterface.OnClickListener() {
 
