@@ -127,6 +127,8 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
             txtCountryDropDown.setText(countryName);
         }
 
+//        autoselectCity.setEnabled(true);
+
         eventServiceHelper = new EventServiceHelper(getApplicationContext());
         eventServiceHelper.setEventServiceListener(this);
         progressDialogHelper = new ProgressDialogHelper(getApplicationContext());
@@ -136,6 +138,7 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
         autoselectCity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                autoselectCity.setEnabled(false);
                 cityList.clear();
                 Log.d(TAG, "fetching the current city based on current location");
 
@@ -199,6 +202,7 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
         if (v == txtCityDropDown) {
+            autoselectCity.setEnabled(true);
             if (isCountryCheck) {
                 loadCitySpinner();
             } else {
@@ -223,6 +227,7 @@ public class SelectCityActivity extends AppCompatActivity implements View.OnClic
                 Toast.makeText(this, "Please select your city", Toast.LENGTH_SHORT).show();
             }
         } else if (v == txtCountryDropDown) {
+            autoselectCity.setEnabled(true);
             isCountryCheck = true;
 
             Log.d(TAG, "Available countries count" + countrySpinnerAdapter.getCount());

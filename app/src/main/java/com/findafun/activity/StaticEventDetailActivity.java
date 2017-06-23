@@ -145,10 +145,11 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
                     .setMinDaysUntilPrompt(2)
                     .setMinLaunchesUntilPrompt(3)
                     .init();*/
-
-        initializeViews();
         event = (Event) getIntent().getSerializableExtra("eventObj");
+        initializeViews();
+
         populateData();
+
 
         if (curRate == 10) {
             fetchAppRate();
@@ -580,6 +581,14 @@ public class StaticEventDetailActivity extends AppCompatActivity implements Goog
         LinearLayout engageBtn = (LinearLayout) findViewById(R.id.engage_btn);
         Button bookingBtn = (Button) findViewById(R.id.booking_btn);
         LinearLayout checkinsBtn = (LinearLayout) findViewById(R.id.checkins_btn);
+
+        String paidFree = event.getEvent_cost();
+
+        if(paidFree.equalsIgnoreCase("Free")){
+            bookingBtn.setVisibility(View.GONE);
+        } else {
+            bookingBtn.setVisibility(View.VISIBLE);
+        }
 
         whishListBtn.setOnClickListener(new View.OnClickListener() {
             @Override

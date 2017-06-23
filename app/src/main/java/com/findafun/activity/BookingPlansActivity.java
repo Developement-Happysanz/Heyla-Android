@@ -336,7 +336,7 @@ public class BookingPlansActivity extends AppCompatActivity implements LoadMoreL
         if (v == btnProceed) {
 
             if ((flagPlan.equalsIgnoreCase("no")) || (flagTicket.equalsIgnoreCase("no")) || (flagBookingDate.equalsIgnoreCase("no"))) {
-                Toast.makeText(this, "Select ticket or plan", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Select ticket or plan or date", Toast.LENGTH_SHORT).show();
             } else {
                 selectedTicket = totalCount;
                 String totalTicketNo = numTicketcount.getText().toString();

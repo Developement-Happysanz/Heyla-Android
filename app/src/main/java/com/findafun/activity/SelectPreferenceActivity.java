@@ -37,6 +37,9 @@ import org.json.JSONObject;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class SelectPreferenceActivity extends AppCompatActivity implements PreferenceListAdapter.OnItemClickListener, ICategoryServiceListener, DialogClickListener, View.OnClickListener {
 
@@ -53,6 +56,9 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
     private ImageView PrefSelect;
     int pos;
     private TextView txtGetStarted, txtSelect, txtSelectAll;
+
+//    ArrayList<String> values=new ArrayList<String>();
+    HashSet<String> hashSet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +88,7 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
 
         //mRecyclerView.setOnItemClickListener(this);
         selectedList = new ArrayList<>();
+        hashSet = new HashSet<String>();
 
         categoryServiceHelper = new CategoryServiceHelper(this);
         categoryServiceHelper.setCategoryServiceListener(this);
@@ -142,6 +149,7 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
 
             preferences.add(preference);
         }
+
         SetCategory setCategory = new SetCategory();
         setCategory.setPreferences(preferences);
         setCategory.setFuncName("user_preference");
@@ -156,6 +164,7 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
 
     @Override
     public void onCategoryResponse(JSONArray response) {
+        String ok ="";
         progressDialogHelper.hideProgressDialog();
         Gson gson = new Gson();
         Type listType = new TypeToken<ArrayList<Category>>() {
@@ -173,6 +182,7 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
 
     @Override
     public void onSetCategoryResponse(JSONObject response) {
+        String ok = "";
         progressDialogHelper.hideProgressDialog();
         Intent intent = new Intent(this, LandingActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -211,6 +221,7 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
     public void onClick(View v) {
         if (v == txtGetStarted) {
             if (selectedList.size() >= 4) {
+
                 setPreferences();
             } else {
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
@@ -274,6 +285,7 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
 //            PrefSelect.setBackgroundResource(imgResource);
             tag.setCategoryPreference("yes");
             selectedList.add(tag);
+
             preferenceAdatper.notifyItemChanged(position);
         } else {
 //            bgShape.setColor(getResources().getColor(R.color.white));
@@ -283,6 +295,7 @@ public class SelectPreferenceActivity extends AppCompatActivity implements Prefe
             selectedList.remove(tag);
             preferenceAdatper.notifyItemChanged(position);
         }
+//        preferenceAdatper.notifyItemChanged(position);
 //        ImageView tickImage = (ImageView) view.findViewById(R.id.tickImage);
 //        ImageView logoImage = (ImageView) view.findViewById(R.id.img_category);
 //        if (tag.getCategoryPreference().equals("no")) {

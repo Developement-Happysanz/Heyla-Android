@@ -39,6 +39,7 @@
     <application
         android:name=".app.AppController"
         android:allowBackup="true"
+        android:fullBackupContent="false"
         android:icon="@mipmap/appicon_logo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">

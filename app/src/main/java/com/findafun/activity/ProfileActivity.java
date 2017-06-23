@@ -751,7 +751,10 @@ public class ProfileActivity extends AppCompatActivity implements DialogClickLis
             SignUpServiceHelper mServiceHelper = new SignUpServiceHelper(this);
             mServiceHelper.updateUserProfile(url, this);
 
-            //}
+        } else {
+            if (mProgressDialog != null) {
+                mProgressDialog.cancel();
+            }
         }
 
     }
@@ -795,7 +798,7 @@ public class ProfileActivity extends AppCompatActivity implements DialogClickLis
             AlertDialogHelper.showSimpleAlertDialog(this, "Select valid gender");
             return false;
         } else if (!FindAFunValidator.checkNullString(this.mOccupation.getText().toString().trim())) {
-            AlertDialogHelper.showSimpleAlertDialog(this, "Select valid gender");
+            AlertDialogHelper.showSimpleAlertDialog(this, "Select valid occupation");
             return false;
         } else {
             return true;
