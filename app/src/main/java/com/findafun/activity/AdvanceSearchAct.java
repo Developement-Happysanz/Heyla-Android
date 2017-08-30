@@ -166,6 +166,7 @@ public class AdvanceSearchAct extends AppCompatActivity implements AdapterView.O
         findViewById(R.id.btnapply).setOnClickListener(this);
         findViewById(R.id.btncancel).setOnClickListener(this);
         fetchCategoryValues();
+
         categoryAdapter = new ArrayAdapter<String>(this, R.layout.category_list_item, R.id.category_list_name, categoryArrayList) { // The third parameter works around ugly Android legacy. http://stackoverflow.com/a/18529511/145173
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {

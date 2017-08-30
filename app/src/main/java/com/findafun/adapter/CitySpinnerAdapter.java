@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 
 public class CitySpinnerAdapter extends ArrayAdapter {
+
     private static final String TAG = CitySpinnerAdapter.class.getName();
 
     private Activity context;

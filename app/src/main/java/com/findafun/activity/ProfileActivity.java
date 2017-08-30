@@ -261,9 +261,9 @@ public class ProfileActivity extends AppCompatActivity implements DialogClickLis
             public void onClick(View v) {
                 Log.d(TAG, "birthday widget selected");
                 showBirthdayDate();
-
             }
         });
+
         mGenderList.add("Male");
         mGenderList.add("Female");
         mGenderList.add("Others");
