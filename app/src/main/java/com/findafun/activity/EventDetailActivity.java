@@ -630,7 +630,7 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
                     AlertDialog.Builder builder = new AlertDialog.Builder(
                             EventDetailActivity.this);
                     builder.setTitle("Events");
-                    builder.setMessage("Making your presense for the event?");
+                    builder.setMessage("Making your presence for the event?");
                     builder.setPositiveButton("May Be",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog,
