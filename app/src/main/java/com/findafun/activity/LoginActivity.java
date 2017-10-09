@@ -165,6 +165,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
             initializeViews();
+
             signUpServiceHelper = new SignUpServiceHelper(this);
             signUpServiceHelper.setSignUpServiceListener(this);
             progressDialogHelper = new ProgressDialogHelper(this);
@@ -889,13 +890,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 } else {
                     super.onRequestPermissionsResult(requestCode, permissions, grantResults);
                 }
-
-
             }
 
             // other 'case' lines to check for other
             // permissions this app might request
         }
     }
-
 }
