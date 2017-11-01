@@ -291,7 +291,7 @@ public class SignupFragment extends Fragment implements View.OnClickListener, IS
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     PreferenceStorage.saveLoginMode(getActivity(), FindAFunConstants.GOOGLE_PLUS);
-                    mSelectedLoginMode = FindAFunConstants.FACEBOOK;
+//                    mSelectedLoginMode = FindAFunConstants.FACEBOOK;
                     mSelectedLoginMode = FindAFunConstants.GOOGLE_PLUS;
                     if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.GET_ACCOUNTS) == PackageManager.PERMISSION_GRANTED) {
                        // Log.d(TAG, "initiate google plus sign up");

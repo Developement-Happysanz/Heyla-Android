@@ -165,7 +165,6 @@ public class PreferenceStorage {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(FindAFunConstants.KEY_LOGIN_MODE, type);
         editor.commit();
-
     }
 
     public static int getLoginMode(Context context) {
@@ -173,7 +172,6 @@ public class PreferenceStorage {
                 .getDefaultSharedPreferences(context);
         Integer mode = sharedPreferences.getInt(FindAFunConstants.KEY_LOGIN_MODE, 0);
         return mode;
-
     }
 
     public static void saveProfilePic(Context context, String url) {

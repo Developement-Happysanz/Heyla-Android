@@ -8,11 +8,12 @@ android {
             keyPassword 'Heyla@123'
             storeFile file('heyla.jks')
             storePassword 'Heyla@123'
+            flavorDimensions "default"
 //            storeFile file("E:/Development/heyla.keystore")
         }
     }
-    compileSdkVersion 23
-    buildToolsVersion '25.0.2'
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
 
     defaultConfig {
         applicationId "com.palprotech.heyla"
@@ -63,9 +64,11 @@ android {
         }
     }
 
-    applicationVariants.all { variant ->
-        variant.outputs.each { output ->
-            output.outputFile = file("$project.buildDir/apk/Heyla.apk")
+    android.applicationVariants.all { variant ->
+
+        variant.outputs.all { output ->
+//            output.outputFile = file("$project.buildDir/apk/Heyla.apk")
+            outputFileName = "${variant.name}-${variant.versionName}.apk"
         }
     }
     productFlavors {

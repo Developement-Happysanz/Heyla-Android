@@ -756,7 +756,6 @@ public class ProfileActivity extends AppCompatActivity implements DialogClickLis
                 mProgressDialog.cancel();
             }
         }
-
     }
 
     private boolean validateFields() {
