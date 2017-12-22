@@ -181,7 +181,6 @@ public class EventDetailActivity extends AppCompatActivity implements GoogleApiC
             editor.commit();
             Log.d("version code", String.valueOf(version));
         }
-
     }
 
 

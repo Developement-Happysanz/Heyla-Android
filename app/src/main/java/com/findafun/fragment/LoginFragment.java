@@ -892,10 +892,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Dia
 
                         }
                     }
-
-
-                    //
-
                 }
             } catch (JSONException e) {
                 e.printStackTrace();

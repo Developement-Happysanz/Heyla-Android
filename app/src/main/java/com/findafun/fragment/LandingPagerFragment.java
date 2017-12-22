@@ -349,5 +349,4 @@ public class LandingPagerFragment extends Fragment implements IEventServiceListe
     public void onWindowFocusChanged() {
 
     }
-
 }
