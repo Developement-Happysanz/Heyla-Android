@@ -8,8 +8,8 @@ public class FindAFunConstants {
     // URLS
 //    public static final String BASE_URL = "http://heylaapp.com/app/";
     public static final String BASE_URL = "http://heylaapp.com/old_site/app/";
-    public static final String BASE_URL_1 = "http://heylaapp.com/";
-    public static final String GET_SIGN_UP_URL = "http://heylaapp.com/app/api.php";
+    public static final String BASE_URL_1 = "http://heylaapp.com/old_site/";
+    public static final String GET_SIGN_UP_URL = "http://heylaapp.com/old_site/app/api.php";
     //http://hobbistan.com/app/hobbistan/api.php?func_name=event_popular&event_id=530
     public static final String SET_CATEGORY_URL = BASE_URL + "api.php";
     public static final String GET_ADVANCE_SINGLE_SEARCH = BASE_URL + "api.php";
@@ -28,10 +28,10 @@ public class FindAFunConstants {
     public static final String GET_CITY_URL = BASE_URL + "api.php?func_name=getCity";
     public static final String GET_CITY_NEW_URL = BASE_URL + "api.php?func_name=getCitynew&country=%s";
     public static final String GET_COUNTRY_URL = BASE_URL + "api.php?func_name=getCountry";
-    public static final String UPDATE_PROFILE_URL = "http://heylaapp.com/app/api.php?func_name=updateProfile&user_email=%s&user_name=%s&user_id=%d&user_city=%s&user_gender=%s&user_birthday=%s&user_occupation=%s&user_phone=%s";
-    //    public static final String UPDATE_PROFILE_URL = "http://heylaapp.com/app/api.php?func_name=updateProfile&user_email=%s&user_name=%s&user_id=%d&user_password=%s&user_city=%s&user_gender=%s&user_birthday=%s&user_occupation=%s&user_phone=%s";
-    public static final String ADD_EVENT_URL = "http://heylaapp.com/app/api.php?func_name=user_add_event&event_type=%d&txtEvent=%s&cboCategory=%s&cboCity=%s&txtVenue=%s&txtAddress=%s&txtDescription=%s&cboCost=%s&txtSdate=%s&txtEdate=%s&cboStime=%s&cboEtime=%s&txtLatitude=%s&txtLongitude=%s&txtPhone=%s&txtPerson=%s&txtEmail=%s&txtpic1=%s&txtpic2=%s&txtpic3=%s";
-    public static final String UPDATE_CITY = "http://heylaapp.com/app/api.php?func_name=update_usercity&user_id=%d&city=%s&country=%s&user_type=%d";
+    public static final String UPDATE_PROFILE_URL = "http://heylaapp.com/old_site/app/api.php?func_name=updateProfile&user_email=%s&user_name=%s&user_id=%d&user_city=%s&user_gender=%s&user_birthday=%s&user_occupation=%s&user_phone=%s";
+    //    public static final String UPDATE_PROFILE_URL = "http://heylaapp.com/old_site/app/api.php?func_name=updateProfile&user_email=%s&user_name=%s&user_id=%d&user_password=%s&user_city=%s&user_gender=%s&user_birthday=%s&user_occupation=%s&user_phone=%s";
+    public static final String ADD_EVENT_URL = "http://heylaapp.com/old_site/app/api.php?func_name=user_add_event&event_type=%d&txtEvent=%s&cboCategory=%s&cboCity=%s&txtVenue=%s&txtAddress=%s&txtDescription=%s&cboCost=%s&txtSdate=%s&txtEdate=%s&cboStime=%s&cboEtime=%s&txtLatitude=%s&txtLongitude=%s&txtPhone=%s&txtPerson=%s&txtEmail=%s&txtpic1=%s&txtpic2=%s&txtpic3=%s";
+    public static final String UPDATE_CITY = "http://heylaapp.com/old_site/app/api.php?func_name=update_usercity&user_id=%d&city=%s&country=%s&user_type=%d";
     public static final String UPLOAD_PROFILE_IMAGE = BASE_URL + "upload.php?user_id=%d";
     public static final String GET_EVENTS_BOOKMARK = BASE_URL + "api.php?func_name=fetch_event_bookmark&user_id=%d";
     public static final String ADD_EVENT_BOOKMARK = BASE_URL + "api.php?func_name=add_event_bookmark&user_id=%d&event_id=%d";
