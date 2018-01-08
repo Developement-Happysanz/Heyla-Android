@@ -6,7 +6,8 @@ package com.findafun.utils;
 public class FindAFunConstants {
 
     // URLS
-    public static final String BASE_URL = "http://heylaapp.com/app/";
+//    public static final String BASE_URL = "http://heylaapp.com/app/";
+    public static final String BASE_URL = "http://heylaapp.com/old_site/app/";
     public static final String BASE_URL_1 = "http://heylaapp.com/";
     public static final String GET_SIGN_UP_URL = "http://heylaapp.com/app/api.php";
     //http://hobbistan.com/app/hobbistan/api.php?func_name=event_popular&event_id=530

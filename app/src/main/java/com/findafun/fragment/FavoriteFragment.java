@@ -798,6 +798,7 @@ public class FavoriteFragment extends LandingPagerFragment implements OnMapReady
 
     private void fetchCurrentLocation() {
         Log.d(TAG, "fetch the current location");
+
         try {
 
             mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
